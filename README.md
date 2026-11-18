@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-**R&D prototype Р Р†Р вЂљРІР‚Сњ two accepted packaging examples; further development discontinued due to project budget constraints.**
+**R&D prototype — two accepted packaging examples; further development discontinued due to project budget constraints.**
 
 Blender Farm Pro is a PharmaGen PRO fork that explores controlled, headless Blender/Cycles rendering of pharmaceutical packaging. Its portfolio scope is **two owner-reported workplace-accepted examples**, Viagra (`74-min`) and Cialis (`59-min`). The retained catalogue contains 391 SKU records for legacy compatibility; it is not a claim of 391 visually approved products.
 
@@ -39,7 +39,7 @@ flowchart LR
 
 The physical builder generates an atlas from vendored fonts and independent SVG contours, creates the carton construction and relief, compiles manifest version `1.13`, and passes it to the existing Blender driver. One packed scene supplies the requested camera view. Geometry, UV, shader, camera and render evidence are recorded beside the output.
 
-The physical demonstration command writes PNGs. The legacy Stage 3 WEBP contract is 1600Р вЂњРІР‚вЂќ1600 and at most 500 KB; these 2048Р вЂњРІР‚вЂќ2048 historical portfolio examples are not presented as Stage 3 deliverables.
+The physical demonstration command writes PNGs. The legacy Stage 3 WEBP contract is 1600×1600 and at most 500 KB; these 2048×2048 historical portfolio examples are not presented as Stage 3 deliverables.
 
 ## 6. Render Manifest & Data Contracts
 
@@ -56,13 +56,13 @@ Versions `1.10`/`1.11` cover legacy geometry and compound marks; `1.13` covers t
 
 ![Historical Viagra packaging example](docs/portfolio/74-min.webp)
 
-Owner-reported workplace acceptance. Original: `74-min-hero.png`, 2048Р вЂњРІР‚вЂќ2048. Method: procedural carton, independent vector/font artwork, authored PBR approximation, relief and Cycles. The target is an authored 100 mg / 30-tablet adaptation, not a manufacturer-certified carton master. Exact historical creation commit is unknown.
+Owner-reported workplace acceptance. Original: `74-min-hero.png`, 2048×2048. Method: procedural carton, independent vector/font artwork, authored PBR approximation, relief and Cycles. The target is an authored 100 mg / 30-tablet adaptation, not a manufacturer-certified carton master. Exact historical creation commit is unknown.
 
 ### 59-min / Cialis
 
 ![Historical Cialis packaging example](docs/portfolio/59-min.webp)
 
-Owner-reported workplace acceptance. Original: `59-min-hero.png`, 2048Р вЂњРІР‚вЂќ2048. Method: the same physical pipeline with Cialis artwork, foil approximation and Braille. The target is an authored 20 mg / 30-tablet adaptation. Its physical height estimate must not be mistaken for calibrated factory dimensions or the passport's printed dimensions.
+Owner-reported workplace acceptance. Original: `59-min-hero.png`, 2048×2048. Method: the same physical pipeline with Cialis artwork, foil approximation and Braille. The target is an authored 20 mg / 30-tablet adaptation. Its physical height estimate must not be mistaken for calibrated factory dimensions or the passport's printed dimensions.
 
 These are **historically accepted render examples**. The WebP previews preserve every decoded RGBA pixel of the original PNGs. They are not substituted fresh renders. [Hashes and preview provenance](docs/portfolio/preview-provenance.json).
 
@@ -116,7 +116,7 @@ Outputs are `reports/demo-74/renders/74-min-demo.png` and `reports/demo-59/rende
 
 ## 14. Project Status
 
-**R&D prototype Р Р†Р вЂљРІР‚Сњ two accepted packaging examples; further development discontinued due to project budget constraints.**
+**R&D prototype — two accepted packaging examples; further development discontinued due to project budget constraints.**
 
 This release preparation is limited to preserving and presenting the two examples. Its validation/publication verdict is recorded in [PORTFOLIO_PUBLICATION_SUMMARY.md](PORTFOLIO_PUBLICATION_SUMMARY.md); an unverified local candidate must not be described as a published release.
 
