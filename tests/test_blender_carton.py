@@ -25,6 +25,7 @@ from pathlib import Path
 
 from src.utils import load_config, resolve_path
 from src.measure import _front_face_and_background
+from src.design_group import FOLDER_BY_STEM
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -43,6 +44,7 @@ STRIPE_MIN_FRAC, STRIPE_MAX_FRAC = 0.03, 0.06
 # reference_analysis.md 4: "roughness reads high (~0.6-0.8 in a Principled-BSDF
 # sense), not the ~0.35 currently hardcoded"; 8 asks for the body specifically.
 MATTE_MIN, MATTE_MAX = 0.6, 0.8
+FONT_REGULAR, FONT_BOLD = "DejaVuSans.ttf", "DejaVuSans-Bold.ttf"
 
 # The top-right brand badge. Restated here rather than imported: the driver only
 # imports under Blender's own interpreter, and a test that reads its constants
@@ -150,6 +152,174 @@ def build_scene(job):
                 f"--- stdout ---\n{proc.stdout}\n--- stderr ---\n{proc.stderr}"
             )
         return json.loads(dump_path.read_text(encoding="utf-8"))
+
+
+@unittest.skipUnless(Path(BLENDER_EXE).exists(),
+                     f"Blender not installed at {BLENDER_EXE}")
+class TestVisibleCartonProfile(unittest.TestCase):
+    """The optional profile builds only measured, manifest-driven details."""
+
+    @classmethod
+    def setUpClass(cls):
+        from src.render_manifest import build_manifest
+
+        passport_path = PROJECT_ROOT / "04_passports/passports_json/74-min.json"
+        passport = json.loads(passport_path.read_text(encoding="utf-8"))
+        cls.job = build_manifest(passport)
+        cls.profile = cls.job["design"]["carton_profile"]
+        cls.scene = build_scene(cls.job)
+        cls.scene_repeat = build_scene(cls.job)
+        no_bump = json.loads(json.dumps(cls.job))
+        no_bump["design"]["carton_profile"]["surface_finish"][
+            "micro_bump"]["strength"] = 0.0
+        cls.no_bump = build_scene(no_bump)
+        cls.plain = build_scene(JOB)
+
+    def test_profile_and_measured_detail_kinds_reach_scene_dump(self):
+        dumped = self.scene["carton_profile"]
+        self.assertEqual(dumped["profile_version"], "1.0")
+        self.assertGreater(dumped["edge_radius_m"], 0.0)
+        self.assertGreater(dumped["board_thickness_m"], 0.0)
+
+        kinds = {row["kind"] for row in self.scene["visible_carton_geometry"]}
+        self.assertTrue({"flap", "seam", "gap"}.issubset(kinds))
+
+    def test_visible_geometry_is_bounded_and_small(self):
+        details = self.scene["visible_carton_geometry"]
+        self.assertLessEqual(len(details), 32)
+        carton = self.scene["carton"]["self_bounds"]
+        base = min(self.scene["carton"]["dimensions"])
+        allowance = base * (
+            self.profile["board_thickness_frac"]
+            + max(f["stand_off_frac"]
+                  for f in self.profile["visible_flaps"])
+        ) + 1e-6
+        for row in details:
+            with self.subTest(name=row["name"]):
+                bounds = row["bounds_in_carton_frame"]
+                for axis in range(3):
+                    self.assertGreaterEqual(
+                        bounds["min"][axis], carton["min"][axis] - allowance)
+                    self.assertLessEqual(
+                        bounds["max"][axis], carton["max"][axis] + allowance)
+
+    def test_no_profile_preserves_generic_geometry_path(self):
+        self.assertIsNone(self.plain["carton_profile"])
+        self.assertEqual(self.plain["visible_carton_geometry"], [])
+        for actual, expected_mm in zip(
+                self.plain["carton"]["dimensions"],
+                (JOB["carton"]["width_mm"], JOB["carton"]["depth_mm"],
+                 JOB["carton"]["height_mm"])):
+            self.assertAlmostEqual(actual * 1000.0, expected_mm, places=3)
+
+    def test_unsupported_profile_version_is_a_hard_driver_failure(self):
+        bad = json.loads(json.dumps(self.job))
+        bad["design"]["carton_profile"]["profile_version"] = "9.9"
+        with tempfile.TemporaryDirectory() as tmp:
+            job_path = Path(tmp) / "job.json"
+            dump_path = Path(tmp) / "scene.json"
+            job_path.write_text(json.dumps(bad), encoding="utf-8")
+            proc = subprocess.run(
+                [BLENDER_EXE, "--background", "--factory-startup",
+                 "--python", DRIVER_SCRIPT, "--", "--job", str(job_path),
+                 "--dump-scene", str(dump_path)],
+                capture_output=True, text=True, timeout=300,
+            )
+
+        self.assertNotEqual(proc.returncode, 0)
+        self.assertIn("unsupported carton_profile", proc.stdout + proc.stderr)
+        self.assertFalse(dump_path.exists())
+
+    def test_profile_material_has_deterministic_normal_only_grain(self):
+        finish = self.scene["carton"]["material_finish"]
+        self.assertIn("ShaderNodeTexNoise", finish["node_types"])
+        self.assertIn("ShaderNodeBump", finish["node_types"])
+        self.assertNotEqual(finish["mapping_location"], [0.0, 0.0, 0.0])
+        self.assertAlmostEqual(
+            finish["noise_scale"],
+            self.profile["surface_finish"]["micro_bump"]["scale"], places=5)
+        self.assertAlmostEqual(
+            finish["bump_strength"],
+            self.profile["surface_finish"]["micro_bump"]["strength"], places=5)
+        self.assertLess(
+            finish["bump_distance_m"],
+            self.scene["carton_profile"]["board_thickness_m"])
+        self.assertFalse(finish["noise_linked_to_base_color"])
+
+    def test_finish_is_identical_across_board_and_print(self):
+        board = self.scene["carton"]["material_finish"]
+        self.assertTrue(self.scene["design_fields"])
+        for field in self.scene["design_fields"]:
+            with self.subTest(name=field["name"]):
+                self.assertEqual(field["material_finish"], board)
+
+    def test_finish_is_repeatable_and_cannot_change_bounds(self):
+        keys = ("carton_profile", "visible_carton_geometry", "design_fields")
+        for key in keys:
+            self.assertEqual(self.scene[key], self.scene_repeat[key])
+        self.assertEqual(
+            self.scene["carton"]["self_bounds"],
+            self.no_bump["carton"]["self_bounds"])
+        self.assertEqual(
+            [row["bounds_in_carton_frame"]
+             for row in self.scene["visible_carton_geometry"]],
+            [row["bounds_in_carton_frame"]
+             for row in self.no_bump["visible_carton_geometry"]])
+
+    def test_no_profile_keeps_the_flat_material_node_set(self):
+        finish = self.plain["carton"]["material_finish"]
+        self.assertNotIn("ShaderNodeTexNoise", finish["node_types"])
+        self.assertNotIn("ShaderNodeBump", finish["node_types"])
+
+    def test_print_reaches_front_top_and_visible_left_surfaces(self):
+        by_surface = {}
+        for row in self.scene["design_fields"]:
+            by_surface.setdefault(row["surface"], []).append(row)
+        self.assertTrue({"front", "top", "left"}.issubset(by_surface))
+        self.assertEqual(
+            self.scene["side_panel"], [],
+            "a measured left-surface design must not be overprinted by the "
+            "generic barcode/side-panel fallback",
+        )
+        left_colour = by_surface["left"][0]["base_color"]
+        covered_details = [
+            row for row in self.scene["visible_carton_geometry"]
+            if row["surface"] == "left" and row["kind"] in ("flap", "seam")
+        ]
+        self.assertTrue(covered_details)
+        self.assertTrue(all(row["base_color"] == left_colour
+                            for row in covered_details))
+
+        carton = self.scene["carton"]["self_bounds"]
+        half_thick = self.scene["carton"]["dimensions"][1] * 0.002
+        self.assertLessEqual(
+            abs(min(r["bounds_in_carton_frame"]["min"][1]
+                    for r in by_surface["front"]) - carton["min"][1]),
+            2 * half_thick)
+        self.assertLessEqual(
+            abs(max(r["bounds_in_carton_frame"]["max"][2]
+                    for r in by_surface["top"]) - carton["max"][2]),
+            2 * half_thick)
+        self.assertLessEqual(
+            abs(min(r["bounds_in_carton_frame"]["min"][0]
+                    for r in by_surface["left"]) - carton["min"][0]),
+            2 * half_thick)
+
+    def test_core_text_remains_manifest_text_and_valid_aux_text_is_geometry(self):
+        core = {row["name"]: row["body"] for row in self.scene["label"]}
+        self.assertEqual(core["label_brand"],
+                         self.job["label_content"]["brand_name_display"])
+        self.assertEqual(core["label_ingredient"],
+                         self.job["label_content"]["active_ingredient_display"])
+        self.assertEqual(core["label_dosage"],
+                         self.job["label_content"]["dosage_display"])
+        self.assertEqual(core["label_unit_count"],
+                         self.job["label_content"]["unit_count_display"])
+        rows = self.scene["reference_aux_text"]
+        self.assertEqual([row["body"] for row in rows],
+                         ["film-coated tablets"])
+        self.assertTrue(all(row["font"] in (FONT_REGULAR, FONT_BOLD)
+                            for row in rows))
 
 
 @unittest.skipUnless(Path(BLENDER_EXE).exists(),
@@ -1610,8 +1780,17 @@ class TestMeasuredTypeStandsWhereItWasMeasured(unittest.TestCase):
                 fill = None
                 for field in design.get("fields") or []:
                     for part in field.get("parts") or []:
-                        if len(part["outline"]) >= 3 and self._covers(u, v, part["outline"]):
-                            fill = field["fill"]
+                        if len(part["outline"]) < 3 or not self._covers(u, v, part["outline"]):
+                            continue
+                        # Contract 1.8: a hole is not part of the part, so the
+                        # row is printed on whatever shows through it. `64-min`
+                        # is the case -- its measured dosage sits wholly inside
+                        # the window the teal field leaves for the salmon badge,
+                        # and the real carton prints it dark there.
+                        if any(len(r) >= 3 and self._covers(u, v, r)
+                               for r in (part.get("holes") or [])):
+                            continue
+                        fill = field["fill"]
                 if fill is None:
                     continue
                 h = fill.lstrip("#")
@@ -1717,13 +1896,24 @@ class TestLabelInkFollowsTheSurfaceUnderIt(unittest.TestCase):
 
     @classmethod
     def _fill_under(cls, job, u, v):
-        """The design fill printed under (u, v); later parts paint over earlier."""
+        """The design fill printed under (u, v); later parts paint over earlier.
+
+        Contract 1.8: inside a hole is not inside the part, so the board shows --
+        or whatever earlier part reached here, which is why the hole `continue`s
+        rather than clearing `found`. Written out again rather than imported from
+        the driver on purpose: this is the second implementation, and two that
+        agree is the whole value of it.
+        """
         found = None
         for field in ((job.get("design") or {}).get("fields") or []):
             for part in field.get("parts") or []:
                 outline = part.get("outline") or []
-                if len(outline) >= 3 and cls._inside(u, v, outline):
-                    found = field.get("fill")
+                if len(outline) < 3 or not cls._inside(u, v, outline):
+                    continue
+                if any(len(ring) >= 3 and cls._inside(u, v, ring)
+                       for ring in (part.get("holes") or [])):
+                    continue
+                found = field.get("fill")
         return found
 
     def test_no_label_row_is_printed_in_ink_its_surface_hides(self):
@@ -1784,17 +1974,53 @@ class TestNoGridRowIsPrintedInInkItsOwnBackgroundHides(unittest.TestCase):
     quietly grow, and asserted to still fail so it cannot go stale.
     """
 
-    SKU = ("59-min", "64-min", "74-min", "135-min", "155-min", "156-min",
-           "308-min", "344-min", "404-min")
+    # EVERY SKU that can straddle, which is every SKU with a design block --
+    # the 363 on the generic art direction have a white body, one accent stripe
+    # and one badge, and the grid was fitted to clear them. It was nine, chosen
+    # for no reason anyone recorded, and the four cartons outside those nine
+    # were unwatched: `357-min` printed 10.0% of its ingredient row and 28.7%
+    # of its dosage in an ink those surfaces hide, and `149-min` 13.7% of its
+    # unit count, for as long as this list has existed. The OCR barrier found
+    # the first of them and only because its fixtures were finally rebuilt.
+    #
+    # Read from the same map Stage 1 reads rather than restated, so a SKU
+    # entering the design group enters this guard with it. 28 scenes is 28
+    # Blender launches -- measured at 2.8s each and 20s for `357-min`, whose
+    # design carries the group's largest polygons, so about two minutes.
+    SKU = tuple(sorted(FOLDER_BY_STEM, key=lambda s: int(s.split("-")[0])))
+
+    #: The count cannot quietly shrink, the same rule the OCR barrier's
+    #: MIN_SAMPLE enforces for the same reason.
+    MIN_SKU = 28
     ROLE = {"label_brand": "brand_name_display",
             "label_ingredient": "active_ingredient_display",
             "label_dosage": "dosage_display",
             "label_unit_count": "unit_count_display"}
-    # (sku, row) -> why placement cannot clear it.
-    KNOWN_STRADDLING = {
-        ("59-min", "label_unit_count"),   # design owns the bottom-right corner
-        ("64-min", "label_unit_count"),   # likewise
-    }
+    # STILL empty after contract 1.10's marks were admitted to this guard, and
+    # that took a change to the driver rather than an entry here. Admitting them
+    # found two rows straddling -- `152-min`'s dosage across its signature swash
+    # and `157-min`'s unit count across the Roche hexagon, 3.7% of each cap band
+    # -- and both cleared once `_clear_of_design` could see a mark too. The
+    # measurement that had said it must not was misread; see
+    # `_one_ink_serves` in the driver, which is the function it was made about.
+    #
+    # Note what this guard cannot see, measured on the third row that moved:
+    # it compares the INK's lightness against the SURFACE's, so `230-min`'s
+    # orange Neptune rule on a white board never registered, while the render
+    # plainly shows it cutting the digits of "15mg". A coloured mark is
+    # understated here; the contact sheet is what caught that one.
+    #
+    # Empty, and it took a measurement to empty it. The entries here said
+    # placement could not clear these two rows; scanning the face says
+    # otherwise. Shifting the row LEFT along its own baseline reaches a
+    # fully readable position at 15.5% of face width on `59-min` and 24.0%
+    # on `64-min` -- both inside the third of a face the note claimed to
+    # have searched, and both without moving the row off its baseline.
+    #
+    # Ink was never going to do it: the cap band on `59-min` is 47.7% dark
+    # and 52.3% light, and the two must sum to 100%, so the best any single
+    # ink can do is hide 47.7% of the string.
+    KNOWN_STRADDLING = set()
 
     @classmethod
     def setUpClass(cls):
@@ -1817,13 +2043,47 @@ class TestNoGridRowIsPrintedInInkItsOwnBackgroundHides(unittest.TestCase):
         return r
 
     @classmethod
-    def _fill_at(cls, fields, u, v):
+    def _fill_at(cls, design, u, v):
+        """The surface printed under (u, v), restated independently of the driver.
+
+        Judges READABILITY, so it must see every surface the driver prints --
+        fields and then MARKS, in paint order. Reading fields alone passed a row
+        inked against a surface it never looked at, and did: with marks admitted
+        this guard found `152-min`'s dosage and `157-min`'s unit count printing
+        3.7% of themselves in an ink their own background hides.
+
+        Two contracts this has to obey, and it obeyed neither:
+
+        - **1.9: the PART's fill, not the field's.** A field's colour is the
+          median of the whole cluster; a part is one region of it, and on 8 of
+          the group's 75 printed parts the two still differ. Taking the field's
+          measured this guard against a colour the driver does not paint.
+        - **1.8: a point inside a hole is on whatever shows through it** -- and
+          a mark has holes too, five of the twenty-two.
+        """
         found = None
-        for f in fields:
+        for f in (design or {}).get("fields") or []:
+            # Label rows below are front-face geometry.  Top/left fields use
+            # their own normalised 0..1 frames and cannot be projected into the
+            # front frame merely because their UV numbers overlap.
+            if f.get("surface", "front") != "front":
+                continue
             for p in f.get("parts") or []:
                 o = p.get("outline") or []
-                if len(o) >= 3 and cls._inside(u, v, o):
-                    found = f.get("fill")
+                if len(o) < 3 or not cls._inside(u, v, o):
+                    continue
+                if any(len(r) >= 3 and cls._inside(u, v, r)
+                       for r in (p.get("holes") or [])):
+                    continue
+                found = p.get("fill", f.get("fill"))
+        for m in (design or {}).get("marks") or []:
+            o = m.get("outline") or []
+            if len(o) < 3 or not cls._inside(u, v, o):
+                continue
+            if any(len(r) >= 3 and cls._inside(u, v, r)
+                   for r in (m.get("holes") or [])):
+                continue
+            found = m.get("fill")
         return found
 
     @staticmethod
@@ -1865,13 +2125,25 @@ class TestNoGridRowIsPrintedInInkItsOwnBackgroundHides(unittest.TestCase):
                 for i in range(30):
                     for j in range(10):
                         fill = self._fill_at(
-                            fields, u0 + (u1 - u0) * (i + 0.5) / 30,
+                            design, u0 + (u1 - u0) * (i + 0.5) / 30,
                             v0 + (v1 - v0) * (j + 0.5) / 10) or substrate
                         if (self._luma(fill) < 0.5) == (not ink_is_white):
                             hidden += 1
                 if hidden:
                     out.add((stem, row["name"]))
         return out
+
+    def test_the_guard_covers_every_carton_that_can_straddle(self):
+        """A guard that quietly covers fewer cartons reports the same green."""
+        self.assertGreaterEqual(
+            len(self.SKU), self.MIN_SKU,
+            f"this guard covers {len(self.SKU)} SKU. It is meant to cover every "
+            f"design SKU; if the group shrank, say so where the group is "
+            f"defined and lower MIN_SKU in the open.")
+        self.assertEqual(
+            len(self.scenes), len(self.SKU),
+            "a scene failed to build; a SKU that cannot be built is not a SKU "
+            "this guard has checked.")
 
     def test_the_set_of_unreadable_rows_is_exactly_the_known_one(self):
         self.assertEqual(
@@ -1882,3 +2154,209 @@ class TestNoGridRowIsPrintedInInkItsOwnBackgroundHides(unittest.TestCase):
             "the row can be moved clear -- which is what the real carton does "
             "-- or it belongs in KNOWN_STRADDLING with the measurement that "
             "shows placement cannot clear it.")
+
+
+@unittest.skipUnless(Path(BLENDER_EXE).exists(),
+                     f"Blender not installed at {BLENDER_EXE}")
+class TestPaintOrderIsGeometry(unittest.TestCase):
+    """Contract 1.7: `z` decides which field covers which, in the scene.
+
+    Two readings of one record. `fit_design_spec.rasterise()` fills the field
+    list front to back, and every `verification.pixel_agreement` and every
+    `design_qa` target was measured against that. `build_design_fields()` read
+    the same list into ONE plane -- `location = (0, front_y, 0)` for every part
+    -- where nothing is on top of anything and Cycles resolves an overlap
+    however it likes. On `357-min` the teal block was erased outright in the
+    target and z-fought in the render; `362-min` the same.
+
+    Asserted off the scene rather than the pixels, for the reason the whole
+    file exists: a render can look right for the wrong reason, and z-fighting
+    in particular is stable enough per build to pass a pixel check once.
+
+    Three cartons rather than all twelve with more than one field. The
+    property is structural, each `build_scene` is a Blender launch, and the
+    catalogue sweep is what covers breadth. `357-min` is the only carton where
+    the order decides anything -- 2.09% of its face against under 0.1%
+    everywhere else -- and it is included for that reason, not as a sample.
+    """
+
+    SKU = ("357-min", "59-min", "404-min")
+
+    @classmethod
+    def setUpClass(cls):
+        manifests = Path(resolve_path("04_passports/render_manifests"))
+        cls.jobs, cls.scenes = {}, {}
+        for stem in cls.SKU:
+            cls.jobs[stem] = json.loads(
+                (manifests / f"{stem}.json").read_text(encoding="utf-8"))
+            cls.scenes[stem] = build_scene(cls.jobs[stem])
+
+    def _by_field(self, stem):
+        """{z: [part bounds]} for the built design, keyed by the field's own z."""
+        fields = self.jobs[stem]["design"]["fields"]
+        z_of_role = {f["role"]: int(f["z"]) for f in fields}
+        out = {}
+        for obj in self.scenes[stem]["design_fields"]:
+            # `design_{role}_{part index}`; the role may itself contain "_"
+            # (`secondary_1`), so strip the known affixes rather than split.
+            role = obj["name"][len("design_"):].rsplit("_", 1)[0]
+            self.assertIn(role, z_of_role,
+                          f"{stem}: built object {obj['name']!r} belongs to no "
+                          f"field in the manifest")
+            out.setdefault(z_of_role[role], []).append(obj["bounds_in_carton_frame"])
+        return out
+
+    def test_a_higher_z_is_built_nearer_the_camera(self):
+        """The camera looks along +Y and the front face is at min(Y).
+
+        So "in front of" is a SMALLER Y, and a field the raster paints later has
+        to be built there. Strict, not merely non-overlapping: two fields on one
+        plane is exactly the state this contract removes.
+        """
+        for stem in self.SKU:
+            by_z = self._by_field(stem)
+            with self.subTest(sku=stem):
+                self.assertGreater(len(by_z), 1,
+                                   f"{stem} has one field; it cannot show an order")
+                depths = {z: min(b["min"][1] for b in bs) for z, bs in by_z.items()}
+                order = [depths[z] for z in sorted(depths)]
+                for a, b in zip(order, order[1:]):
+                    self.assertGreater(
+                        a, b,
+                        f"{stem}: a field with a higher z is not in front. Built "
+                        f"depths by z: {depths}. Coplanar fields are what "
+                        f"contract 1.7 exists to stop.")
+
+    def test_the_stack_stays_thinner_than_the_ink_it_is_made_of(self):
+        """Separated, but still ink on board rather than tiles above it.
+
+        Each part is a slab of 2 * half_thick straddling its own plane, so the
+        whole stack has to spread over less than that or the frontmost field
+        stops touching the face. It also has to stay behind the label rows,
+        which sit at `front_y - 2 * half_thick`.
+        """
+        for stem in self.SKU:
+            by_z = self._by_field(stem)
+            with self.subTest(sku=stem):
+                bs = [b for parts in by_z.values() for b in parts]
+                half = min(b["max"][1] - b["min"][1] for b in bs) / 2.0
+                spread = max(b["min"][1] for b in bs) - min(b["min"][1] for b in bs)
+                self.assertLess(
+                    spread, half,
+                    f"{stem}: the field stack spreads {spread:.6f} against a "
+                    f"half-thickness of {half:.6f}; printed fields would read as "
+                    f"applied tiles")
+                front_y = self.scenes[stem]["carton"]["self_bounds"]["min"][1]
+                self.assertGreater(
+                    min(b["min"][1] for b in bs), front_y - 2.0 * half,
+                    f"{stem}: the frontmost field has reached the label plane")
+
+    def test_the_scene_agrees_with_the_raster_about_who_covers_whom(self):
+        """The one carton where the order decides anything.
+
+        `357-min`'s two fields overlap over 2.09% of its face -- everywhere else
+        in the group the figure is under 0.1%. The raster paints `highlight`
+        after `brand`, so the scene must build `highlight` in front of it.
+        """
+        stem = "357-min"
+        fields = self.jobs[stem]["design"]["fields"]
+        z_of_role = {f["role"]: int(f["z"]) for f in fields}
+        self.assertLess(z_of_role["brand"], z_of_role["highlight"],
+                        "the fixture no longer has brand painted before highlight")
+        by_z = self._by_field(stem)
+        brand = min(b["min"][1] for b in by_z[z_of_role["brand"]])
+        highlight = min(b["min"][1] for b in by_z[z_of_role["highlight"]])
+        self.assertLess(
+            highlight, brand,
+            "the raster covers brand with highlight and the scene does not, "
+            "which is the disagreement contract 1.7 was written to end")
+
+
+@unittest.skipUnless(Path(BLENDER_EXE).exists(),
+                     f"Blender not installed at {BLENDER_EXE}")
+class TestAHoleIsCutOutOfTheCurve(unittest.TestCase):
+    """Contract 1.8: a part is its outline MINUS its holes, in the scene.
+
+    A hole is another cyclic spline of the SAME curve, because Blender fills a
+    2D curve by nesting -- two objects would each fill and the hole would be
+    painted rather than cut. Nothing else in the dump can tell those apart: the
+    bounding box is identical whether the hole was removed or filled in, which
+    is exactly how the group rendered for as long as it did.
+
+    `357-min` is the case the contract exists for. Its `brand#1` is a thin
+    sprawling shape winding around a window that covers 44.4% of the face; with
+    the window filled the part enclosed 9.07 times its own ink and IoU 0.110
+    against the component it claims. `64-min` carries the other kind -- a window
+    the teal field leaves for the salmon dosage badge.
+    """
+
+    SKU = ("357-min", "64-min")
+
+    @classmethod
+    def setUpClass(cls):
+        manifests = Path(resolve_path("04_passports/render_manifests"))
+        cls.jobs, cls.scenes = {}, {}
+        for stem in cls.SKU:
+            cls.jobs[stem] = json.loads(
+                (manifests / f"{stem}.json").read_text(encoding="utf-8"))
+            cls.scenes[stem] = build_scene(cls.jobs[stem])
+
+    @staticmethod
+    def _ring_area(ring):
+        n = len(ring)
+        return abs(sum(ring[i][0] * ring[(i + 1) % n][1]
+                       - ring[(i + 1) % n][0] * ring[i][1]
+                       for i in range(n))) / 2.0
+
+    def _parts(self, stem):
+        """{object name: part} for every design part in the manifest."""
+        out = {}
+        for f in self.jobs[stem]["design"]["fields"]:
+            for i, part in enumerate(f["parts"]):
+                out[f"design_{f['role']}_{i}"] = part
+        return out
+
+    def test_a_part_builds_one_spline_for_its_outline_and_one_per_hole(self):
+        seen = 0
+        for stem in self.SKU:
+            parts = self._parts(stem)
+            for obj in self.scenes[stem]["design_fields"]:
+                part = parts.get(obj["name"])
+                self.assertIsNotNone(
+                    part, f"{stem}: built {obj['name']!r} matches no manifest part")
+                want = 1 + len([r for r in (part.get("holes") or []) if len(r) >= 3])
+                seen += want - 1
+                with self.subTest(sku=stem, obj=obj["name"]):
+                    self.assertEqual(
+                        obj["splines"], want,
+                        f"{stem} {obj['name']}: {obj['splines']} spline(s) built "
+                        f"for an outline and {want - 1} hole(s). A hole in its "
+                        f"own curve object is a second filled shape, not a hole.")
+        self.assertGreater(seen, 0, "no fixture carries a hole; this asserts nothing")
+
+    def test_the_filled_area_is_the_outline_minus_its_holes(self):
+        """The spline count alone would pass if Blender filled the holes in.
+
+        So the area is measured off the tessellation Cycles is handed. Shoelace
+        on the manifest's own rings for the target -- the two agree to the fifth
+        decimal on a carton 0.11m wide, which is far tighter than any hole in
+        the group.
+        """
+        for stem in self.SKU:
+            parts = self._parts(stem)
+            b = self.scenes[stem]["carton"]["self_bounds"]
+            face_w = b["max"][0] - b["min"][0]
+            face_h = b["max"][2] - b["min"][2]
+            for obj in self.scenes[stem]["design_fields"]:
+                part = parts[obj["name"]]
+                want = self._ring_area(part["outline"])
+                want -= sum(self._ring_area(r) for r in (part.get("holes") or [])
+                            if len(r) >= 3)
+                want *= face_w * face_h
+                with self.subTest(sku=stem, obj=obj["name"]):
+                    self.assertAlmostEqual(
+                        obj["fill_area_m2"], want, delta=max(0.02 * want, 1e-7),
+                        msg=f"{stem} {obj['name']}: Blender filled "
+                            f"{obj['fill_area_m2']:.8f} m2 where outline minus "
+                            f"holes is {want:.8f}. A hole that is drawn but not "
+                            f"cut renders as ink the carton does not have.")

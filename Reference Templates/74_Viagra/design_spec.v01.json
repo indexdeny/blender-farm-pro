@@ -1,0 +1,99 @@
+{
+  "spec_version": "0.1",
+  "sku": "74-min.jpg",
+  "source_image": "raw_viagra_front.png",
+  "face_aspect": 1.1018,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#DEDEDB",
+  "fields": [
+    {
+      "role": "brand",
+      "fill": "#34376D",
+      "coverage_pct": 9.7,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 2.5,
+          "smoothness": 0.0,
+          "outline": [
+            [
+              0.9973,
+              0.1287
+            ],
+            [
+              0.9991,
+              0.2822
+            ],
+            [
+              0.84,
+              0.2838
+            ],
+            [
+              0.84,
+              0.1295
+            ],
+            [
+              0.9964,
+              0.1295
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "glyph_components_dropped": 3,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 0,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 0.9499,
+    "excluded_as_glyphs_pct": 3.83,
+    "iou_by_field": {
+      "brand": 0.336
+    },
+    "vertices": 5
+  },
+  "type_rows": {
+    "brand_name_display": {
+      "u0": 0.0632,
+      "u1": 0.735,
+      "v0": 0.1275,
+      "v1": 0.1972,
+      "cap_frac": 0.0674,
+      "cap_top_v": 0.1284,
+      "align": "LEFT",
+      "read_as": "VIAGRAL"
+    },
+    "active_ingredient_display": {
+      "u0": 0.5436,
+      "u1": 0.7336,
+      "v0": 0.3292,
+      "v1": 0.3841,
+      "cap_frac": 0.0517,
+      "cap_top_v": 0.3313,
+      "align": "RIGHT",
+      "read_as": "sildenafil"
+    },
+    "dosage_display": {
+      "u0": 0.0623,
+      "u1": 0.3014,
+      "v0": 0.224,
+      "v1": 0.3036,
+      "cap_frac": 0.0608,
+      "cap_top_v": 0.2248,
+      "align": "LEFT",
+      "read_as": "50 mg"
+    },
+    "unit_count_display": {
+      "u0": 0.055,
+      "u1": 0.5059,
+      "v0": 0.8655,
+      "v1": 0.9208,
+      "cap_frac": 0.0521,
+      "cap_top_v": 0.8676,
+      "align": "LEFT",
+      "read_as": "4 film-coated tablets"
+    }
+  },
+  "type_rows_note": "GEOMETRY ONLY. `read_as` records the reference's own words, which are how each row was identified and are NOT what gets printed: the renderer draws the manifest's strings. The reference and the catalogue often carry different products -- Motiron for Ritalin, Aspendos for Modafinil."
+}

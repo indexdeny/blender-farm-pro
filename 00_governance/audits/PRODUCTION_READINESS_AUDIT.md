@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # Production Readiness Audit
 
 > **Phase:** PharmaGen PRO v1.0 — Production Hardening

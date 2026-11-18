@@ -512,19 +512,172 @@ class TestOCRBarrierOverTheTemplateSample(unittest.TestCase):
     close "one template family".
     """
 
-    # A ratchet, not a threshold. Tesseract reads `135-min`'s "1mg" as "lmg" --
-    # a lowercase L for the digit -- in every page-segmentation mode. The RENDER
-    # is correct: the scene test compares the built text object's body against
-    # the manifest byte-for-byte and passes. Folding glyph lookalikes was tried
-    # and rejected; scripts/render_qa.py records why it is unsafe.
+    # REGENERATED at contract 1.8, from fixtures built at `3c53e52`.
     #
-    # Listed so it cannot quietly grow, and asserted to still be failing so it
-    # cannot quietly go stale.
-    KNOWN_OCR_MISSES = {("135-min", "dosage_display")}
+    # Between those two commits the renderer changed four times -- Phase A
+    # enumerated the design, Phase B replaced every geometric admission rule
+    # with a hand-made ground truth, 1.7 gave the fields a paint order, 1.8 made
+    # a part a region rather than a ring -- and the fixtures were not rebuilt
+    # once. They described a renderer that no longer existed, and the suite was
+    # green because it read them and they were self-consistent with each other.
+    # `TestOCRAgainstAFreshRender` is the gate that says so, and it had been red
+    # across all four phases with nobody running it.
+    #
+    # WHAT THE REGENERATION ABSORBED, stated because a regeneration that does
+    # not say what it swallowed is a silent cap. Six rows had started missing
+    # before 1.8 and were not noticed: `149-min` dosage, `150-min` unit count,
+    # `308-min` dosage, `357-min` ingredient, `365-min` ingredient, `404-min`
+    # unit count. One is attributable to 1.8 -- `64-min` dosage -- and there the
+    # RENDER improved: its "100mg" used to be printed white on the teal field
+    # and is now dark on the board window the field leaves for the salmon badge,
+    # which is what the real carton does. Tesseract read the old one and does
+    # not read the new one.
+    #
+    # It also shrank. Ten rows that used to miss now READ -- `60-min` brand and
+    # dosage, `149-min` unit count, `157-min` ingredient, `221-min` dosage and
+    # unit count, `340-min` unit count, `346-min` brand and unit count, `365-min`
+    # dosage -- so the list goes 21 entries to 17 while the sample's total misses
+    # go 21 to 18. The four phases made the renderer better; nothing was watching
+    # that either.
+    #
+    # Accepted misses. Every one was checked on the rectified face of the render
+    # it is scored against: the string is PRINTED and legible to a person, and
+    # Tesseract returns something else or nothing. What it returns is recorded
+    # beside it as evidence, so a reader can see what the reader did instead of
+    # taking a comment for it. A row where a GLYPH is not legible is not here --
+    # see `ROWS_THE_RENDER_HIDES`.
+    #
+    # Reading at 2x resolution was measured as a way out and is worse, not
+    # better: 21 misses become 25 and not one brand is recovered.
+    #
+    # MISREAD -- the string comes back mangled, so we can see it was found:
+    KNOWN_OCR_MISSES = {
+        ("59-min", "unit_count_display"),    # "30 Pills" -> "30 ill"
+        ("135-min", "dosage_display"),       # "1mg" -> "lmg", lowercase L for the digit
+        ("308-min", "dosage_display"),       # "3mg" -> "& mg" one pass, "a mg" the other
+        ("365-min", "active_ingredient_display"),  # "HCl" -> "HCI}" -- the same lowercase
+                                             # L as `230-min`, plus the edge of the design
+                                             # block that ABUTS the row read as a brace.
+                                             # The block does not cover a glyph: measured,
+                                             # 0.0% of this row's cap band is hidden.
+        ("365-min", "unit_count_display"),   # "30 Pills" -> "0 Pills" / "si Pills"
+        ("404-min", "unit_count_display"),   # "30 Pills" -> "30 ee"
+        #
+        # NOT RETURNED AT ALL, though printed and legible -- checked on the
+        # rectified face one by one. Tesseract simply omits the row.
+        ("62-min", "active_ingredient_display"),
+                                             # "Tadalafil", and the row did not
+                                             # move: it reads in every page mode
+                                             # from a crop of its own band and
+                                             # is lost only in the whole-face
+                                             # read, which changed when the
+                                             # brand beside it did. The brand
+                                             # used to lie across the dosage bar
+                                             # and no longer does; this is what
+                                             # that cost.
+        ("62-min", "dosage_display"),        # "20mg" in its amber badge at v0.43
+        ("64-min", "dosage_display"),        # "100mg" dark in the board window the
+                                             # teal field leaves; crisp at any crop
+        ("149-min", "unit_count_display"),   # "30 Pills", dark on the board at the
+                                             # right, the purple band's corner just
+                                             # touching the foot of the glyphs. LOOKED
+                                             # AT on the rectified face at native scale:
+                                             # every glyph is clear, and
+                                             # TestNoGridRowIsPrintedInInkItsOwn
+                                             # BackgroundHides passes on this carton --
+                                             # the cap band is on one surface. It started
+                                             # missing at contract 1.9 for the same
+                                             # reason `149-min`'s dosage started
+                                             # READING: that band went from `#C84569` at
+                                             # 0.390 perceived luma to `#7333B8` at
+                                             # 0.291. Darker helps white type on it and
+                                             # hurts dark type across it -- one cause,
+                                             # two signs.
+        ("344-min", "unit_count_display"),   # the same string on the same frame and a
+                                             # different carton shape, where it sits
+                                             # ENTIRELY on the board beside the small
+                                             # `#6009B0` square. Nothing covers a glyph;
+                                             # this is the `365-min` pattern already
+                                             # recorded above, a design edge ABUTTING
+                                             # the row perturbing the whole-face read.
+        ("155-min", "unit_count_display"),   # "30 Pills", small, bottom left
+        ("158-min", "brand_name_display"),   # the whole face returns "a Clonazepam"
+        ("158-min", "dosage_display"),       # likewise
+        ("158-min", "unit_count_display"),   # likewise
+        ("344-min", "dosage_display"),       # "200mg", the same frame as `149-min`
+        #
+        # CONTRACT 1.10 -- a MARK stands beside or across the row, and Tesseract
+        # groups it with the words. Every one of these was looked at on the
+        # rectified face at native scale and every glyph is legible to a person;
+        # what changed is that the face now carries small letterform-like shapes
+        # the reader treats as characters. Nine rows here against three that
+        # started reading -- `230-min` active ingredient, `150-min` unit count
+        # and `357-min` brand, all three removed above rather than left recorded
+        # as broken, and the last of them also leaves `KNOWN_BRAND_MISREADS`.
+        #
+        # It is filed as the READER on the project's two checks and not on the
+        # OCR return: the faces were inspected one by one, and the marks do not
+        # hide a glyph -- `157-min`'s Roche hexagon is an OUTLINE crossing
+        # "30 Pills", `230-min`'s Neptune mark is an orange outline overlapping
+        # "15mg", `404-min`'s two Novartis fragments sit on the board beside
+        # "Ritalin 10mg". The related RENDER defect -- that the grid does not
+        # know marks exist and can place a row across one -- is open and
+        # recorded in the driver and in 00_PROJECT_STATE/MARKS_DRAWN.md.
+        #
+        # This list was briefly wrong in a way worth recording, because the
+        # instrument was at fault rather than the carton: two rows were entered
+        # here that the RENDER reads and the committed WEBP did not. At q98 the
+        # fixture had stopped reading the same as the PNG it came from -- three
+        # rows of 112, in both directions -- so no list could satisfy both the
+        # fixture barrier and the fresh-render gate at once. The fixtures are
+        # lossless now and the two agree again; see `scripts/make_ocr_fixtures`.
+        ("157-min", "active_ingredient_display"),
+        ("157-min", "dosage_display"),
+        # `157-min` unit count came OFF this list by being earned. "30 Pills"
+        # was printed straight through the Roche hexagon -- the strokes cut the
+        # "0", the "P" and the "s" -- and the row now sets clear of it, because
+        # `_clear_of_design` can see a mark. That was reverted once on a misread
+        # figure; the driver's `_one_ink_serves` carries the correction.
+        ("221-min", "dosage_display"),
+        ("221-min", "unit_count_display"),
+        ("230-min", "dosage_display"),
+        ("357-min", "active_ingredient_display"),
+        ("404-min", "brand_name_display"),
+        ("404-min", "dosage_display"),
+    }
+
+    #: Rows where a GLYPH is not legible, which is a defect in the RENDER and
+    #: not in the reader. Kept apart from `KNOWN_OCR_MISSES` on purpose: filing
+    #: one of these as a reader limitation is how a regeneration hides a
+    #: regression, and the two are told apart by looking at the rectified face
+    #: and asking whether a person can read every glyph.
+    #:
+    #: Tolerated so the suite is green, and visible so it is not forgotten.
+    #: Measured with the same computation `tests/test_blender_carton.py::
+    #: TestNoGridRowIsPrintedInInkItsOwnBackgroundHides` uses -- which does NOT
+    #: cover this SKU: its list is nine cartons and `357-min` is not one of them,
+    #: so this barrier is the only thing that sees it.
+    #: Empty, and it took a fix to empty it. It held one entry --
+    #: `357-min`'s ingredient row, 10.0% of its cap band printed in white where
+    #: the white swoosh rises into it, which Tesseract returned as 'Amphetamine
+    #: / Dextroamphetapaiiugmtaa ts ie'. The cause was that
+    #: `render_driver._clear_of_design` only ever moved a row DOWN, and every
+    #: offset that clears that row lies UP the face. It is cleared now by a rise
+    #: of 0.015, and the row reads. The same change cleared `357-min`'s dosage
+    #: at 28.7% and `149-min`'s unit count at 13.7%, neither of which this
+    #: barrier had ever noticed, because both still read while straddling.
+    ROWS_THE_RENDER_HIDES = {}
 
     # The sample cannot silently shrink to the one fixture it replaced.
     #
-    # Nine, not eleven, and the two it lost are named in `src/design_group.py`
+    # Twenty-eight: every folder in `src/design_group.TEMPLATE_SAMPLE`. It was
+    # nine, covering the SKU that happened to have fixtures, while nineteen
+    # more sat in the sample unwatched -- and when they were finally rendered
+    # and read, eight render defects came out of them. Lowering this number is
+    # exactly the quiet shrink the constant exists to catch.
+    #
+    # The earlier note, kept because the reasoning still holds: nine, not
+    # eleven, and the two it lost are named in `src/design_group.py`
     # rather than merely subtracted here: a re-acquisition replaced the group's
     # photography, and `21_Valium_Brand` and `24_Xanax_Pfizer` came back with
     # frames nothing can measure -- a blister lying across the printed face, and
@@ -532,7 +685,7 @@ class TestOCRBarrierOverTheTemplateSample(unittest.TestCase):
     # barrier with it. Lowering this number is exactly the quiet shrink the
     # constant exists to catch, which is why it is lowered in the open, with the
     # cause written down, and not by one.
-    MIN_SAMPLE = 9
+    MIN_SAMPLE = 28
 
     @classmethod
     def setUpClass(cls):
@@ -568,24 +721,72 @@ class TestOCRBarrierOverTheTemplateSample(unittest.TestCase):
             for field, found in res["fields"].items():
                 if not found:
                     misses.add((stem, field))
-        new = misses - self.KNOWN_OCR_MISSES
+        new = misses - self.KNOWN_OCR_MISSES - set(self.ROWS_THE_RENDER_HIDES)
         self.assertFalse(
             new,
             f"label text that no longer reads off the render: {sorted(new)}")
 
     def test_the_known_miss_list_is_not_stale(self):
-        """A ratchet that has silently been fixed is a ratchet nobody trusts."""
+        """A ratchet that has silently been fixed is a ratchet nobody trusts.
+
+        Both lists, not one. A render defect that starts reading has been FIXED,
+        and leaving it recorded says the renderer still hides a row it does not
+        -- which is the same lie in the other direction.
+        """
+        listed = self.KNOWN_OCR_MISSES | set(self.ROWS_THE_RENDER_HIDES)
         still_missing = set()
         for stem, webp, manifest, view in self.cases:
-            if not any(s == stem for s, _ in self.KNOWN_OCR_MISSES):
+            if not any(s == stem for s, _ in listed):
                 continue
             res = render_qa.check_image(webp, manifest, view)
             still_missing |= {(stem, f) for f, ok in res["fields"].items() if not ok}
-        fixed = self.KNOWN_OCR_MISSES - still_missing
+        fixed = listed - still_missing
         self.assertFalse(
             fixed,
-            f"these now read and should be removed from KNOWN_OCR_MISSES: "
-            f"{sorted(fixed)}")
+            f"these now read and should be removed from KNOWN_OCR_MISSES or "
+            f"ROWS_THE_RENDER_HIDES: {sorted(fixed)}")
+
+    #: Brands that are PRINTED correctly and misread by Tesseract, with what
+    #: it returns instead. The value is the evidence, kept as data so a person
+    #: can see what the reader actually did rather than take a comment for it.
+    #: All four were checked on the rectified face: the wordmark is there and a
+    #: person reads it. All four are stable across runs.
+    #:
+    #: This weakens a guard deliberately, so it is worth being exact about
+    #: which one. What caught the Gemini engine's invented "Datels" was that a
+    #: renderer can print a word appearing in no manifest. THAT is pinned
+    #: byte-for-byte on the built scene by tests/test_blender_carton.py::
+    #: TestLabelText::test_every_string_survives_verbatim -- which runs on one
+    #: fixture SKU, the rest resting on the structural argument that a Blender
+    #: text object draws its `body` or nothing. What is given up here is the
+    #: weaker, per-SKU claim that the string also survives legibly INTO PIXELS,
+    #: and only for these four.
+    #:
+    #: Reading at 2x resolution was measured as a way out: 21 misses become 25
+    #: and not one of these four is recovered.
+    #: Regenerated with the fixtures at contract 1.8. `60-min` ("Cialis
+    #: Professional") and `346-min` ("Modvigil") came OFF -- both brands now
+    #: read, and the list can only shrink by being earned. The two that remain
+    #: return nothing at all rather than a fragment: the whole of `158-min`'s
+    #: face comes back as "a Clonazepam", and `357-min`'s as the ingredient row
+    #: and the unit count with no "Adderall" anywhere. Both wordmarks are white
+    #: on a dark field, both measured 0.0% hidden.
+    KNOWN_BRAND_MISREADS = {
+        "158-min": "",             # of "Klonopin" -- not returned
+        # `357-min` was here until contract 1.10 and came off by being earned:
+        # "Adderall" now returns. It is the same carton whose INGREDIENT row
+        # entered `KNOWN_OCR_MISSES` in the same contract, which is worth seeing
+        # together -- drawing the C-II symbol below and right of that row cost
+        # the reader one row on this face and gained it another.
+        # CONTRACT 1.10. "Ritalin" is printed, is legible on the rectified face
+        # at native scale, and did not move -- the fixture from before the marks
+        # shows the identical layout. What changed is that two Novartis mark
+        # fragments now sit on the board BESIDE it at the same height, and the
+        # reader groups them with the row. This is the reader, on the project's
+        # own test of looking rather than on the OCR return, and it is the price
+        # of a decision rather than a defect: see 00_PROJECT_STATE/MARKS_DRAWN.md.
+        "404-min": "",             # of "Ritalin" -- not returned
+    }
 
     def test_the_brand_name_reads_on_every_SKU_in_the_sample(self):
         """Singled out because it is the field the Gemini engine invented.
@@ -593,13 +794,26 @@ class TestOCRBarrierOverTheTemplateSample(unittest.TestCase):
         `reference_analysis.md` §7 caught that engine printing "Datels", a word
         appearing nowhere in any manifest. Whatever else a packshot gets wrong,
         the brand on the front face has to be the brand.
+
+        `KNOWN_BRAND_MISREADS` is the exception list and it is not a skip list:
+        a brand on it must STILL FAIL to read. One that starts reading has to
+        come off, the same rule `test_the_known_miss_list_is_not_stale` applies
+        to the other ratchet, so the list can only shrink by being earned.
         """
         for stem, webp, manifest, view in self.cases:
             with self.subTest(stem=stem):
                 res = render_qa.check_image(webp, manifest, view)
                 expected = manifest["label_content"]["brand_name_display"]
+                got = res["fields"]["brand_name_display"]
+                if stem in self.KNOWN_BRAND_MISREADS:
+                    self.assertFalse(
+                        got,
+                        f"{stem}: brand '{expected}' now READS. Take it out of "
+                        f"KNOWN_BRAND_MISREADS -- an exception nobody has to earn "
+                        f"is an exception nobody checks.")
+                    continue
                 self.assertTrue(
-                    res["fields"]["brand_name_display"],
+                    got,
                     f"{stem}: brand '{expected}' not readable; flags={res['flags']}")
 
 
@@ -633,22 +847,26 @@ class TestOCRAgainstAFreshRender(unittest.TestCase):
         res = render_qa.check_image(png, manifest, view)
         self.assertGreaterEqual(res["found"], 3, f"flags={res['flags']}")
 
-    def test_the_template_sample_fixtures_still_match_a_fresh_render(self):
-        """Eleven committed fixtures drift eleven ways, not one.
+    #: Rendered once and read twice -- the sample is 28 Blender launches and
+    #: two tests need the same result. Memoised on the class rather than in
+    #: setUpClass so the cheap `1-min` test above is not made to wait for it.
+    _FRESH = None
 
-        Re-renders the whole sample and re-runs the barrier's own assertion
-        against the new pixels. A fixture set is only worth what it still
-        represents.
-        """
+    @classmethod
+    def _fresh_misses(cls, case) -> set:
+        """Re-render the whole sample and score it. ~15 minutes."""
+        if cls._FRESH is not None:
+            return cls._FRESH
         import subprocess
         import sys
         from scripts.make_ocr_fixtures import sample_stems
 
         out_dir = Path(render_qa.DEFAULT_PROCESSED_DIR)
-        known = TestOCRBarrierOverTheTemplateSample.KNOWN_OCR_MISSES
         misses = set()
         for stem in sample_stems():
             png = out_dir / f"{stem}.png"
+            # Resume in Stage 2 is unconditional -- an existing PNG means done --
+            # so the stale one has to go or nothing is re-rendered at all.
             for stale in (png, png.with_suffix(".view.json")):
                 if stale.exists():
                     stale.unlink()
@@ -656,19 +874,83 @@ class TestOCRAgainstAFreshRender(unittest.TestCase):
                 [sys.executable, "-m", "src.blender_renderer", "--limit", "1",
                  "--from", stem],
                 cwd=str(PROJECT_ROOT), capture_output=True, text=True, timeout=600)
-            self.assertEqual(proc.returncode, 0, f"{stem}: {proc.stderr[-1500:]}")
-            self.assertTrue(png.exists(), f"{stem}: the render produced no PNG")
+            case.assertEqual(proc.returncode, 0, f"{stem}: {proc.stderr[-1500:]}")
+            case.assertTrue(png.exists(), f"{stem}: the render produced no PNG")
 
             manifest = json.loads(
                 (Path(render_qa.DEFAULT_MANIFESTS_DIR) / f"{stem}.json")
                 .read_text(encoding="utf-8"))
             res = render_qa.check_image(png, manifest, render_qa.load_view(png))
             misses |= {(stem, f) for f, ok in res["fields"].items() if not ok}
+        cls._FRESH = misses
+        return misses
 
+    def test_the_template_sample_fixtures_still_match_a_fresh_render(self):
+        """Twenty-eight committed fixtures drift twenty-eight ways, not one.
+
+        Re-renders the whole sample and re-runs the barrier's own assertion
+        against the new pixels. A fixture set is only worth what it still
+        represents -- and this gate is the reason we know the set had gone four
+        contract phases stale while the suite reported green.
+        """
+        listed = (TestOCRBarrierOverTheTemplateSample.KNOWN_OCR_MISSES
+                  | set(TestOCRBarrierOverTheTemplateSample.ROWS_THE_RENDER_HIDES))
+        misses = self._fresh_misses(self)
         self.assertFalse(
-            misses - known,
+            misses - listed,
             f"a fresh render reads worse than the committed fixtures: "
-            f"{sorted(misses - known)}")
+            f"{sorted(misses - listed)}")
+
+    def test_the_fixtures_and_a_fresh_render_miss_exactly_the_same_rows(self):
+        """Not merely "no worse" -- the SAME.
+
+        The assertion above is one-sided: a fixture set that misses MORE than
+        the renderer does passes it, and that is precisely the state a stale set
+        arrives in. Both sides are read by the same `check_image` over the same
+        manifests, so any difference is a difference in the pixels, and the
+        committed WEBP is measured to score identically to the PNG it came from.
+
+        That measurement is not free and it has been falsified TWICE, which is
+        why the fixtures are lossless rather than merely high quality. At q92 it
+        held until contract 1.9 moved `62-min`'s badge a few levels and took its
+        unit count across Tesseract's boundary; the set went to q98, which
+        disagreed with the PNG on none of the sample's 112 rows. Contract 1.10
+        then put three rows on that boundary and q98 disagreed on all three, in
+        BOTH directions -- and q100 disagreed on three as well, a different
+        three. Quality is not the dial. Lossless disagrees on none, at 2.82 ->
+        31.97 MB; `scripts/make_ocr_fixtures` carries the full measurement.
+
+        The failure this test showed while that held is worth keeping: with the
+        two sources disagreeing, NO ratchet list can satisfy both this gate and
+        the fixture barrier, because one demands a row be listed and the other
+        demands it be removed. An exception list would have hidden that; the
+        equality assertion made it impossible to paper over.
+        """
+        fixture_misses = set()
+        for stem, webp, manifest, view in self._fixture_cases():
+            res = render_qa.check_image(webp, manifest, view)
+            fixture_misses |= {(stem, f) for f, ok in res["fields"].items() if not ok}
+        fresh = self._fresh_misses(self)
+        self.assertEqual(
+            fixture_misses, fresh,
+            f"the committed fixtures and a fresh render disagree. Only in the "
+            f"fixtures: {sorted(fixture_misses - fresh)}; only in the render: "
+            f"{sorted(fresh - fixture_misses)}. Rebuild with "
+            f"`python scripts/make_ocr_fixtures.py`.")
+
+    @staticmethod
+    def _fixture_cases():
+        from scripts.make_ocr_fixtures import sample_stems
+        out = []
+        for stem in sample_stems():
+            webp = FIXTURE_DIR / f"{stem}.webp"
+            manifest = FIXTURE_DIR / f"{stem}.manifest.json"
+            view = FIXTURE_DIR / f"{stem}.view.json"
+            if webp.exists() and manifest.exists() and view.exists():
+                out.append((stem, webp,
+                            json.loads(manifest.read_text(encoding="utf-8")),
+                            json.loads(view.read_text(encoding="utf-8"))))
+        return out
 
 
 if __name__ == '__main__':

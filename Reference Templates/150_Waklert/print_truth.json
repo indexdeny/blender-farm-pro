@@ -1,0 +1,687 @@
+{
+  "schema": "print_truth/1",
+  "sku": "150-min",
+  "source_image": "Waklert_front_raw.webp",
+  "front_face_px": [
+    [
+      308,
+      252
+    ],
+    [
+      888,
+      200
+    ],
+    [
+      888,
+      480
+    ],
+    [
+      300,
+      545
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    537
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.548,
+    "highlight": 0.67,
+    "secondary_1": 3.684
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 9.807,
+      "bbox_uv": [
+        0.0227,
+        0.0,
+        0.9782,
+        0.1248
+      ],
+      "centroid_uv": [
+        0.4683,
+        0.052
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 5.083,
+      "bbox_uv": [
+        0.2945,
+        0.5736,
+        0.7236,
+        0.7635
+      ],
+      "centroid_uv": [
+        0.5102,
+        0.6646
+      ],
+      "class": "unrepresentable",
+      "reason": "teal Waklert badge merged into the orange cluster; one fill per cluster cannot carry it"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 1.67,
+      "bbox_uv": [
+        0.6473,
+        0.9032,
+        0.9091,
+        0.9981
+      ],
+      "centroid_uv": [
+        0.7779,
+        0.9508
+      ],
+      "class": "object",
+      "reason": "blister below the carton"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.444,
+      "bbox_uv": [
+        0.2973,
+        0.7616,
+        0.7227,
+        0.7989
+      ],
+      "centroid_uv": [
+        0.5074,
+        0.7811
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.321,
+      "bbox_uv": [
+        0.8936,
+        0.6108,
+        0.9564,
+        0.7505
+      ],
+      "centroid_uv": [
+        0.9265,
+        0.6806
+      ],
+      "class": "mark",
+      "reason": "SUN Pharma logo"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.286,
+      "bbox_uv": [
+        0.0,
+        0.5512,
+        0.0118,
+        0.9981
+      ],
+      "centroid_uv": [
+        0.0037,
+        0.8446
+      ],
+      "class": "object",
+      "reason": "carton left edge"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.214,
+      "bbox_uv": [
+        0.1818,
+        0.3426,
+        0.2555,
+        0.4953
+      ],
+      "centroid_uv": [
+        0.2171,
+        0.4027
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.204,
+      "bbox_uv": [
+        0.0827,
+        0.2961,
+        0.1436,
+        0.5009
+      ],
+      "centroid_uv": [
+        0.111,
+        0.4045
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.192,
+      "bbox_uv": [
+        0.3264,
+        0.2812,
+        0.3736,
+        0.4879
+      ],
+      "centroid_uv": [
+        0.3544,
+        0.4021
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.171,
+      "bbox_uv": [
+        0.7182,
+        0.2626,
+        0.7636,
+        0.4655
+      ],
+      "centroid_uv": [
+        0.7357,
+        0.3809
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#10",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.169,
+      "bbox_uv": [
+        0.3873,
+        0.3352,
+        0.4345,
+        0.4842
+      ],
+      "centroid_uv": [
+        0.4101,
+        0.4142
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#11",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.66,
+        0.3203,
+        0.7073,
+        0.4674
+      ],
+      "centroid_uv": [
+        0.6838,
+        0.3995
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#12",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.153,
+      "bbox_uv": [
+        0.2682,
+        0.3408,
+        0.3155,
+        0.4916
+      ],
+      "centroid_uv": [
+        0.2918,
+        0.4153
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#13",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.146,
+      "bbox_uv": [
+        0.7955,
+        0.3128,
+        0.8391,
+        0.46
+      ],
+      "centroid_uv": [
+        0.8154,
+        0.3869
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#14",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.133,
+      "bbox_uv": [
+        0.8782,
+        0.3073,
+        0.9164,
+        0.4562
+      ],
+      "centroid_uv": [
+        0.8974,
+        0.3837
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#15",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.121,
+      "bbox_uv": [
+        0.4936,
+        0.3296,
+        0.5336,
+        0.4767
+      ],
+      "centroid_uv": [
+        0.5138,
+        0.3898
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#16",
+      "role": "brand",
+      "fill": "#AE6335",
+      "area_pct": 0.118,
+      "bbox_uv": [
+        0.6136,
+        0.2663,
+        0.6636,
+        0.4674
+      ],
+      "centroid_uv": [
+        0.6385,
+        0.3313
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 1.374,
+      "bbox_uv": [
+        0.0782,
+        0.2775,
+        0.3736,
+        0.5121
+      ],
+      "centroid_uv": [
+        0.2122,
+        0.4092
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 1.059,
+      "bbox_uv": [
+        0.0182,
+        0.0,
+        0.9836,
+        0.1378
+      ],
+      "centroid_uv": [
+        0.4734,
+        0.1005
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.693,
+      "bbox_uv": [
+        0.64,
+        0.8827,
+        0.9155,
+        0.9981
+      ],
+      "centroid_uv": [
+        0.7822,
+        0.9403
+      ],
+      "class": "object",
+      "reason": "blister below the carton"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.477,
+      "bbox_uv": [
+        0.7709,
+        0.2551,
+        0.8436,
+        0.4711
+      ],
+      "centroid_uv": [
+        0.8003,
+        0.3843
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.414,
+      "bbox_uv": [
+        0.8591,
+        0.2682,
+        0.9227,
+        0.4674
+      ],
+      "centroid_uv": [
+        0.8889,
+        0.3774
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.377,
+      "bbox_uv": [
+        0.4355,
+        0.2663,
+        0.4827,
+        0.4879
+      ],
+      "centroid_uv": [
+        0.4593,
+        0.3765
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.322,
+      "bbox_uv": [
+        0.4855,
+        0.3184,
+        0.54,
+        0.4842
+      ],
+      "centroid_uv": [
+        0.5115,
+        0.3944
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.286,
+      "bbox_uv": [
+        0.0,
+        0.3296,
+        0.0164,
+        0.9981
+      ],
+      "centroid_uv": [
+        0.0069,
+        0.6912
+      ],
+      "class": "object",
+      "reason": "carton left edge"
+    },
+    {
+      "key": "highlight#8",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.285,
+      "bbox_uv": [
+        0.3727,
+        0.2793,
+        0.4355,
+        0.4953
+      ],
+      "centroid_uv": [
+        0.3937,
+        0.4071
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#9",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.281,
+      "bbox_uv": [
+        0.7118,
+        0.2588,
+        0.77,
+        0.4767
+      ],
+      "centroid_uv": [
+        0.7352,
+        0.3752
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#10",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.265,
+      "bbox_uv": [
+        0.6091,
+        0.2551,
+        0.6691,
+        0.473
+      ],
+      "centroid_uv": [
+        0.6381,
+        0.338
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#11",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.243,
+      "bbox_uv": [
+        0.6555,
+        0.311,
+        0.7091,
+        0.4786
+      ],
+      "centroid_uv": [
+        0.6846,
+        0.3912
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#12",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.181,
+      "bbox_uv": [
+        0.5655,
+        0.2644,
+        0.58,
+        0.4804
+      ],
+      "centroid_uv": [
+        0.5728,
+        0.3707
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#13",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.159,
+      "bbox_uv": [
+        0.7227,
+        0.3259,
+        0.7591,
+        0.4562
+      ],
+      "centroid_uv": [
+        0.7409,
+        0.391
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#14",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.3309,
+        0.3482,
+        0.3682,
+        0.4786
+      ],
+      "centroid_uv": [
+        0.3501,
+        0.4145
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#15",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.141,
+      "bbox_uv": [
+        0.2727,
+        0.3501,
+        0.3109,
+        0.4804
+      ],
+      "centroid_uv": [
+        0.2916,
+        0.4161
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#16",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.13,
+      "bbox_uv": [
+        0.5427,
+        0.3259,
+        0.56,
+        0.4767
+      ],
+      "centroid_uv": [
+        0.5525,
+        0.3973
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#17",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.121,
+      "bbox_uv": [
+        0.0964,
+        0.3128,
+        0.1264,
+        0.4209
+      ],
+      "centroid_uv": [
+        0.1103,
+        0.3827
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#18",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.109,
+      "bbox_uv": [
+        0.3855,
+        0.324,
+        0.4364,
+        0.473
+      ],
+      "centroid_uv": [
+        0.4187,
+        0.3781
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#19",
+      "role": "highlight",
+      "fill": "#EFDACD",
+      "area_pct": 0.106,
+      "bbox_uv": [
+        0.8427,
+        0.2663,
+        0.8736,
+        0.4637
+      ],
+      "centroid_uv": [
+        0.8525,
+        0.3675
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

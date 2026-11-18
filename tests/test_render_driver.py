@@ -379,5 +379,118 @@ class TestPrintedFaceCorners(unittest.TestCase):
         self._assert_shared_edge_agrees(scene)
 
 
+class TestComputeDeviceIsStatedAndNotInherited(unittest.TestCase):
+    """Which device drew the frame was a thing nobody chose and nobody could see.
+
+    `setup_render()` set the engine, the sample count and `use_denoising`, and
+    never assigned `scene.cycles.device`. Under `--factory-startup` that leaves
+    CPU, so nothing looked wrong -- but nothing was choosing it, and Blender
+    accepts more than one `--python`, so a script running ahead of the driver
+    could move the entire render onto the GPU. `scripts/probe_render_device.py`
+    does exactly that on purpose; this class is the reason it cannot happen by
+    accident.
+
+    IT IS NOT A QUALITY KNOB. Measured 2026-08-24 on an RTX 2060 SUPER at 16
+    samples against the CPU render of `1-min`, `64-min` and `357-min`: OptiX
+    sampling lands up to 43 levels away on 0.2-0.9% of pixels, CUDA up to 23 on
+    0.2-0.7%, and GPU denoising up to 43 on 14-18%. Each would invalidate the
+    calibration curve, every `design_qa` row and the OCR fixtures, all of which
+    were measured on CPU pixels.
+    """
+
+    def test_config_states_a_device_and_a_denoiser(self):
+        """Read without a default, so a deleted key fails rather than defaults.
+
+        No Blender needed: this is about the config file, and skipping it on a
+        machine without Blender would hide a broken config from CI.
+        """
+        blender = _CFG["blender"]
+        for key in ("device", "device_backend", "denoising_device"):
+            self.assertIn(key, blender,
+                          f"config.yaml blender.{key} is missing; the device "
+                          f"would go back to being whatever the process "
+                          f"inherited.")
+        self.assertIn(blender["device"], ("CPU", "GPU"))
+        self.assertIn(blender["denoising_device"], ("CPU", "GPU"))
+
+    def test_the_drivers_defaults_are_what_config_declares(self):
+        """The two sides of a value nothing carries between them.
+
+        The driver cannot read `config.yaml` -- it runs inside Blender's own
+        interpreter and may not import project code -- and nothing passes these
+        as flags yet, because that means editing `src/blender_renderer.py`.
+        So the driver's flag DEFAULTS are what actually renders, and this test
+        is the weld: change the config and the suite fails until the driver
+        agrees, instead of the config quietly meaning nothing.
+
+        Parsed out of the source rather than imported, because importing the
+        driver outside Blender fails at `import bpy` on the first line.
+        """
+        import re
+        src = DRIVER.read_text(encoding="utf-8")
+        for flag, key in (("--device", "device"),
+                          ("--device-backend", "device_backend"),
+                          ("--denoising-device", "denoising_device")):
+            m = re.search(rf'_arg\("{re.escape(flag)}",\s*"([^"]*)"\)', src)
+            self.assertIsNotNone(
+                m, f"render_driver.py has no default for {flag}")
+            self.assertEqual(
+                m.group(1).upper(), str(_CFG["blender"][key]).upper(),
+                f"config.yaml says blender.{key} is "
+                f"{_CFG['blender'][key]!r} but the driver's {flag} default is "
+                f"{m.group(1)!r}. Nothing passes this flag, so the DRIVER's "
+                f"value is the one that renders -- the config would be a "
+                f"statement with no effect.")
+
+    @unittest.skipUnless(_HAVE_BLENDER, _SKIP_REASON)
+    def test_the_dump_reports_the_device_blender_actually_holds(self):
+        """Read back off the scene, so it cannot agree by echoing its input."""
+        device = _dump_scene()["device"]
+        self.assertEqual(device["engine"], CONFIGURED_ENGINE)
+        self.assertEqual(device["cycles_device"], _CFG["blender"]["device"])
+        self.assertEqual(device["denoising_use_gpu"],
+                         _CFG["blender"]["denoising_device"] == "GPU")
+
+    @unittest.skipUnless(_HAVE_BLENDER, _SKIP_REASON)
+    def test_a_cpu_render_never_reports_an_accelerator(self):
+        """Blender leaves GPU devices flagged `use` in its own preferences.
+
+        Reporting that list on a CPU render reads as though the card were doing
+        the work. `scene.cycles.device` is the only thing that decides, so the
+        list is reported only when it decides something.
+        """
+        device = _dump_scene()["device"]
+        if device["cycles_device"] == "CPU":
+            self.assertEqual(device["enabled_devices"], [])
+            self.assertIsNone(device["backend"])
+
+    @unittest.skipUnless(_HAVE_BLENDER, _SKIP_REASON)
+    def test_an_unavailable_backend_is_fatal_rather_than_a_fallback(self):
+        """The rule the engine already follows, applied to the device.
+
+        A GPU setting that quietly renders on the CPU is the same defect as an
+        engine that quietly renders in EEVEE: the pixels change and the log does
+        not say so. Asked for a back-end this Blender does not offer, the driver
+        must exit non-zero and write nothing.
+        """
+        with tempfile.TemporaryDirectory() as td:
+            job_path = Path(td) / "job.json"
+            out_path = Path(td) / "out.png"
+            job_path.write_text(json.dumps(_manifest()), encoding="utf-8")
+            proc = subprocess.run(
+                [str(BLENDER_EXE), "--background", "--factory-startup",
+                 "--python", str(DRIVER), "--",
+                 "--job", str(job_path), "--out", str(out_path),
+                 "--engine-type", CONFIGURED_ENGINE,
+                 "--samples", "1", "--res-x", "64", "--res-y", "64",
+                 "--device", "GPU", "--device-backend", "NO_SUCH_BACKEND"],
+                capture_output=True, text=True, timeout=300)
+        self.assertNotEqual(proc.returncode, 0,
+                            "an unavailable back-end rendered anyway")
+        self.assertFalse(out_path.exists(), "it wrote a PNG on the wrong device")
+        self.assertIn("NO_SUCH_BACKEND", proc.stdout + proc.stderr,
+                      "the failure does not name the back-end that was refused")
+
+
 if __name__ == "__main__":
     unittest.main()

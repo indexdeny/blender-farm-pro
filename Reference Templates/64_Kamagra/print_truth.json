@@ -1,0 +1,600 @@
+{
+  "schema": "print_truth/1",
+  "sku": "64-min",
+  "source_image": "raw_Kamagra_front_01.png",
+  "front_face_px": [
+    [
+      405,
+      105
+    ],
+    [
+      994,
+      87
+    ],
+    [
+      994,
+      897
+    ],
+    [
+      405,
+      953
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    1544
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.022,
+    "highlight": 1.523
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#00463B",
+      "area_pct": 32.511,
+      "bbox_uv": [
+        0.0064,
+        0.4365,
+        0.9991,
+        0.9994
+      ],
+      "centroid_uv": [
+        0.4619,
+        0.7654
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#00463B",
+      "area_pct": 0.199,
+      "bbox_uv": [
+        0.8836,
+        0.943,
+        0.9991,
+        0.9994
+      ],
+      "centroid_uv": [
+        0.9509,
+        0.9818
+      ],
+      "class": "object",
+      "reason": "teal pouch lying in front of the carton"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#00463B",
+      "area_pct": 0.198,
+      "bbox_uv": [
+        0.9564,
+        0.8659,
+        0.9991,
+        0.9689
+      ],
+      "centroid_uv": [
+        0.9787,
+        0.9156
+      ],
+      "class": "object",
+      "reason": "teal pouch lying in front of the carton"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#00463B",
+      "area_pct": 0.112,
+      "bbox_uv": [
+        0.6982,
+        0.4171,
+        0.9636,
+        0.4249
+      ],
+      "centroid_uv": [
+        0.8655,
+        0.4211
+      ],
+      "class": "blend",
+      "reason": "one-pixel sliver of the wave's antialiased edge"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 5.342,
+      "bbox_uv": [
+        0.7027,
+        0.6639,
+        0.9609,
+        0.9994
+      ],
+      "centroid_uv": [
+        0.8253,
+        0.8146
+      ],
+      "class": "object",
+      "reason": "teal pouch lying in front of the carton"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 4.948,
+      "bbox_uv": [
+        0.0073,
+        0.4326,
+        0.9645,
+        0.8335
+      ],
+      "centroid_uv": [
+        0.3583,
+        0.5635
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 1.778,
+      "bbox_uv": [
+        0.9682,
+        0.0,
+        0.9991,
+        0.7694
+      ],
+      "centroid_uv": [
+        0.9868,
+        0.4375
+      ],
+      "class": "object",
+      "reason": "carton right edge"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.975,
+      "bbox_uv": [
+        0.0073,
+        0.3556,
+        0.9655,
+        0.5635
+      ],
+      "centroid_uv": [
+        0.4466,
+        0.4342
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.916,
+      "bbox_uv": [
+        0.0082,
+        0.375,
+        0.9645,
+        0.5835
+      ],
+      "centroid_uv": [
+        0.4545,
+        0.4531
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.88,
+      "bbox_uv": [
+        0.0091,
+        0.3944,
+        0.9655,
+        0.603
+      ],
+      "centroid_uv": [
+        0.4484,
+        0.475
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.853,
+      "bbox_uv": [
+        0.0073,
+        0.4132,
+        0.9645,
+        0.6231
+      ],
+      "centroid_uv": [
+        0.4397,
+        0.4952
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.395,
+      "bbox_uv": [
+        0.0909,
+        0.3795,
+        0.2145,
+        0.5175
+      ],
+      "centroid_uv": [
+        0.1275,
+        0.4299
+      ],
+      "class": "mark",
+      "reason": "Kamagra family device"
+    },
+    {
+      "key": "highlight#8",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.342,
+      "bbox_uv": [
+        0.2536,
+        0.2338,
+        0.3455,
+        0.2947
+      ],
+      "centroid_uv": [
+        0.2994,
+        0.2637
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#9",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.25,
+      "bbox_uv": [
+        0.5155,
+        0.2345,
+        0.5791,
+        0.296
+      ],
+      "centroid_uv": [
+        0.5444,
+        0.2634
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#10",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.233,
+      "bbox_uv": [
+        0.43,
+        0.2332,
+        0.5009,
+        0.2966
+      ],
+      "centroid_uv": [
+        0.4654,
+        0.2675
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#11",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.222,
+      "bbox_uv": [
+        0.0982,
+        0.2319,
+        0.1636,
+        0.2921
+      ],
+      "centroid_uv": [
+        0.1239,
+        0.2621
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#12",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.214,
+      "bbox_uv": [
+        0.1673,
+        0.2332,
+        0.2436,
+        0.2934
+      ],
+      "centroid_uv": [
+        0.2058,
+        0.2661
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#13",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.21,
+      "bbox_uv": [
+        0.5855,
+        0.2364,
+        0.6609,
+        0.2966
+      ],
+      "centroid_uv": [
+        0.624,
+        0.2695
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#14",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.207,
+      "bbox_uv": [
+        0.3527,
+        0.2351,
+        0.4264,
+        0.2953
+      ],
+      "centroid_uv": [
+        0.39,
+        0.2682
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#15",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.2,
+      "bbox_uv": [
+        0.82,
+        0.2377,
+        0.8755,
+        0.2986
+      ],
+      "centroid_uv": [
+        0.8482,
+        0.268
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#16",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.195,
+      "bbox_uv": [
+        0.7555,
+        0.2377,
+        0.8091,
+        0.2979
+      ],
+      "centroid_uv": [
+        0.7821,
+        0.2676
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#17",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.184,
+      "bbox_uv": [
+        0.2127,
+        0.4074,
+        0.2836,
+        0.5136
+      ],
+      "centroid_uv": [
+        0.2595,
+        0.4435
+      ],
+      "class": "mark",
+      "reason": "Kamagra family device"
+    },
+    {
+      "key": "highlight#18",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.119,
+      "bbox_uv": [
+        0.1391,
+        0.3361,
+        0.1827,
+        0.3692
+      ],
+      "centroid_uv": [
+        0.1607,
+        0.3524
+      ],
+      "class": "mark",
+      "reason": "Kamagra family device"
+    },
+    {
+      "key": "highlight#19",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.119,
+      "bbox_uv": [
+        0.7236,
+        0.4961,
+        0.9045,
+        0.6438
+      ],
+      "centroid_uv": [
+        0.8143,
+        0.5672
+      ],
+      "class": "unrepresentable",
+      "reason": "salmon dosage box merged into the dark-teal cluster; one fill per cluster cannot carry it"
+    },
+    {
+      "key": "highlight#20",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.119,
+      "bbox_uv": [
+        0.7018,
+        0.237,
+        0.7364,
+        0.2973
+      ],
+      "centroid_uv": [
+        0.725,
+        0.2639
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#21",
+      "role": "highlight",
+      "fill": "#002F26",
+      "area_pct": 0.103,
+      "bbox_uv": [
+        0.2536,
+        0.3763,
+        0.2955,
+        0.4067
+      ],
+      "centroid_uv": [
+        0.2743,
+        0.3916
+      ],
+      "class": "mark",
+      "reason": "Kamagra family device"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 2.623,
+      "bbox_uv": [
+        0.7236,
+        0.4961,
+        0.9045,
+        0.6438
+      ],
+      "centroid_uv": [
+        0.8141,
+        0.5696
+      ],
+      "class": "window"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.042,
+      "bbox_uv": [
+        0.01,
+        0.7299,
+        0.0127,
+        0.989
+      ],
+      "centroid_uv": [
+        0.0105,
+        0.8614
+      ],
+      "class": "blend"
+    },
+    {
+      "key": "highlight#3/hole#0",
+      "of": "highlight#3",
+      "area_pct": 0.053,
+      "bbox_uv": [
+        0.8445,
+        0.3595,
+        0.9636,
+        0.3659
+      ],
+      "centroid_uv": [
+        0.9161,
+        0.3629
+      ],
+      "class": "window"
+    },
+    {
+      "key": "highlight#4/hole#0",
+      "of": "highlight#4",
+      "area_pct": 0.071,
+      "bbox_uv": [
+        0.8036,
+        0.3782,
+        0.9636,
+        0.3854
+      ],
+      "centroid_uv": [
+        0.9014,
+        0.3818
+      ],
+      "class": "window"
+    },
+    {
+      "key": "highlight#5/hole#0",
+      "of": "highlight#5",
+      "area_pct": 0.105,
+      "bbox_uv": [
+        0.6964,
+        0.3977,
+        0.9636,
+        0.4054
+      ],
+      "centroid_uv": [
+        0.8708,
+        0.4016
+      ],
+      "class": "window"
+    },
+    {
+      "key": "highlight#6/hole#0",
+      "of": "highlight#6",
+      "area_pct": 0.12,
+      "bbox_uv": [
+        0.6982,
+        0.4171,
+        0.9636,
+        0.4249
+      ],
+      "centroid_uv": [
+        0.8662,
+        0.421
+      ],
+      "class": "window"
+    }
+  ]
+}

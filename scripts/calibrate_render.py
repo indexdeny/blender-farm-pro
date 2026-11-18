@@ -96,14 +96,37 @@ def chart_manifest(stem: str) -> tuple[dict, list]:
     if not design:
         raise SystemExit(f"{stem}: no design block; nothing to calibrate against")
     fills = [f"#{r:02X}{g:02X}{b:02X}" for r, g, b in PATCHES]
+    # The chart is a design like any other and must speak the current contract:
+    # `z` since 1.7 and `holes` since 1.8, both required and both refused by the
+    # driver with SystemExit rather than defaulted. The patches never overlap, so
+    # the order is free and the holes are empty -- but writing them is not
+    # ceremony, it is the difference between a chart that renders and one that
+    # stops the run. It stopped this one: the fields carried no `z` from 1.7
+    # until here, and nothing said so because the chart is only built inside a
+    # Blender render. `tests/test_calibrate_render.py` now validates the job
+    # against the schema, which costs nothing and would have caught it.
     design["fields"] = [
-        {"role": f"patch_{i}", "fill": fill, "coverage_pct": 1.0,
+        {"role": f"patch_{i}", "fill": fill, "coverage_pct": 1.0, "z": i,
+         # Contract 1.9: the PART carries the colour and the driver paints that,
+         # with no fallback to the field's. A chart is a design block like any
+         # other, and it is the one the whole transfer curve is read off -- so it
+         # states each patch's colour where the renderer now looks for it.
+         # `mark_holes` since 1.10, for the same reason `holes` is required: a
+         # part that does not say which of its holes are marks is a part whose
+         # marks are unknown, and the pairing rule cannot be checked on it.
          "parts": [{"kind": "field", "area_pct": 1.0, "smoothness": 0.0,
-                    "outline": outline}]}
+                    "fill": fill, "outline": outline, "holes": [],
+                    "mark_holes": []}]}
         for i, (fill, outline) in enumerate(zip(fills, _grid(len(PATCHES))))]
+    # Contract 1.10. A chart reproduces nobody's trademark, so the honest value
+    # is an explicit empty list rather than an absent key -- the driver refuses
+    # the absent one, and rightly: it cannot tell "no marks approved" from "the
+    # marks were never decided".
+    design["marks"] = []
     # No type on the chart: a label crossing a patch is ink, not paint, and the
     # driver reverses it against whatever it lands on -- which here is a patch.
     design["type_rows"] = {}
+    design["reference_aux_text"] = []
     for k in job.get("label_content", {}):
         job["label_content"][k] = ""
     return job, fills

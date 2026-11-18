@@ -1,0 +1,48 @@
+{
+  "verification_date": "2026-11-19",
+  "images": [
+    {
+      "sku": "74-min",
+      "accepted_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+      "fresh_sha256": "086541ec1c90d3082edb20f50acf61e25fb9684e88fe4dc32b04691d3f3b48ff",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "bytes_identical": false,
+      "pixels_identical": false,
+      "different_pixels": 652,
+      "total_pixels": 4194304,
+      "max_channel_delta": 1,
+      "mse_rgb": 5.1816304524739586e-05,
+      "psnr_rgb_db": 90.98613924463238,
+      "ssim_global_luminance": 0.9999999969332765,
+      "ssim_method": "global luminance SSIM formula, not windowed SSIM; not an acceptance threshold",
+      "visual_qa": "PASS_WITH_HISTORICAL_LIMITATIONS",
+      "numeric_interpretation": "Exact equality separate from visual assessment; no criterion changed after measurement",
+      "visual_interpretation": "Small numerical deviation without a discernible visual regression; exact equality FAIL."
+    },
+    {
+      "sku": "59-min",
+      "accepted_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+      "fresh_sha256": "23aac52b109d94e88dbc24e30069cd910c410262d939829a106960051961d6ef",
+      "dimensions": [
+        2048,
+        2048
+      ],
+      "bytes_identical": false,
+      "pixels_identical": false,
+      "different_pixels": 501,
+      "total_pixels": 4194304,
+      "max_channel_delta": 1,
+      "mse_rgb": 3.981590270996094e-05,
+      "psnr_rgb_db": 92.13023794327913,
+      "ssim_global_luminance": 0.9999999972612239,
+      "ssim_method": "global luminance SSIM formula, not windowed SSIM; not an acceptance threshold",
+      "visual_qa": "PASS_WITH_HISTORICAL_LIMITATIONS",
+      "numeric_interpretation": "Exact equality separate from visual assessment; no criterion changed after measurement",
+      "visual_interpretation": "Small numerical deviation without a discernible visual regression; exact equality FAIL."
+    }
+  ],
+  "scope": "One controlled fresh hero render per SKU; accepted previews remain original-derived; whole-frame OCR is partial."
+}

@@ -1,0 +1,2452 @@
+{
+  "schema": "hole_payoff/1",
+  "metric": "truth_agreement, in points (100 x the fraction)",
+  "summary": {
+    "holes_total": 239,
+    "truth_hole_entries": 242,
+    "vanished_labels": [
+      "brand#0/hole#1",
+      "brand#0/hole#2",
+      "brand#0/hole#3"
+    ],
+    "vanished_note": "242 hole entries across the truth files, 3 of them flagged `vanished` by label_print -- a label whose hole the partition no longer has is kept and flagged rather than deleted. 239 holes were enumerated here, which is the difference.",
+    "already_cut": 10,
+    "measured": 228,
+    "unrepresentable_rings": 1,
+    "potential_all_pts": 55.353,
+    "potential_excluding_lettering_pts": 10.92,
+    "positive_potential_excluding_lettering_pts": 11.039,
+    "distribution_all": {
+      "under_0.1": 150,
+      "0.1_to_1.0": 59,
+      "over_1.0": 19
+    },
+    "distribution_excluding_lettering": {
+      "under_0.1": 23,
+      "0.1_to_1.0": 4,
+      "over_1.0": 2
+    },
+    "by_class": {
+      "lettering": {
+        "count": 199,
+        "potential_pts": 44.433
+      },
+      "blend": {
+        "count": 10,
+        "potential_pts": 0.847
+      },
+      "window": {
+        "count": 10,
+        "potential_pts": 0.0
+      },
+      "mark": {
+        "count": 8,
+        "potential_pts": 9.937
+      },
+      "object": {
+        "count": 12,
+        "potential_pts": 0.136
+      }
+    },
+    "enumeration_floor_note": "Holes are enumerated by enclosed_background() above MIN_HOLE_FRAC=0.0001, so the total here is holes above that floor, not every hole in the segmentation."
+  },
+  "cartons": [
+    {
+      "folder": "59_Cialis",
+      "sku": "59-min",
+      "truth_agreement": 0.9773,
+      "truth_hole_entries": 8,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#2/hole#0",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.2215,
+          "already_cut": false,
+          "delta": 0.0089
+        },
+        {
+          "key": "brand#2/hole#1",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.1651,
+          "already_cut": false,
+          "delta": -0.0006
+        },
+        {
+          "key": "brand#2/hole#2",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.147,
+          "already_cut": false,
+          "delta": -0.0136
+        },
+        {
+          "key": "brand#2/hole#3",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.0702,
+          "already_cut": false,
+          "delta": 0.0055
+        },
+        {
+          "key": "highlight#0/hole#0",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.0289,
+          "already_cut": false,
+          "delta": 0.008
+        },
+        {
+          "key": "highlight#0/hole#1",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.0202,
+          "already_cut": false,
+          "delta": -0.002
+        },
+        {
+          "key": "highlight#0/hole#2",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "lettering",
+          "area_pct": 0.0135,
+          "already_cut": false,
+          "delta": -0.0019
+        },
+        {
+          "key": "highlight#0/hole#3",
+          "sku": "59-min",
+          "folder": "59_Cialis",
+          "class": "blend",
+          "area_pct": 0.013,
+          "already_cut": false,
+          "delta": 0.0158
+        }
+      ]
+    },
+    {
+      "folder": "60_Cialis_Professional",
+      "sku": "60-min",
+      "truth_agreement": 0.9877,
+      "truth_hole_entries": 4,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "60-min",
+          "folder": "60_Cialis_Professional",
+          "class": "lettering",
+          "area_pct": 0.305,
+          "already_cut": false,
+          "delta": -0.0108
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "60-min",
+          "folder": "60_Cialis_Professional",
+          "class": "lettering",
+          "area_pct": 0.1883,
+          "already_cut": false,
+          "delta": -0.0029
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "60-min",
+          "folder": "60_Cialis_Professional",
+          "class": "lettering",
+          "area_pct": 0.1807,
+          "already_cut": false,
+          "delta": -0.0122
+        },
+        {
+          "key": "brand#0/hole#3",
+          "sku": "60-min",
+          "folder": "60_Cialis_Professional",
+          "class": "lettering",
+          "area_pct": 0.1622,
+          "already_cut": false,
+          "delta": -0.0129
+        }
+      ]
+    },
+    {
+      "folder": "62_Cialis_Super_Active",
+      "sku": "62-min",
+      "truth_agreement": 0.9925,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "64_Kamagra",
+      "sku": "64-min",
+      "truth_agreement": 0.9893,
+      "truth_hole_entries": 6,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "64-min",
+          "folder": "64_Kamagra",
+          "class": "window",
+          "area_pct": 2.6231,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "64-min",
+          "folder": "64_Kamagra",
+          "class": "blend",
+          "area_pct": 0.0422,
+          "already_cut": false,
+          "delta": 0.0766
+        },
+        {
+          "key": "highlight#3/hole#0",
+          "sku": "64-min",
+          "folder": "64_Kamagra",
+          "class": "window",
+          "area_pct": 0.0528,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#4/hole#0",
+          "sku": "64-min",
+          "folder": "64_Kamagra",
+          "class": "window",
+          "area_pct": 0.0712,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#5/hole#0",
+          "sku": "64-min",
+          "folder": "64_Kamagra",
+          "class": "window",
+          "area_pct": 0.1047,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#6/hole#0",
+          "sku": "64-min",
+          "folder": "64_Kamagra",
+          "class": "window",
+          "area_pct": 0.1202,
+          "already_cut": true,
+          "delta": 0.0
+        }
+      ]
+    },
+    {
+      "folder": "74_Viagra",
+      "sku": "74-min",
+      "truth_agreement": 0.9418,
+      "truth_hole_entries": 4,
+      "vanished_labels": [
+        "brand#0/hole#1",
+        "brand#0/hole#2",
+        "brand#0/hole#3"
+      ],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "74-min",
+          "folder": "74_Viagra",
+          "class": "mark",
+          "area_pct": 1.418,
+          "already_cut": false,
+          "delta": 5.29
+        }
+      ]
+    },
+    {
+      "folder": "133_Ambien",
+      "sku": "133-min",
+      "truth_agreement": 0.9869,
+      "truth_hole_entries": 7,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "blend",
+          "area_pct": 0.2193,
+          "already_cut": false,
+          "delta": 0.5662
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "blend",
+          "area_pct": 0.0127,
+          "already_cut": false,
+          "delta": null,
+          "note": "ring too small to represent"
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "blend",
+          "area_pct": 0.0104,
+          "already_cut": false,
+          "delta": 0.0075
+        },
+        {
+          "key": "brand#1/hole#0",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "lettering",
+          "area_pct": 0.1721,
+          "already_cut": false,
+          "delta": 0.0654
+        },
+        {
+          "key": "brand#1/hole#1",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "lettering",
+          "area_pct": 0.1455,
+          "already_cut": false,
+          "delta": 0.0171
+        },
+        {
+          "key": "brand#1/hole#2",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "lettering",
+          "area_pct": 0.1285,
+          "already_cut": false,
+          "delta": 0.0236
+        },
+        {
+          "key": "brand#1/hole#3",
+          "sku": "133-min",
+          "folder": "133_Ambien",
+          "class": "lettering",
+          "area_pct": 0.0751,
+          "already_cut": false,
+          "delta": 0.0686
+        }
+      ]
+    },
+    {
+      "folder": "134_Atarax",
+      "sku": "134-min",
+      "truth_agreement": 0.9631,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "135_Ativan",
+      "sku": "135-min",
+      "truth_agreement": 0.926,
+      "truth_hole_entries": 4,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "135-min",
+          "folder": "135_Ativan",
+          "class": "mark",
+          "area_pct": 0.942,
+          "already_cut": false,
+          "delta": 3.8654
+        },
+        {
+          "key": "highlight#0/hole#0",
+          "sku": "135-min",
+          "folder": "135_Ativan",
+          "class": "lettering",
+          "area_pct": 0.2068,
+          "already_cut": false,
+          "delta": 0.7565
+        },
+        {
+          "key": "highlight#0/hole#1",
+          "sku": "135-min",
+          "folder": "135_Ativan",
+          "class": "lettering",
+          "area_pct": 0.179,
+          "already_cut": false,
+          "delta": 0.7899
+        },
+        {
+          "key": "highlight#0/hole#2",
+          "sku": "135-min",
+          "folder": "135_Ativan",
+          "class": "lettering",
+          "area_pct": 0.1765,
+          "already_cut": false,
+          "delta": 0.7792
+        }
+      ]
+    },
+    {
+      "folder": "149_Modalert",
+      "sku": "149-min",
+      "truth_agreement": 0.8647,
+      "truth_hole_entries": 11,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#1/hole#0",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.5373,
+          "already_cut": false,
+          "delta": 1.7692
+        },
+        {
+          "key": "brand#1/hole#1",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.4321,
+          "already_cut": false,
+          "delta": 1.1081
+        },
+        {
+          "key": "brand#1/hole#2",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.4264,
+          "already_cut": false,
+          "delta": 1.0782
+        },
+        {
+          "key": "brand#1/hole#3",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.3781,
+          "already_cut": false,
+          "delta": 1.0866
+        },
+        {
+          "key": "brand#1/hole#4",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.3297,
+          "already_cut": false,
+          "delta": 1.0883
+        },
+        {
+          "key": "brand#1/hole#5",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.3205,
+          "already_cut": false,
+          "delta": 0.4375
+        },
+        {
+          "key": "brand#1/hole#6",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.315,
+          "already_cut": false,
+          "delta": 0.9965
+        },
+        {
+          "key": "brand#1/hole#7",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.3037,
+          "already_cut": false,
+          "delta": 0.7621
+        },
+        {
+          "key": "brand#1/hole#8",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.2793,
+          "already_cut": false,
+          "delta": 0.7562
+        },
+        {
+          "key": "brand#1/hole#9",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.2311,
+          "already_cut": false,
+          "delta": 0.6889
+        },
+        {
+          "key": "brand#1/hole#10",
+          "sku": "149-min",
+          "folder": "149_Modalert",
+          "class": "lettering",
+          "area_pct": 0.1957,
+          "already_cut": false,
+          "delta": 0.6315
+        }
+      ]
+    },
+    {
+      "folder": "150_Waklert",
+      "sku": "150-min",
+      "truth_agreement": 0.9676,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "151_Provigil",
+      "sku": "151-min",
+      "truth_agreement": null,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "152_Artvigil",
+      "sku": "152-min",
+      "truth_agreement": 0.9818,
+      "truth_hole_entries": 15,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0439,
+          "already_cut": false,
+          "delta": 0.1293
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.043,
+          "already_cut": false,
+          "delta": 0.1312
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0382,
+          "already_cut": false,
+          "delta": 0.1284
+        },
+        {
+          "key": "brand#0/hole#3",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.03,
+          "already_cut": false,
+          "delta": 0.1095
+        },
+        {
+          "key": "brand#0/hole#4",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0296,
+          "already_cut": false,
+          "delta": 0.1012
+        },
+        {
+          "key": "brand#0/hole#5",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0249,
+          "already_cut": false,
+          "delta": 0.088
+        },
+        {
+          "key": "brand#0/hole#6",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0228,
+          "already_cut": false,
+          "delta": 0.0852
+        },
+        {
+          "key": "brand#0/hole#7",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0212,
+          "already_cut": false,
+          "delta": 0.0805
+        },
+        {
+          "key": "brand#0/hole#8",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0193,
+          "already_cut": false,
+          "delta": 0.0712
+        },
+        {
+          "key": "brand#0/hole#9",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0173,
+          "already_cut": false,
+          "delta": 0.0562
+        },
+        {
+          "key": "brand#0/hole#10",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "blend",
+          "area_pct": 0.0169,
+          "already_cut": false,
+          "delta": -0.0029
+        },
+        {
+          "key": "brand#0/hole#11",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0169,
+          "already_cut": false,
+          "delta": 0.0683
+        },
+        {
+          "key": "brand#0/hole#12",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "blend",
+          "area_pct": 0.0165,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "brand#0/hole#13",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "lettering",
+          "area_pct": 0.0165,
+          "already_cut": false,
+          "delta": 0.0655
+        },
+        {
+          "key": "brand#0/hole#14",
+          "sku": "152-min",
+          "folder": "152_Artvigil",
+          "class": "blend",
+          "area_pct": 0.0163,
+          "already_cut": false,
+          "delta": -0.0057
+        }
+      ]
+    },
+    {
+      "folder": "155_Imovane",
+      "sku": "155-min",
+      "truth_agreement": 0.8449,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "156_Xanax",
+      "sku": "156-min",
+      "truth_agreement": 0.9942,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "157_Valium",
+      "sku": "157-min",
+      "truth_agreement": 0.9909,
+      "truth_hole_entries": 5,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "157-min",
+          "folder": "157_Valium",
+          "class": "lettering",
+          "area_pct": 0.3847,
+          "already_cut": false,
+          "delta": -0.003
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "157-min",
+          "folder": "157_Valium",
+          "class": "lettering",
+          "area_pct": 0.3334,
+          "already_cut": false,
+          "delta": -0.0037
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "157-min",
+          "folder": "157_Valium",
+          "class": "lettering",
+          "area_pct": 0.2485,
+          "already_cut": false,
+          "delta": -0.0155
+        },
+        {
+          "key": "type#14/hole#0",
+          "sku": "157-min",
+          "folder": "157_Valium",
+          "class": "window",
+          "area_pct": 0.1311,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "type#14/hole#1",
+          "sku": "157-min",
+          "folder": "157_Valium",
+          "class": "window",
+          "area_pct": 0.1297,
+          "already_cut": true,
+          "delta": 0.0
+        }
+      ]
+    },
+    {
+      "folder": "158_Klonopin",
+      "sku": "158-min",
+      "truth_agreement": 0.9435,
+      "truth_hole_entries": 3,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "158-min",
+          "folder": "158_Klonopin",
+          "class": "lettering",
+          "area_pct": 0.4623,
+          "already_cut": false,
+          "delta": 1.5606
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "158-min",
+          "folder": "158_Klonopin",
+          "class": "lettering",
+          "area_pct": 0.4014,
+          "already_cut": false,
+          "delta": 1.6481
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "158-min",
+          "folder": "158_Klonopin",
+          "class": "lettering",
+          "area_pct": 0.2846,
+          "already_cut": false,
+          "delta": 1.1391
+        }
+      ]
+    },
+    {
+      "folder": "221_Inderal",
+      "sku": "221-min",
+      "truth_agreement": 0.8423,
+      "truth_hole_entries": 44,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "mark",
+          "area_pct": 0.2578,
+          "already_cut": false,
+          "delta": 0.6307
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.1212,
+          "already_cut": false,
+          "delta": 0.2926
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0917,
+          "already_cut": false,
+          "delta": 0.2106
+        },
+        {
+          "key": "brand#0/hole#3",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0701,
+          "already_cut": false,
+          "delta": 0.1213
+        },
+        {
+          "key": "brand#0/hole#4",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.068,
+          "already_cut": false,
+          "delta": 0.0974
+        },
+        {
+          "key": "brand#0/hole#5",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0628,
+          "already_cut": false,
+          "delta": 0.1489
+        },
+        {
+          "key": "brand#0/hole#6",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0529,
+          "already_cut": false,
+          "delta": 0.0934
+        },
+        {
+          "key": "brand#0/hole#7",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0491,
+          "already_cut": false,
+          "delta": 0.0963
+        },
+        {
+          "key": "brand#0/hole#8",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0464,
+          "already_cut": false,
+          "delta": 0.0805
+        },
+        {
+          "key": "brand#0/hole#9",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0443,
+          "already_cut": false,
+          "delta": 0.072
+        },
+        {
+          "key": "brand#0/hole#10",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0439,
+          "already_cut": false,
+          "delta": 0.0554
+        },
+        {
+          "key": "brand#0/hole#11",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0363,
+          "already_cut": false,
+          "delta": 0.0635
+        },
+        {
+          "key": "brand#0/hole#12",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0279,
+          "already_cut": false,
+          "delta": 0.0351
+        },
+        {
+          "key": "brand#0/hole#13",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "mark",
+          "area_pct": 0.0275,
+          "already_cut": false,
+          "delta": 0.0559
+        },
+        {
+          "key": "brand#0/hole#14",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.024,
+          "already_cut": false,
+          "delta": 0.0261
+        },
+        {
+          "key": "brand#0/hole#15",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0234,
+          "already_cut": false,
+          "delta": 0.0438
+        },
+        {
+          "key": "brand#0/hole#16",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0222,
+          "already_cut": false,
+          "delta": 0.0363
+        },
+        {
+          "key": "brand#0/hole#17",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0214,
+          "already_cut": false,
+          "delta": 0.0249
+        },
+        {
+          "key": "brand#0/hole#18",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0201,
+          "already_cut": false,
+          "delta": 0.0369
+        },
+        {
+          "key": "brand#0/hole#19",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0189,
+          "already_cut": false,
+          "delta": 0.0339
+        },
+        {
+          "key": "brand#0/hole#20",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0174,
+          "already_cut": false,
+          "delta": 0.0339
+        },
+        {
+          "key": "brand#0/hole#21",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.016,
+          "already_cut": false,
+          "delta": 0.0319
+        },
+        {
+          "key": "brand#0/hole#22",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0138,
+          "already_cut": false,
+          "delta": 0.0256
+        },
+        {
+          "key": "brand#0/hole#23",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0112,
+          "already_cut": false,
+          "delta": 0.0136
+        },
+        {
+          "key": "brand#0/hole#24",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0106,
+          "already_cut": false,
+          "delta": 0.0125
+        },
+        {
+          "key": "brand#0/hole#25",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "mark",
+          "area_pct": 0.0104,
+          "already_cut": false,
+          "delta": 0.022
+        },
+        {
+          "key": "highlight#0/hole#0",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.9016,
+          "already_cut": false,
+          "delta": 1.4876
+        },
+        {
+          "key": "highlight#0/hole#1",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.5713,
+          "already_cut": false,
+          "delta": 1.3583
+        },
+        {
+          "key": "highlight#0/hole#2",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.4636,
+          "already_cut": false,
+          "delta": 1.2633
+        },
+        {
+          "key": "highlight#0/hole#3",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.4084,
+          "already_cut": false,
+          "delta": 1.0016
+        },
+        {
+          "key": "highlight#0/hole#4",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.348,
+          "already_cut": false,
+          "delta": 0.9147
+        },
+        {
+          "key": "highlight#0/hole#5",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.2651,
+          "already_cut": false,
+          "delta": 0.7211
+        },
+        {
+          "key": "highlight#0/hole#6",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.2203,
+          "already_cut": false,
+          "delta": 0.5916
+        },
+        {
+          "key": "highlight#1/hole#0",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.1455,
+          "already_cut": false,
+          "delta": 0.267
+        },
+        {
+          "key": "highlight#1/hole#1",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.1359,
+          "already_cut": false,
+          "delta": 0.2717
+        },
+        {
+          "key": "highlight#1/hole#2",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.1267,
+          "already_cut": false,
+          "delta": 0.2564
+        },
+        {
+          "key": "highlight#1/hole#3",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.1177,
+          "already_cut": false,
+          "delta": 0.3125
+        },
+        {
+          "key": "highlight#1/hole#4",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0792,
+          "already_cut": false,
+          "delta": 0.1843
+        },
+        {
+          "key": "highlight#1/hole#5",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0739,
+          "already_cut": false,
+          "delta": 0.1684
+        },
+        {
+          "key": "highlight#1/hole#6",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0544,
+          "already_cut": false,
+          "delta": 0.1456
+        },
+        {
+          "key": "highlight#1/hole#7",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0526,
+          "already_cut": false,
+          "delta": 0.1352
+        },
+        {
+          "key": "highlight#1/hole#8",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0519,
+          "already_cut": false,
+          "delta": 0.1378
+        },
+        {
+          "key": "highlight#1/hole#9",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0519,
+          "already_cut": false,
+          "delta": 0.1383
+        },
+        {
+          "key": "highlight#1/hole#10",
+          "sku": "221-min",
+          "folder": "221_Inderal",
+          "class": "lettering",
+          "area_pct": 0.0509,
+          "already_cut": false,
+          "delta": 0.1231
+        }
+      ]
+    },
+    {
+      "folder": "230_Slimex",
+      "sku": "230-min",
+      "truth_agreement": null,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "272_Valium_Brand",
+      "sku": "272-min",
+      "truth_agreement": 0.9904,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "304_Sonata",
+      "sku": "304-min",
+      "truth_agreement": 0.9091,
+      "truth_hole_entries": 1,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "highlight#1/hole#0",
+          "sku": "304-min",
+          "folder": "304_Sonata",
+          "class": "window",
+          "area_pct": 0.2053,
+          "already_cut": true,
+          "delta": 0.0
+        }
+      ]
+    },
+    {
+      "folder": "308_Lexotanil",
+      "sku": "308-min",
+      "truth_agreement": 0.9868,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "340_Xanax_Pfizer",
+      "sku": "340-min",
+      "truth_agreement": 0.9844,
+      "truth_hole_entries": 12,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.1414,
+          "already_cut": false,
+          "delta": 0.1501
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0998,
+          "already_cut": false,
+          "delta": 0.0049
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0535,
+          "already_cut": false,
+          "delta": -0.019
+        },
+        {
+          "key": "brand#0/hole#3",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0508,
+          "already_cut": false,
+          "delta": -0.0661
+        },
+        {
+          "key": "brand#0/hole#4",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0421,
+          "already_cut": false,
+          "delta": 0.018
+        },
+        {
+          "key": "brand#0/hole#5",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0337,
+          "already_cut": false,
+          "delta": 0.04
+        },
+        {
+          "key": "brand#0/hole#6",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.031,
+          "already_cut": false,
+          "delta": 0.0122
+        },
+        {
+          "key": "brand#0/hole#7",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0258,
+          "already_cut": false,
+          "delta": 0.0153
+        },
+        {
+          "key": "brand#0/hole#8",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0245,
+          "already_cut": false,
+          "delta": -0.0095
+        },
+        {
+          "key": "brand#0/hole#9",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0146,
+          "already_cut": false,
+          "delta": 0.003
+        },
+        {
+          "key": "brand#0/hole#10",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0111,
+          "already_cut": false,
+          "delta": -0.0063
+        },
+        {
+          "key": "brand#0/hole#11",
+          "sku": "340-min",
+          "folder": "340_Xanax_Pfizer",
+          "class": "object",
+          "area_pct": 0.0107,
+          "already_cut": false,
+          "delta": -0.0064
+        }
+      ]
+    },
+    {
+      "folder": "344_Modafinil_Generic",
+      "sku": "344-min",
+      "truth_agreement": 0.8647,
+      "truth_hole_entries": 11,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#1/hole#0",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.5373,
+          "already_cut": false,
+          "delta": 1.7692
+        },
+        {
+          "key": "brand#1/hole#1",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.4321,
+          "already_cut": false,
+          "delta": 1.1081
+        },
+        {
+          "key": "brand#1/hole#2",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.4264,
+          "already_cut": false,
+          "delta": 1.0782
+        },
+        {
+          "key": "brand#1/hole#3",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.3781,
+          "already_cut": false,
+          "delta": 1.0866
+        },
+        {
+          "key": "brand#1/hole#4",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.3297,
+          "already_cut": false,
+          "delta": 1.0883
+        },
+        {
+          "key": "brand#1/hole#5",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.3205,
+          "already_cut": false,
+          "delta": 0.4375
+        },
+        {
+          "key": "brand#1/hole#6",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.315,
+          "already_cut": false,
+          "delta": 0.9965
+        },
+        {
+          "key": "brand#1/hole#7",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.3037,
+          "already_cut": false,
+          "delta": 0.7621
+        },
+        {
+          "key": "brand#1/hole#8",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.2793,
+          "already_cut": false,
+          "delta": 0.7562
+        },
+        {
+          "key": "brand#1/hole#9",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.2311,
+          "already_cut": false,
+          "delta": 0.6889
+        },
+        {
+          "key": "brand#1/hole#10",
+          "sku": "344-min",
+          "folder": "344_Modafinil_Generic",
+          "class": "lettering",
+          "area_pct": 0.1957,
+          "already_cut": false,
+          "delta": 0.6315
+        }
+      ]
+    },
+    {
+      "folder": "346_Modvigil",
+      "sku": "346-min",
+      "truth_agreement": null,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "357_Adderall",
+      "sku": "357-min",
+      "truth_agreement": 0.9624,
+      "truth_hole_entries": 17,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.3669,
+          "already_cut": false,
+          "delta": 0.8326
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "blend",
+          "area_pct": 0.0628,
+          "already_cut": false,
+          "delta": 0.146
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "blend",
+          "area_pct": 0.02,
+          "already_cut": false,
+          "delta": 0.0431
+        },
+        {
+          "key": "brand#1/hole#0",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "window",
+          "area_pct": 44.3961,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "brand#1/hole#1",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "window",
+          "area_pct": 1.8296,
+          "already_cut": true,
+          "delta": 0.0
+        },
+        {
+          "key": "brand#1/hole#2",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.5898,
+          "already_cut": false,
+          "delta": 0.0231
+        },
+        {
+          "key": "brand#1/hole#3",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.3934,
+          "already_cut": false,
+          "delta": 0.0211
+        },
+        {
+          "key": "brand#1/hole#4",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.3263,
+          "already_cut": false,
+          "delta": -0.0059
+        },
+        {
+          "key": "highlight#0/hole#0",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "mark",
+          "area_pct": 0.6474,
+          "already_cut": false,
+          "delta": 0.0759
+        },
+        {
+          "key": "highlight#0/hole#1",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.4231,
+          "already_cut": false,
+          "delta": 0.0739
+        },
+        {
+          "key": "highlight#0/hole#2",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.272,
+          "already_cut": false,
+          "delta": -0.0033
+        },
+        {
+          "key": "highlight#0/hole#3",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.1657,
+          "already_cut": false,
+          "delta": 0.0152
+        },
+        {
+          "key": "highlight#0/hole#4",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "mark",
+          "area_pct": 0.0241,
+          "already_cut": false,
+          "delta": -0.0012
+        },
+        {
+          "key": "highlight#0/hole#5",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "mark",
+          "area_pct": 0.0136,
+          "already_cut": false,
+          "delta": -0.0016
+        },
+        {
+          "key": "highlight#0/hole#6",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.0115,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#1/hole#0",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.5191,
+          "already_cut": false,
+          "delta": 0.6354
+        },
+        {
+          "key": "highlight#1/hole#1",
+          "sku": "357-min",
+          "folder": "357_Adderall",
+          "class": "lettering",
+          "area_pct": 0.3716,
+          "already_cut": false,
+          "delta": 0.5123
+        }
+      ]
+    },
+    {
+      "folder": "362_Hydrocodone",
+      "sku": "362-min",
+      "truth_agreement": 0.9638,
+      "truth_hole_entries": 18,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "brand#0/hole#0",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1895,
+          "already_cut": false,
+          "delta": 0.2048
+        },
+        {
+          "key": "brand#0/hole#1",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1891,
+          "already_cut": false,
+          "delta": 0.2101
+        },
+        {
+          "key": "brand#0/hole#2",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.189,
+          "already_cut": false,
+          "delta": 0.2076
+        },
+        {
+          "key": "brand#0/hole#3",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1884,
+          "already_cut": false,
+          "delta": 0.1918
+        },
+        {
+          "key": "brand#0/hole#4",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1869,
+          "already_cut": false,
+          "delta": 0.2383
+        },
+        {
+          "key": "brand#0/hole#5",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1825,
+          "already_cut": false,
+          "delta": 0.1553
+        },
+        {
+          "key": "brand#0/hole#6",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1815,
+          "already_cut": false,
+          "delta": 0.1462
+        },
+        {
+          "key": "brand#0/hole#7",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.174,
+          "already_cut": false,
+          "delta": 0.1606
+        },
+        {
+          "key": "brand#0/hole#8",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.139,
+          "already_cut": false,
+          "delta": 0.1532
+        },
+        {
+          "key": "brand#0/hole#9",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1374,
+          "already_cut": false,
+          "delta": 0.1646
+        },
+        {
+          "key": "brand#0/hole#10",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1358,
+          "already_cut": false,
+          "delta": 0.164
+        },
+        {
+          "key": "brand#0/hole#11",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1241,
+          "already_cut": false,
+          "delta": 0.1487
+        },
+        {
+          "key": "brand#0/hole#12",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1076,
+          "already_cut": false,
+          "delta": 0.1291
+        },
+        {
+          "key": "brand#0/hole#13",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.1061,
+          "already_cut": false,
+          "delta": 0.1152
+        },
+        {
+          "key": "brand#0/hole#14",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.0879,
+          "already_cut": false,
+          "delta": 0.0751
+        },
+        {
+          "key": "brand#0/hole#15",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.0745,
+          "already_cut": false,
+          "delta": 0.0948
+        },
+        {
+          "key": "brand#0/hole#16",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.064,
+          "already_cut": false,
+          "delta": 0.0774
+        },
+        {
+          "key": "brand#0/hole#17",
+          "sku": "362-min",
+          "folder": "362_Hydrocodone",
+          "class": "lettering",
+          "area_pct": 0.0217,
+          "already_cut": false,
+          "delta": 0.031
+        }
+      ]
+    },
+    {
+      "folder": "365_Tapentadol",
+      "sku": "365-min",
+      "truth_agreement": 0.9886,
+      "truth_hole_entries": 0,
+      "vanished_labels": [],
+      "holes": []
+    },
+    {
+      "folder": "404_Ritalin",
+      "sku": "404-min",
+      "truth_agreement": 0.9959,
+      "truth_hole_entries": 72,
+      "vanished_labels": [],
+      "holes": [
+        {
+          "key": "highlight#0/hole#0",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.453,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#1",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.4164,
+          "already_cut": false,
+          "delta": -0.0065
+        },
+        {
+          "key": "highlight#0/hole#2",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.4002,
+          "already_cut": false,
+          "delta": -0.0125
+        },
+        {
+          "key": "highlight#0/hole#3",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.3724,
+          "already_cut": false,
+          "delta": -0.0145
+        },
+        {
+          "key": "highlight#0/hole#4",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.3384,
+          "already_cut": false,
+          "delta": -0.0125
+        },
+        {
+          "key": "highlight#0/hole#5",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.268,
+          "already_cut": false,
+          "delta": -0.002
+        },
+        {
+          "key": "highlight#0/hole#6",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.2606,
+          "already_cut": false,
+          "delta": -0.0075
+        },
+        {
+          "key": "highlight#0/hole#7",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.2598,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#8",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.2578,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#9",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.2574,
+          "already_cut": false,
+          "delta": -0.0065
+        },
+        {
+          "key": "highlight#0/hole#10",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.2522,
+          "already_cut": false,
+          "delta": -0.0035
+        },
+        {
+          "key": "highlight#0/hole#11",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.229,
+          "already_cut": false,
+          "delta": -0.013
+        },
+        {
+          "key": "highlight#0/hole#12",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1973,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#13",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1896,
+          "already_cut": false,
+          "delta": -0.0025
+        },
+        {
+          "key": "highlight#0/hole#14",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1872,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#15",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.187,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#16",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1701,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#17",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1615,
+          "already_cut": false,
+          "delta": -0.0085
+        },
+        {
+          "key": "highlight#0/hole#18",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.151,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#19",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1198,
+          "already_cut": false,
+          "delta": -0.007
+        },
+        {
+          "key": "highlight#0/hole#20",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.1164,
+          "already_cut": false,
+          "delta": -0.003
+        },
+        {
+          "key": "highlight#0/hole#21",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0746,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#22",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0738,
+          "already_cut": false,
+          "delta": -0.016
+        },
+        {
+          "key": "highlight#0/hole#23",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0726,
+          "already_cut": false,
+          "delta": -0.007
+        },
+        {
+          "key": "highlight#0/hole#24",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0668,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#25",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0658,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#26",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0656,
+          "already_cut": false,
+          "delta": -0.0045
+        },
+        {
+          "key": "highlight#0/hole#27",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0656,
+          "already_cut": false,
+          "delta": -0.003
+        },
+        {
+          "key": "highlight#0/hole#28",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0627,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#29",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0583,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#30",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0583,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#31",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0575,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#32",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0565,
+          "already_cut": false,
+          "delta": -0.008
+        },
+        {
+          "key": "highlight#0/hole#33",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0487,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#34",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0473,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#35",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0465,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#36",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0463,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#37",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0462,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#38",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0458,
+          "already_cut": false,
+          "delta": -0.0025
+        },
+        {
+          "key": "highlight#0/hole#39",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0452,
+          "already_cut": false,
+          "delta": -0.002
+        },
+        {
+          "key": "highlight#0/hole#40",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.04,
+          "already_cut": false,
+          "delta": -0.0025
+        },
+        {
+          "key": "highlight#0/hole#41",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0394,
+          "already_cut": false,
+          "delta": -0.004
+        },
+        {
+          "key": "highlight#0/hole#42",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0376,
+          "already_cut": false,
+          "delta": -0.0025
+        },
+        {
+          "key": "highlight#0/hole#43",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.037,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#44",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.037,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#45",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.036,
+          "already_cut": false,
+          "delta": -0.007
+        },
+        {
+          "key": "highlight#0/hole#46",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0344,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#47",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0336,
+          "already_cut": false,
+          "delta": -0.0035
+        },
+        {
+          "key": "highlight#0/hole#48",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.033,
+          "already_cut": false,
+          "delta": -0.0085
+        },
+        {
+          "key": "highlight#0/hole#49",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0326,
+          "already_cut": false,
+          "delta": -0.004
+        },
+        {
+          "key": "highlight#0/hole#50",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0324,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#51",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0318,
+          "already_cut": false,
+          "delta": -0.002
+        },
+        {
+          "key": "highlight#0/hole#52",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0304,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#53",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0302,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#54",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0292,
+          "already_cut": false,
+          "delta": -0.0025
+        },
+        {
+          "key": "highlight#0/hole#55",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0245,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#56",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0239,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#57",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0231,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#58",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0231,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#59",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0229,
+          "already_cut": false,
+          "delta": -0.002
+        },
+        {
+          "key": "highlight#0/hole#60",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0229,
+          "already_cut": false,
+          "delta": -0.0005
+        },
+        {
+          "key": "highlight#0/hole#61",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0227,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#62",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0199,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#63",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0191,
+          "already_cut": false,
+          "delta": -0.0015
+        },
+        {
+          "key": "highlight#0/hole#64",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0187,
+          "already_cut": false,
+          "delta": -0.001
+        },
+        {
+          "key": "highlight#0/hole#65",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0187,
+          "already_cut": false,
+          "delta": -0.0025
+        },
+        {
+          "key": "highlight#0/hole#66",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0185,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#67",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0165,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#68",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0153,
+          "already_cut": false,
+          "delta": -0.007
+        },
+        {
+          "key": "highlight#0/hole#69",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0147,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#70",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0145,
+          "already_cut": false,
+          "delta": 0.0
+        },
+        {
+          "key": "highlight#0/hole#71",
+          "sku": "404-min",
+          "folder": "404_Ritalin",
+          "class": "lettering",
+          "area_pct": 0.0143,
+          "already_cut": false,
+          "delta": 0.0
+        }
+      ]
+    }
+  ]
+}

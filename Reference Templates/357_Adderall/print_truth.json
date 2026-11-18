@@ -1,0 +1,1146 @@
+{
+  "schema": "print_truth/1",
+  "sku": "357-min",
+  "source_image": "Adderall_front_face.png",
+  "front_face_px": [
+    [
+      0,
+      0
+    ],
+    [
+      134,
+      0
+    ],
+    [
+      134,
+      172
+    ],
+    [
+      0,
+      172
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    1412
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.831,
+    "highlight": 2.319,
+    "secondary_1": 1.95
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 6.351,
+      "bbox_uv": [
+        0.2173,
+        0.8591,
+        0.7636,
+        0.9858
+      ],
+      "centroid_uv": [
+        0.4894,
+        0.9224
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 5.899,
+      "bbox_uv": [
+        0.0373,
+        0.0375,
+        0.9509,
+        0.9603
+      ],
+      "centroid_uv": [
+        0.2522,
+        0.6098
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.381,
+      "bbox_uv": [
+        0.62,
+        0.7103,
+        0.9155,
+        0.7783
+      ],
+      "centroid_uv": [
+        0.7669,
+        0.7488
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.375,
+      "bbox_uv": [
+        0.0655,
+        0.3775,
+        0.5527,
+        0.4221
+      ],
+      "centroid_uv": [
+        0.2909,
+        0.4025
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.325,
+      "bbox_uv": [
+        0.0636,
+        0.2967,
+        0.4427,
+        0.3492
+      ],
+      "centroid_uv": [
+        0.2473,
+        0.323
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.325,
+      "bbox_uv": [
+        0.5327,
+        0.2429,
+        0.8855,
+        0.2989
+      ],
+      "centroid_uv": [
+        0.7221,
+        0.2692
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.306,
+      "bbox_uv": [
+        0.6373,
+        0.0666,
+        0.8382,
+        0.0949
+      ],
+      "centroid_uv": [
+        0.7408,
+        0.0813
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.28,
+      "bbox_uv": [
+        0.3864,
+        0.1459,
+        0.6836,
+        0.2188
+      ],
+      "centroid_uv": [
+        0.5336,
+        0.1868
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.214,
+      "bbox_uv": [
+        0.5636,
+        0.381,
+        0.8164,
+        0.4313
+      ],
+      "centroid_uv": [
+        0.6921,
+        0.4046
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.202,
+      "bbox_uv": [
+        0.4536,
+        0.2946,
+        0.69,
+        0.3477
+      ],
+      "centroid_uv": [
+        0.5711,
+        0.3207
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#10",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.185,
+      "bbox_uv": [
+        0.0627,
+        0.245,
+        0.2482,
+        0.2946
+      ],
+      "centroid_uv": [
+        0.1423,
+        0.2686
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#11",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.184,
+      "bbox_uv": [
+        0.0655,
+        0.1466,
+        0.3082,
+        0.2174
+      ],
+      "centroid_uv": [
+        0.1855,
+        0.1846
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#12",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.152,
+      "bbox_uv": [
+        0.5291,
+        0.0673,
+        0.6264,
+        0.0949
+      ],
+      "centroid_uv": [
+        0.5802,
+        0.0816
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#13",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.145,
+      "bbox_uv": [
+        0.7727,
+        0.488,
+        0.8591,
+        0.5595
+      ],
+      "centroid_uv": [
+        0.7987,
+        0.5279
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#14",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.143,
+      "bbox_uv": [
+        0.6891,
+        0.1239,
+        0.9173,
+        0.2351
+      ],
+      "centroid_uv": [
+        0.8079,
+        0.183
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#15",
+      "role": "brand",
+      "fill": "#167389",
+      "area_pct": 0.12,
+      "bbox_uv": [
+        0.2582,
+        0.2443,
+        0.3982,
+        0.2868
+      ],
+      "centroid_uv": [
+        0.326,
+        0.2677
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 22.232,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.9991,
+        0.9788
+      ],
+      "centroid_uv": [
+        0.5033,
+        0.5168
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 1.258,
+      "bbox_uv": [
+        0.6945,
+        0.1289,
+        0.91,
+        0.2302
+      ],
+      "centroid_uv": [
+        0.806,
+        0.1791
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.313,
+      "bbox_uv": [
+        0.2018,
+        0.9873,
+        0.6655,
+        0.9993
+      ],
+      "centroid_uv": [
+        0.4086,
+        0.995
+      ],
+      "class": "object",
+      "reason": "label artwork margin below the printed panel"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.311,
+      "bbox_uv": [
+        0.3927,
+        0.1508,
+        0.4582,
+        0.2132
+      ],
+      "centroid_uv": [
+        0.4242,
+        0.1809
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.288,
+      "bbox_uv": [
+        0.2364,
+        0.1516,
+        0.3036,
+        0.2132
+      ],
+      "centroid_uv": [
+        0.2676,
+        0.1826
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.265,
+      "bbox_uv": [
+        0.1573,
+        0.1516,
+        0.2218,
+        0.2125
+      ],
+      "centroid_uv": [
+        0.1867,
+        0.1826
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.264,
+      "bbox_uv": [
+        0.3182,
+        0.1516,
+        0.3773,
+        0.2132
+      ],
+      "centroid_uv": [
+        0.3425,
+        0.1828
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.25,
+      "bbox_uv": [
+        0.4718,
+        0.1508,
+        0.5418,
+        0.2139
+      ],
+      "centroid_uv": [
+        0.5064,
+        0.1858
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#8",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.214,
+      "bbox_uv": [
+        0.0727,
+        0.1523,
+        0.14,
+        0.2125
+      ],
+      "centroid_uv": [
+        0.1075,
+        0.1856
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#9",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.181,
+      "bbox_uv": [
+        0.3191,
+        0.6246,
+        0.3745,
+        0.6884
+      ],
+      "centroid_uv": [
+        0.349,
+        0.6552
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#10",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.176,
+      "bbox_uv": [
+        0.5545,
+        0.1508,
+        0.6091,
+        0.2132
+      ],
+      "centroid_uv": [
+        0.5723,
+        0.1883
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#11",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.175,
+      "bbox_uv": [
+        0.2191,
+        0.6246,
+        0.3036,
+        0.6707
+      ],
+      "centroid_uv": [
+        0.2608,
+        0.644
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#12",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.171,
+      "bbox_uv": [
+        0.6236,
+        0.1508,
+        0.6782,
+        0.2132
+      ],
+      "centroid_uv": [
+        0.6406,
+        0.1881
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#13",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.149,
+      "bbox_uv": [
+        0.1245,
+        0.6105,
+        0.1764,
+        0.6721
+      ],
+      "centroid_uv": [
+        0.1502,
+        0.6404
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#14",
+      "role": "highlight",
+      "fill": "#F1F3FA",
+      "area_pct": 0.121,
+      "bbox_uv": [
+        0.0627,
+        0.6098,
+        0.1109,
+        0.6714
+      ],
+      "centroid_uv": [
+        0.0905,
+        0.6407
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#0",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 13.291,
+      "bbox_uv": [
+        0.0,
+        0.0326,
+        0.9991,
+        0.9993
+      ],
+      "centroid_uv": [
+        0.7018,
+        0.7908
+      ],
+      "class": "blend",
+      "reason": "the same white swoosh, split off by shading"
+    },
+    {
+      "key": "secondary_1#1",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.611,
+      "bbox_uv": [
+        0.0691,
+        0.3839,
+        0.5491,
+        0.42
+      ],
+      "centroid_uv": [
+        0.2995,
+        0.4051
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#2",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.562,
+      "bbox_uv": [
+        0.0664,
+        0.3003,
+        0.44,
+        0.3435
+      ],
+      "centroid_uv": [
+        0.253,
+        0.3213
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#3",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.547,
+      "bbox_uv": [
+        0.5373,
+        0.2465,
+        0.8827,
+        0.2939
+      ],
+      "centroid_uv": [
+        0.7127,
+        0.2687
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#4",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.316,
+      "bbox_uv": [
+        0.7673,
+        0.4823,
+        0.8691,
+        0.5644
+      ],
+      "centroid_uv": [
+        0.8257,
+        0.5223
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#5",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.267,
+      "bbox_uv": [
+        0.4582,
+        0.2996,
+        0.6882,
+        0.3449
+      ],
+      "centroid_uv": [
+        0.5872,
+        0.3201
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#6",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.252,
+      "bbox_uv": [
+        0.4964,
+        0.8109,
+        0.6336,
+        0.8484
+      ],
+      "centroid_uv": [
+        0.5627,
+        0.8298
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#7",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.241,
+      "bbox_uv": [
+        0.5655,
+        0.3846,
+        0.7336,
+        0.4278
+      ],
+      "centroid_uv": [
+        0.6512,
+        0.406
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#8",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.207,
+      "bbox_uv": [
+        0.6909,
+        0.1261,
+        0.9136,
+        0.233
+      ],
+      "centroid_uv": [
+        0.8077,
+        0.1785
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#9",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.196,
+      "bbox_uv": [
+        0.0573,
+        0.6069,
+        0.1809,
+        0.6749
+      ],
+      "centroid_uv": [
+        0.1122,
+        0.642
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#10",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.179,
+      "bbox_uv": [
+        0.26,
+        0.2465,
+        0.3955,
+        0.2847
+      ],
+      "centroid_uv": [
+        0.3232,
+        0.2681
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#11",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.151,
+      "bbox_uv": [
+        0.2145,
+        0.6218,
+        0.3073,
+        0.6742
+      ],
+      "centroid_uv": [
+        0.2606,
+        0.6475
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#12",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.15,
+      "bbox_uv": [
+        0.79,
+        0.1473,
+        0.8918,
+        0.2174
+      ],
+      "centroid_uv": [
+        0.8427,
+        0.1775
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#13",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.138,
+      "bbox_uv": [
+        0.7364,
+        0.3867,
+        0.8127,
+        0.4193
+      ],
+      "centroid_uv": [
+        0.7728,
+        0.4052
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#14",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.134,
+      "bbox_uv": [
+        0.1473,
+        0.2486,
+        0.2427,
+        0.2847
+      ],
+      "centroid_uv": [
+        0.1957,
+        0.2695
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#15",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.13,
+      "bbox_uv": [
+        0.5636,
+        0.5744,
+        0.6509,
+        0.6126
+      ],
+      "centroid_uv": [
+        0.6047,
+        0.593
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#16",
+      "role": "secondary_1",
+      "fill": "#E6E5EC",
+      "area_pct": 0.118,
+      "bbox_uv": [
+        0.3145,
+        0.6218,
+        0.3782,
+        0.6926
+      ],
+      "centroid_uv": [
+        0.3466,
+        0.6611
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 0.367,
+      "bbox_uv": [
+        0.2218,
+        0.8633,
+        0.7555,
+        0.9809
+      ],
+      "centroid_uv": [
+        0.5809,
+        0.9407
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.063,
+      "bbox_uv": [
+        0.2264,
+        0.864,
+        0.4191,
+        0.8739
+      ],
+      "centroid_uv": [
+        0.3122,
+        0.8657
+      ],
+      "class": "blend"
+    },
+    {
+      "key": "brand#0/hole#2",
+      "of": "brand#0",
+      "area_pct": 0.02,
+      "bbox_uv": [
+        0.4227,
+        0.8633,
+        0.48,
+        0.8711
+      ],
+      "centroid_uv": [
+        0.449,
+        0.866
+      ],
+      "class": "blend"
+    },
+    {
+      "key": "brand#1/hole#0",
+      "of": "brand#1",
+      "area_pct": 44.396,
+      "bbox_uv": [
+        0.0409,
+        0.0404,
+        0.9482,
+        0.6034
+      ],
+      "centroid_uv": [
+        0.4765,
+        0.2886
+      ],
+      "class": "window"
+    },
+    {
+      "key": "brand#1/hole#1",
+      "of": "brand#1",
+      "area_pct": 1.83,
+      "bbox_uv": [
+        0.04,
+        0.6926,
+        0.2227,
+        0.9511
+      ],
+      "centroid_uv": [
+        0.0991,
+        0.8059
+      ],
+      "class": "window"
+    },
+    {
+      "key": "brand#1/hole#2",
+      "of": "brand#1",
+      "area_pct": 0.59,
+      "bbox_uv": [
+        0.0573,
+        0.6069,
+        0.1809,
+        0.6749
+      ],
+      "centroid_uv": [
+        0.1254,
+        0.6412
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#1/hole#3",
+      "of": "brand#1",
+      "area_pct": 0.393,
+      "bbox_uv": [
+        0.3145,
+        0.6218,
+        0.3782,
+        0.6926
+      ],
+      "centroid_uv": [
+        0.3476,
+        0.656
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#1/hole#4",
+      "of": "brand#1",
+      "area_pct": 0.326,
+      "bbox_uv": [
+        0.2145,
+        0.6218,
+        0.3073,
+        0.6742
+      ],
+      "centroid_uv": [
+        0.2607,
+        0.6456
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#0",
+      "of": "highlight#0",
+      "area_pct": 0.647,
+      "bbox_uv": [
+        0.7673,
+        0.4823,
+        0.8691,
+        0.5644
+      ],
+      "centroid_uv": [
+        0.8189,
+        0.5228
+      ],
+      "class": "mark",
+      "reason": "the C-II schedule symbol"
+    },
+    {
+      "key": "highlight#0/hole#1",
+      "of": "highlight#0",
+      "area_pct": 0.423,
+      "bbox_uv": [
+        0.4964,
+        0.8109,
+        0.6336,
+        0.8484
+      ],
+      "centroid_uv": [
+        0.5632,
+        0.8294
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#2",
+      "of": "highlight#0",
+      "area_pct": 0.272,
+      "bbox_uv": [
+        0.5636,
+        0.5744,
+        0.6509,
+        0.6126
+      ],
+      "centroid_uv": [
+        0.6093,
+        0.5934
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#3",
+      "of": "highlight#0",
+      "area_pct": 0.166,
+      "bbox_uv": [
+        0.4291,
+        0.8123,
+        0.4891,
+        0.847
+      ],
+      "centroid_uv": [
+        0.4587,
+        0.8298
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#4",
+      "of": "highlight#0",
+      "area_pct": 0.024,
+      "bbox_uv": [
+        0.7582,
+        0.6976,
+        0.7827,
+        0.7181
+      ],
+      "centroid_uv": [
+        0.7717,
+        0.7084
+      ],
+      "class": "mark",
+      "reason": "the Shire logotype swash"
+    },
+    {
+      "key": "highlight#0/hole#5",
+      "of": "highlight#0",
+      "area_pct": 0.014,
+      "bbox_uv": [
+        0.7764,
+        0.6827,
+        0.7936,
+        0.6969
+      ],
+      "centroid_uv": [
+        0.7841,
+        0.6909
+      ],
+      "class": "mark",
+      "reason": "the Shire logotype swash"
+    },
+    {
+      "key": "highlight#0/hole#6",
+      "of": "highlight#0",
+      "area_pct": 0.011,
+      "bbox_uv": [
+        0.6373,
+        0.8144,
+        0.6482,
+        0.8286
+      ],
+      "centroid_uv": [
+        0.6426,
+        0.8214
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#1/hole#0",
+      "of": "highlight#1",
+      "area_pct": 0.519,
+      "bbox_uv": [
+        0.79,
+        0.1473,
+        0.8918,
+        0.2174
+      ],
+      "centroid_uv": [
+        0.8321,
+        0.1786
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#1/hole#1",
+      "of": "highlight#1",
+      "area_pct": 0.372,
+      "bbox_uv": [
+        0.7073,
+        0.1466,
+        0.7845,
+        0.2167
+      ],
+      "centroid_uv": [
+        0.7469,
+        0.182
+      ],
+      "class": "lettering"
+    }
+  ]
+}

@@ -24,6 +24,7 @@ framing — see 06_docs/DESIGN_RATIONALE.md.
 """
 import bpy
 import mathutils
+import os
 import sys
 import json
 import math
@@ -45,11 +46,36 @@ ENGINE     = _arg("--engine-type", "CYCLES")
 SAMPLES    = int(_arg("--samples", "64"))
 RES_X      = int(_arg("--res-x", "2048"))
 RES_Y      = int(_arg("--res-y", "2048"))
+# Which device Cycles samples on, which back-end it reaches the GPU through, and
+# where the denoiser runs. STATED, not inherited: until 2026-08-24 setup_render()
+# never assigned `scene.cycles.device`, so the render used whatever device the
+# process started with. Under `--factory-startup` that is CPU, which is why
+# nothing was visibly wrong — but a second `--python` argument ahead of this
+# script could move the whole render onto the GPU, and the packshot would come
+# back up to 43 levels different on a fraction of a percent of its pixels with
+# nothing in the log to say which device drew it.
+#
+# The defaults are today's measured behaviour, so a caller that passes neither
+# flag renders exactly what it rendered before.
+DEVICE          = (_arg("--device", "CPU") or "CPU").upper()
+DEVICE_BACKEND  = (_arg("--device-backend", "OPTIX") or "OPTIX").upper()
+DENOISE_DEVICE  = (_arg("--denoising-device", "CPU") or "CPU").upper()
 # Diagnostic seam: build the scene, write its measured geometry to this path as
 # JSON, and skip rendering. Exists because carton/stripe placement can only be
 # verified inside Blender, and a packshot is far too slow and too indirect to
 # assert on in a unit test — see tests/test_blender_carton.py.
 DUMP_SCENE = _arg("--dump-scene")
+OBJECT_MASK_PATH = _arg("--object-mask")
+SHADOW_MASK_PATH = _arg("--shadow-mask")
+# Diagnostic sensitivity seam: the production path is always the common
+# receiver; tests may switch only that receiver off for a matched comparison.
+SHADOW_OFF = "--shadow-off" in _argv
+# Diagnostic-only path used by scripts/render_reference_blanks.py.  The job is
+# still manifest-shaped and carries the measured carton profile, but all printed
+# content must be absent from both the render and the scene dump.
+BLANK_CARTON = "--blank-carton" in _argv
+# A source-label study is explicitly diagnostic; ordinary jobs retain the passport.
+SAVE_BLEND = _arg("--save-blend")
 
 if not JOB_PATH or not (OUT_PATH or DUMP_SCENE):
     raise SystemExit(
@@ -101,6 +127,238 @@ def make_material(name: str, hex_color: str, roughness=0.35) -> "bpy.types.Mater
         if "Roughness" in bsdf.inputs:
             bsdf.inputs["Roughness"].default_value = roughness
     return mat
+
+
+def make_carton_material(name, hex_color, finish=None):
+    """Carton colour with optional deterministic, normal-only paper grain."""
+    if not finish:
+        return make_material(name, hex_color, roughness=MATTE_ROUGHNESS)
+    mat = make_material(
+        name, hex_color, roughness=float(finish["roughness"]))
+    nodes = mat.node_tree.nodes
+    links = mat.node_tree.links
+    bsdf = nodes.get("Principled BSDF")
+
+    texcoord = nodes.new("ShaderNodeTexCoord")
+    texcoord.name = "Carton Coordinates"
+    texcoord.object = bpy.data.objects.get("carton")
+    mapping = nodes.new("ShaderNodeMapping")
+    mapping.name = "Carton Seed Mapping"
+    noise = nodes.new("ShaderNodeTexNoise")
+    noise.name = "Carton Paper Grain"
+    bump = nodes.new("ShaderNodeBump")
+    bump.name = "Carton Micro Bump"
+
+    micro = finish["micro_bump"]
+    seed = int(micro["seed"])
+    mapping.inputs["Location"].default_value = (
+        ((seed * 17) % 1009) / 1009.0,
+        ((seed * 29) % 1013) / 1013.0,
+        ((seed * 43) % 1019) / 1019.0,
+    )
+    coordinate_scale = float(finish.get("_coordinate_scale", 1.0))
+    mapping.inputs["Scale"].default_value = (
+        coordinate_scale, coordinate_scale, coordinate_scale)
+    noise.inputs["Scale"].default_value = float(micro["scale"])
+    bump.inputs["Strength"].default_value = float(micro["strength"])
+    bump.inputs["Distance"].default_value = float(
+        finish.get("_distance_m", micro["distance_frac"]))
+
+    links.new(texcoord.outputs["Object"], mapping.inputs["Vector"])
+    links.new(mapping.outputs["Vector"], noise.inputs["Vector"])
+    links.new(noise.outputs["Fac"], bump.inputs["Height"])
+    links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    return mat
+
+
+PROFILE_SURFACES = {"front", "top", "left"}
+
+
+def _profile_surface_frame(surface, bounds):
+    """Origin and unit-square axes for one supported carton surface."""
+    x0, y0, z0 = bounds["min"]
+    x1, y1, z1 = bounds["max"]
+    if surface == "front":
+        return (mathutils.Vector((x0, y0, z1)),
+                mathutils.Vector((x1 - x0, 0.0, 0.0)),
+                mathutils.Vector((0.0, 0.0, z0 - z1)),
+                mathutils.Vector((0.0, -1.0, 0.0)))
+    if surface == "top":
+        return (mathutils.Vector((x0, y0, z1)),
+                mathutils.Vector((x1 - x0, 0.0, 0.0)),
+                mathutils.Vector((0.0, y1 - y0, 0.0)),
+                mathutils.Vector((0.0, 0.0, 1.0)))
+    if surface == "left":
+        return (mathutils.Vector((x0, y0, z1)),
+                mathutils.Vector((0.0, y1 - y0, 0.0)),
+                mathutils.Vector((0.0, 0.0, z0 - z1)),
+                mathutils.Vector((-1.0, 0.0, 0.0)))
+    raise SystemExit(
+        f"[render_driver] unsupported carton_profile surface {surface!r}")
+
+
+def _parent_carton_detail(obj, box, kind, surface):
+    obj["carton_detail_kind"] = kind
+    obj["carton_detail_surface"] = surface
+    obj.parent = box
+    obj.matrix_parent_inverse = box.matrix_world.inverted()
+
+
+def build_full_surface_materials(design, finish=None):
+    """Materials proven to cover an entire measured carton surface.
+
+    A flap or seam is separate geometry, so it cannot inherit ink from the
+    coplanar design curve.  Propagation is allowed only when the manifest
+    already proves one solid, hole-free part covers the whole 0..1 surface;
+    anything partial remains substrate rather than becoming an inferred wrap.
+    """
+    materials = {}
+    for field_index, field in enumerate((design or {}).get("fields") or []):
+        surface = field.get("surface", "front")
+        parts = field.get("parts") or []
+        if (surface not in PROFILE_SURFACES
+                or float(field.get("coverage_pct", 0.0)) < 99.9
+                or len(parts) != 1):
+            continue
+        part = parts[0]
+        outline = part.get("outline") or []
+        if (float(part.get("area_pct", 0.0)) < 99.9
+                or part.get("holes")
+                or len(outline) < 4
+                or not part.get("fill")):
+            continue
+        us = [float(point[0]) for point in outline]
+        vs = [float(point[1]) for point in outline]
+        if (abs(min(us)) > 1e-6 or abs(max(us) - 1.0) > 1e-6
+                or abs(min(vs)) > 1e-6 or abs(max(vs) - 1.0) > 1e-6):
+            continue
+        role = field.get("role", field_index)
+        materials[surface] = make_carton_material(
+            f"design_{role}_0_mat", part["fill"], finish)
+    return materials
+
+
+def build_visible_carton_details(box, profile, face_w, face_h, depth, bounds,
+                                 surface_materials=None):
+    """Build only the measured external carton construction.
+
+    The profile owns visible exterior facts. No hidden/internal flap is inferred,
+    and no SKU branch exists here: a manifest without a profile takes the former
+    cube path without modifiers or child geometry.
+    """
+    if not profile:
+        return []
+    if profile.get("profile_version") != "1.0":
+        raise SystemExit(
+            "[render_driver] unsupported carton_profile profile_version "
+            f"{profile.get('profile_version')!r}")
+    for section in ("visible_flaps", "visible_seams"):
+        for row in profile.get(section) or []:
+            if row.get("surface") not in PROFILE_SURFACES:
+                raise SystemExit(
+                    "[render_driver] unsupported carton_profile surface "
+                    f"{row.get('surface')!r}")
+
+    base = min(face_w, face_h, depth)
+    edge_radius = base * float(profile["edge_radius_frac"])
+    board_thickness = base * float(profile["board_thickness_frac"])
+    if edge_radius > 0:
+        bevel = box.modifiers.new(name="carton_edge_radius", type="BEVEL")
+        bevel.width = edge_radius
+        bevel.segments = 3
+        bevel.limit_method = "ANGLE"
+        bevel.harden_normals = True
+    box["carton_profile_version"] = "1.0"
+    box["carton_board_thickness_m"] = board_thickness
+
+    body_mat = box.data.materials[0] if box.data.materials else None
+    surface_materials = surface_materials or {}
+    gap_mat = make_material("carton_gap_mat", "#20242A",
+                            roughness=MATTE_ROUGHNESS)
+    built = []
+
+    def rectangular_detail(name, row, kind):
+        surface = row["surface"]
+        origin, u_axis, v_axis, normal = _profile_surface_frame(surface, bounds)
+        u0, u1 = float(row["u0"]), float(row["u1"])
+        v0, v1 = float(row["v0"]), float(row["v1"])
+        stand_off = base * float(row["stand_off_frac"])
+        centre = (origin + u_axis * ((u0 + u1) / 2.0)
+                  + v_axis * ((v0 + v1) / 2.0)
+                  + normal * (stand_off + board_thickness / 2.0))
+        du = u_axis.length * (u1 - u0)
+        dv = v_axis.length * (v1 - v0)
+        if surface == "front":
+            dimensions = (du, board_thickness, dv)
+        elif surface == "top":
+            dimensions = (du, dv, board_thickness)
+        else:  # left
+            dimensions = (board_thickness, du, dv)
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=centre)
+        obj = bpy.context.active_object
+        obj.name = name
+        obj.scale = dimensions
+        bpy.ops.object.transform_apply(scale=True)
+        detail_mat = surface_materials.get(surface, body_mat)
+        if detail_mat is not None:
+            obj.data.materials.append(detail_mat)
+        _parent_carton_detail(obj, box, kind, surface)
+        built.append(obj)
+
+    def line_detail(name, surface, points, width_m, normal_offset,
+                    kind, material, uv_shift=(0.0, 0.0)):
+        origin, u_axis, v_axis, normal = _profile_surface_frame(surface, bounds)
+        curve = bpy.data.curves.new(name, type="CURVE")
+        curve.dimensions = "3D"
+        curve.resolution_u = 1
+        curve.bevel_resolution = 1
+        curve.bevel_depth = width_m / 2.0
+        curve.use_fill_caps = True
+        spline = curve.splines.new("POLY")
+        spline.points.add(len(points) - 1)
+        for index, uv in enumerate(points):
+            u = float(uv[0]) + uv_shift[0]
+            v = float(uv[1]) + uv_shift[1]
+            point = (origin + u_axis * u + v_axis * v
+                     + normal * normal_offset)
+            spline.points[index].co = (*point, 1.0)
+        obj = bpy.data.objects.new(name, curve)
+        bpy.context.scene.collection.objects.link(obj)
+        obj.data.materials.append(material)
+        _parent_carton_detail(obj, box, kind, surface)
+        built.append(obj)
+
+    for index, flap in enumerate(profile.get("visible_flaps") or []):
+        rectangular_detail(f"carton_flap_{index}", flap, "flap")
+
+    for index, seam in enumerate(profile.get("visible_seams") or []):
+        surface = seam["surface"]
+        points = seam["polyline"]
+        seam_width = base * float(seam["width_frac"])
+        gap_width = base * float(seam["gap_frac"])
+        normal_offset = board_thickness + max(seam_width, gap_width) / 2.0
+        if gap_width > 0:
+            line_detail(f"carton_gap_{index}", surface, points, gap_width,
+                        normal_offset, "gap", gap_mat)
+        # The lip runs directly beside the gap. The current measured seam is
+        # horizontal, but the dominant-axis branch also gives vertical evidence
+        # an unambiguous adjacent side without inventing a topology.
+        first, last = points[0], points[-1]
+        if abs(float(last[0]) - float(first[0])) >= abs(
+                float(last[1]) - float(first[1])):
+            shift = (0.0, -float(seam["width_frac"]))
+        else:
+            shift = (float(seam["width_frac"]), 0.0)
+        seam_mat = surface_materials.get(surface, body_mat)
+        if seam_width > 0 and seam_mat is not None:
+            line_detail(f"carton_seam_{index}", surface, points, seam_width,
+                        normal_offset, "seam", seam_mat, shift)
+
+    if len(built) > 32:
+        raise SystemExit(
+            f"[render_driver] carton_profile built {len(built)} visible detail "
+            "objects; maximum is 32")
+    return built
 
 
 # Row 6 of the front-panel grid (src/passport_generator.py) specifies a ~4mm
@@ -415,8 +673,103 @@ def _point_in_polygon(u, v, outline) -> bool:
     return inside
 
 
+#: Bounding boxes per design, keyed by the design dict's identity. One scene is
+#: built per process, so the design object outlives every lookup against it.
+_PART_CACHE = {}
+
+
+def _drawable_mark_parts(mark):
+    """Base, then colour overlays; mirrors src.mark_geometry without imports.
+
+    Blender runs outside the project interpreter. Keep this accessor limited to
+    paint order; validation and approved-mark ownership remain at the boundary.
+    """
+    return [mark] + list(mark.get("parts") or [])
+
+
+def _prepared_parts(design):
+    """(u0, u1, v0, v1, outline, holes, fill) per drawable surface, in paint order.
+
+    Fields first, then contract 1.10's MARKS, which is the paint order: a mark's
+    `z` continues past the last field's on all twelve cartons that carry one, so
+    "the last containing surface wins" reads the same sequence the driver draws.
+
+    TWO AUDIENCES, ONE LIST, AND THE SECOND ONE WAS MEASURED RATHER THAN
+    ASSUMED. This lookup serves an INK -- `_band_fill` and the measured row's
+    point test -- and a MOVE, `_one_ink_serves`, the predicate
+    `_clear_of_design` accepts a position by. They are not the same question and
+    they do not have to have the same answer:
+
+    - the ink's is a principle. A row stands on a surface and a mark IS one;
+      inking against a surface you refuse to look at is simply wrong.
+    - the mover's is contingent. Nothing says the grid should walk a row across
+      the face to dodge a logo, and whether it should is a fact about the
+      cartons in front of it.
+
+    So they were split behind a parameter and measured apart -- and the mover
+    wants marks too, so the parameter is gone and this is one list again. If a
+    carton ever enters the group whose mark makes the mover move a row somewhere
+    worse, the seam is a `with_marks` flag away; the reason it is not here now is
+    that nothing takes the other branch, and an unused value that decides where
+    type goes is the same objection this file already records against the joint
+    two-axis search.
+    """
+    key = id(design)
+    got = _PART_CACHE.get(key)
+    if got is None:
+        got = []
+        for field in (design or {}).get("fields") or []:
+            if field.get("surface", "front") != "front":
+                continue
+            for part in field.get("parts") or []:
+                outline = part.get("outline") or []
+                if len(outline) < 3:
+                    continue
+                us = [float(q[0]) for q in outline]
+                vs = [float(q[1]) for q in outline]
+                holes = [ring for ring in (part.get("holes") or [])
+                         if len(ring) >= 3]
+                if "fill" not in part:
+                    # SystemExit for the same reason `z` and `holes` are:
+                    # Blender exits 0 after an ordinary uncaught exception, so a
+                    # KeyError here reads as a successful render.
+                    raise SystemExit(
+                        f"[render_driver] design field "
+                        f"{field.get('role')!r} carries a part with no `fill`. "
+                        f"That is contract 1.9 and it is required; a manifest "
+                        f"written before it must be regenerated by Stage 1 "
+                        f"rather than painted its field's colour, which is what "
+                        f"33 of the group's 75 parts should not be.")
+                # The PART's fill, not the field's: a measured row reversed out
+                # of a part is set against what is actually printed under it,
+                # and under contract 1.9 that is not always the field's colour.
+                got.append((min(us), max(us), min(vs), max(vs),
+                            outline, holes, part["fill"]))
+        # CONTRACT 1.10's marks. This went in once, came out whole on a misread
+        # measurement, and went back in: `_one_ink_serves` carries the figures,
+        # because that is the function the misreading was about.
+        for m_i, mark in enumerate((design or {}).get("marks") or []):
+            for p_i, part in enumerate(_drawable_mark_parts(mark)):
+                outline = part.get("outline") or []
+                if len(outline) < 3:
+                    continue
+                if "fill" not in part:
+                    raise SystemExit(
+                        f"[render_driver] design mark {m_i} "
+                        f"({mark.get('key')!r}) part {p_i} carries no `fill`; "
+                        f"regenerate the manifest from Stage 1.")
+                us = [float(q[0]) for q in outline]
+                vs = [float(q[1]) for q in outline]
+                holes = [ring for ring in (part.get("holes") or [])
+                         if len(ring) >= 3]
+                got.append((min(us), max(us), min(vs), max(vs),
+                            outline, holes, part["fill"]))
+        _PART_CACHE[key] = got
+    return got
+
+
 def _surface_fill(design, u, v):
-    """The design part printed under (u, v), or None where the board shows.
+    """The design surface printed under (u, v), or None where the board shows.
 
     A measured row lands wherever the reference puts it, and on these cartons
     that is often ON the design rather than beside it: Kamagra sets its dosage
@@ -426,15 +779,32 @@ def _surface_fill(design, u, v):
     own render.
 
     Later parts paint over earlier ones, so the last containing part wins, the
-    same order build_design_fields draws them in. The row's CENTRE decides: a row
-    straddling two surfaces is a problem with the design, not with the ink.
+    same order build_design_fields draws them in.
+
+    Each part is tried against its bounding box before its outline. That is an
+    exact early-out, not an approximation -- a point outside a polygon's box is
+    outside the polygon -- and it is worth having because the clearing search
+    calls this function a few tens of thousands of times per carton, while a
+    single outline here runs to 488 vertices. The boxes are computed once per
+    design and kept in `_PART_CACHE`, in the order the parts are drawn, so the
+    "last containing part wins" rule reads off the same sequence as before.
+
+    Contract 1.10's marks are in that sequence, last. `_prepared_parts` records
+    why, and why the two callers that wanted different answers turned out not to.
     """
     found = None
-    for field in (design or {}).get("fields") or []:
-        for part in field.get("parts") or []:
-            outline = part.get("outline") or []
-            if len(outline) >= 3 and _point_in_polygon(u, v, outline):
-                found = field.get("fill")
+    for u0, u1, v0, v1, outline, holes, fill in _prepared_parts(design):
+        if u < u0 or u > u1 or v < v0 or v > v1:
+            continue
+        if not _point_in_polygon(u, v, outline):
+            continue
+        # Contract 1.8: inside a hole is not inside the part. The board shows
+        # there -- or a field behind it, which the parts already drawn will have
+        # reported, so leaving `found` alone is exactly right rather than
+        # merely convenient.
+        if any(_point_in_polygon(u, v, ring) for ring in holes):
+            continue
+        found = fill
     return found
 
 
@@ -494,6 +864,90 @@ def _required_lift(t, floor_z):
     lowest = min((t.matrix_world @ Vector(c)).z
                  for c in t.evaluated_get(dg).bound_box)
     return max(floor_z - lowest, 0.0)
+
+
+def _line_breaks(t) -> int:
+    """How many line breaks this row carries, i.e. its line count minus one."""
+    return (t.data.body or "").count(chr(10))
+
+
+def _overlaps_block(t, block) -> bool:
+    """Does this built row's box stand over that colour block?
+
+    The BOX and not the cap band, and that is the whole point here: what runs
+    into a block is the row's descenders and the space its second line takes,
+    not its capitals. On `62-min` the brand's cap band clears the dosage's own
+    band inside the block by 0.1mm while its box covers 68.3% of the block, and
+    the render shows "Active" lying across the bar.
+    """
+    x_lo, x_hi = _x_span(t)
+    z_lo, z_hi = _z_span(t)
+    return not (x_hi <= block["x0"] or x_lo >= block["x1"]
+                or z_hi <= block["z0"] or z_lo >= block["z1"])
+
+
+def _block_is_taken(block, texts, font, cap_frac, fill_frac):
+    """Would a dosage set in this colour block run into a row already placed?
+
+    `dosage_block` is `blocks[0]` -- the first block the design happens to yield
+    -- and nothing checked what else stands there. On `221-min` that is the
+    salmon panel behind the wordmark, so "40mg" was reversed into it on top of
+    "Inderal" and the two printed through one another: measured on the built
+    scene `label_brand` spanned v 0.141-0.291 and `label_dosage` v 0.164-0.285,
+    the OCR barrier read `Indepal`, and brand, dosage and unit count were all
+    unfindable.
+
+    The question is whether the DOSAGE would collide, not whether anything at
+    all touches the block. Asking the looser question moved the dosage off two
+    further cartons (`133-min`, `362-min`) whose blocks are merely grazed by a
+    row's cap band and where nothing was wrong. So the band tested here is the
+    one the placement below actually uses: the block's cap height, centred in
+    it, across the width the text is fitted to.
+
+    Cap bands throughout, not bounding boxes -- a box carries descender space
+    that reaches where no glyph does.
+    """
+    bh = block["z1"] - block["z0"]
+    bw = block["x1"] - block["x0"]
+    cap = bh * cap_frac
+    # Exactly where the placement below puts it: the same origin z, then
+    # down by the font's cap drop, because the row is set align_y="TOP".
+    # Taking the block-centred band instead sits the test a cap-drop too
+    # high and it collides with the row above -- which moved the dosage on
+    # `133-min` and `362-min`, where nothing was wrong.
+    origin_z = block["z1"] - 0.5 * (bh - cap)
+    z_hi = origin_z - _cap_drop(font) * (cap / _cap_ratio(font))
+    z_lo = z_hi - cap
+    mid = 0.5 * (block["x0"] + block["x1"])
+    x_lo = mid - 0.5 * bw * fill_frac
+    x_hi = mid + 0.5 * bw * fill_frac
+    for t in texts:
+        o_x_lo, o_x_hi = _x_span(t)
+        if o_x_hi <= x_lo or o_x_lo >= x_hi:
+            continue
+        o_top = t.location.z - _cap_drop(t.data.font) * t.data.size
+        # EVERY line of the row, not the first. A wrapped brand reaches a whole
+        # line pitch further down for each line after the first, and testing
+        # only the first band declared `62-min`'s amber bar free: "Cialis Super
+        # Active" wraps, its second line descends to v 0.450, the bar sits at
+        # v 0.412-0.465, and "20mg" was reversed into it under the tail of the
+        # brand -- 2.64mm of overlap, which the catalogue sweep flags and
+        # nothing else did.
+        #
+        # `space_line` is a multiple of `size`, so the pitch in world units is
+        # the product. One carton in the group wraps its brand AND offers a
+        # block, which is why this had gone unseen.
+        o_bot = (o_top - _cap_ratio(t.data.font) * t.data.size
+                 - _line_breaks(t) * t.data.space_line * t.data.size)
+        if os.environ.get("PHARMAGEN_CLEAR_DEBUG"):
+            print(f"[block] {t.name} x {o_x_lo:.4f}..{o_x_hi:.4f} "
+                  f"band {o_bot:.4f}..{o_top:.4f} breaks={_line_breaks(t)} "
+                  f"vs block x {x_lo:.4f}..{x_hi:.4f} band {z_lo:.4f}..{z_hi:.4f}",
+                  flush=True)
+        if o_bot >= z_hi or o_top <= z_lo:
+            continue
+        return True
+    return False
 
 
 def _lift_row(texts, floor_z, spans=(), gap=0.0):
@@ -758,7 +1212,13 @@ def build_label(box, label_content: dict, face_w, face_h, left_x, front_y, top_z
     measured = type_rows or {}
 
     def _ink_for(row):
-        """Ink that reads against whatever this row is printed on."""
+        """Ink that reads against whatever this row is printed on.
+
+        Marks count, because the reference puts a measured row where the real
+        carton puts it, and on `157_Valium` that is across the Roche hexagon.
+        A point test at the row's own centre, so it can change what a row is
+        printed IN and never where it is.
+        """
         fill = _surface_fill(design, 0.5 * (row["u0"] + row["u1"]),
                              0.5 * (row["v0"] + row["v1"]))
         return _reverse_ink(fill) if fill else ink
@@ -807,6 +1267,28 @@ def build_label(box, label_content: dict, face_w, face_h, left_x, front_y, top_z
         if measured_top_z is not None:
             floor = max(floor, measured_top_z + BRAND_INGREDIENT_GAP_FRAC * face_h)
         _fit_above(t, floor)
+        # A DESIGN's dosage block stops the brand for the same reason the badge
+        # does -- it is the thing standing in that column -- and on a design
+        # carton no generic badge is drawn, so `badge_left_x` is None and
+        # nothing stopped it. `62-min` is the case: "Cialis Super Active" wraps,
+        # its second line runs to u 0.801 and the amber bar the design sets the
+        # dosage in sits at u 0.634-0.734, so "Active" was printed across the
+        # bar with "20mg" reversed into what was left of it -- the brand's box
+        # covering 68.3% of the block. The reference shows what that column is
+        # for: "Cialis" on one line with "10 mg" in the bar BESIDE it.
+        #
+        # Corrected from the BUILT row rather than by narrowing `brand_right`
+        # up front, and the difference is a regression this already caused once:
+        # `brand_right` is also the clearing search's right limit, and narrowing
+        # it took away the +0.184 indent that lifts `59-min`'s brand out of its
+        # green swoosh -- 0.0% hidden back to 31.0%. Measured over the group, a
+        # built brand overlaps its carton's block on exactly one carton, and the
+        # two others whose rows touch a block at all touch 0.9% and 1.2% of it.
+        if dosage_block is not None and _overlaps_block(t, dosage_block):
+            _fit_width(t, max(dosage_block["x0"]
+                              - BRAND_BADGE_GAP_FRAC * face_w - left,
+                              0.1 * face_w))
+            _fit_above(t, floor)
         rows.append(t)
         grid_rows.append((t, brand_right))
 
@@ -849,8 +1331,12 @@ def build_label(box, label_content: dict, face_w, face_h, left_x, front_y, top_z
             "label_dosage", dosage, bold, measured["dosage_display"],
             _ink_for(measured["dosage_display"]),
             face_w, face_h, left_x, top_z, y))
-    elif dosage and dosage_block is not None and (
-            dosage_block["x1"] - dosage_block["x0"]) >= DOSAGE_BLOCK_MIN_WIDTH_FRAC * face_w:
+    elif (dosage and dosage_block is not None
+            and (dosage_block["x1"] - dosage_block["x0"])
+            >= DOSAGE_BLOCK_MIN_WIDTH_FRAC * face_w
+            and not _block_is_taken(dosage_block, rows, bold,
+                                    DOSAGE_BLOCK_CAP_FRAC,
+                                    DOSAGE_BLOCK_FILL_FRAC)):
         # Reversed out of the measured colour block, which is where the real
         # carton puts it. Leaving it on the grid below would print the dosage
         # twice over: once in black at the foot of the face, and once as an empty
@@ -918,13 +1404,39 @@ def build_label(box, label_content: dict, face_w, face_h, left_x, front_y, top_z
     # to honour where there is a measurement at all.
     substrate = (design or {}).get("substrate")
     for t, right_limit in grid_rows:
+        # The vertical fallback needs a floor, and it has two: the row beneath
+        # this one, and the face. Passed from here because only the caller knows
+        # the whole row set -- the same reason `_row_left_limit` is computed here.
+        gap = BRAND_INGREDIENT_GAP_FRAC * face_h
+        floor = _row_floor_z(t, rows, gap)
+        face_bottom = top_z - face_h
         _clear_of_design(t, design, substrate, left_x, top_z, face_w, face_h,
-                         right_limit)
-        b = _bounds_in_frame(t, box)
-        fill = _surface_fill(
-            design,
-            0.5 * (b["min"][0] + b["max"][0] - 2.0 * left_x) / face_w,
-            (top_z - 0.5 * (b["min"][2] + b["max"][2])) / face_h)
+                         right_limit,
+                         _row_left_limit(t, rows, left_x, face_w),
+                         face_bottom if floor is None else max(floor, face_bottom),
+                         _row_ceiling_z(t, rows, gap))
+        # The band is derived from the row's own location, NOT from
+        # `_bounds_in_frame`, and the difference is the whole bug this
+        # replaced. Blender does not refresh an object's evaluated bounds
+        # when `location` is assigned, so after `_clear_of_design` moves a
+        # row the bounds still describe where it USED to be. While only
+        # LEFT-set rows were cleared the two agreed to about 0.007 of the
+        # face and nothing showed; a right-set row travels far enough to
+        # matter, and on `230-min` the ink was chosen for u 0.743-0.947
+        # while the row was drawn at u 0.471-0.675 -- a band that is 70.9%
+        # dark against one that is not, so "30 Pills" came out WHITE on a
+        # white board, 100% of it invisible. `272-min` the same.
+        #
+        # Same quantities `_clear_of_design` uses, so the mover and the
+        # inker cannot disagree about where the row is.
+        width = _text_dimensions(t).x
+        lo = t.location.x if t.data.align_x == "LEFT" else t.location.x - width
+        cap_top = t.location.z - _cap_drop(t.data.font) * t.data.size
+        cap_bot = cap_top - _cap_ratio(t.data.font) * t.data.size
+        fill = _band_fill(
+            design, substrate,
+            (lo - left_x) / face_w, (lo + width - left_x) / face_w,
+            (top_z - cap_top) / face_h, (top_z - cap_bot) / face_h)
         if fill:
             t.data.materials.clear()
             t.data.materials.append(_reverse_ink(fill))
@@ -940,21 +1452,100 @@ def build_label(box, label_content: dict, face_w, face_h, left_x, front_y, top_z
     return rows
 
 
-def _one_ink_serves(design, substrate, u0, u1, v0, v1):
+#: How finely `_one_ink_serves` samples a row's cap band.
+#:
+#: It was 24x6, and the number mattered in a way a sampling density usually
+#: does not: this function decides when `_clear_of_design` STOPS moving a row,
+#: while tests/test_blender_carton.py judges the result on its own 30x10 grid.
+#: A mover coarser than its judge stops one step short and the row is reported
+#: unreadable at a position it was just told was clear -- measured on `59-min`,
+#: where 24x6 saw 0 dark samples in the band and 30x10 saw 1, and 120x40 saw 10.
+#: Finer than any judge, so the row is cleared for real and not to a resolution.
+_INK_SAMPLES_U = 120
+_INK_SAMPLES_V = 40
+
+
+_DARK_CACHE = {}
+
+
+def _is_dark(fill):
+    """Does `_reverse_ink` treat this colour as dark? Memoised.
+
+    A design carries a handful of distinct colours and the samplers ask about
+    them tens of thousands of times per carton, re-parsing the same six hex
+    digits every time. Same bar as `_reverse_ink`, in sRGB, so the three cannot
+    drift apart on what "dark" means.
+    """
+    got = _DARK_CACHE.get(fill)
+    if got is None:
+        h = (fill or "#FFFFFF").lstrip("#")
+        r, g, b = (int(h[k:k + 2], 16) / 255.0 for k in (0, 2, 4))
+        got = 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.5
+        _DARK_CACHE[fill] = got
+    return got
+
+
+#: Stride for the cheap rejecting pass. 120 and 40 are both divisible by it,
+#: so the coarse grid is a strict SUBSET of the fine one -- which is the whole
+#: reason it is safe to skip the fine pass when the coarse one rejects: every
+#: sample the coarse pass saw is a sample the fine pass would also take, so a
+#: coarse witness of two colours IS a fine witness of two colours. A coarse
+#: grid that merely resembled the fine one would not license this.
+_INK_COARSE_STRIDE = 5
+
+#: Step of the clearing search, as a fraction of the face. Unchanged -- it is
+#: the step the horizontal pass has always used.
+CLEAR_STEP_FRAC = 0.005
+
+
+
+
+def _one_ink_serves(design, substrate, u0, u1, v0, v1, stride=1):
     """True when every surface under this band sits on one side of the ink bar.
 
     Not "one surface": `135-min` sets its dosage across `#032F5D` and `#AD3A9D`
     and white reads on both, so crossing that boundary costs nothing. What
     cannot be served is a band carrying both a light and a dark surface.
+
+    *stride* samples every nth point of the fine grid rather than a grid of its
+    own. `_clear_of_design` asks the strided pass first because most positions
+    it tries are rejected, and a rejection needs one witness of each colour, not
+    4800 points. An acceptance is always confirmed at stride 1.
+
+    MARKS COUNT HERE, AND A NOTE THAT USED TO STAND IN THIS PLACE SAID THE
+    OPPOSITE ON A MISREAD MEASUREMENT. This is the predicate `_clear_of_design`
+    accepts a position by, so what it sees MOVES ROWS -- which is why letting it
+    see a mark was reverted once and why the revert was wrong.
+
+    The revert was justified as "eight OCR rows lost against three gained, and
+    `221_Inderal`'s legible white 40mg walked off its band". That figure was the
+    cost of DRAWING the marks, not of moving the rows: the run with the mover
+    blind lost NINE against the same three, so the mover was worth exactly one
+    row and cost none. `221_Inderal` never moved at all -- measured on the scene
+    dump, none of its rows so much as touches one of its marks.
+
+    Retaken. Across all 28 design cartons plus a generic one, a seeing mover
+    relocates exactly THREE rows and no others:
+
+      `157-min` unit count  du +0.170 left, off the Roche hexagon -- the row
+                            Tesseract could not read, and now reads
+      `230-min` dosage      du +0.070, "15mg" out of the Neptune mark's frame
+      `152-min` dosage      du +0.085, "150mg" off the signature swash
+
+    +1 OCR row, none lost, and the readability guard's straddling set goes 2 to
+    ZERO. Two of the three gain nothing a reader can score and are still right:
+    looked at, "15mg" had the mark's orange rule through its digits. That one
+    also shows what the guard cannot see -- it compares ink and surface
+    LIGHTNESS, and an orange mark on a white board passes while its strokes cut
+    the glyphs.
     """
     dark = light = False
-    for i in range(24):
-        for j in range(6):
-            fill = _surface_fill(design, u0 + (u1 - u0) * (i + 0.5) / 24,
-                                 v0 + (v1 - v0) * (j + 0.5) / 6) or substrate
-            h = (fill or "#FFFFFF").lstrip("#")
-            r, g, b = (int(h[k:k + 2], 16) / 255.0 for k in (0, 2, 4))
-            if 0.2126 * r + 0.7152 * g + 0.0722 * b < 0.5:
+    for i in range(0, _INK_SAMPLES_U, stride):
+        for j in range(0, _INK_SAMPLES_V, stride):
+            fill = _surface_fill(
+                design, u0 + (u1 - u0) * (i + 0.5) / _INK_SAMPLES_U,
+                v0 + (v1 - v0) * (j + 0.5) / _INK_SAMPLES_V) or substrate
+            if _is_dark(fill):
                 dark = True
             else:
                 light = True
@@ -963,8 +1554,98 @@ def _one_ink_serves(design, substrate, u0, u1, v0, v1):
     return True
 
 
+def _band_minority(design, substrate, u0, u1, v0, v1):
+    """The smaller of this band's two sides, as a share of it.
+
+    What `_one_ink_serves` answers yes/no, answered as a quantity. Not used to
+    DECIDE anything -- a tolerance was tried and the evidence refused it: across
+    the group's 81 grid rows, 20 carry a mixed band at home and they run from
+    0.250% to 49.729% with no gap anywhere, so there is no size at which one
+    stops being a defect. It is here because `PHARMAGEN_CLEAR_DEBUG` prints it,
+    and printing it is how two bugs in this search were found.
+    """
+    dark = 0
+    for i in range(_INK_SAMPLES_U):
+        for j in range(_INK_SAMPLES_V):
+            # Whatever `_one_ink_serves` sees, since this is that function
+            # answered as a quantity rather than yes/no. A diagnostic measuring
+            # a different surface set from the decision it reports on would be
+            # worse than no diagnostic.
+            fill = _surface_fill(
+                design, u0 + (u1 - u0) * (i + 0.5) / _INK_SAMPLES_U,
+                v0 + (v1 - v0) * (j + 0.5) / _INK_SAMPLES_V) or substrate
+            if _is_dark(fill):
+                dark += 1
+    share = dark / float(_INK_SAMPLES_U * _INK_SAMPLES_V)
+    return min(share, 1.0 - share)
+
+
+def _band_fill(design, substrate, u0, u1, v0, v1):
+    """The surface most of this band stands on, as a colour to reverse against.
+
+    The ink and the placement must judge the SAME region or they undo each
+    other. `_clear_of_design` clears a row over its CAP BAND; the ink used to be
+    taken from the centre of the row's BOUNDING BOX, which carries descender
+    space the glyphs never reach. On `59-min` that split them: the mover put the
+    unit count on a band that is 0 of 4800 samples dark -- clean board -- and
+    the box centre still sat on the swoosh below it, so the row was inked WHITE
+    and printed invisibly on cream at a position chosen to make it readable.
+
+    By majority rather than by a point, because a row that could not be cleared
+    still has to pick the ink that serves most of itself. On a cleared row the
+    majority is unanimous and this is just the band's own colour.
+    """
+    tally = {}
+    for i in range(_INK_SAMPLES_U):
+        for j in range(_INK_SAMPLES_V):
+            # Marks count. This runs after `_clear_of_design` has returned, so
+            # the row is already placed; and the majority rule means a mark the
+            # row merely clips does not flip an ink that serves the rest of it.
+            fill = _surface_fill(
+                design, u0 + (u1 - u0) * (i + 0.5) / _INK_SAMPLES_U,
+                v0 + (v1 - v0) * (j + 0.5) / _INK_SAMPLES_V) or substrate
+            tally_key = (_is_dark(fill), fill)
+            tally[tally_key] = tally.get(tally_key, 0) + 1
+    if not tally:
+        return None
+    side = {}
+    for (dark, _f), n in tally.items():
+        side[dark] = side.get(dark, 0) + n
+    win = max(side, key=side.get)
+    return max((k for k in tally if k[0] == win), key=lambda k: tally[k])[1]
+
+
+def _row_left_limit(t, rows, left_x, face_w):
+    """How far left a right-set row may travel before it reaches a neighbour.
+
+    The bottom row is two strings sharing one baseline -- dosage left, unit
+    count right -- so clearing the unit count leftwards has to stop at the
+    dosage rather than print through it. Rows that do not overlap this one's
+    CAP BAND vertically are not in the way whatever their x, which is the same
+    reason `_clear_of_design` judges the cap band and not the bounding box.
+    """
+    cap_top = t.location.z - _cap_drop(t.data.font) * t.data.size
+    cap_bot = cap_top - _cap_ratio(t.data.font) * t.data.size
+    gap = 0.02 * face_w
+    limit = left_x
+    for o in rows:
+        if o is t:
+            continue
+        o_top = o.location.z - _cap_drop(o.data.font) * o.data.size
+        o_bot = o_top - _cap_ratio(o.data.font) * o.data.size
+        if o_bot > cap_top or o_top < cap_bot:
+            continue                      # nothing shared vertically
+        o_w = _text_dimensions(o).x
+        align = o.data.align_x
+        o_right = o.location.x + (o_w if align == "LEFT" else
+                                  0.5 * o_w if align == "CENTER" else 0.0)
+        limit = max(limit, o_right + gap)
+    return limit
+
+
 def _clear_of_design(t, design, substrate, left_x, top_z, face_w, face_h,
-                     right_limit):
+                     right_limit, left_limit=None, floor_z=None,
+                     ceiling_z=None):
     """Indent a LEFT-set grid row until one ink can serve all of its capitals.
 
     A measured row never needs this: the reference puts a row where the real
@@ -982,28 +1663,251 @@ def _clear_of_design(t, design, substrate, left_x, top_z, face_w, face_h,
     and `344-min` look affected and stop looking so as the sampling gets finer;
     over the cap band both are clean at every density.
 
-    Bounded by the row's own right limit rather than by a chosen distance: a row
-    that cannot be cleared before it would overrun stays where the grid put it
-    and keeps whatever ink `_surface_fill` gives it. Two rows in the sample are
-    in that position -- both bottom-right unit counts, where the design owns the
-    corner and no offset in either axis comes within a third of the face.
+    Bounded by the row's own limit rather than by a chosen distance: a row that
+    cannot be cleared before it would overrun stays where the grid put it and
+    keeps whatever ink `_surface_fill` gives it.
+
+    A RIGHT-set row is cleared the same way, toward the LEFT. This used to bail
+    on any row that was not LEFT-set, and a note here recorded that the two
+    bottom-right unit counts could not be cleared by placement at all -- that
+    no offset in either axis came within a third of the face. Scanning the face
+    says otherwise: `59-min` reaches a fully readable position 15.5% of the
+    face width to the left and `64-min` 24.0%, both along the row's own
+    baseline, so the bottom row still shares one.
+
+    Ink could never have fixed those: `59-min`'s cap band is 47.7% dark and
+    52.3% light, and the hidden shares of the two inks sum to 100%, so the best
+    single ink still hides 47.7% of the string. Placement is the lever.
+
+    AND WHEN THE FIELD SPANS THE WIDTH, the lever is the other axis. Indenting
+    assumes there is somewhere along the row's own baseline to go, which is true
+    of a swoosh and false of a rule. `344-min` is the case: Phase B put its red
+    top rule into the spec -- it is printed, `v 0.047-0.202` -- and the rule runs
+    `u 0.016-0.926`, so no x clears it. The brand's cap band lands `v
+    0.133-0.253`, 34.2% of it on the rule and 65.8% on the board, and
+    `_band_fill`'s majority therefore inks it DARK: a third of "Modafinil
+    Generic" printed dark on dark red, present and unreadable.
+
+    AND UP AS WELL AS DOWN, which it did not until contract 1.8's fixture
+    rebuild found what the missing direction had been costing. The fallback
+    dropped a row and never raised one, and the group still carried three rows
+    printed in an ink their own surface hides -- every one of them clearable
+    only upward:
+
+      `357-min` ingredient  10.0% hidden   cleared by a rise of 0.015
+      `357-min` dosage      28.7% hidden   cleared by a rise of 0.115
+      `149-min` unit count  13.7% hidden   cleared by a rise of 0.235
+
+    The ingredient shows why the horizontal pass could not save them: it runs
+    88% of the face wide, so no x offset fits between the margins at all, and
+    every offset that serves lies UP the face -- 0.015 to 0.235 of it -- where
+    nothing ever looked. Its own field is BELOW the row, and a row escapes a
+    field by moving away from it.
+
+    Each direction is exhausted before the next is tried and the new one comes
+    last, so a carton the old search cleared is cleared by the identical move.
+
+    A JOINT search over both axes was built and measured and is not here. A
+    diagonal boundary is genuinely cheaper to cross in two axes -- `357-min`'s
+    dosage clears at (dx +0.090, dz -0.005), against 0.115 straight up -- but
+    with the axes tried first it never fires on any carton in the group, and
+    unreachable code that decides where type goes is worse than a move 0.020
+    larger than it had to be.
+
+    The row goes back to where the grid put it if nothing serves.
+
+    Bounded by the row beneath it -- `_row_floor_z` -- because lowering a row
+    onto its neighbour is the failure `_clear_below` exists to prevent, by the
+    row above it -- `_row_ceiling_z` -- for the same reason in the other
+    direction, and by the face itself.
+
+    One caution, measured: a candidate found on a coarse grid may not survive
+    the fine one. `357-min`'s dosage has a position at dx +0.160 that serves at
+    30x10 and does not at 120x40, where 0.29% of the band is still the other
+    colour. `serves()` confirms every acceptance at full density for that
+    reason.
     """
-    if not design or t.data.align_x != "LEFT":
+    if not design or t.data.align_x not in ("LEFT", "RIGHT"):
         return t
+    rightward = t.data.align_x == "LEFT"
+    if left_limit is None:
+        left_limit = left_x
     width = _text_dimensions(t).x
-    cap_top = t.location.z - _cap_drop(t.data.font) * t.data.size
-    cap_bot = cap_top - _cap_ratio(t.data.font) * t.data.size
-    step = 0.005 * face_w
-    x = t.location.x
-    while True:
-        if _one_ink_serves(design, substrate,
-                           (x - left_x) / face_w, (x + width - left_x) / face_w,
-                           (top_z - cap_top) / face_h, (top_z - cap_bot) / face_h):
-            t.location.x = x
+    drop = _cap_drop(t.data.font) * t.data.size
+    cap_h = _cap_ratio(t.data.font) * t.data.size
+    home_x, home_z = t.location.x, t.location.z
+
+    def _band(x, z):
+        # location.x is the row's LEFT edge when it is left-set and its
+        # RIGHT edge when it is right-set; the band is the same either way.
+        lo = x if rightward else x - width
+        hi = x + width if rightward else x
+        cap_top = z - drop
+        return ((lo - left_x) / face_w, (hi - left_x) / face_w,
+                (top_z - cap_top) / face_h, (top_z - (cap_top - cap_h)) / face_h)
+
+    def serves(x, z):
+        band = _band(x, z)
+        # Reject cheaply, accept only on the full grid.
+        return (_one_ink_serves(design, substrate, *band,
+                               stride=_INK_COARSE_STRIDE)
+                and _one_ink_serves(design, substrate, *band))
+
+    sx, sz = CLEAR_STEP_FRAC * face_w, CLEAR_STEP_FRAC * face_h
+
+    # The two limits are NOT symmetric and must not be treated as one window.
+    # `right_limit` bounds a LEFT-set row's travel toward its neighbour;
+    # `_row_left_limit` answers the same question for a RIGHT-set row and
+    # returns the neighbour on the row's OTHER side, so applying it to a
+    # left-set row rejects even the position the grid chose -- measured, it
+    # rejected every candidate for `357-min`'s dosage and the row never moved.
+    # A row may INDENT away from its margin and never past it. The grid sets
+    # rows between u 0.07 and u 0.95 and those margins are art direction, so
+    # the far side of a row's travel is its own home: measured, letting a
+    # LEFT-set row travel left took `60-min`'s brand to u 0.026 -- outside the
+    # label grid altogether -- on a carton that was already readable. The
+    # horizontal range is therefore exactly the one this function always had.
+    lo_bound = left_limit if not rightward else home_x
+    hi_bound = right_limit if rightward else home_x
+    top_bound = top_z if ceiling_z is None else min(top_z, ceiling_z)
+
+    def in_bounds(xi, zj):
+        # Each axis is bounded only when it MOVES. The old search checked the
+        # x limit in its x pass and the floor in its z pass, and never one in
+        # the other's; checking both on every candidate rejects a pure-z move
+        # for a row that is already wider than its own limit -- and the brand
+        # is, on every carton where it fills the face. Measured, that threw
+        # away the 0.100 drop the old code gave `357-min`'s brand and left it
+        # printing 22.4% of its cap band in an ink that surface hides.
+        x, z = home_x + xi * sx, home_z + zj * sz
+        if xi:
+            lo = x if rightward else x - width
+            hi = x + width if rightward else x
+            if lo < lo_bound or hi > hi_bound:
+                return False
+        if zj:
+            cap_top = z - drop
+            if cap_top > top_bound:
+                return False
+            if floor_z is not None and cap_top - cap_h < floor_z:
+                return False
+        return True
+
+    def take(xi, zj):
+        if (xi or zj) and not in_bounds(xi, zj):
+            # HOME is always admissible. The old search asked `serves` about it
+            # before it asked about any bound, and a row can start outside one:
+            # `357-min`'s brand fills 88% of the face and reaches its own right
+            # limit, so testing the bound first rejected the position the grid
+            # chose and sent a readable row up the carton.
+            return False
+        if not serves(home_x + xi * sx, home_z + zj * sz):
+            return False
+        t.location.x = home_x + xi * sx
+        t.location.z = home_z + zj * sz
+        return True
+
+    # Each direction is EXHAUSTED before the next is tried, and the newly
+    # opened one comes last, so a carton the old search cleared is cleared by
+    # the identical move. `64-min`'s unit count travels 0.240 of the face along
+    # its baseline and `59-min`'s 0.155; a travel cap fitted to the three rows
+    # THIS change repairs would have thrown both away.
+    # Each direction is EXHAUSTED before the new one is tried, not alternated
+    # with it. Alternating takes the nearest serving position, which sounds
+    # better and is not: it moved `158-min` and `221-min`, two cartons the old
+    # search had already cleared, onto different positions that are no more
+    # readable. The old direction goes first and goes all the way, so a carton
+    # that used to be cleared is cleared by the identical move.
+    reach = max(1, int(1.0 / CLEAR_STEP_FRAC))
+    ahead = 1 if rightward else -1              # the way this row used to look
+    if os.environ.get("PHARMAGEN_CLEAR_DEBUG"):
+        print(f"[clear] {t.name} home minority "
+              f"{_band_minority(design, substrate, *_band(home_x, home_z)):.5f}",
+              flush=True)
+    if take(0, 0):
+        return t
+    for xi in range(1, reach + 1):
+        if take(ahead * xi, 0):
             return t
-        if x + width + step > right_limit:
+    for zj in range(1, reach + 1):
+        if take(0, -zj):                        # down, as it always was
             return t
-        x += step
+    for zj in range(1, reach + 1):
+        if take(0, zj):                         # up, which is new
+            return t
+
+    t.location.x, t.location.z = home_x, home_z
+    return t
+
+
+def _row_span(o):
+    """(left, right, cap_bottom, cap_top) of a row, from its LOCATION.
+
+    Not from `_z_span`/`_x_span`, and the difference is a trap this file already
+    records once: Blender does not refresh an object's evaluated bounds when
+    `location` is assigned, so a row `_clear_of_design` has already moved still
+    reports where it USED to be. `_row_left_limit` computes from the location and
+    the font's own metrics for exactly that reason; anything that has to be
+    correct DURING the clearing pass has to do the same.
+    """
+    w = _text_dimensions(o).x
+    align = o.data.align_x
+    right = o.location.x + (w if align == "LEFT" else
+                            0.5 * w if align == "CENTER" else 0.0)
+    top = o.location.z - _cap_drop(o.data.font) * o.data.size
+    return right - w, right, top - _cap_ratio(o.data.font) * o.data.size, top
+
+
+def _row_floor_z(t, rows, gap):
+    """How far this row may descend before it reaches the row beneath it.
+
+    The mirror of `_row_left_limit`, and it shares that function's one real
+    rule: a row that does not overlap this one HORIZONTALLY is not in the way
+    whatever its height. `135-min` is why -- its measured dosage block sits at
+    the right of the same band the brand occupies at the left, they share their
+    whole height and touch nowhere, and dropping a row for an obstacle it never
+    meets is a wrong layout too, just a quieter one.
+    """
+    x_lo, x_hi, cap_bot, _cap_top = _row_span(t)
+    floor = None
+    for o in rows:
+        if o is t:
+            continue
+        o_x_lo, o_x_hi, _o_bot, o_top = _row_span(o)
+        if x_hi <= o_x_lo or x_lo >= o_x_hi:
+            continue                      # nothing shared horizontally
+        if o_top >= cap_bot:
+            continue                      # not beneath this row
+        floor = o_top + gap if floor is None else max(floor, o_top + gap)
+    return floor
+
+
+def _row_ceiling_z(t, rows, gap):
+    """How far this row may RISE before it reaches the row above it.
+
+    The mirror of `_row_floor_z`, added because the clearing search now travels
+    upward as well as down, and for the same reason that one exists: a row that
+    does not overlap this one horizontally is not in the way whatever its
+    height.
+
+    Upward was missing outright until contract 1.8's fixture rebuild found
+    `357-min` printing "Amphetamine / Dextroamphetamine Salts" in white with
+    10.0% of its cap band on the white swoosh -- and the only offsets that clear
+    it lie UP the face, from 0.015 to 0.235 of it, because the field it has to
+    escape is below the row rather than above it.
+    """
+    x_lo, x_hi, _cap_bot, cap_top = _row_span(t)
+    ceiling = None
+    for o in rows:
+        if o is t:
+            continue
+        o_x_lo, o_x_hi, o_bot, _o_top = _row_span(o)
+        if x_hi <= o_x_lo or x_lo >= o_x_hi:
+            continue                      # nothing shared horizontally
+        if o_bot <= cap_top:
+            continue                      # not above this row
+        ceiling = o_bot - gap if ceiling is None else min(ceiling, o_bot - gap)
+    return ceiling
 
 
 def _add_panel_text(name, body, font, cap_h, ink_mat, u, v, x, align="LEFT"):
@@ -1172,8 +2076,8 @@ def build_side_panel(box, manifest: dict, panel_w, panel_h, left_x, back_y,
     return built
 
 
-def build_design_fields(box, design: dict, face_w, face_h, left_x, front_y,
-                        top_z, half_thick):
+def build_design_fields(box, design: dict, face_w, face_h, depth, left_x,
+                        front_y, top_z, half_thick, finish=None):
     """Draw a measured design onto the front face.
 
     Contract 1.4 carries the fields of a REAL carton for the eleven SKU with
@@ -1189,63 +2093,318 @@ def build_design_fields(box, design: dict, face_w, face_h, left_x, front_y,
     Extruded by the same half-thickness as the stripe it replaces, so printed
     fields read as ink on board rather than as tiles floating above it, and
     cannot z-fight with the face.
+
+    CONTRACT 1.7: fields are separated in DEPTH by their `z`, so paint order is
+    geometry rather than a convention. Every part used to be built at
+    `location = (0, front_y, 0)` -- one plane, where nothing is on top of
+    anything and Cycles resolves an overlap arbitrarily. The spec's field list
+    has always been ordered and `rasterise()` fills it front to back, so the
+    target and the render answered the same question differently: on
+    `357_Adderall` the teal block was erased outright in the target and z-fought
+    in the render.
+
+    The separation is deliberately much smaller than the slab itself -- the whole
+    stack spreads over less than half a `half_thick` however many fields there
+    are -- so the fields still straddle the face plane and read as ink. It also
+    stays clear of the label rows, which sit at `front_y - 2 * half_thick`: the
+    frontmost field's surface reaches `front_y - 1.5 * half_thick` at worst.
+
+    CONTRACT 1.8: a part is its outline MINUS its holes, and the holes are more
+    cyclic splines of the same curve. The two contracts compose, and had to land
+    in this order: a hole is a window onto whatever is BEHIND the part, so it
+    shows the right thing only once the fields stand at different depths.
     """
-    built, blocks = [], []
-    for f_i, field in enumerate(design.get("fields") or []):
-        fill = field.get("fill")
-        if not fill:
+    fields = design.get("fields") or []
+    if "marks" not in design:
+        # SystemExit for the same reason `z`, `holes` and `fill` are: Blender
+        # exits 0 after an ordinary uncaught exception, so a KeyError here would
+        # read as a successful render of a carton whose marks were never
+        # decided. They are a person's decision, not a default -- see
+        # 00_PROJECT_STATE/MARKS_DECISION.md.
+        raise SystemExit(
+            "[render_driver] the design block carries no `marks`. That is "
+            "contract 1.10 and it is required, empty where the owner approved "
+            "none; a manifest written before it must be regenerated by Stage 1.")
+    marks = design.get("marks") or []
+    # Small enough that the stack never reads as tiles, and scaled by the field
+    # count so adding fields cannot walk the top one into the label plane. Marks
+    # share the budget because they stand in the same stack, in front of every
+    # field; with none the denominator is unchanged and so is every render that
+    # carries no mark.
+    z_step = half_thick / (2.0 * max(1, len(fields) + len(marks)))
+    built, blocks, mats = [], [], {}
+
+    def _filled_curve(name, rings, colour, surface, surface_offset):
+        """One filled, extruded 2D curve: the outer ring first, holes after.
+
+        Contract 1.8's nesting rule and contract 1.10's marks are the same
+        geometry problem, so they are the same code. Blender fills a 2D curve by
+        NESTING -- measured on this build, an inner square takes a unit square's
+        fill to 0.7500 whichever way it is wound, and the extrude walls the hole
+        too. Not separate objects: two objects would each fill, and the hole
+        would be painted rather than cut.
+        """
+        curve = bpy.data.curves.new(name, type="CURVE")
+        curve.dimensions = "2D"
+        curve.fill_mode = "BOTH"
+        curve.extrude = half_thick
+        for points in rings:
+            if len(points) < 3:
+                continue
+            spline = curve.splines.new("POLY")
+            spline.points.add(len(points) - 1)
+            for i, uv in enumerate(points):
+                u, v = float(uv[0]), float(uv[1])
+                if surface == "front":
+                    # This branch is the pre-surface contract byte-for-byte.
+                    spline.points[i].co = (
+                        left_x + u * face_w, top_z - v * face_h, 0.0, 1.0)
+                elif surface == "top":
+                    spline.points[i].co = (
+                        left_x + u * face_w, front_y + v * depth, 0.0, 1.0)
+                elif surface == "left":
+                    desired_y = front_y + u * depth
+                    desired_z = top_z - v * face_h
+                    # +90 around Y maps local (-Z,Y,0) to world (0,Y,Z).
+                    spline.points[i].co = (
+                        -desired_z, desired_y, 0.0, 1.0)
+                else:
+                    raise SystemExit(
+                        "[render_driver] unsupported design field surface "
+                        f"{surface!r}")
+            spline.use_cyclic_u = True
+        obj = bpy.data.objects.new(name, curve)
+        bpy.context.scene.collection.objects.link(obj)
+        if surface == "front":
+            obj.rotation_euler = (math.radians(90.0), 0.0, 0.0)
+            obj.location = (0.0, front_y - surface_offset, 0.0)
+        elif surface == "top":
+            obj.location = (0.0, 0.0, top_z + surface_offset)
+        else:  # left
+            obj.rotation_euler = (0.0, math.radians(90.0), 0.0)
+            obj.location = (left_x - surface_offset, 0.0, 0.0)
+        obj["design_surface"] = surface
+        # Diagnostic facts, read back by --dump-scene.  They describe the
+        # object Blender actually built; they are not manifest state and do not
+        # participate in placement.  Keeping the common ink budget beside the
+        # actual offset makes a floating mark measurable without duplicating
+        # the z-stack arithmetic in QA.
+        obj["design_normal_offset_m"] = float(surface_offset)
+        obj["design_ink_budget_m"] = float(half_thick / 2.0)
+        obj["design_hole_count"] = max(0, len(rings) - 1)
+        obj["design_fill"] = colour
+        mat = mats.get(colour)
+        if mat is None:
+            mat = make_carton_material(f"{name}_mat", colour, finish)
+            mats[colour] = mat
+        obj.data.materials.append(mat)
+        obj.parent = box
+        obj.matrix_parent_inverse = box.matrix_world.inverted()
+        return obj
+    for f_i, field in enumerate(fields):
+        # Only a guard now: under contract 1.9 the field's fill paints nothing,
+        # the part's does. A field with none is malformed, not a field to paint.
+        if not field.get("fill"):
             continue
-        mat = make_material(f"design_{field.get('role', f_i)}_mat", fill,
-                            roughness=MATTE_ROUGHNESS)
+        if "z" not in field:
+            # SystemExit, not KeyError: Blender exits 0 after an ordinary
+            # uncaught exception, and `blender_renderer` would read the run as a
+            # success with the fields built in whatever order the list happened
+            # to have.
+            raise SystemExit(
+                f"[render_driver] design field {field.get('role')!r} carries no "
+                f"`z`. That is contract 1.7 and it is required; a manifest "
+                f"written before it must be regenerated by Stage 1 rather than "
+                f"built in an order this driver invents.")
+        surface = field.get("surface", "front")
+        if surface not in PROFILE_SURFACES:
+            raise SystemExit(
+                "[render_driver] unsupported design field surface "
+                f"{surface!r}")
+        surface_offset = int(field["z"]) * z_step
         for p_i, part in enumerate(field.get("parts") or []):
             outline = part.get("outline") or []
             if len(outline) < 3:
                 continue
-            name = f"design_{field.get('role', f_i)}_{p_i}"
-            curve = bpy.data.curves.new(name, type="CURVE")
-            curve.dimensions = "2D"
-            curve.fill_mode = "BOTH"
-            curve.extrude = half_thick
-            spline = curve.splines.new("POLY")
-            spline.points.add(len(outline) - 1)
-            for i, uv in enumerate(outline):
-                u, v = float(uv[0]), float(uv[1])
-                # A 2D curve lives in its object's local XY. Rotating +90 degrees
-                # about X below maps local (x, y) to world (x, z), which is the
-                # front face's own plane -- so the point is written straight in
-                # face coordinates and never converted twice.
-                spline.points[i].co = (left_x + u * face_w,
-                                       top_z - v * face_h, 0.0, 1.0)
-            spline.use_cyclic_u = True
-
-            obj = bpy.data.objects.new(name, curve)
-            bpy.context.scene.collection.objects.link(obj)
-            obj.rotation_euler = (math.radians(90.0), 0.0, 0.0)
-            obj.location = (0.0, front_y, 0.0)
-            obj.data.materials.append(mat)
-            obj.parent = box
-            obj.matrix_parent_inverse = box.matrix_world.inverted()
+            if "holes" not in part:
+                # SystemExit for the same reason `z` above is: Blender exits 0
+                # after an ordinary uncaught exception, so a KeyError here would
+                # be read as a successful render of a carton with every hole
+                # filled in.
+                raise SystemExit(
+                    f"[render_driver] design field {field.get('role')!r} part "
+                    f"{p_i} carries no `holes`. That is contract 1.8 and it is "
+                    f"required, empty where the part has none; a manifest "
+                    f"written before it must be regenerated by Stage 1 rather "
+                    f"than built as a solid shape this driver assumes.")
+            if "fill" not in part:
+                raise SystemExit(
+                    f"[render_driver] design field {field.get('role')!r} part "
+                    f"{p_i} carries no `fill`. That is contract 1.9 and it is "
+                    f"required; a field's fill is the median of its whole "
+                    f"cluster while a part is one region of it, and a manifest "
+                    f"written before 1.9 must be regenerated by Stage 1 rather "
+                    f"than painted a colour this driver assumes.")
+            # CONTRACT 1.9: the colour is the PART's. Cached per colour rather
+            # than made per part, so a field whose parts agree still builds one
+            # material -- which is the common case, and what keeps Stage A's
+            # plumbing bit-identical to the per-field material it replaced.
+            part_fill = part["fill"]
+            # CONTRACT 1.8: a part is its outline MINUS its holes, and the holes
+            # are more cyclic splines of the SAME curve -- see `_filled_curve`.
+            obj = _filled_curve(
+                f"design_{field.get('role', f_i)}_{p_i}",
+                [outline] + list(part.get("holes") or []),
+                part_fill, surface, surface_offset)
             built.append(obj)
 
             # A `block` is a place to put type: four of the eleven references
             # reverse the dosage out of one. The spec names it -- the driver does
             # not re-derive it from the outline, which would be a second copy of
             # a rule that already lives in scripts/fit_design_spec.py.
-            if part.get("kind") == "block":
+            if surface == "front" and part.get("kind") == "block":
                 us = [float(pt[0]) for pt in outline]
                 vs = [float(pt[1]) for pt in outline]
                 blocks.append({
-                    "fill": fill,
+                    "fill": part_fill,
                     "x0": left_x + min(us) * face_w, "x1": left_x + max(us) * face_w,
                     "z0": top_z - max(vs) * face_h, "z1": top_z - min(vs) * face_h,
                 })
+    # CONTRACT 1.10: the marks the owner approved by name, drawn in front of
+    # every field. Each carries the print_truth key that permitted it, so a
+    # drawn mark can be put back against the row of MARKS_DECISION.md that
+    # allowed it.
+    #
+    # A mark carries its OWN holes and five of the twenty-two have them. The
+    # sentence that used to stand here -- "`holes` is empty on every one of
+    # them by construction, each approved region was measured solid" -- was
+    # true of the eight HOLE marks and false of the components, and painting
+    # them solid covered up to 9.5x the ink they describe. `157_Valium`'s Roche
+    # hexagon is an OUTLINE; filled, it invents a logo the pack does not print.
+    for m_i, mark in enumerate(marks):
+        for required in ("fill", "outline", "z", "key"):
+            if required not in mark:
+                raise SystemExit(
+                    f"[render_driver] design mark {m_i} carries no "
+                    f"`{required}`. That is contract 1.10 and it is required; "
+                    f"regenerate the manifest from Stage 1 rather than drawing "
+                    f"a mark this driver has to guess at.")
+        parts = _drawable_mark_parts(mark)
+        for p_i, part in enumerate(parts):
+            outline = part.get("outline") or []
+            if len(outline) < 3:
+                continue
+            if "fill" not in part:
+                raise SystemExit(
+                    f"[render_driver] design mark {m_i} part {p_i} "
+                    "carries no `fill`; regenerate the manifest from Stage 1.")
+            name = f"mark_{mark.get('role', m_i)}_{m_i}"
+            if p_i:
+                name += f"_part_{p_i - 1}"
+            # Every approved mark retains one z slot. Overlays subdivide that
+            # slot, never adding a full z_step per path. Legacy base depth is
+            # unchanged; even hundreds of overlays stay below the next slot.
+            surface_offset = (int(mark["z"]) + p_i / len(parts)) * z_step
+            obj = _filled_curve(
+                name, [outline] + list(part.get("holes") or []),
+                part["fill"], "front", surface_offset)
+            obj["design_mark_key"] = mark["key"]
+            obj["design_mark_part_index"] = p_i - 1  # -1 identifies the base
+            built.append(obj)
+
     print(f"[render_driver] design: {len(built)} field part(s) from "
           f"{len(design.get('fields') or [])} field(s), "
-          f"{len(blocks)} colour block(s)")
+          f"{len(blocks)} colour block(s), {len(marks)} approved mark(s)")
     # The largest block is the dosage's. Where a carton has more than one filled
     # rectangle the dosage is on the biggest of them in every reference measured.
     blocks.sort(key=lambda b: (b["x1"] - b["x0"]) * (b["z1"] - b["z0"]), reverse=True)
     return built, blocks
+
+
+def build_reference_aux_text(box, rows, face_w, face_h, depth, left_x,
+                             front_y, top_z, half_thick):
+    """Build only boundary-validated, reference-only auxiliary text rows."""
+    if not rows:
+        return []
+    fonts = {
+        "regular": _load_font(FONT_REGULAR),
+        "bold": _load_font(FONT_BOLD),
+    }
+    ink = make_material("reference_aux_ink", LABEL_INK,
+                        roughness=MATTE_ROUGHNESS)
+    built = []
+    for index, row in enumerate(rows):
+        surface = row["surface"]
+        if surface not in PROFILE_SURFACES:
+            raise SystemExit(
+                "[render_driver] unsupported reference_aux_text surface "
+                f"{surface!r}")
+        u0, v0, u1, v1 = (float(value) for value in row["bbox"])
+        align = row["align"]
+        font = fonts.get(row["font_role"])
+        if font is None:
+            raise SystemExit(
+                "[render_driver] unsupported reference_aux_text font_role "
+                f"{row['font_role']!r}")
+        name = f"reference_aux_{index}"
+        if surface == "front":
+            anchor_x = (left_x + u0 * face_w if align == "LEFT" else
+                        left_x + u1 * face_w if align == "RIGHT" else
+                        left_x + (u0 + u1) * face_w / 2.0)
+            cap_h = (v1 - v0) * face_h * 0.62
+            obj = _add_text(
+                name, row["text"], font, cap_h, ink, anchor_x,
+                top_z - v0 * face_h, front_y - 3.0 * half_thick, align)
+            extent_axis = 0
+            allowed = (u1 - u0) * face_w
+        elif surface == "left":
+            # Text reads toward the front (-Y), so LEFT begins at bbox u1.
+            anchor_y = (front_y + u1 * depth if align == "LEFT" else
+                        front_y + u0 * depth if align == "RIGHT" else
+                        front_y + (u0 + u1) * depth / 2.0)
+            cap_h = (v1 - v0) * face_h * 0.62
+            obj = _add_panel_text(
+                name, row["text"], font, cap_h, ink, anchor_y,
+                top_z - v0 * face_h, left_x - 3.0 * half_thick, align)
+            extent_axis = 1
+            allowed = (u1 - u0) * depth
+        else:  # top
+            anchor_x = (left_x + u0 * face_w if align == "LEFT" else
+                        left_x + u1 * face_w if align == "RIGHT" else
+                        left_x + (u0 + u1) * face_w / 2.0)
+            cap_h = (v1 - v0) * depth * 0.62
+            bpy.ops.object.text_add(location=(
+                anchor_x, front_y + v1 * depth, top_z + 3.0 * half_thick))
+            obj = bpy.context.active_object
+            obj.name = name
+            obj.data.body = row["text"]
+            obj.data.font = font
+            obj.data.size = cap_h / _cap_ratio(font)
+            obj.data.align_x = align
+            obj.data.align_y = "TOP"
+            obj.data.materials.append(ink)
+            extent_axis = 0
+            allowed = (u1 - u0) * face_w
+        actual = _text_dimensions(obj)[extent_axis]
+        if actual > allowed > 0:
+            obj.scale.x *= allowed / actual
+        obj["reference_aux_surface"] = surface
+        obj.parent = box
+        obj.matrix_parent_inverse = box.matrix_world.inverted()
+        built.append(obj)
+    return built
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def build_box(dims_m, palette: dict, label_content: dict = None,
@@ -1282,8 +2441,20 @@ def build_box(dims_m, palette: dict, label_content: dict = None,
     # "white always" is not a rule those cartons follow, and it fails inside the
     # sample rather than at its edge.
     design = (manifest or {}).get("design")
+    profile = (design or {}).get("carton_profile")
+    finish = None
+    if profile:
+        source_finish = profile["surface_finish"]
+        micro = dict(source_finish["micro_bump"])
+        base = min(w, h, d)
+        finish = {
+            "roughness": float(source_finish["roughness"]),
+            "micro_bump": micro,
+            "_coordinate_scale": 1.0 / base,
+            "_distance_m": base * float(micro["distance_frac"]),
+        }
     body_hex = (design or {}).get("substrate") or "#FFFFFF"
-    body_mat = make_material("carton_body", body_hex, roughness=MATTE_ROUGHNESS)
+    body_mat = make_carton_material("carton_body", body_hex, finish)
     box.data.materials.append(body_mat)
 
     # Measure the mesh that was actually built instead of assuming it spans
@@ -1308,6 +2479,14 @@ def build_box(dims_m, palette: dict, label_content: dict = None,
     # than as an applied tile and cannot z-fight with the surface they sit on.
     # Shared by the stripe and the badge, hence hoisted out of either branch.
     half_thick = depth * 0.002
+
+    full_surface_materials = build_full_surface_materials(design, finish)
+    build_visible_carton_details(
+        box, profile, face_w, face_h, depth,
+        {"min": [min(xs), min(ys), min(zs)],
+         "max": [max(xs), max(ys), max(zs)]},
+        full_surface_materials,
+    )
 
     # The stripe and badge ARE the generic art direction: one accent band and one
     # primary badge, fitted to nine AI reference renders. Where a real carton has
@@ -1384,17 +2563,28 @@ def build_box(dims_m, palette: dict, label_content: dict = None,
         badge.matrix_parent_inverse = box.matrix_world.inverted()
 
     dosage_block = None
-    if design:
-        _, blocks = build_design_fields(box, design, face_w, face_h,
+    if design and not BLANK_CARTON:
+        _, blocks = build_design_fields(box, design, face_w, face_h, depth,
                                         right_x - face_w, front_y, top_z,
-                                        half_thick)
+                                        half_thick, finish)
         dosage_block = blocks[0] if blocks else None
 
-    build_label(box, label_content, face_w, face_h, right_x - face_w,
-                front_y, top_z, half_thick, unit_scale, badge_left_x, stripe_top_z,
-                dosage_block, (design or {}).get("type_rows"), design)
+    if not BLANK_CARTON:
+        build_label(box, label_content, face_w, face_h, right_x - face_w,
+                    front_y, top_z, half_thick, unit_scale, badge_left_x,
+                    stripe_top_z, dosage_block,
+                    (design or {}).get("type_rows"), design)
 
-    if manifest:
+    if design and not BLANK_CARTON:
+        build_reference_aux_text(
+            box, design.get("reference_aux_text") or [], face_w, face_h,
+            depth, right_x - face_w, front_y, top_z, half_thick)
+
+    measured_left_surface = any(
+        field.get("surface", "front") == "left"
+        for field in ((design or {}).get("fields") or [])
+    )
+    if manifest and not BLANK_CARTON and not measured_left_surface:
         build_side_panel(box, manifest, depth, face_h, min(xs), front_y,
                          top_z, half_thick, unit_scale)
 
@@ -1402,8 +2592,25 @@ def build_box(dims_m, palette: dict, label_content: dict = None,
     return box, max(w, h, d)
 
 
-def build_background(hex_color: str, exposure: float):
-    """A seamless, evenly-lit backdrop — not a floor that catches the key light.
+_LAST_SHADOW_RIG = {
+    "enabled": False,
+    "scope": "common_carton_rig",
+    "method": "none",
+    "receiver_scale": 0.0,
+    "receiver_offset_frac": 0.0,
+    "engine": ENGINE,
+}
+
+
+def _disable_receiver_indirect(plane):
+    for attr in ("visible_diffuse", "visible_glossy", "visible_transmission",
+                 "visible_volume_scatter"):
+        if hasattr(plane, attr):
+            setattr(plane, attr, False)
+
+
+def build_background(hex_color: str, exposure: float, target_size: float):
+    """A seamless emissive backdrop plus one compact contact receiver.
 
     It used to be a diffuse plane lit by the key and fill. Two small lights
     cannot light 50 metres of plane evenly, so the render showed a hot spot
@@ -1415,11 +2622,17 @@ def build_background(hex_color: str, exposure: float):
     sit at 254.9 directly beneath the carton, i.e. no shadow to speak of.
 
     Making the backdrop EMISSIVE decouples it from the rig: it renders at a fixed
-    value everywhere, takes no cast shadow, and needs no light aimed at it, so the
-    key and fill are free to do nothing but light the product. That is the
-    "product floating on white" look the references are shot in.
+    value everywhere and needs no light aimed at it.  A separate compact plane
+    now evaluates only local geometric occlusion beneath the carton, producing
+    the requested soft support without exposing a floor, horizon or rectangle.
     """
-    bpy.ops.mesh.primitive_plane_add(size=50, location=(0, 0, 0))
+    global _LAST_SHADOW_RIG
+    mode = "off" if SHADOW_OFF else "receiver"
+    plane_scale = 50.0 / target_size
+    receiver_offset_frac = 0.0005 if mode != "off" else 0.0
+    bpy.ops.mesh.primitive_plane_add(
+        size=plane_scale * target_size,
+        location=(0, 0, -0.002 * target_size))
     plane = bpy.context.active_object
     plane.name = "background"
 
@@ -1427,24 +2640,127 @@ def build_background(hex_color: str, exposure: float):
     mat.use_nodes = True
     nodes, links = mat.node_tree.nodes, mat.node_tree.links
     nodes.clear()
-    emission = nodes.new("ShaderNodeEmission")
-    emission.inputs["Color"].default_value = hex_to_rgba(hex_color or "#FFFFFF")
-    # Exactly full scale after the film transform, so the backdrop always renders
-    # pure white whatever exposure this carton is metered at. Deriving it beats a
-    # magic number: the two can never drift apart.
-    emission.inputs["Strength"].default_value = 2.0 ** (-exposure)
     output = nodes.new("ShaderNodeOutputMaterial")
+
+    emission = nodes.new("ShaderNodeEmission")
+    emission.inputs["Color"].default_value = hex_to_rgba(
+        hex_color or "#FFFFFF")
+    # Exactly full scale after the film transform, so the backdrop always
+    # renders pure white whatever exposure this carton is metered at.
+    emission.inputs["Strength"].default_value = 2.0 ** (-exposure)
     links.new(emission.outputs["Emission"], output.inputs["Surface"])
+    _disable_receiver_indirect(plane)
+    if hasattr(plane, "visible_shadow"):
+        plane.visible_shadow = False
     plane.data.materials.append(mat)
+
+    if mode == "receiver":
+        # A compact real receiver evaluates geometric occlusion only under and
+        # immediately around the carton.  The former full-frame AO receiver met
+        # every image gate but made a matched 2048 render 61% slower; limiting
+        # the same physical calculation to its useful support is the measured
+        # performance fix.  A Generated-coordinate feather reaches transparent
+        # before the boundary, leaving the emissive studio plane visible there.
+        receiver_scale = 1.5
+        feather_start = 0.40
+        ao_distance_frac = 0.04
+        ao_samples = 4
+        shadow_floor_linear = 0.78
+        bpy.ops.mesh.primitive_plane_add(
+            size=receiver_scale * target_size,
+            location=(0, 0, -receiver_offset_frac * target_size))
+        receiver = bpy.context.active_object
+        receiver.name = "shadow_receiver"
+
+        receiver_mat = bpy.data.materials.new(name="shadow_receiver_mat")
+        receiver_mat.use_nodes = True
+        rnodes = receiver_mat.node_tree.nodes
+        rlinks = receiver_mat.node_tree.links
+        rnodes.clear()
+        rout = rnodes.new("ShaderNodeOutputMaterial")
+        ao = rnodes.new("ShaderNodeAmbientOcclusion")
+        ao.inputs["Color"].default_value = hex_to_rgba(
+            hex_color or "#FFFFFF")
+        ao.inputs["Distance"].default_value = ao_distance_frac * target_size
+        ao.samples = ao_samples
+        ao.only_local = False
+        ramp = rnodes.new("ShaderNodeValToRGB")
+        ramp.color_ramp.interpolation = "EASE"
+        ramp.color_ramp.elements[0].position = 0.0
+        ramp.color_ramp.elements[0].color = (
+            shadow_floor_linear, shadow_floor_linear,
+            shadow_floor_linear, 1.0)
+        ramp.color_ramp.elements[1].position = 1.0
+        ramp.color_ramp.elements[1].color = (1.0, 1.0, 1.0, 1.0)
+        lit_receiver = rnodes.new("ShaderNodeEmission")
+        lit_receiver.inputs["Strength"].default_value = 2.0 ** (-exposure)
+        rlinks.new(ao.outputs["AO"], ramp.inputs["Fac"])
+        rlinks.new(ramp.outputs["Color"], lit_receiver.inputs["Color"])
+
+        texcoord = rnodes.new("ShaderNodeTexCoord")
+        separate = rnodes.new("ShaderNodeSeparateXYZ")
+        rlinks.new(texcoord.outputs["Generated"], separate.inputs["Vector"])
+        edge_x = rnodes.new("ShaderNodeMath")
+        edge_x.operation = "SUBTRACT"
+        edge_x.inputs[1].default_value = 0.5
+        rlinks.new(separate.outputs["X"], edge_x.inputs[0])
+        abs_x = rnodes.new("ShaderNodeMath")
+        abs_x.operation = "ABSOLUTE"
+        rlinks.new(edge_x.outputs[0], abs_x.inputs[0])
+        edge_y = rnodes.new("ShaderNodeMath")
+        edge_y.operation = "SUBTRACT"
+        edge_y.inputs[1].default_value = 0.5
+        rlinks.new(separate.outputs["Y"], edge_y.inputs[0])
+        abs_y = rnodes.new("ShaderNodeMath")
+        abs_y.operation = "ABSOLUTE"
+        rlinks.new(edge_y.outputs[0], abs_y.inputs[0])
+        edge = rnodes.new("ShaderNodeMath")
+        edge.operation = "MAXIMUM"
+        rlinks.new(abs_x.outputs[0], edge.inputs[0])
+        rlinks.new(abs_y.outputs[0], edge.inputs[1])
+        fade = rnodes.new("ShaderNodeMapRange")
+        fade.clamp = True
+        fade.inputs["From Min"].default_value = feather_start
+        fade.inputs["From Max"].default_value = 0.5
+        fade.inputs["To Min"].default_value = 0.0
+        fade.inputs["To Max"].default_value = 1.0
+        rlinks.new(edge.outputs[0], fade.inputs["Value"])
+        transparent = rnodes.new("ShaderNodeBsdfTransparent")
+        mix = rnodes.new("ShaderNodeMixShader")
+        rlinks.new(fade.outputs["Result"], mix.inputs[0])
+        rlinks.new(lit_receiver.outputs["Emission"], mix.inputs[1])
+        rlinks.new(transparent.outputs[0], mix.inputs[2])
+        rlinks.new(mix.outputs[0], rout.inputs["Surface"])
+        receiver.data.materials.append(receiver_mat)
+        _disable_receiver_indirect(receiver)
+        _LAST_SHADOW_RIG = {
+            "enabled": True,
+            "scope": "common_carton_rig",
+            "method": "physical_receiver",
+            "receiver_scale": receiver_scale,
+            "receiver_offset_frac": receiver_offset_frac,
+            "feather_start": feather_start,
+            "ao_distance_frac": ao_distance_frac,
+            "ao_samples": ao_samples,
+            "shadow_floor_linear": shadow_floor_linear,
+            "engine": ENGINE,
+        }
+    else:
+        _LAST_SHADOW_RIG = {
+            "enabled": False,
+            "scope": "common_carton_rig",
+            "method": "none",
+            "receiver_scale": 0.0,
+            "receiver_offset_frac": 0.0,
+            "engine": ENGINE,
+        }
 
     # A large bright surface would otherwise bounce into the carton, lifting the
     # shadows and washing the accent out of tolerance. EEVEE does not gather that
     # indirect light anyway, but Cycles does, and the same driver has to serve
     # both — so switch the backdrop out of every indirect path explicitly.
-    for attr in ("visible_diffuse", "visible_glossy", "visible_transmission",
-                 "visible_volume_scatter", "visible_shadow"):
-        if hasattr(plane, attr):
-            setattr(plane, attr, False)
+    # Per-mode visibility is set above; all three share one receiver object and
+    # scale rule, so the spike changes one variable rather than the studio rig.
 
 
 LENS_MM = 85.0        # matches the documented Gemini optical calibration
@@ -1663,6 +2979,83 @@ def setup_film(exposure: float):
     view.exposure = exposure
 
 
+def setup_device(scene):
+    """Pin Cycles to the device it was ASKED for, or stop.
+
+    The device used to be whatever the process inherited. Under
+    `--factory-startup` that is CPU, so nothing looked wrong -- but nothing
+    was choosing it either, and a `--python` argument ahead of this script is
+    enough to move the render onto the GPU. `scripts/probe_render_device.py`
+    does precisely that, on purpose, and it is why this function exists.
+
+    A DEVICE IS NOT A QUALITY SETTING AND IS NOT SUBSTITUTABLE. Measured
+    2026-08-24 on an RTX 2060 SUPER at 16 samples, against the CPU render of
+    `1-min`, `64-min` and `357-min`: OptiX sampling lands up to 43 levels away
+    on 0.2-0.9% of pixels, CUDA up to 23 on 0.2-0.7%, and GPU denoising up to
+    43 on 14-18%. Every one of those would invalidate the calibration curve, the
+    `design_qa` rows and the OCR fixtures, all of which were measured on CPU
+    pixels. So an unavailable device raises `SystemExit` rather than falling
+    back -- the same rule the engine already follows one function down, and for
+    the same reason: a quietly swapped renderer emits off-spec packshots with
+    nothing in the log to say so.
+
+    SystemExit specifically, because Blender prints an ordinary traceback and
+    still exits 0, which `blender_renderer.py` would read as a success.
+    """
+    if DEVICE not in ("CPU", "GPU"):
+        raise SystemExit(
+            f"[render_driver] blender.device must be CPU or GPU, not "
+            f"{DEVICE!r}.")
+    if DENOISE_DEVICE not in ("CPU", "GPU"):
+        raise SystemExit(
+            f"[render_driver] blender.denoising_device must be CPU or GPU, not "
+            f"{DENOISE_DEVICE!r}.")
+
+    scene.cycles.device = DEVICE
+    if DEVICE == "GPU":
+        prefs = bpy.context.preferences.addons["cycles"].preferences
+        try:
+            prefs.compute_device_type = DEVICE_BACKEND
+        except (TypeError, ValueError) as exc:
+            raise SystemExit(
+                f"[render_driver] compute back-end {DEVICE_BACKEND!r} is not "
+                f"one this Blender ({bpy.app.version_string}) offers; refusing "
+                f"to substitute another. Blender reports: {exc}")
+        prefs.refresh_devices()
+        # Only the accelerator is enabled. Leaving the CPU device on as well is
+        # a HYBRID render -- a third thing, with its own pixels -- and picking
+        # it by accident is exactly the silence this function removes.
+        enabled = []
+        for dev in prefs.devices:
+            dev.use = (dev.type == DEVICE_BACKEND)
+            if dev.use:
+                enabled.append(dev.name)
+        if not enabled:
+            raise SystemExit(
+                f"[render_driver] blender.device is GPU and blender."
+                f"device_backend is {DEVICE_BACKEND!r}, but this machine "
+                f"exposes no such device. Refusing to render on the CPU under "
+                f"a GPU setting: the two do not produce the same image, and "
+                f"every figure this project holds was measured on one of them.")
+        print(f"[render_driver] cycles device {DEVICE}/{DEVICE_BACKEND}: "
+              f"{', '.join(enabled)}")
+    else:
+        print(f"[render_driver] cycles device {DEVICE}")
+
+    # Independent of the sampling device, and worth its own key: the denoiser is
+    # more than half of every render (~14.9s of 28s, R006), so it is where the
+    # time is -- and also where the pixels move most, 14-18% of the frame.
+    if hasattr(scene.cycles, "denoising_use_gpu"):
+        scene.cycles.denoising_use_gpu = (DENOISE_DEVICE == "GPU")
+    elif DENOISE_DEVICE == "GPU":
+        raise SystemExit(
+            f"[render_driver] blender.denoising_device is GPU but this Blender "
+            f"({bpy.app.version_string}) has no `denoising_use_gpu`; refusing "
+            f"to denoise on the CPU under a GPU setting.")
+    print(f"[render_driver] denoiser "
+          f"{getattr(scene.cycles, 'denoiser', '?')} on {DENOISE_DEVICE}")
+
+
 def setup_render(out_path: str, engine: str, samples: int, res_x: int, res_y: int):
     scene = bpy.context.scene
     # Ask Blender to make the assignment rather than introspecting the enum.
@@ -1694,11 +3087,196 @@ def setup_render(out_path: str, engine: str, samples: int, res_x: int, res_y: in
     if engine == "CYCLES":
         scene.cycles.samples = samples
         scene.cycles.use_denoising = True
+        setup_device(scene)
     scene.render.resolution_x = res_x
     scene.render.resolution_y = res_y
     scene.render.resolution_percentage = 100
     scene.render.image_settings.file_format = "PNG"
     scene.render.filepath = out_path
+
+
+def _save_mask(path, values):
+    import numpy as np
+
+    target = Path(path)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temporary = target.with_name(f".{target.stem}.tmp{target.suffix}")
+    grey = np.asarray(values, dtype=np.float32)
+    rgba = np.empty((RES_Y, RES_X, 4), dtype=np.float32)
+    rgba[:, :, :3] = np.clip(grey[:, :, None], 0.0, 1.0)
+    rgba[:, :, 3] = 1.0
+    image = bpy.data.images.new(
+        f"{target.stem}_derived_mask", RES_X, RES_Y, alpha=True,
+        float_buffer=False)
+    image.colorspace_settings.name = "Non-Color"
+    image.file_format = "PNG"
+    image.filepath_raw = str(temporary)
+    image.pixels.foreach_set(rgba.ravel())
+    image.save()
+    bpy.data.images.remove(image)
+    os.replace(temporary, target)
+    print(f"[render_driver] wrote derived mask {target}")
+
+
+def _convex_hull(points):
+    unique = sorted(set((float(x), float(y)) for x, y in points))
+    if len(unique) <= 1:
+        return unique
+
+    def cross(origin, a, b):
+        return ((a[0] - origin[0]) * (b[1] - origin[1])
+                - (a[1] - origin[1]) * (b[0] - origin[0]))
+
+    lower = []
+    for point in unique:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], point) <= 0:
+            lower.pop()
+        lower.append(point)
+    upper = []
+    for point in reversed(unique):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], point) <= 0:
+            upper.pop()
+        upper.append(point)
+    return lower[:-1] + upper[:-1]
+
+
+def _projected_object_mask():
+    """Rasterize the convex carton envelope through the actual scene camera."""
+    import numpy as np
+    from bpy_extras.object_utils import world_to_camera_view
+
+    scene = bpy.context.scene
+    camera = scene.camera
+    if camera is None:
+        raise SystemExit(
+            "[render_driver] derived object mask requires the built camera")
+    depsgraph = bpy.context.evaluated_depsgraph_get()
+    carton = bpy.data.objects.get("carton")
+    if carton is None:
+        raise SystemExit(
+            "[render_driver] derived object mask requires procedural carton")
+    projected = []
+    for obj in scene.objects:
+        # The carton and its measured construction details own the outer
+        # silhouette.  Printed curves and glyph meshes are guaranteed inside
+        # that envelope; tessellating all of their vertices made mask export
+        # slower than the beauty render without changing one boundary pixel.
+        is_envelope = (obj == carton
+                       or obj.get("carton_detail_kind") is not None)
+        if (not is_envelope or obj.hide_render
+                or obj.type not in {"MESH", "CURVE", "FONT"}):
+            continue
+        evaluated = obj.evaluated_get(depsgraph)
+        if obj.type == "FONT":
+            local_corners = evaluated.bound_box
+        else:
+            mesh = evaluated.to_mesh()
+            if not mesh.vertices:
+                evaluated.to_mesh_clear()
+                continue
+            mins = [min(vertex.co[axis] for vertex in mesh.vertices)
+                    for axis in range(3)]
+            maxs = [max(vertex.co[axis] for vertex in mesh.vertices)
+                    for axis in range(3)]
+            local_corners = [
+                (x, y, z)
+                for x in (mins[0], maxs[0])
+                for y in (mins[1], maxs[1])
+                for z in (mins[2], maxs[2])
+            ]
+            evaluated.to_mesh_clear()
+        object_points = []
+        for corner in local_corners:
+            # Match _bounds_in_frame: evaluated geometry supplies the bounds,
+            # while the original object's matrix carries the parent transform.
+            # Using evaluated.matrix_world here applies the carton parent twice
+            # for curves on Blender 5.1 and projects them thousands of pixels
+            # outside a 64px test frame.
+            world = obj.matrix_world @ mathutils.Vector(corner)
+            ndc = world_to_camera_view(scene, camera, world)
+            object_points.append((
+                ndc.x * RES_X, ndc.y * RES_Y))
+        projected.extend(object_points)
+    hull = _convex_hull(projected)
+    if len(hull) < 3:
+        raise SystemExit(
+            "[render_driver] derived object mask has no projected carton hull")
+    hull_bounds = (min(x for x, _y in hull), min(y for _x, y in hull),
+                   max(x for x, _y in hull), max(y for _x, y in hull))
+    if (hull_bounds[0] < -RES_X or hull_bounds[1] < -RES_Y
+            or hull_bounds[2] > 2 * RES_X or hull_bounds[3] > 2 * RES_Y):
+        raise SystemExit(
+            "[render_driver] projected carton hull is outside the frame: "
+            f"{hull_bounds}")
+
+    mask = np.zeros((RES_Y, RES_X), dtype=bool)
+    min_y = max(0, int(math.floor(min(y for _x, y in hull))))
+    max_y = min(RES_Y - 1, int(math.ceil(max(y for _x, y in hull))))
+    for row in range(min_y, max_y + 1):
+        scan_y = row + 0.5
+        intersections = []
+        for index, (x0, y0) in enumerate(hull):
+            x1, y1 = hull[(index + 1) % len(hull)]
+            if (y0 <= scan_y < y1) or (y1 <= scan_y < y0):
+                intersections.append(
+                    x0 + (scan_y - y0) * (x1 - x0) / (y1 - y0))
+        if len(intersections) < 2:
+            continue
+        left, right = min(intersections), max(intersections)
+        start = max(0, int(math.ceil(left - 0.5)))
+        stop = min(RES_X, int(math.floor(right - 0.5)) + 1)
+        if start < stop:
+            mask[row, start:stop] = True
+    return mask
+
+
+def save_diagnostic_passes():
+    """Derive masks from scene projection and the existing beauty render."""
+    import numpy as np
+
+    if not (OBJECT_MASK_PATH or SHADOW_MASK_PATH):
+        return
+    if SHADOW_MASK_PATH and not _LAST_SHADOW_RIG.get("enabled"):
+        raise SystemExit(
+            "[render_driver] derived shadow mask requested while shadow rig is off")
+
+    object_mask = _projected_object_mask()
+
+    if OBJECT_MASK_PATH:
+        _save_mask(OBJECT_MASK_PATH, object_mask.astype(np.float32))
+    if not SHADOW_MASK_PATH:
+        return
+
+    beauty = bpy.data.images.load(str(Path(OUT_PATH)), check_existing=False)
+    beauty_pixels = np.empty(RES_X * RES_Y * 4, dtype=np.float32)
+    beauty.pixels.foreach_get(beauty_pixels)
+    beauty_rgba = beauty_pixels.reshape((RES_Y, RES_X, 4))
+    bpy.data.images.remove(beauty)
+    luma = (0.2126 * beauty_rgba[:, :, 0]
+            + 0.7152 * beauty_rgba[:, :, 1]
+            + 0.0722 * beauty_rgba[:, :, 2])
+    outside = ~object_mask
+    if not outside.any():
+        raise SystemExit(
+            "[render_driver] projected object mask covers the whole frame; "
+            "refusing to derive a shadow from an invalid mask")
+    white = float(np.percentile(luma[outside], 99.5))
+    shadow = np.clip(white - luma, 0.0, 1.0)
+    ys, xs = np.nonzero(object_mask)
+    radius = max(2, int(round(max(RES_X, RES_Y) * 0.05)))
+    near = np.zeros_like(object_mask)
+    near[max(0, int(ys.min()) - radius):
+         min(RES_Y, int(ys.max()) + radius + 1),
+         max(0, int(xs.min()) - radius):
+         min(RES_X, int(xs.max()) + radius + 1)] = True
+    padded = np.pad(object_mask, 1, mode="constant")
+    object_ring = np.logical_or.reduce([
+        padded[0:-2, 0:-2], padded[0:-2, 1:-1], padded[0:-2, 2:],
+        padded[1:-1, 0:-2], padded[1:-1, 1:-1], padded[1:-1, 2:],
+        padded[2:, 0:-2], padded[2:, 1:-1], padded[2:, 2:],
+    ])
+    shadow = np.where(near & ~object_ring & (shadow > 0.002), shadow, 0.0)
+    _save_mask(SHADOW_MASK_PATH, shadow)
 
 
 def _base_color(obj):
@@ -1727,6 +3305,65 @@ def _roughness(obj):
     return bsdf.inputs["Roughness"].default_value
 
 
+def _material_finish(obj):
+    """Read the actual carton material graph back into the scene dump."""
+    if not obj.data.materials:
+        return None
+    mat = obj.data.materials[0]
+    if not mat.use_nodes:
+        return None
+    nodes = mat.node_tree.nodes
+    mapping = nodes.get("Carton Seed Mapping")
+    noise = nodes.get("Carton Paper Grain")
+    bump = nodes.get("Carton Micro Bump")
+    bsdf = nodes.get("Principled BSDF")
+    base_input = (bsdf.inputs.get("Base Color") if bsdf is not None else None)
+    return {
+        "node_types": sorted(node.bl_idname for node in nodes),
+        "mapping_location": (
+            list(mapping.inputs["Location"].default_value[:3])
+            if mapping is not None else None),
+        "mapping_scale": (
+            list(mapping.inputs["Scale"].default_value[:3])
+            if mapping is not None else None),
+        "noise_scale": (
+            float(noise.inputs["Scale"].default_value)
+            if noise is not None else None),
+        "bump_strength": (
+            float(bump.inputs["Strength"].default_value)
+            if bump is not None else None),
+        "bump_distance_m": (
+            float(bump.inputs["Distance"].default_value)
+            if bump is not None else None),
+        "noise_linked_to_base_color": bool(
+            base_input is not None and any(
+                link.from_node == noise for link in base_input.links)),
+    }
+
+
+def _fill_area(obj):
+    """One side of a filled 2D curve's area, in the object's own units.
+
+    The measurement that makes contract 1.8 checkable without rendering. A hole
+    is another cyclic spline of the same curve and Blender fills by nesting, so
+    whether the hole was CUT or merely drawn shows up here and nowhere else in
+    the dump: the bounding box is identical either way.
+
+    Caps only -- the polygons whose local normal is +-Z -- halved, because the
+    extrude gives the region a front and a back. Measured on 5.1.2, a unit
+    square with a 0.5 inner square returns 0.7500 unextruded and 1.5000 in caps
+    at 0.05 extrude, whichever way either ring is wound.
+    """
+    if obj.type != "CURVE":
+        return None
+    dg = bpy.context.evaluated_depsgraph_get()
+    ev = obj.evaluated_get(dg)
+    me = ev.to_mesh()
+    caps = sum(pg.area for pg in me.polygons if abs(pg.normal.z) > 0.9)
+    ev.to_mesh_clear()
+    return round(caps / 2.0, 10)
+
+
 def _bounds_in_frame(obj, reference):
     """Axis-aligned bounds of obj's mesh expressed in `reference`'s local frame.
 
@@ -1737,19 +3374,38 @@ def _bounds_in_frame(obj, reference):
     "on the front face, at the bottom" is a plain interval comparison.
     """
     to_ref = reference.matrix_world.inverted() @ obj.matrix_world
-    if obj.type in ("FONT", "CURVE"):
-        # Neither has vertices until the depsgraph builds them -- glyphs for a
-        # text object, a tessellated fill for a curve -- so measure the evaluated
-        # bounding box instead. Same frame, same meaning; only the source of the
-        # points differs.
-        #
-        # CURVE was added with the contract-1.4 design fields, which are filled
-        # 2D curves. Before that this branch tried `obj.data.vertices` on them
-        # and raised, and Blender exits 0 after an uncaught exception: the dump
-        # was simply never written while the run reported success.
+    if obj.type == "FONT":
+        # A text object has no vertices until the depsgraph builds its glyphs,
+        # so the evaluated bounding box is the measurement.
         from mathutils import Vector
         dg = bpy.context.evaluated_depsgraph_get()
         pts = [to_ref @ Vector(c) for c in obj.evaluated_get(dg).bound_box]
+    elif obj.type == "CURVE":
+        # A curve is measured from its TESSELLATED MESH, and the difference from
+        # the branch above is not stylistic.
+        #
+        # CURVE was added with the contract-1.4 design fields, which are filled
+        # 2D curves, and it was put on the same evaluated bound_box as FONT.
+        # Blender does not fill that in for a curve: measured on 5.1.2 with a
+        # 0.05 x 0.03 rectangle extruded by 0.0001, `evaluated_get(dg).bound_box`
+        # returns the DEFAULT unit cube -- (-1,-1,-1) to (1,1,1) -- while the raw
+        # `obj.bound_box` is exact and `to_mesh()` carries 16 real vertices
+        # spanning the rectangle. So every design field in every scene dump has
+        # reported a two-unit box on a carton 0.09 units wide.
+        #
+        # It went unseen because nothing read it: the design-field tests check
+        # `name`, `roughness` and `base_color`. A test written against these
+        # bounds would have passed for the wrong reason, which is how it was
+        # found -- contract 1.7's paint-order test asked how thick the stack is
+        # and got 1.0.
+        dg = bpy.context.evaluated_depsgraph_get()
+        ev = obj.evaluated_get(dg)
+        mesh = ev.to_mesh()
+        pts = [to_ref @ v.co for v in mesh.vertices]
+        ev.to_mesh_clear()
+        if not pts:
+            from mathutils import Vector
+            pts = [to_ref @ Vector(c) for c in obj.bound_box]
     else:
         pts = [to_ref @ v.co for v in obj.data.vertices]
     return {
@@ -1863,6 +3519,109 @@ def printed_faces_px():
     }
 
 
+def _device_report() -> dict:
+    """What Cycles is actually set to sample and denoise on.
+
+    Applies the device settings and then READS THEM BACK, rather than echoing
+    the flags it was given. The difference is the whole value of the field: a
+    dump that repeats its own input agrees with itself whatever Blender did, and
+    the failure this guards against -- the render happening on a device nobody
+    chose -- is invisible to it.
+
+    Off CYCLES there is no `scene.cycles`, so the engine is reported and the
+    rest is null rather than invented.
+    """
+    scene = bpy.context.scene
+    if ENGINE != "CYCLES":
+        return {"engine": ENGINE, "cycles_device": None, "backend": None,
+                "enabled_devices": [], "denoising_use_gpu": None}
+    try:
+        scene.render.engine = ENGINE
+    except (TypeError, ValueError) as exc:
+        raise SystemExit(
+            f"[render_driver] render engine '{ENGINE}' is not available in this "
+            f"Blender ({bpy.app.version_string}). Blender reports: {exc}")
+    setup_device(scene)
+    prefs = bpy.context.preferences.addons["cycles"].preferences
+    on_gpu = scene.cycles.device == "GPU"
+    return {
+        "engine": scene.render.engine,
+        "cycles_device": scene.cycles.device,
+        # Both null on CPU rather than reported, and that is not tidiness. The
+        # preference list keeps whatever devices Blender enabled for itself, so
+        # a CPU render would print "enabled_devices: [NVIDIA ...]" and read as
+        # though the card were doing the work. `scene.cycles.device` is the only
+        # thing that decides, and on CPU the list decides nothing.
+        "backend": prefs.compute_device_type if on_gpu else None,
+        "enabled_devices": (sorted(d.name for d in prefs.devices if d.use)
+                            if on_gpu else []),
+        "denoising_use_gpu": getattr(scene.cycles, "denoising_use_gpu", None),
+    }
+
+
+def _projected_splines_px(obj):
+    """Actual curve control rings, before extrusion/bevel, in image pixels.
+
+    These are measured off Blender objects with their real normal offsets and
+    transforms. They describe the path, not the final beveled mesh silhouette.
+    `printed_faces_px` sets the matching projection resolution before this runs.
+    """
+    if obj.type != "CURVE":
+        return None
+    from bpy_extras.object_utils import world_to_camera_view
+    scene = bpy.context.scene
+    if scene.camera is None:
+        return None
+    rings = []
+    for spline in obj.data.splines:
+        points = (spline.bezier_points if spline.type == "BEZIER"
+                  else spline.points)
+        ring = []
+        for point in points:
+            world = obj.matrix_world @ mathutils.Vector(point.co[:3])
+            ndc = world_to_camera_view(scene, scene.camera, world)
+            ring.append([float(ndc.x * RES_X), float((1.0 - ndc.y) * RES_Y)])
+        rings.append(ring)
+    return rings
+
+
+def _diagnostic_projection(obj):
+    """Evaluated mesh triangles including caps, walls and modifiers.
+
+    Pixel origin is top-left; positive depth is distance along the camera view
+    axis in scene units (metres). This geometry diagnostic is independent of
+    beauty shading. Triangle coverage is not a visibility or lighting result.
+    """
+    if obj.type not in {"CURVE", "MESH"}:
+        return None
+    from bpy_extras.object_utils import world_to_camera_view
+    scene = bpy.context.scene
+    if scene.camera is None:
+        return None
+    evaluated = obj.evaluated_get(bpy.context.evaluated_depsgraph_get())
+    mesh = evaluated.to_mesh()
+    try:
+        mesh.calc_loop_triangles()
+        vertices = []
+        for vertex in mesh.vertices:
+            # As in _bounds_in_frame, apply the original parent transform to
+            # evaluated local vertices; do not apply the parent twice.
+            world = obj.matrix_world @ vertex.co
+            ndc = world_to_camera_view(scene, scene.camera, world)
+            vertices.append([float(ndc.x * RES_X),
+                             float((1.0 - ndc.y) * RES_Y), float(ndc.z)])
+        return {
+            "basis": "evaluated_mesh",
+            "resolution": [RES_X, RES_Y],
+            "depth_basis": "camera_view_axis_metres_positive_in_front",
+            "projected_vertices_px_depth": vertices,
+            "triangles": [list(triangle.vertices)
+                          for triangle in mesh.loop_triangles],
+        }
+    finally:
+        evaluated.to_mesh_clear()
+
+
 def dump_scene(path: str):
     """Write the measured geometry of the built scene as JSON."""
     box = bpy.data.objects.get("carton")
@@ -1881,6 +3640,8 @@ def dump_scene(path: str):
         }
     out = {
         "carton": None,
+        "carton_profile": None,
+        "visible_carton_geometry": [],
         "stripe": None,
         "badge": None,
         # Present even when nothing was built, so a consumer never has to guess
@@ -1888,11 +3649,22 @@ def dump_scene(path: str):
         # hand-authored .blend branch builds none of this.
         "side_panel": [],
         "label": [],
+        "reference_aux_text": [],
+        "relief": [],
+        "design_marks": [],
+        "shadow_rig": dict(_LAST_SHADOW_RIG),
         "lighting": lighting,
         # Read back off the scene rather than echoing the FILM_* constants, so
         # the dump reports what Blender actually holds.
         "film": {"view_transform": view.view_transform,
                  "exposure": view.exposure},
+        # Which device would draw this frame, read back the same way -- off the
+        # scene after the assignment, never echoed from the flags. A dump that
+        # repeated its own input could not catch the case this exists for: the
+        # device being something nobody asked for. `--dump-scene` returns before
+        # setup_render(), so the assignment is made here, on the same seam and
+        # for the same reason `setup_film` is applied before this point.
+        "device": _device_report(),
         **printed_faces_px(),
     }
     if box is not None:
@@ -1902,7 +3674,34 @@ def dump_scene(path: str):
             "rotation_z_deg": math.degrees(box.matrix_world.to_euler().z),
             "base_color": _base_color(box),
             "roughness": _roughness(box),
+            "material_finish": _material_finish(box),
         }
+        profile_version = box.get("carton_profile_version")
+        if profile_version is not None:
+            bevel = next((modifier for modifier in box.modifiers
+                          if modifier.name == "carton_edge_radius"), None)
+            out["carton_profile"] = {
+                "profile_version": str(profile_version),
+                "edge_radius_m": (float(bevel.width) if bevel else 0.0),
+                "edge_segments": (int(bevel.segments) if bevel else 0),
+                "board_thickness_m": float(
+                    box.get("carton_board_thickness_m", 0.0)),
+            }
+        out["visible_carton_geometry"] = [
+            {
+                "name": obj.name,
+                "kind": str(obj.get("carton_detail_kind")),
+                "surface": str(obj.get("carton_detail_surface")),
+                "bounds_in_carton_frame": _bounds_in_frame(obj, box),
+                "base_color": _base_color(obj),
+                "roughness": _roughness(obj),
+                "material_finish": _material_finish(obj),
+            }
+            for obj in sorted(
+                (item for item in bpy.data.objects
+                 if item.get("carton_detail_kind") is not None),
+                key=lambda item: item.name)
+        ]
         for key, obj in (("stripe", stripe), ("badge", badge)):
             if obj is not None:
                 out[key] = {
@@ -1917,12 +3716,51 @@ def dump_scene(path: str):
         out["design_fields"] = [
             {
                 "name": o.name,
+                "surface": str(o.get("design_surface", "front")),
                 "bounds_in_carton_frame": _bounds_in_frame(o, box),
                 "base_color": _base_color(o),
                 "roughness": _roughness(o),
+                "material_finish": _material_finish(o),
+                # Contract 1.8. `splines` is 1 + the number of holes the part
+                # carries, and `fill_area_m2` is what those holes actually
+                # removed -- the only two figures in this dump that can tell a
+                # cut hole from a filled one.
+                "splines": (len(o.data.splines) if o.type == "CURVE" else None),
+                "fill_area_m2": _fill_area(o),
+                "projected_splines_px": _projected_splines_px(o),
+                "projected_splines_basis":
+                    "curve_control_points_before_extrusion_and_bevel",
+                "diagnostic_projection": _diagnostic_projection(o),
             }
             for o in sorted((x for x in bpy.data.objects
                              if x.name.startswith("design_")),
+                            key=lambda x: x.name)
+        ]
+        out["design_marks"] = [
+            {
+                "name": o.name,
+                "surface": str(o.get("design_surface", "front")),
+                "bounds_in_carton_frame": _bounds_in_frame(o, box),
+                "normal_offset_m": float(
+                    o.get("design_normal_offset_m", 0.0)),
+                "ink_budget_m": float(o.get("design_ink_budget_m", 0.0)),
+                "holes": int(o.get("design_hole_count", 0)),
+                "fill": str(o.get("design_fill", "")),
+                "mark_key": str(o.get("design_mark_key", "")),
+                "mark_part_index": int(o.get("design_mark_part_index", -1)),
+                "base_color": _base_color(o),
+                "roughness": _roughness(o),
+                "material_finish": _material_finish(o),
+                "splines": (len(o.data.splines)
+                            if o.type == "CURVE" else None),
+                "fill_area_m2": _fill_area(o),
+                "projected_splines_px": _projected_splines_px(o),
+                "projected_splines_basis":
+                    "curve_control_points_before_extrusion_and_bevel",
+                "diagnostic_projection": _diagnostic_projection(o),
+            }
+            for o in sorted((x for x in bpy.data.objects
+                             if x.name.startswith("mark_")),
                             key=lambda x: x.name)
         ]
         # Every label row, with the exact string it will draw. `body` is what
@@ -1976,12 +3814,40 @@ def dump_scene(path: str):
                              if o.type == "FONT" and o.name.startswith("label_")),
                             key=lambda o: -o.location.z)
         ]
+        out["reference_aux_text"] = [
+            {
+                "name": obj.name,
+                "body": obj.data.body,
+                "surface": str(obj.get("reference_aux_surface")),
+                "font": obj.data.font.name if obj.data.font else None,
+                "bounds_in_carton_frame": _bounds_in_frame(obj, box),
+            }
+            for obj in sorted(
+                (item for item in bpy.data.objects
+                 if item.type == "FONT"
+                 and item.name.startswith("reference_aux_")),
+                key=lambda item: item.name)
+        ]
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2)
     print(f"[render_driver] dumped scene geometry to {path}")
 
 
 def main():
+    if JOB.get('physical_baseline'):
+        # Explicit photograph-free branch, compiled by the existing manifest
+        # owner. The adapters receive bpy; no second Blender entry point exists.
+        sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+        from src.carton_scene import run_physical
+        views = _arg('--physical-views')
+        try:
+            run_physical(bpy, JOB, OUT_PATH or DUMP_SCENE, DUMP_SCENE, SAVE_BLEND,
+                         views.split(',') if views else None)
+        except Exception:
+            import traceback
+            traceback.print_exc()
+            raise
+        return
     clear_scene()
 
     palette = JOB.get("palette", {}) or {}
@@ -2024,7 +3890,8 @@ def main():
               f"exposure {exposure:+.2f}")
 
         box, target_size = build_box(dims_m, palette, JOB.get("label_content"), JOB)
-        build_background(palette.get("background", "#FFFFFF"), exposure)
+        build_background(
+            palette.get("background", "#FFFFFF"), exposure, target_size)
         setup_camera(dims_m)
         setup_lighting(target_size)
 
@@ -2039,15 +3906,25 @@ def main():
         return
 
     setup_render(OUT_PATH, ENGINE, SAMPLES, RES_X, RES_Y)
+    if SAVE_BLEND:
+        bpy.ops.wm.save_as_mainfile(filepath=str(Path(SAVE_BLEND).resolve()))
 
     # Sidecar for post-render QA. Written before the render so it exists even if
     # rendering later fails, and the pixels are unaffected either way.
-    view_path = Path(OUT_PATH).with_suffix(".view.json")
-    view_path.write_text(json.dumps(printed_faces_px(), indent=2), encoding="utf-8")
-    print(f"[render_driver] wrote {view_path}")
+    if not BLANK_CARTON:
+        view_path = Path(OUT_PATH).with_suffix(".view.json")
+        view_path.write_text(json.dumps(printed_faces_px(), indent=2), encoding="utf-8")
+        print(f"[render_driver] wrote {view_path}")
 
     bpy.ops.render.render(write_still=True)
+    save_diagnostic_passes()
     print(f"[render_driver] wrote {OUT_PATH}")
 
 
-main()
+try:
+    main()
+except Exception as exc:
+    # Blender reports ordinary script exceptions with process exit 0. Stage 2
+    # must receive a failure for scene, sidecar and render errors (INV-004).
+    raise SystemExit(
+        f"[render_driver] fatal {type(exc).__name__}: {exc}") from exc

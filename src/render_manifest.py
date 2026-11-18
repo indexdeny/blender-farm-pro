@@ -43,7 +43,8 @@ from pathlib import Path
 from src.design_group import load_design, reshape_to_design
 from src.utils import product_code
 
-MANIFEST_VERSION = "1.6"
+MANIFEST_VERSION = "1.10"
+COMPOUND_MARK_MANIFEST_VERSION = "1.11"
 
 _SCHEMA_PATH = Path(__file__).resolve().parent.parent / "schemas" / "render_manifest.schema.json"
 
@@ -151,11 +152,17 @@ def _design_block(sku_id: str) -> dict | None:
     spec = load_design(sku_id)
     if spec is None:
         return None
-    return {
+    design = {
         "spec_version": str(spec.get("spec_version", "")),
         "face_aspect": float(spec["face_aspect"]),
         "substrate": str(spec["substrate"]),
         "fields": spec.get("fields") or [],
+        # Contract 1.10. Present and usually empty: the marks the OWNER approved
+        # by name in 00_PROJECT_STATE/MARKS_DECISION.md. Each keeps the
+        # print_truth key that permitted it, so provenance survives into the one
+        # artefact the renderer actually reads -- the driver can import nothing
+        # from this project, so a key absent here does not exist to it.
+        "marks": spec.get("marks") or [],
         # Per-role type geometry, where the reference could be read. Partial by
         # nature: only rows identified against the reference's OWN strings are
         # measured, so a role that is absent here is one the renderer keeps on
@@ -163,6 +170,12 @@ def _design_block(sku_id: str) -> dict | None:
         "type_rows": spec.get("type_rows") or {},
         "source_image": str(spec.get("source_image", "")),
     }
+    # Strictly optional additions to contract 1.10. Their absence is the old
+    # path byte-for-byte; no catalogue-wide manifest migration is required.
+    for key in ("carton_profile", "reference_aux_text"):
+        if key in spec:
+            design[key] = spec[key]
+    return design
 
 
 def reshape_to_art_direction(
@@ -257,7 +270,27 @@ def validate_manifest(manifest: dict) -> None:
             "Install it with: python -m pip install -r requirements.txt"
         ) from e
     Draft202012Validator(load_schema()).validate(manifest)
+    if 'physical_baseline' in manifest:
+        from src.carton_spec import validate_spec, verify_generated
+        import hashlib
+        physical = manifest['physical_baseline']
+        validate_spec(physical['spec'])
+        verify_generated(physical['artwork'])
+        digest = hashlib.sha256(json.dumps(physical['spec'], sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+        if digest != physical['artwork']['spec_sha256']:
+            raise ValueError('Physical artwork was generated from a different spec')
+        for field, axis in [('width_mm','width'), ('height_mm','height'), ('depth_mm','depth')]:
+            if manifest['carton'][field] != physical['spec']['dimensions_mm'][axis]:
+                raise ValueError('Physical carton dimensions differ from design_spec')
+        return
     _reject_tangled_outlines(manifest)
+    from src.mark_geometry import validate_mark_geometry
+    for i, mark in enumerate((manifest.get("design") or {}).get("marks", [])):
+        # Compound geometry opts into the new strict boundary. Legacy marks
+        # retain their existing contract; this is not a catalogue migration.
+        if "parts" in mark:
+            validate_mark_geometry(mark, f"{manifest.get('sku_id')}: design.marks[{i}]")
+    _reject_unpaired_marks(manifest)
 
 
 def _reject_tangled_outlines(manifest: dict) -> None:
@@ -278,18 +311,92 @@ def _reject_tangled_outlines(manifest: dict) -> None:
 
     for field in ((manifest.get("design") or {}).get("fields") or []):
         for i, part in enumerate(field.get("parts") or []):
-            outline = part.get("outline") or []
-            if len(outline) < 4:
-                continue
-            hits = ring_crossings([(float(p[0]), float(p[1])) for p in outline])
-            if hits:
-                raise ValueError(
-                    f"{manifest.get('sku_id')}: design field "
-                    f"{field.get('role')!r} part {i} has an outline that "
-                    f"crosses itself at {hits[:3]} -- that is not a region, and "
-                    f"the driver and the QA raster would fill different areas. "
-                    f"Regenerate the manifest; src.design_group.simple_ring "
-                    f"repairs it at load.")
+            # Contract 1.8: the holes are checked on the same footing as the
+            # outline. A part is its outline minus its holes, so a tangled hole
+            # is a tangled region boundary -- and it reaches the render the same
+            # way, since the driver hands both to Blender as splines of one
+            # curve.
+            rings = [("outline", part.get("outline") or [])]
+            rings += [(f"hole {k}", ring)
+                      for k, ring in enumerate(part.get("holes") or [])]
+            for what, ring in rings:
+                if len(ring) < 4:
+                    continue
+                hits = ring_crossings([(float(p[0]), float(p[1])) for p in ring])
+                if hits:
+                    raise ValueError(
+                        f"{manifest.get('sku_id')}: design field "
+                        f"{field.get('role')!r} part {i} has an {what} that "
+                        f"crosses itself at {hits[:3]} -- that is not a region, "
+                        f"and the driver and the QA raster would fill different "
+                        f"areas. Regenerate the manifest; "
+                        f"src.design_group.simple_ring repairs it at load.")
+
+
+def _reject_unpaired_marks(manifest: dict) -> None:
+    """A cut mark hole and its mark are one thing, and neither may travel alone.
+
+    `00_PROJECT_STATE/MARKS_DECISION.md` states the rule and the reason: cutting
+    a mark hole while drawing nothing into it shows board through our field in
+    the shape of another company's logo, which is the act contract 1.8 already
+    refuses for another company's lettering. The owner's scope sentence repeats
+    it -- "a mark hole may be cut only when its corresponding mark is emitted in
+    the same build".
+
+    `fit()` emits both from one loop, so the unpaired case is unreachable in the
+    PRODUCER. This exists because a manifest is a file: it can be hand-edited,
+    merged, or written by something else, and a rule that only the producer
+    keeps is a rule the artefact does not carry.
+
+    Checked both ways, because the two failures are different acts:
+
+    - a cut hole listed in `mark_holes` with no mark drawn into it is the logo
+      showing through, which is what the decision forbids;
+    - a mark whose `source` is `hole` with no cut hole under it is a mark
+      floating on top of an uncut field, which is not what was approved either.
+    """
+    design = manifest.get("design") or {}
+    marks = design.get("marks") or []
+    sku = manifest.get("sku_id")
+
+    def _ring(r):
+        return tuple((round(float(x), 4), round(float(y), 4)) for x, y in r)
+
+    drawn: dict[tuple[tuple[float, float], ...], list[dict]] = {}
+    for mark in marks:
+        if mark.get("source") != "hole":
+            continue
+        drawn.setdefault(_ring(mark.get("outline") or []), []).append(mark)
+
+    cut: dict[tuple[tuple[float, float], ...], list[tuple[str | None, int, int]]] = {}
+    for field in design.get("fields") or []:
+        for i, part in enumerate(field.get("parts") or []):
+            holes = part.get("holes") or []
+            for k in part.get("mark_holes") or []:
+                if k >= len(holes):
+                    raise ValueError(
+                        f"{sku}: design field {field.get('role')!r} part {i} "
+                        f"lists mark_hole {k} but carries only {len(holes)} "
+                        f"holes.")
+                cut.setdefault(_ring(holes[k]), []).append((field.get("role"), i, k))
+
+    for ring, where in cut.items():
+        if ring not in drawn:
+            role, i, k = where[0]
+            raise ValueError(
+                f"{sku}: design field {role!r} part {i} cuts hole {k} as a MARK "
+                f"and no mark is drawn into it. That shows board through our "
+                f"field in the shape of another company's logo, which is what "
+                f"00_PROJECT_STATE/MARKS_DECISION.md forbids and what contract "
+                f"1.8 already refuses for another company's lettering. "
+                f"Regenerate the manifest from Stage 1.")
+    for ring, entries in drawn.items():
+        if ring not in cut:
+            raise ValueError(
+                f"{sku}: mark {entries[0].get('key')!r} has source 'hole' and no "
+                f"cut hole under it, so it would be painted on top of an uncut "
+                f"field rather than filling the window it was approved for. "
+                f"Regenerate the manifest from Stage 1.")
 
 
 # ── carton resolution ────────────────────────────────────────────────────────
@@ -402,9 +509,13 @@ def build_manifest(passport: dict) -> dict:
     template_id, is_bottle_override = agent_1_router(passport)
     palette = (passport.get("branding") or {}).get("palette") or {}
     label = passport.get("label_content") or {}
+    design = _design_block(passport.get("sku_id", ""))
+    version = (COMPOUND_MARK_MANIFEST_VERSION
+               if any("parts" in mark for mark in (design or {}).get("marks", []))
+               else MANIFEST_VERSION)
 
     return {
-        "manifest_version": MANIFEST_VERSION,
+        "manifest_version": version,
         "sku_id": str(passport.get("sku_id", "")),
         # What identifies the row and what is printed on the pack are two
         # questions; conflating them put `.jpg` on all 391 cartons. See
@@ -414,7 +525,7 @@ def build_manifest(passport: dict) -> dict:
         "is_bottle_override": bool(is_bottle_override),
         "packaging_geometry": str(passport.get("packaging_geometry") or "BOX"),
         "carton": resolve_carton(passport, template_id),
-        **({"design": design} if (design := _design_block(passport.get("sku_id", ""))) else {}),
+        **({"design": design} if design else {}),
         "palette": {
             "primary": palette.get("primary"),
             "accent": palette.get("accent"),
@@ -437,6 +548,37 @@ def build_manifest(passport: dict) -> dict:
 
 
 # ── persistence ──────────────────────────────────────────────────────────────
+def build_baseline_manifest(passport: dict, spec: dict, artwork: dict) -> dict:
+    """Compile the independent physical branch; never load legacy photo design.
+
+    The caller supplies the validated canonical baseline_rebuild section and
+    this run's generated artwork. Stage 1 routing retains its existing owner.
+    """
+    from src.passport_generator import agent_1_router
+    from src.carton_spec import validate_spec, verify_generated
+    validate_spec(spec)
+    if product_code(passport["sku_id"]) != spec["sku"]:
+        raise ValueError("Physical spec SKU does not match passport")
+    verify_generated(artwork)
+    template_id, bottle = agent_1_router(passport)
+    dimensions = {axis+'_mm': spec['dimensions_mm'][key] for axis,key in [('width','width'),('height','height'),('depth','depth')]}
+    label = passport['label_content']
+    result = {
+        'manifest_version': '1.13', 'sku_id': passport['sku_id'],
+        'product_code': product_code(passport['sku_id']), 'template_id': template_id,
+        'is_bottle_override': bool(bottle), 'packaging_geometry': passport['packaging_geometry'],
+        'carton': {**dimensions, 'source':'design_spec',
+                   'passport_dimensions':_resolve_passport_dimensions(passport, template_id),
+                   'features':passport['secondary_packaging']['features'],
+                   'material':passport['secondary_packaging']['material']},
+        'palette': {key:spec['colors'][name]['hex'] for key,name in spec.get('palette_roles', {'primary':'navy','accent':'cyan','background':'paper'}).items()},
+        'label_content': {**label, 'active_ingredient_display':passport['active_ingredient']},
+        'physical_baseline': {'spec':spec,'artwork':artwork},
+    }
+    validate_manifest(result)
+    return result
+
+
 def manifest_path_for(stem: str, manifests_dir: Path) -> Path:
     """Manifest location for a passport stem, following the -min convention."""
     return Path(manifests_dir) / f"{stem}.json"

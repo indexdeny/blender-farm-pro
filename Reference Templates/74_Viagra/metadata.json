@@ -1,0 +1,140 @@
+{
+  "sku_id": "74-min.jpg",
+  "artifact_type": "reverse_engineering_passport",
+  "schema_version": "2.0",
+  "product_name": "Viagra",
+  "active_ingredient": "Sildenafil",
+  "template_id": "T1_SMALL",
+  "dimensions": "110x50x18mm",
+  "camera_reconstruction": {
+    "note": "pitch, yaw and focal length are not recoverable from one uncalibrated view; see Section A",
+    "carton_bbox_aspect": 1.161,
+    "carton_share_of_frame_pct": 62.47
+  },
+  "bounding_boxes": {
+    "brand_title": [
+      0.381,
+      0.176,
+      0.449,
+      0.102
+    ],
+    "dosage_value": [
+      0.382,
+      0.302,
+      0.063,
+      0.058
+    ],
+    "active_ingredient": [
+      0.707,
+      0.343,
+      0.123,
+      0.051
+    ],
+    "unit_count": [
+      0.382,
+      0.842,
+      0.301,
+      0.058
+    ]
+  },
+  "palette": {
+    "primary": "#082858",
+    "accent": "#282898",
+    "background": "#D8D8D8"
+  },
+  "label_content": {
+    "brand_name_display": "VIAGRA",
+    "dosage_display": "50 mg",
+    "unit_count_display": "4 film-coated tablets"
+  },
+  "reference_images": [
+    "raw_viagra_front.png",
+    "back.webp",
+    "blister.webp"
+  ],
+  "quality_gate": {
+    "reverse_engineering_passport_present": true,
+    "bounding_boxes_complete": true,
+    "primitives_decomposed": true,
+    "layer_stack_defined": true
+  },
+  "status": "complete",
+  "coordinate_space": "carton image bounding box, NOT front-face coordinates",
+  "color_zones": [
+    {
+      "id": "ZONE_01",
+      "hex": "#D8D8D8",
+      "area_pct": 64.24
+    },
+    {
+      "id": "ZONE_02",
+      "hex": "#082858",
+      "area_pct": 21.5
+    },
+    {
+      "id": "ZONE_03",
+      "hex": "#787888",
+      "area_pct": 9.5
+    },
+    {
+      "id": "ZONE_04",
+      "hex": "#282898",
+      "area_pct": 3.43
+    }
+  ],
+  "measurement_source": "scripts/reference_measure.py, 2026-08-07",
+  "source_tier": null,
+  "packaging_market": "eu",
+  "market_evidence": "braille on the front face; \"film-coated tablets\"; pack of 4",
+  "front_face_px": [
+    [
+      184,
+      153
+    ],
+    [
+      958,
+      105
+    ],
+    [
+      960,
+      656
+    ],
+    [
+      223,
+      759
+    ]
+  ],
+  "front_face_measurement": {
+    "source_image": "raw_viagra_front.png",
+    "order": "TL, TR, BR, BL — the order render_driver.py emits, so src/deskew.flatten_face reads it unchanged",
+    "method": "set by hand against a coordinate overlay, then verified by rectifying and inspecting the result",
+    "corner_quality": "good",
+    "corner_note": "clean after one correction"
+  },
+  "design_measurement": {
+    "source_image": "raw_viagra_front.png",
+    "rectified_px": [
+      1100,
+      819
+    ],
+    "reference_aspect": 0.7445,
+    "catalogue_aspect": 0.4545,
+    "fields": {
+      "brand": {
+        "pct": 25.2,
+        "hex": "#002957"
+      },
+      "substrate": {
+        "pct": 69.7,
+        "hex": "#DDDEDB"
+      },
+      "highlight": {
+        "pct": 5.2,
+        "hex": "#636671"
+      },
+      "type": null
+    },
+    "method": "rectified with src/deskew.flatten_face from hand-set corners; type split by value < 0.35, remainder k-means k=3 labelled by saturation and value, not by hue",
+    "note": "shares are of the FRONT FACE. The `color_zones` block counts the whole photograph, background included, and the two are not comparable."
+  }
+}

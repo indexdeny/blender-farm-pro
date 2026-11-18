@@ -1,0 +1,91 @@
+{
+  "spec_version": "0.1",
+  "sku": "362-min.jpg",
+  "source_image": "Hydrocodone_front_face.png",
+  "face_aspect": 1.2609,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#EDC8C3",
+  "fields": [
+    {
+      "role": "brand",
+      "fill": "#6A072D",
+      "coverage_pct": 23.9,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 10.6,
+          "smoothness": 0.0,
+          "outline": [
+            [
+              0.9155,
+              0.5263
+            ],
+            [
+              0.9164,
+              0.6813
+            ],
+            [
+              0.0727,
+              0.6813
+            ],
+            [
+              0.0709,
+              0.5278
+            ],
+            [
+              0.9145,
+              0.527
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "coverage_pct": 15.0,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 12.7,
+          "smoothness": 0.2,
+          "outline": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.9991,
+              0.0
+            ],
+            [
+              0.9991,
+              0.9993
+            ],
+            [
+              0.0,
+              0.9993
+            ],
+            [
+              0.0,
+              0.0007
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "glyph_components_dropped": 0,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 1,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 0.1876,
+    "excluded_as_glyphs_pct": 20.23,
+    "iou_by_field": {
+      "brand": 0.0,
+      "highlight": 0.188
+    },
+    "vertices": 10
+  }
+}

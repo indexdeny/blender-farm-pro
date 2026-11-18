@@ -36,9 +36,9 @@ paths:
 # ── Stage 2: Selenium / Gemini RPA renderer (unchanged from source project) ──
 rpa:
   # Pre-authenticated Chrome profile (Gemini session must already be logged in).
-  browser_profile_dir:  'C:\Users\candy\.gemini\antigravity-browser-profile\Profile 1'
+  browser_profile_dir:  'C:\CHANGE_ME\Chrome\Profile 1'
   browser_profile_name: "Profile 1"
-  downloads_dir:        'C:\Users\candy\Downloads'
+  downloads_dir:        'C:\CHANGE_ME\Downloads'
   gemini_url:           "https://gemini.google.com/app"
   # WARNING: Gemini blocks image generation in headless mode. Leave false.
   headless:                 false
@@ -70,6 +70,48 @@ blender:
                                                  # (startup, BVH, denoiser), so lowering further buys little. Re-check after any
                                                  # material/geometry change that adds glass, metal or real GI.
   render_timeout: 300   # seconds, per SKU — ~4.5x headroom at 16 samples (was ~1.8x at 64)
+  # ── Compute device ────────────────────────────────────────────────────────
+  # Cycles' sampling device, and separately the denoiser's. STATED rather than
+  # inherited, which is the whole point of these two keys: setup_render() never
+  # assigned `scene.cycles.device` at all, so the device was whatever the
+  # process happened to start with — and a second `--python` argument before the
+  # driver could move the whole render onto the GPU with nothing in the log
+  # saying so. scripts/probe_render_device.py does exactly that, deliberately,
+  # and it is the reason these keys exist.
+  #
+  # CPU is not a placeholder. Measured 2026-08-24 on an RTX 2060 SUPER against
+  # the CPU render of 1-min / 64-min / 357-min, all at 16 samples:
+  #
+  #   OPTIX sampling        1.17-1.34x faster,  up to 43 levels apart on 0.2-0.9% of pixels
+  #   CUDA  sampling        1.18-1.45x faster,  up to 23 levels apart on 0.2-0.7% of pixels
+  #   OPTIX + GPU denoise   1.6-5.4x  faster,   up to 43 levels apart on 14-18% of pixels
+  #
+  # None reproduces the CPU image, so none can be switched on without re-taking
+  # every figure measured against it — every design_qa row, the calibration
+  # curve, and the OCR fixtures. That is a phase of its own, not a config tweak.
+  #
+  # HOW THESE REACH THE RENDER, and the one thing to know before changing them.
+  # The driver may not import project code — it runs inside Blender's own
+  # interpreter — so it cannot read this file. It carries the same three values
+  # as flag defaults (--device / --device-backend / --denoising-device), and
+  # `tests/test_render_driver.py` asserts the defaults equal what is written
+  # here. Nothing passes them on the command line yet: that would mean editing
+  # src/blender_renderer.py, which is outside this migration's allowed changes.
+  #
+  # So changing a value here does NOT change a render on its own — it fails the
+  # test instead, until someone changes the driver's default to match and wires
+  # the flag through the launchers. That is deliberate. A config key that
+  # silently did nothing is the failure this project already has one example of
+  # (`smoothness`, measured and read by nobody); a key that stops the suite
+  # until the wiring exists is a statement with teeth.
+  #
+  # device:           CPU | GPU  — GPU needs `device_backend` below
+  # device_backend:   OPTIX | CUDA | HIP | ONEAPI — ignored when device is CPU
+  # denoising_device: CPU | GPU  — independent of `device`; the denoiser is more
+  #                   than half of every render, so this is where the time is
+  device:           "CPU"
+  device_backend:   "OPTIX"
+  denoising_device: "CPU"
 
 # ── Stage 3: final image processor (webp_converter behaviour — canonical) ────
 image_processor:

@@ -297,7 +297,8 @@ def _erode(mask, r):
 
 
 def measured_silhouette_px(image_path, threshold=MEASURE_THRESHOLD,
-                           erode_r=MEASURE_ERODE_R):
+                           erode_r=MEASURE_ERODE_R,
+                           object_mask_path=None):
     """(min_x, min_y, max_x, max_y) of the carton, read off the pixels.
 
     Comparable with ``silhouette_px`` only within ``MEASURE_UNCERTAINTY_PCT`` --
@@ -308,20 +309,35 @@ def measured_silhouette_px(image_path, threshold=MEASURE_THRESHOLD,
     from PIL import Image
 
     grey = np.asarray(Image.open(image_path).convert("RGB")).astype(float).mean(axis=2)
-    mask = grey < threshold
-    if erode_r:
-        mask = _erode(mask, erode_r)
+    if object_mask_path is not None:
+        mask = np.asarray(Image.open(object_mask_path).convert("L")) > 127
+        if mask.shape != grey.shape:
+            raise ValueError(
+                "object mask dimensions do not match the rendered image: "
+                f"{mask.shape} != {grey.shape}")
+        restore = 0
+    else:
+        # Reference photographs have no scene-derived mask and deliberately
+        # retain the measured luminance path documented above.
+        mask = grey < threshold
+        if erode_r:
+            mask = _erode(mask, erode_r)
+        restore = erode_r
     if not mask.any():
+        source = (f"object mask {object_mask_path}" if object_mask_path is not None
+                  else f"pixels darker than {threshold} after erosion")
         raise AssertionError(
-            f"nothing darker than {threshold} in {image_path} after erosion: "
-            f"either the frame is empty or the backdrop is darker than the subject")
+            f"no carton found from {source}: either the frame is empty or the "
+            "measurement input is invalid")
     ys, xs = np.nonzero(mask)
-    return (float(xs.min() - erode_r), float(ys.min() - erode_r),
-            float(xs.max() + erode_r), float(ys.max() + erode_r))
+    return (float(xs.min() - restore), float(ys.min() - restore),
+            float(xs.max() + restore), float(ys.max() + restore))
 
 
 def measured_silhouette_aspect(image_path, threshold=MEASURE_THRESHOLD,
-                               erode_r=MEASURE_ERODE_R):
+                               erode_r=MEASURE_ERODE_R,
+                               object_mask_path=None):
     """Measured silhouette width divided by its height."""
-    x0, y0, x1, y1 = measured_silhouette_px(image_path, threshold, erode_r)
+    x0, y0, x1, y1 = measured_silhouette_px(
+        image_path, threshold, erode_r, object_mask_path)
     return (x1 - x0) / (y1 - y0)

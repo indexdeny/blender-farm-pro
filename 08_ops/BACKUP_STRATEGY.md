@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # Backup Strategy
 
 > What to keep, what is regenerable, and what is gone forever if lost. Driven by

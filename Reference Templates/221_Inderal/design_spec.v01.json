@@ -1,0 +1,253 @@
+{
+  "spec_version": "0.1",
+  "sku": "221-min.jpg",
+  "source_image": "Inderal_front_raw.webp",
+  "face_aspect": 0.63,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#FEFEFE",
+  "fields": [
+    {
+      "role": "brand",
+      "fill": "#4A235E",
+      "coverage_pct": 12.9,
+      "parts": [
+        {
+          "kind": "field",
+          "area_pct": 11.3,
+          "smoothness": 0.31,
+          "outline": [
+            [
+              0.3391,
+              0.0
+            ],
+            [
+              0.9818,
+              0.039
+            ],
+            [
+              0.9991,
+              0.0332
+            ],
+            [
+              0.9936,
+              0.0418
+            ],
+            [
+              0.9936,
+              0.9986
+            ],
+            [
+              0.2673,
+              0.9986
+            ],
+            [
+              0.0636,
+              0.9928
+            ],
+            [
+              0.0364,
+              0.9726
+            ],
+            [
+              0.0164,
+              0.9206
+            ],
+            [
+              0.0155,
+              0.8557
+            ],
+            [
+              0.9927,
+              0.8874
+            ],
+            [
+              0.9909,
+              0.0404
+            ],
+            [
+              0.34,
+              0.0
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "highlight",
+      "fill": "#F1897A",
+      "coverage_pct": 16.4,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 7.9,
+          "smoothness": 0.33,
+          "outline": [
+            [
+              0.0727,
+              0.0693
+            ],
+            [
+              0.5445,
+              0.0967
+            ],
+            [
+              0.5582,
+              0.1082
+            ],
+            [
+              0.5645,
+              0.1284
+            ],
+            [
+              0.5645,
+              0.2857
+            ],
+            [
+              0.56,
+              0.3016
+            ],
+            [
+              0.5318,
+              0.3131
+            ],
+            [
+              0.0718,
+              0.2872
+            ],
+            [
+              0.0545,
+              0.2583
+            ],
+            [
+              0.0536,
+              0.1544
+            ],
+            [
+              0.0545,
+              0.0952
+            ],
+            [
+              0.0718,
+              0.0707
+            ]
+          ]
+        },
+        {
+          "kind": "block",
+          "area_pct": 4.4,
+          "smoothness": 0.22,
+          "outline": [
+            [
+              0.0655,
+              0.4574
+            ],
+            [
+              0.4355,
+              0.4747
+            ],
+            [
+              0.4455,
+              0.4877
+            ],
+            [
+              0.4436,
+              0.6032
+            ],
+            [
+              0.4291,
+              0.6104
+            ],
+            [
+              0.0664,
+              0.5945
+            ],
+            [
+              0.0545,
+              0.5772
+            ],
+            [
+              0.0545,
+              0.469
+            ],
+            [
+              0.0645,
+              0.4589
+            ]
+          ]
+        },
+        {
+          "kind": "field",
+          "area_pct": 1.6,
+          "smoothness": 0.23,
+          "outline": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0336,
+              0.0
+            ],
+            [
+              0.0191,
+              0.0317
+            ],
+            [
+              0.0136,
+              0.0837
+            ],
+            [
+              0.0127,
+              0.8456
+            ],
+            [
+              0.0209,
+              0.8543
+            ],
+            [
+              0.0136,
+              0.8571
+            ],
+            [
+              0.0136,
+              0.9076
+            ],
+            [
+              0.0282,
+              0.961
+            ],
+            [
+              0.0527,
+              0.9928
+            ],
+            [
+              0.0627,
+              0.9928
+            ],
+            [
+              0.0,
+              0.9913
+            ],
+            [
+              0.0,
+              0.0014
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "glyph_components_dropped": 0,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 0,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 0.9138,
+    "excluded_as_glyphs_pct": 0.0,
+    "iou_by_field": {
+      "brand": 0.765,
+      "highlight": 0.715
+    },
+    "vertices": 47
+  }
+}

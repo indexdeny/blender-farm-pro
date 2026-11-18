@@ -1,6 +1,6 @@
 {
   "spec_version": "0.1",
-  "sku": "15_T1_Xanax",
+  "sku": "156-min.jpg",
   "source_image": "Xanax_front_raw.jpg",
   "face_aspect": 0.6891,
   "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
@@ -8,13 +8,15 @@
   "fields": [
     {
       "role": "brand",
+      "z": 0,
       "fill": "#ED68BF",
       "coverage_pct": 16.4,
       "parts": [
         {
-          "kind": "block",
+          "kind": "field",
           "area_pct": 7.7,
-          "smoothness": 0.33,
+          "smoothness": 0.65,
+          "fill": "#ED68BF",
           "outline": [
             [
               0.0,
@@ -25,12 +27,56 @@
               0.0
             ],
             [
+              0.0682,
+              0.0079
+            ],
+            [
+              0.07,
+              0.0132
+            ],
+            [
+              0.0727,
+              0.1557
+            ],
+            [
+              0.0745,
+              0.1649
+            ],
+            [
+              0.0755,
+              0.2098
+            ],
+            [
               0.0791,
               0.5963
             ],
             [
               0.0782,
               0.9868
+            ],
+            [
+              0.0745,
+              0.9921
+            ],
+            [
+              0.0673,
+              0.9934
+            ],
+            [
+              0.0482,
+              0.9934
+            ],
+            [
+              0.0418,
+              0.996
+            ],
+            [
+              0.0245,
+              0.996
+            ],
+            [
+              0.0191,
+              0.9987
             ],
             [
               0.0,
@@ -40,49 +86,118 @@
               0.0,
               0.0013
             ]
-          ]
+          ],
+          "holes": [],
+          "mark_holes": []
         },
         {
-          "kind": "block",
+          "kind": "field",
           "area_pct": 4.3,
-          "smoothness": 0.0,
+          "smoothness": 0.55,
+          "fill": "#ED68BF",
           "outline": [
             [
               0.8655,
               0.2309
             ],
             [
+              0.9245,
+              0.2335
+            ],
+            [
+              0.9582,
+              0.2322
+            ],
+            [
+              0.9645,
+              0.2335
+            ],
+            [
               0.9673,
               0.2375
+            ],
+            [
+              0.9682,
+              0.2652
+            ],
+            [
+              0.9655,
+              0.3747
+            ],
+            [
+              0.9664,
+              0.4103
+            ],
+            [
+              0.9645,
+              0.4472
             ],
             [
               0.9636,
               0.6398
             ],
             [
+              0.9573,
+              0.6438
+            ],
+            [
+              0.9345,
+              0.6451
+            ],
+            [
+              0.9264,
+              0.6478
+            ],
+            [
+              0.8936,
+              0.6478
+            ],
+            [
+              0.8909,
+              0.6504
+            ],
+            [
+              0.8755,
+              0.6517
+            ],
+            [
+              0.8664,
+              0.6517
+            ],
+            [
               0.8627,
               0.6478
+            ],
+            [
+              0.8618,
+              0.2375
             ],
             [
               0.8645,
               0.2322
             ]
-          ]
+          ],
+          "holes": [],
+          "mark_holes": []
         }
       ]
     }
   ],
-  "glyph_components_dropped": 0,
-  "flat_fields_dropped": 0,
-  "ink_components_dropped": 3,
+  "marks": [],
+  "components_dropped": 9,
+  "dropped_by_class": {
+    "type": 9
+  },
+  "holes_filled_by_class": {},
+  "truth": "print_truth.json",
   "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
   "verification": {
-    "pixel_agreement": 0.9514,
-    "excluded_as_glyphs_pct": 6.03,
+    "pixel_agreement": 0.9992,
+    "excluded_as_glyphs_pct": 11.16,
     "iou_by_field": {
-      "brand": 0.722
+      "brand": 0.994
     },
-    "vertices": 11
+    "vertices": 37
   },
   "type_rows": {
     "brand_name_display": {

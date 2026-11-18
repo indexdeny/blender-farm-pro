@@ -5,15 +5,127 @@
   "face_aspect": 0.6555,
   "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
   "substrate": "#E0E3EB",
-  "fields": [],
-  "glyph_components_dropped": 0,
-  "flat_fields_dropped": 0,
-  "ink_components_dropped": 0,
+  "fields": [
+    {
+      "role": "highlight",
+      "z": 0,
+      "fill": "#8C848F",
+      "coverage_pct": 3.4,
+      "parts": [
+        {
+          "kind": "field",
+          "area_pct": 0.1,
+          "smoothness": 0.1,
+          "fill": "#7C968F",
+          "outline": [
+            [
+              0.9445,
+              0.1831
+            ],
+            [
+              0.9791,
+              0.1886
+            ],
+            [
+              0.9827,
+              0.1928
+            ],
+            [
+              0.9827,
+              0.2552
+            ],
+            [
+              0.9782,
+              0.2607
+            ],
+            [
+              0.9436,
+              0.258
+            ],
+            [
+              0.9391,
+              0.2552
+            ],
+            [
+              0.9391,
+              0.1886
+            ],
+            [
+              0.94,
+              0.1859
+            ],
+            [
+              0.9436,
+              0.1845
+            ]
+          ],
+          "holes": [
+            [
+              [
+                0.9445,
+                0.1914
+              ],
+              [
+                0.97,
+                0.1942
+              ],
+              [
+                0.9782,
+                0.1969
+              ],
+              [
+                0.9791,
+                0.1997
+              ],
+              [
+                0.9773,
+                0.2386
+              ],
+              [
+                0.9782,
+                0.2483
+              ],
+              [
+                0.9745,
+                0.2524
+              ],
+              [
+                0.9709,
+                0.2497
+              ],
+              [
+                0.9455,
+                0.251
+              ],
+              [
+                0.9427,
+                0.2469
+              ],
+              [
+                0.9445,
+                0.1928
+              ]
+            ]
+          ],
+          "mark_holes": []
+        }
+      ]
+    }
+  ],
+  "marks": [],
+  "components_dropped": 16,
+  "dropped_by_class": {
+    "type": 16
+  },
+  "holes_filled_by_class": {},
+  "truth": "print_truth.json",
   "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
   "verification": {
-    "pixel_agreement": 1.0,
-    "excluded_as_glyphs_pct": 0.0,
-    "iou_by_field": {},
-    "vertices": 0
+    "pixel_agreement": 0.9999,
+    "excluded_as_glyphs_pct": 6.9,
+    "iou_by_field": {
+      "highlight": 0.909
+    },
+    "vertices": 21
   }
 }

@@ -314,7 +314,10 @@ def ink_within(face, row: dict, parts) -> dict:
     recovers nothing, because a sliver of board along the box's edge is as far
     from the fill as the white glyphs are and spans the full height.
 
-    `parts` is [(fill_hex, outline)] in face coordinates. Passed by both readers.
+    `parts` is [(fill_hex, outline, holes)] in face coordinates, passed by both
+    readers. The holes are cut out of the mask for the same reason the driver
+    cuts them out of the curve: a hole is board, and ink found in one belongs to
+    whatever shows through, not to this shape.
     It does not fire on the photographs -- a printed block's edge is soft enough
     that Tesseract boxes the glyphs there, which is why the reference's own
     Cialis dosage was measured at 0.3158-0.4133 all along.
@@ -324,14 +327,18 @@ def ink_within(face, row: dict, parts) -> dict:
     import numpy as np
     from PIL import ImageDraw
 
-    for fill, outline in parts:
+    for fill, outline, holes in parts:
         us = [float(q[0]) for q in outline]
         vs = [float(q[1]) for q in outline]
         if _box_iou(row, (min(us), max(us), min(vs), max(vs))) < BOXED_SHAPE_IOU:
             continue
         w, h = face.size
         mask = Image.new("L", (w, h), 0)
-        ImageDraw.Draw(mask).polygon([(u * w, v * h) for u, v in outline], fill=255)
+        draw = ImageDraw.Draw(mask)
+        draw.polygon([(u * w, v * h) for u, v in outline], fill=255)
+        for ring in holes or ():
+            if len(ring) >= 3:
+                draw.polygon([(u * w, v * h) for u, v in ring], fill=0)
         for _ in range(BOUNDARY_ERODE_PX):
             mask = mask.filter(ImageFilter.MinFilter(3))
         inside = np.asarray(mask) > 0
@@ -517,7 +524,7 @@ def measure(folder: Path, preview: bool = False) -> dict:
     # the glyphs -- and it is passed anyway so both readers run the same code.
     spec_path = folder / "design_spec.json"
     fitted = json.loads(spec_path.read_text(encoding="utf-8")) if spec_path.exists() else {}
-    parts = [(f.get("fill"), p["outline"])
+    parts = [(f.get("fill"), p["outline"], p.get("holes") or [])
              for f in (fitted.get("fields") or []) for p in (f.get("parts") or [])
              if len(p.get("outline") or []) >= 3]
     rows = [ink_within(flat, r, parts)

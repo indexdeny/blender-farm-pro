@@ -1,0 +1,867 @@
+{
+  "schema": "print_truth/1",
+  "sku": "346-min",
+  "source_image": "Modvigil_front_raw.webp",
+  "front_face_px": [
+    [
+      112,
+      335
+    ],
+    [
+      1240,
+      302
+    ],
+    [
+      1240,
+      838
+    ],
+    [
+      112,
+      852
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    513
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.823,
+    "highlight": 2.868,
+    "type": 2.196
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 14.038,
+      "bbox_uv": [
+        0.7018,
+        0.0507,
+        0.9864,
+        0.7622
+      ],
+      "centroid_uv": [
+        0.8529,
+        0.4308
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 1.505,
+      "bbox_uv": [
+        0.5373,
+        0.7096,
+        0.6755,
+        0.9552
+      ],
+      "centroid_uv": [
+        0.6176,
+        0.8352
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 1.147,
+      "bbox_uv": [
+        0.62,
+        0.4932,
+        0.7191,
+        0.8012
+      ],
+      "centroid_uv": [
+        0.6732,
+        0.6123
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 0.436,
+      "bbox_uv": [
+        0.5464,
+        0.8811,
+        0.9673,
+        0.9805
+      ],
+      "centroid_uv": [
+        0.7509,
+        0.9482
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 0.409,
+      "bbox_uv": [
+        0.4518,
+        0.7173,
+        0.5936,
+        0.7914
+      ],
+      "centroid_uv": [
+        0.5431,
+        0.7555
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 0.136,
+      "bbox_uv": [
+        0.1873,
+        0.9669,
+        0.54,
+        0.9747
+      ],
+      "centroid_uv": [
+        0.3696,
+        0.9711
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#083776",
+      "area_pct": 0.133,
+      "bbox_uv": [
+        0.6727,
+        0.7973,
+        0.7291,
+        0.8928
+      ],
+      "centroid_uv": [
+        0.6924,
+        0.8502
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 7.953,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.3555,
+        0.6101
+      ],
+      "centroid_uv": [
+        0.1092,
+        0.2005
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 3.833,
+      "bbox_uv": [
+        0.0,
+        0.6803,
+        0.9736,
+        0.9825
+      ],
+      "centroid_uv": [
+        0.8484,
+        0.8605
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 3.575,
+      "bbox_uv": [
+        0.0,
+        0.653,
+        0.5973,
+        0.9688
+      ],
+      "centroid_uv": [
+        0.451,
+        0.8647
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 0.939,
+      "bbox_uv": [
+        0.5645,
+        0.2378,
+        0.76,
+        0.5205
+      ],
+      "centroid_uv": [
+        0.6662,
+        0.3872
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 0.412,
+      "bbox_uv": [
+        0.5591,
+        0.8772,
+        0.6436,
+        0.9727
+      ],
+      "centroid_uv": [
+        0.6092,
+        0.938
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 0.389,
+      "bbox_uv": [
+        0.8191,
+        0.0448,
+        0.96,
+        0.1189
+      ],
+      "centroid_uv": [
+        0.8971,
+        0.0798
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 0.234,
+      "bbox_uv": [
+        0.7591,
+        0.078,
+        0.8309,
+        0.2105
+      ],
+      "centroid_uv": [
+        0.7914,
+        0.1371
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 0.125,
+      "bbox_uv": [
+        0.8909,
+        0.6472,
+        0.9745,
+        0.7271
+      ],
+      "centroid_uv": [
+        0.9383,
+        0.6872
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "highlight#8",
+      "role": "highlight",
+      "fill": "#9BB3D8",
+      "area_pct": 0.111,
+      "bbox_uv": [
+        0.6327,
+        0.7212,
+        0.6682,
+        0.7797
+      ],
+      "centroid_uv": [
+        0.6522,
+        0.7498
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a surfer in a wave"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.945,
+      "bbox_uv": [
+        0.5927,
+        0.4971,
+        0.67,
+        0.7797
+      ],
+      "centroid_uv": [
+        0.6272,
+        0.6386
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.665,
+      "bbox_uv": [
+        0.6355,
+        0.8499,
+        0.7327,
+        0.9727
+      ],
+      "centroid_uv": [
+        0.6814,
+        0.9254
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.274,
+      "bbox_uv": [
+        0.0282,
+        0.2846,
+        0.0891,
+        0.3723
+      ],
+      "centroid_uv": [
+        0.0612,
+        0.3262
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#3",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.268,
+      "bbox_uv": [
+        0.0236,
+        0.1053,
+        0.0791,
+        0.2008
+      ],
+      "centroid_uv": [
+        0.0534,
+        0.1503
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#4",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.259,
+      "bbox_uv": [
+        0.9491,
+        0.0741,
+        0.9845,
+        0.4425
+      ],
+      "centroid_uv": [
+        0.9744,
+        0.1838
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#5",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.251,
+      "bbox_uv": [
+        0.5,
+        0.883,
+        0.5682,
+        0.9727
+      ],
+      "centroid_uv": [
+        0.539,
+        0.9392
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#6",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.197,
+      "bbox_uv": [
+        0.5373,
+        0.1326,
+        0.58,
+        0.2261
+      ],
+      "centroid_uv": [
+        0.5585,
+        0.1735
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#7",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.188,
+      "bbox_uv": [
+        0.3991,
+        0.3021,
+        0.4327,
+        0.3879
+      ],
+      "centroid_uv": [
+        0.4156,
+        0.3448
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#8",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.187,
+      "bbox_uv": [
+        0.1245,
+        0.2904,
+        0.1618,
+        0.3762
+      ],
+      "centroid_uv": [
+        0.1443,
+        0.3381
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#9",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.186,
+      "bbox_uv": [
+        0.3627,
+        0.3002,
+        0.3964,
+        0.386
+      ],
+      "centroid_uv": [
+        0.3795,
+        0.3431
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#10",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.183,
+      "bbox_uv": [
+        0.11,
+        0.1092,
+        0.1436,
+        0.2066
+      ],
+      "centroid_uv": [
+        0.1275,
+        0.1638
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#11",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.178,
+      "bbox_uv": [
+        0.6309,
+        0.1384,
+        0.6609,
+        0.2339
+      ],
+      "centroid_uv": [
+        0.6456,
+        0.1856
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#12",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.176,
+      "bbox_uv": [
+        0.6627,
+        0.1404,
+        0.6918,
+        0.2359
+      ],
+      "centroid_uv": [
+        0.6772,
+        0.1875
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#13",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.175,
+      "bbox_uv": [
+        0.7345,
+        0.1618,
+        0.7691,
+        0.269
+      ],
+      "centroid_uv": [
+        0.7516,
+        0.2184
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#14",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.173,
+      "bbox_uv": [
+        0.3682,
+        0.1228,
+        0.4009,
+        0.2203
+      ],
+      "centroid_uv": [
+        0.3852,
+        0.1769
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#15",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.172,
+      "bbox_uv": [
+        0.2173,
+        0.308,
+        0.2564,
+        0.4055
+      ],
+      "centroid_uv": [
+        0.2356,
+        0.3591
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#16",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.164,
+      "bbox_uv": [
+        0.3227,
+        0.2982,
+        0.36,
+        0.384
+      ],
+      "centroid_uv": [
+        0.3435,
+        0.3422
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#17",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.162,
+      "bbox_uv": [
+        0.3055,
+        0.1189,
+        0.3418,
+        0.2144
+      ],
+      "centroid_uv": [
+        0.3219,
+        0.1618
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#18",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.155,
+      "bbox_uv": [
+        0.5955,
+        0.1365,
+        0.6282,
+        0.232
+      ],
+      "centroid_uv": [
+        0.6139,
+        0.1848
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#19",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.138,
+      "bbox_uv": [
+        0.2127,
+        0.1442,
+        0.2445,
+        0.2105
+      ],
+      "centroid_uv": [
+        0.2307,
+        0.1781
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#20",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.135,
+      "bbox_uv": [
+        0.0873,
+        0.3158,
+        0.1218,
+        0.3743
+      ],
+      "centroid_uv": [
+        0.1045,
+        0.345
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#21",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.133,
+      "bbox_uv": [
+        0.0773,
+        0.1384,
+        0.1073,
+        0.2047
+      ],
+      "centroid_uv": [
+        0.0922,
+        0.1715
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#22",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.13,
+      "bbox_uv": [
+        0.1427,
+        0.1404,
+        0.1718,
+        0.2086
+      ],
+      "centroid_uv": [
+        0.1588,
+        0.1763
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#23",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.129,
+      "bbox_uv": [
+        0.3373,
+        0.152,
+        0.3664,
+        0.2183
+      ],
+      "centroid_uv": [
+        0.3529,
+        0.1864
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#24",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.128,
+      "bbox_uv": [
+        0.5127,
+        0.1306,
+        0.5418,
+        0.2242
+      ],
+      "centroid_uv": [
+        0.5269,
+        0.1783
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#25",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.11,
+      "bbox_uv": [
+        0.2745,
+        0.2963,
+        0.2982,
+        0.3821
+      ],
+      "centroid_uv": [
+        0.2878,
+        0.3385
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#26",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.108,
+      "bbox_uv": [
+        0.4818,
+        0.7037,
+        0.59,
+        0.7622
+      ],
+      "centroid_uv": [
+        0.5384,
+        0.7376
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#27",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.108,
+      "bbox_uv": [
+        0.1736,
+        0.1111,
+        0.2,
+        0.2086
+      ],
+      "centroid_uv": [
+        0.1868,
+        0.1601
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#28",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.103,
+      "bbox_uv": [
+        0.2655,
+        0.117,
+        0.2864,
+        0.2125
+      ],
+      "centroid_uv": [
+        0.2774,
+        0.1656
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#29",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.103,
+      "bbox_uv": [
+        0.4009,
+        0.1248,
+        0.4218,
+        0.2203
+      ],
+      "centroid_uv": [
+        0.4126,
+        0.1725
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#30",
+      "role": "type",
+      "fill": "#030910",
+      "area_pct": 0.101,
+      "bbox_uv": [
+        0.4218,
+        0.1559,
+        0.4491,
+        0.2222
+      ],
+      "centroid_uv": [
+        0.4343,
+        0.187
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

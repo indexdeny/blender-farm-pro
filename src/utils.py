@@ -40,9 +40,9 @@ _DEFAULTS = {
         "progress_file":       "gemini_rpa_progress_v23.txt",
     },
     "rpa": {
-        "browser_profile_dir":      r"C:\Users\candy\.gemini\antigravity-browser-profile\Profile 1",
+        "browser_profile_dir":      r"C:\CHANGE_ME\Chrome\Profile 1",
         "browser_profile_name":     "Profile 1",
-        "downloads_dir":            r"C:\Users\candy\Downloads",
+        "downloads_dir":            r"C:\CHANGE_ME\Downloads",
         "gemini_url":               "https://gemini.google.com/app",
         "headless":                 False,
         "batch_size":               1,

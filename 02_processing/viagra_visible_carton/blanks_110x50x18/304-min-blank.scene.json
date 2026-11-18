@@ -1,0 +1,272 @@
+{
+  "carton": {
+    "dimensions": [
+      0.10999999940395355,
+      0.017999999225139618,
+      0.05000000074505806
+    ],
+    "self_bounds": {
+      "min": [
+        -0.054999999701976776,
+        -0.008999999612569809,
+        0.0
+      ],
+      "max": [
+        0.054999999701976776,
+        0.008999999612569809,
+        0.05000000074505806
+      ]
+    },
+    "rotation_z_deg": 34.99999983559887,
+    "base_color": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "roughness": 0.5799999833106995,
+    "material_finish": {
+      "node_types": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeBump",
+        "ShaderNodeMapping",
+        "ShaderNodeOutputMaterial",
+        "ShaderNodeTexCoord",
+        "ShaderNodeTexNoise"
+      ],
+      "mapping_location": [
+        0.694747269153595,
+        0.8746297955513,
+        0.3091265857219696
+      ],
+      "mapping_scale": [
+        55.55555725097656,
+        55.55555725097656,
+        55.55555725097656
+      ],
+      "noise_scale": 185.0,
+      "bump_strength": 0.2199999988079071,
+      "bump_distance_m": 2.1600000764010474e-05,
+      "noise_linked_to_base_color": false
+    }
+  },
+  "carton_profile": {
+    "profile_version": "1.0",
+    "edge_radius_m": 0.0006353999488055706,
+    "edge_segments": 3,
+    "board_thickness_m": 0.00023399998992681503
+  },
+  "visible_carton_geometry": [
+    {
+      "name": "carton_flap_0",
+      "kind": "flap",
+      "surface": "left",
+      "bounds_in_carton_frame": {
+        "min": [
+          -0.055442798882722855,
+          -0.007547399494796991,
+          0.041954997926950455
+        ],
+        "max": [
+          -0.05520879849791527,
+          0.007547399494796991,
+          0.04898500069975853
+        ]
+      },
+      "base_color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "roughness": 0.5799999833106995,
+      "material_finish": {
+        "node_types": [
+          "ShaderNodeBsdfPrincipled",
+          "ShaderNodeBump",
+          "ShaderNodeMapping",
+          "ShaderNodeOutputMaterial",
+          "ShaderNodeTexCoord",
+          "ShaderNodeTexNoise"
+        ],
+        "mapping_location": [
+          0.694747269153595,
+          0.8746297955513,
+          0.3091265857219696
+        ],
+        "mapping_scale": [
+          55.55555725097656,
+          55.55555725097656,
+          55.55555725097656
+        ],
+        "noise_scale": 185.0,
+        "bump_strength": 0.2199999988079071,
+        "bump_distance_m": 2.1600000764010474e-05,
+        "noise_linked_to_base_color": false
+      }
+    },
+    {
+      "name": "carton_gap_0",
+      "kind": "gap",
+      "surface": "left",
+      "bounds_in_carton_frame": {
+        "min": [
+          -0.055324897170066833,
+          -0.007547399494796991,
+          0.04192148521542549
+        ],
+        "max": [
+          -0.05524750053882599,
+          0.007547400891780853,
+          0.041988518089056015
+        ]
+      },
+      "base_color": [
+        0.014443843625485897,
+        0.017641954123973846,
+        0.023153366521000862,
+        1.0
+      ],
+      "roughness": 0.699999988079071,
+      "material_finish": {
+        "node_types": [
+          "ShaderNodeBsdfPrincipled",
+          "ShaderNodeOutputMaterial"
+        ],
+        "mapping_location": null,
+        "mapping_scale": null,
+        "noise_scale": null,
+        "bump_strength": null,
+        "bump_distance_m": null,
+        "noise_linked_to_base_color": false
+      }
+    },
+    {
+      "name": "carton_seam_0",
+      "kind": "seam",
+      "surface": "left",
+      "bounds_in_carton_frame": {
+        "min": [
+          -0.05533839762210846,
+          -0.007547399494796991,
+          0.042199794203042984
+        ],
+        "max": [
+          -0.05523400008678436,
+          0.007547400891780853,
+          0.042290206998586655
+        ]
+      },
+      "base_color": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "roughness": 0.5799999833106995,
+      "material_finish": {
+        "node_types": [
+          "ShaderNodeBsdfPrincipled",
+          "ShaderNodeBump",
+          "ShaderNodeMapping",
+          "ShaderNodeOutputMaterial",
+          "ShaderNodeTexCoord",
+          "ShaderNodeTexNoise"
+        ],
+        "mapping_location": [
+          0.694747269153595,
+          0.8746297955513,
+          0.3091265857219696
+        ],
+        "mapping_scale": [
+          55.55555725097656,
+          55.55555725097656,
+          55.55555725097656
+        ],
+        "noise_scale": 185.0,
+        "bump_strength": 0.2199999988079071,
+        "bump_distance_m": 2.1600000764010474e-05,
+        "noise_linked_to_base_color": false
+      }
+    }
+  ],
+  "stripe": null,
+  "badge": null,
+  "side_panel": [],
+  "label": [],
+  "reference_aux_text": [],
+  "relief": [],
+  "lighting": {
+    "target_size": 0.11,
+    "key_light": {
+      "energy": 22.87334632873535,
+      "size": 0.2199999988079071,
+      "location": [
+        0.33000001311302185,
+        -0.33000001311302185,
+        0.2199999988079071
+      ]
+    },
+    "fill_light": {
+      "energy": 7.3194708824157715,
+      "size": 0.2199999988079071,
+      "location": [
+        -0.2199999988079071,
+        -0.16500000655651093,
+        0.2199999988079071
+      ]
+    }
+  },
+  "film": {
+    "view_transform": "Standard",
+    "exposure": -2.180000066757202
+  },
+  "device": {
+    "engine": "CYCLES",
+    "cycles_device": "CPU",
+    "backend": null,
+    "enabled_devices": [],
+    "denoising_use_gpu": false
+  },
+  "resolution": [
+    2048,
+    2048
+  ],
+  "front_face_px": [
+    [
+      393.3323974609375,
+      925.8253173828125
+    ],
+    [
+      1692.848388671875,
+      586.130615234375
+    ],
+    [
+      1656.0592041015625,
+      1180.5963134765625
+    ],
+    [
+      434.0876159667969,
+      1602.2955017089844
+    ]
+  ],
+  "side_panel_px": [
+    [
+      263.3409118652344,
+      835.5426025390625
+    ],
+    [
+      393.3323974609375,
+      925.8253173828125
+    ],
+    [
+      434.0876159667969,
+      1602.2955017089844
+    ],
+    [
+      310.56646728515625,
+      1491.0579833984375
+    ]
+  ],
+  "design_fields": []
+}

@@ -1,0 +1,1347 @@
+{
+  "schema": "print_truth/1",
+  "sku": "362-min",
+  "source_image": "Hydrocodone_front_face.png",
+  "front_face_px": [
+    [
+      0,
+      0
+    ],
+    [
+      322,
+      0
+    ],
+    [
+      322,
+      406
+    ],
+    [
+      0,
+      406
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    1387
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 2.173,
+    "highlight": 1.68,
+    "secondary_1": 3.387
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 10.639,
+      "bbox_uv": [
+        0.0709,
+        0.5263,
+        0.9182,
+        0.6813
+      ],
+      "centroid_uv": [
+        0.493,
+        0.6052
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.64,
+      "bbox_uv": [
+        0.7973,
+        0.1802,
+        0.9282,
+        0.3143
+      ],
+      "centroid_uv": [
+        0.8524,
+        0.2469
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.319,
+      "bbox_uv": [
+        0.3836,
+        0.3417,
+        0.4591,
+        0.4059
+      ],
+      "centroid_uv": [
+        0.4221,
+        0.3743
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.281,
+      "bbox_uv": [
+        0.1545,
+        0.0966,
+        0.21,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.1819,
+        0.1292
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.28,
+      "bbox_uv": [
+        0.72,
+        0.0966,
+        0.7745,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.7472,
+        0.1292
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.268,
+      "bbox_uv": [
+        0.22,
+        0.1781,
+        0.2727,
+        0.2444
+      ],
+      "centroid_uv": [
+        0.2432,
+        0.2112
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.264,
+      "bbox_uv": [
+        0.2782,
+        0.0966,
+        0.3345,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.3033,
+        0.1291
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.259,
+      "bbox_uv": [
+        0.8227,
+        0.341,
+        0.8764,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.8501,
+        0.3739
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.259,
+      "bbox_uv": [
+        0.3445,
+        0.0966,
+        0.3973,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.3683,
+        0.1287
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.257,
+      "bbox_uv": [
+        0.5891,
+        0.0959,
+        0.6445,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.614,
+        0.1292
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#10",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.257,
+      "bbox_uv": [
+        0.4618,
+        0.2596,
+        0.5164,
+        0.3244
+      ],
+      "centroid_uv": [
+        0.4889,
+        0.2922
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#11",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.256,
+      "bbox_uv": [
+        0.7882,
+        0.4232,
+        0.8418,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.8143,
+        0.4554
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#12",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.254,
+      "bbox_uv": [
+        0.5064,
+        0.3417,
+        0.56,
+        0.4059
+      ],
+      "centroid_uv": [
+        0.5326,
+        0.3737
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#13",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.254,
+      "bbox_uv": [
+        0.6509,
+        0.0959,
+        0.7091,
+        0.1629
+      ],
+      "centroid_uv": [
+        0.68,
+        0.1292
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#14",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.252,
+      "bbox_uv": [
+        0.7009,
+        0.3417,
+        0.7545,
+        0.4059
+      ],
+      "centroid_uv": [
+        0.7278,
+        0.3737
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#15",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.251,
+      "bbox_uv": [
+        0.5473,
+        0.1788,
+        0.6,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.5714,
+        0.2101
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#16",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.246,
+      "bbox_uv": [
+        0.4036,
+        0.0959,
+        0.4609,
+        0.1629
+      ],
+      "centroid_uv": [
+        0.4322,
+        0.1292
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#17",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.245,
+      "bbox_uv": [
+        0.5209,
+        0.0959,
+        0.5782,
+        0.1629
+      ],
+      "centroid_uv": [
+        0.5501,
+        0.1292
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#18",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.245,
+      "bbox_uv": [
+        0.4327,
+        0.1781,
+        0.4845,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.4558,
+        0.2101
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#19",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.245,
+      "bbox_uv": [
+        0.2055,
+        0.4232,
+        0.2564,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.2283,
+        0.4546
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#20",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.241,
+      "bbox_uv": [
+        0.5318,
+        0.2596,
+        0.5855,
+        0.3252
+      ],
+      "centroid_uv": [
+        0.5561,
+        0.2923
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#21",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.234,
+      "bbox_uv": [
+        0.1364,
+        0.4225,
+        0.1936,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.1654,
+        0.4555
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#22",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.234,
+      "bbox_uv": [
+        0.5709,
+        0.341,
+        0.6282,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.5997,
+        0.3739
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#23",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.232,
+      "bbox_uv": [
+        0.4509,
+        0.4225,
+        0.5073,
+        0.4888
+      ],
+      "centroid_uv": [
+        0.4794,
+        0.4557
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#24",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.231,
+      "bbox_uv": [
+        0.57,
+        0.4232,
+        0.6218,
+        0.4888
+      ],
+      "centroid_uv": [
+        0.5958,
+        0.4556
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#25",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.231,
+      "bbox_uv": [
+        0.72,
+        0.4225,
+        0.7764,
+        0.4888
+      ],
+      "centroid_uv": [
+        0.7485,
+        0.4555
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#26",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.217,
+      "bbox_uv": [
+        0.3645,
+        0.1781,
+        0.4218,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.3938,
+        0.2136
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#27",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.216,
+      "bbox_uv": [
+        0.1,
+        0.341,
+        0.1564,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.1289,
+        0.3763
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#28",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.215,
+      "bbox_uv": [
+        0.6055,
+        0.1788,
+        0.6618,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.6338,
+        0.2137
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#29",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.21,
+      "bbox_uv": [
+        0.2627,
+        0.4232,
+        0.3191,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.2914,
+        0.458
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#30",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.209,
+      "bbox_uv": [
+        0.3945,
+        0.2603,
+        0.4509,
+        0.3244
+      ],
+      "centroid_uv": [
+        0.4234,
+        0.2948
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#31",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.207,
+      "bbox_uv": [
+        0.32,
+        0.3417,
+        0.3764,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.3488,
+        0.3767
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#32",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.205,
+      "bbox_uv": [
+        0.7882,
+        0.0966,
+        0.83,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.806,
+        0.1294
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#33",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.197,
+      "bbox_uv": [
+        0.6391,
+        0.341,
+        0.69,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.6594,
+        0.3683
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#34",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.192,
+      "bbox_uv": [
+        0.7255,
+        0.1781,
+        0.7664,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.7418,
+        0.2112
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#35",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.191,
+      "bbox_uv": [
+        0.77,
+        0.3417,
+        0.8109,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.7865,
+        0.3739
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#36",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.186,
+      "bbox_uv": [
+        0.22,
+        0.3417,
+        0.2609,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.2367,
+        0.374
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#37",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.179,
+      "bbox_uv": [
+        0.2164,
+        0.0959,
+        0.2718,
+        0.1622
+      ],
+      "centroid_uv": [
+        0.2437,
+        0.1237
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#38",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.167,
+      "bbox_uv": [
+        0.4673,
+        0.0959,
+        0.5155,
+        0.1629
+      ],
+      "centroid_uv": [
+        0.4884,
+        0.1296
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#39",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.167,
+      "bbox_uv": [
+        0.3991,
+        0.4225,
+        0.4436,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.4212,
+        0.4559
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#40",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.16,
+      "bbox_uv": [
+        0.6664,
+        0.1781,
+        0.7173,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.6911,
+        0.2049
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#41",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.16,
+      "bbox_uv": [
+        0.1627,
+        0.341,
+        0.2109,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.1831,
+        0.3744
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#42",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.155,
+      "bbox_uv": [
+        0.3118,
+        0.1781,
+        0.3618,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.3367,
+        0.2047
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#43",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.4891,
+        0.1781,
+        0.5391,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.5141,
+        0.2045
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#44",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.2664,
+        0.341,
+        0.3164,
+        0.4059
+      ],
+      "centroid_uv": [
+        0.2914,
+        0.3675
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#45",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.148,
+      "bbox_uv": [
+        0.6318,
+        0.4232,
+        0.6809,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.6558,
+        0.4488
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#46",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.14,
+      "bbox_uv": [
+        0.52,
+        0.4232,
+        0.56,
+        0.4874
+      ],
+      "centroid_uv": [
+        0.532,
+        0.4598
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#47",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.136,
+      "bbox_uv": [
+        0.33,
+        0.4232,
+        0.37,
+        0.4881
+      ],
+      "centroid_uv": [
+        0.342,
+        0.4603
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#48",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.119,
+      "bbox_uv": [
+        0.2845,
+        0.1781,
+        0.3027,
+        0.2437
+      ],
+      "centroid_uv": [
+        0.2932,
+        0.2109
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#49",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.118,
+      "bbox_uv": [
+        0.4727,
+        0.3417,
+        0.49,
+        0.4066
+      ],
+      "centroid_uv": [
+        0.4814,
+        0.3738
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#50",
+      "role": "brand",
+      "fill": "#6A072D",
+      "area_pct": 0.112,
+      "bbox_uv": [
+        0.69,
+        0.4232,
+        0.7082,
+        0.4874
+      ],
+      "centroid_uv": [
+        0.6991,
+        0.4553
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "area_pct": 12.73,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.9991,
+        0.9993
+      ],
+      "centroid_uv": [
+        0.5571,
+        0.3983
+      ],
+      "class": "object",
+      "reason": "white margin of the label artwork, outside the printed panel"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "area_pct": 0.116,
+      "bbox_uv": [
+        0.3436,
+        0.5616,
+        0.4045,
+        0.5941
+      ],
+      "centroid_uv": [
+        0.3738,
+        0.5762
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "area_pct": 0.114,
+      "bbox_uv": [
+        0.6582,
+        0.5616,
+        0.72,
+        0.5941
+      ],
+      "centroid_uv": [
+        0.6892,
+        0.5762
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "area_pct": 0.111,
+      "bbox_uv": [
+        0.5673,
+        0.628,
+        0.6291,
+        0.6597
+      ],
+      "centroid_uv": [
+        0.5973,
+        0.6422
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "area_pct": 0.11,
+      "bbox_uv": [
+        0.4155,
+        0.5616,
+        0.4555,
+        0.6071
+      ],
+      "centroid_uv": [
+        0.4372,
+        0.5832
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#FFFEFE",
+      "area_pct": 0.105,
+      "bbox_uv": [
+        0.7318,
+        0.5616,
+        0.7709,
+        0.6071
+      ],
+      "centroid_uv": [
+        0.7534,
+        0.5832
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#0",
+      "role": "secondary_1",
+      "fill": "#CD7474",
+      "area_pct": 20.231,
+      "bbox_uv": [
+        0.0291,
+        0.0534,
+        0.9518,
+        0.5306
+      ],
+      "centroid_uv": [
+        0.4662,
+        0.2175
+      ],
+      "class": "unrepresentable",
+      "reason": "printed vertical gradient on the panel; a flat fill cannot carry it"
+    },
+    {
+      "key": "secondary_1#1",
+      "role": "secondary_1",
+      "fill": "#CD7474",
+      "area_pct": 0.389,
+      "bbox_uv": [
+        0.0673,
+        0.5234,
+        0.9236,
+        0.6835
+      ],
+      "centroid_uv": [
+        0.49,
+        0.5964
+      ],
+      "class": "blend",
+      "reason": "antialiased rim of the dosage block"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 0.189,
+      "bbox_uv": [
+        0.3409,
+        0.558,
+        0.4073,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.3736,
+        0.577
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.189,
+      "bbox_uv": [
+        0.7282,
+        0.5588,
+        0.7736,
+        0.6092
+      ],
+      "centroid_uv": [
+        0.7525,
+        0.5831
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#2",
+      "of": "brand#0",
+      "area_pct": 0.189,
+      "bbox_uv": [
+        0.6555,
+        0.558,
+        0.7236,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.6892,
+        0.577
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#3",
+      "of": "brand#0",
+      "area_pct": 0.188,
+      "bbox_uv": [
+        0.4127,
+        0.558,
+        0.4573,
+        0.6092
+      ],
+      "centroid_uv": [
+        0.4367,
+        0.583
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#4",
+      "of": "brand#0",
+      "area_pct": 0.187,
+      "bbox_uv": [
+        0.5645,
+        0.6251,
+        0.6318,
+        0.6619
+      ],
+      "centroid_uv": [
+        0.5972,
+        0.6433
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#5",
+      "of": "brand#0",
+      "area_pct": 0.182,
+      "bbox_uv": [
+        0.5391,
+        0.5479,
+        0.5845,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.562,
+        0.5722
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#6",
+      "of": "brand#0",
+      "area_pct": 0.181,
+      "bbox_uv": [
+        0.5882,
+        0.5479,
+        0.6336,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.6106,
+        0.5722
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#7",
+      "of": "brand#0",
+      "area_pct": 0.174,
+      "bbox_uv": [
+        0.3091,
+        0.6251,
+        0.3545,
+        0.6756
+      ],
+      "centroid_uv": [
+        0.3288,
+        0.6472
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#8",
+      "of": "brand#0",
+      "area_pct": 0.139,
+      "bbox_uv": [
+        0.4927,
+        0.5487,
+        0.5355,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.5149,
+        0.572
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#9",
+      "of": "brand#0",
+      "area_pct": 0.137,
+      "bbox_uv": [
+        0.2718,
+        0.5479,
+        0.3155,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.2951,
+        0.572
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#10",
+      "of": "brand#0",
+      "area_pct": 0.136,
+      "bbox_uv": [
+        0.4982,
+        0.615,
+        0.54,
+        0.6626
+      ],
+      "centroid_uv": [
+        0.5199,
+        0.6382
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#11",
+      "of": "brand#0",
+      "area_pct": 0.124,
+      "bbox_uv": [
+        0.3582,
+        0.6251,
+        0.4009,
+        0.6626
+      ],
+      "centroid_uv": [
+        0.3798,
+        0.6439
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#12",
+      "of": "brand#0",
+      "area_pct": 0.108,
+      "bbox_uv": [
+        0.6391,
+        0.6128,
+        0.6782,
+        0.6619
+      ],
+      "centroid_uv": [
+        0.6518,
+        0.6418
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#13",
+      "of": "brand#0",
+      "area_pct": 0.106,
+      "bbox_uv": [
+        0.21,
+        0.5487,
+        0.2518,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.2314,
+        0.5674
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#14",
+      "of": "brand#0",
+      "area_pct": 0.088,
+      "bbox_uv": [
+        0.4591,
+        0.615,
+        0.4882,
+        0.6626
+      ],
+      "centroid_uv": [
+        0.4778,
+        0.6363
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#15",
+      "of": "brand#0",
+      "area_pct": 0.075,
+      "bbox_uv": [
+        0.4064,
+        0.6244,
+        0.4355,
+        0.6626
+      ],
+      "centroid_uv": [
+        0.4179,
+        0.6417
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#16",
+      "of": "brand#0",
+      "area_pct": 0.064,
+      "bbox_uv": [
+        0.4618,
+        0.5458,
+        0.4918,
+        0.5984
+      ],
+      "centroid_uv": [
+        0.4768,
+        0.5723
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#17",
+      "of": "brand#0",
+      "area_pct": 0.022,
+      "bbox_uv": [
+        0.25,
+        0.5818,
+        0.2673,
+        0.5963
+      ],
+      "centroid_uv": [
+        0.2582,
+        0.589
+      ],
+      "class": "lettering"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "artifact_role": "provenance_not_source_of_truth",
+  "profile_version": "1.0",
+  "sources": [
+    {
+      "filename": "bf1lzjn5.jpg",
+      "sha256": "407e95e20d313cec26b5386cefe17aff1096b27b8cf7e4874ca85d88323691b3",
+      "width_px": 1920,
+      "height_px": 1080
+    },
+    {
+      "filename": "yh0adk03.jpg",
+      "sha256": "38e29e80bbd0316ef6bb7d0039578c05c44442e29303dda0621e43671667d1b6",
+      "width_px": 1920,
+      "height_px": 1080
+    },
+    {
+      "filename": "plsjgsfe.jpg",
+      "sha256": "4e6d146610b9a02f75b93ec500007d6c3145a6c886983a92e23d419fcb6c8bd2",
+      "width_px": 1920,
+      "height_px": 1080
+    },
+    {
+      "filename": "xvvsddqu.jpg",
+      "sha256": "8c31d1be234934a32ffb7a175645b09f9d9bcadf76d237757e9c53d41d51ece2",
+      "width_px": 1920,
+      "height_px": 1080
+    },
+    {
+      "filename": "xbn2agk2.jpg",
+      "sha256": "766aaff776087c3e78c26a79b4219e9c6dbeeac5eeb17fe544922e8e33846d72",
+      "width_px": 1920,
+      "height_px": 1080
+    },
+    {
+      "filename": "c7eyxtwc.jpg",
+      "sha256": "b0764ca407188076a1484607c6a644ea211fd606c2fcd23d6c7f0622ccaae48c",
+      "width_px": 1920,
+      "height_px": 1080
+    },
+    {
+      "filename": "dtwcv6w1.jpg",
+      "sha256": "589a3c5f1d2f73c9ba68a21ed0ad123a8db6ccafd6f37722f1b9c29f12fdfd03",
+      "width_px": 1920,
+      "height_px": 1080
+    }
+  ],
+  "measurements": [
+    {
+      "name": "edge_radius_frac",
+      "raw_px": 30.0,
+      "normalizer_px": 850.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.03529411764705882,
+      "confidence": 0.86,
+      "source_image": "dtwcv6w1.jpg",
+      "note": "outer top-right radius x=1474..1504 over visible front height y=151..1001 (850 px); wireframe, subdivision level 0"
+    },
+    {
+      "name": "board_thickness_frac",
+      "raw_px": 9.0,
+      "normalizer_px": 690.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.013043478260869565,
+      "confidence": 0.84,
+      "source_image": "xvvsddqu.jpg",
+      "note": "exposed end-board layer x=1138..1147 over end-panel span 690 px"
+    },
+    {
+      "name": "left_flap_u0",
+      "raw_px": 51.0,
+      "normalizer_px": 632.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.08069620253164557,
+      "confidence": 0.82,
+      "source_image": "c7eyxtwc.jpg",
+      "note": "outer flap starts 51 px from the visible left-panel top edge"
+    },
+    {
+      "name": "left_flap_u1",
+      "raw_px": 581.0,
+      "normalizer_px": 632.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.9193037974683544,
+      "confidence": 0.82,
+      "source_image": "c7eyxtwc.jpg",
+      "note": "outer flap ends 51 px before the 632 px visible panel span"
+    },
+    {
+      "name": "left_flap_v0",
+      "raw_px": 14.0,
+      "normalizer_px": 690.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.020289855072463767,
+      "confidence": 0.8,
+      "source_image": "xvvsddqu.jpg",
+      "note": "flap lip begins 14 px from the visible end-panel edge"
+    },
+    {
+      "name": "left_flap_v1",
+      "raw_px": 111.0,
+      "normalizer_px": 690.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.1608695652173913,
+      "confidence": 0.8,
+      "source_image": "xvvsddqu.jpg",
+      "note": "flap lip height 111 px within the 690 px visible end panel"
+    },
+    {
+      "name": "flap_stand_off_frac",
+      "raw_px": 8.0,
+      "normalizer_px": 690.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.011594202898550725,
+      "confidence": 0.78,
+      "source_image": "xvvsddqu.jpg",
+      "note": "maximum visible flap separation is 8 px over the end panel"
+    },
+    {
+      "name": "seam_width_frac",
+      "raw_px": 4.0,
+      "normalizer_px": 690.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.005797101449275362,
+      "confidence": 0.76,
+      "source_image": "xvvsddqu.jpg",
+      "note": "visible folded seam lip is 4 px over the end panel"
+    },
+    {
+      "name": "seam_gap_frac",
+      "raw_px": 3.0,
+      "normalizer_px": 690.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.004347826086956522,
+      "confidence": 0.76,
+      "source_image": "xvvsddqu.jpg",
+      "note": "dark separation at the flap seam is 3 px over the end panel"
+    },
+    {
+      "name": "surface_roughness",
+      "raw_px": 58.0,
+      "normalizer_px": 100.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.58,
+      "confidence": 0.72,
+      "source_image": "bf1lzjn5.jpg",
+      "note": "reviewed shader calibration target; dimensionless 0..1 scale"
+    },
+    {
+      "name": "micro_bump_scale",
+      "raw_px": 185.0,
+      "normalizer_px": 1.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 185.0,
+      "confidence": 0.7,
+      "source_image": "plsjgsfe.jpg",
+      "note": "reviewed procedural noise scale matching the visible paper grain"
+    },
+    {
+      "name": "micro_bump_strength",
+      "raw_px": 22.0,
+      "normalizer_px": 100.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.22,
+      "confidence": 0.72,
+      "source_image": "plsjgsfe.jpg",
+      "note": "reviewed normal-only bump strength; dimensionless 0..1 scale"
+    },
+    {
+      "name": "micro_bump_distance_frac",
+      "raw_px": 1.0,
+      "normalizer_px": 850.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.001176470588235294,
+      "confidence": 0.74,
+      "source_image": "plsjgsfe.jpg",
+      "note": "grain relief kept below one pixel over the 850 px face span"
+    },
+    {
+      "name": "framing_width_min",
+      "raw_px": 1085.0,
+      "normalizer_px": 1920.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.5651041666666666,
+      "confidence": 0.9,
+      "source_image": "bf1lzjn5.jpg",
+      "note": "carton bbox x=625..1710 in the first approved framing target"
+    },
+    {
+      "name": "framing_width_max",
+      "raw_px": 1245.0,
+      "normalizer_px": 1920.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.6484375,
+      "confidence": 0.9,
+      "source_image": "yh0adk03.jpg",
+      "note": "carton bbox x=380..1625 in the second approved framing target"
+    },
+    {
+      "name": "framing_height_min",
+      "raw_px": 856.0,
+      "normalizer_px": 1080.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.7925925925925926,
+      "confidence": 0.9,
+      "source_image": "bf1lzjn5.jpg",
+      "note": "carton bbox y=114..970 in the first approved framing target"
+    },
+    {
+      "name": "framing_height_max",
+      "raw_px": 991.0,
+      "normalizer_px": 1080.0,
+      "formula": "raw_px / normalizer_px",
+      "value": 0.9175925925925926,
+      "confidence": 0.9,
+      "source_image": "yh0adk03.jpg",
+      "note": "carton bbox y=27..1018 in the second approved framing target"
+    }
+  ],
+  "framing_bbox_interval": {
+    "width_frac": {
+      "min": 0.5651041666666666,
+      "max": 0.6484375
+    },
+    "height_frac": {
+      "min": 0.7925925925925926,
+      "max": 0.9175925925925926
+    },
+    "calibration_sources": [
+      "bf1lzjn5.jpg",
+      "yh0adk03.jpg"
+    ]
+  }
+}

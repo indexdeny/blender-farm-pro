@@ -42,10 +42,11 @@ class TestManifestSchema(unittest.TestCase):
         Draft202012Validator.check_schema(load_schema())
 
     def test_schema_pins_the_manifest_version(self):
+        from src.render_manifest import COMPOUND_MARK_MANIFEST_VERSION
         self.assertEqual(
-            load_schema()["properties"]["manifest_version"]["const"],
-            MANIFEST_VERSION,
-            "module constant and schema disagree on the contract version",
+            set(load_schema()["properties"]["manifest_version"]["enum"]),
+            {MANIFEST_VERSION, COMPOUND_MARK_MANIFEST_VERSION, "1.13"},
+            "schema must explicitly list supported contract versions",
         )
 
 
@@ -513,7 +514,7 @@ class TestManifestsOnDisk(unittest.TestCase):
         stale = []
         for f in self.files:
             m = json.loads(f.read_text(encoding="utf-8"))
-            if m.get("manifest_version") != MANIFEST_VERSION:
+            if m.get("manifest_version") not in load_schema()['properties']['manifest_version']['enum']:
                 stale.append(f"{f.stem}={m.get('manifest_version')}")
                 continue
             validate_manifest(m)
@@ -628,8 +629,9 @@ class TestDesignChannel(unittest.TestCase):
             with self.subTest(stem=stem):
                 carton, design = m["carton"], m["design"]
                 built = carton["height_mm"] / carton["width_mm"]
+                expected = design['face_aspect']
                 self.assertAlmostEqual(
-                    built, design["face_aspect"], places=3,
+                    built, expected, places=3,
                     msg=f"{stem}: built face {built:.4f} against a reference "
                         f"measured at {design['face_aspect']:.4f}")
                 self.assertEqual(carton["source"], "design_spec")
@@ -662,6 +664,27 @@ class TestDesignChannel(unittest.TestCase):
         self.assertNotIn("design", m)
         self.assertIn(m["carton"]["source"],
                       ("art_direction", "art_direction_declined_orientation"))
+
+    def test_74_manifest_carries_optional_carton_profile_without_version_bump(self):
+        # Isolate the optional carton profile from separately versioned modes.
+        from src.design_group import load_design
+        from unittest.mock import patch
+        import copy
+        spec = copy.deepcopy(load_design('74-min'))
+        for mark in spec.get('marks',[]):
+            mark.pop('parts',None)
+        with patch('src.render_manifest.load_design',return_value=spec):
+            m = build_manifest(_passport("74-min"))
+
+        self.assertEqual(m["manifest_version"], "1.10")
+        self.assertEqual(
+            m["design"]["carton_profile"]["profile_version"], "1.0")
+        validate_manifest(m)
+
+    def test_generic_build_has_no_design_or_carton_profile(self):
+        m = build_manifest(_passport("1-min"))
+
+        self.assertNotIn("design", m)
 
     def test_a_group_sku_whose_spec_is_missing_fails_loudly(self):
         from unittest.mock import patch
@@ -722,54 +745,197 @@ class TestDesignChannel(unittest.TestCase):
 
     # Parts that are neither off the face nor a block, i.e. admitted on the
     # strength of filling their own bounding box.
-    #
-    # Empty, and it tightened rather than drifted. The one exemption that ever
-    # existed was Xanax Pfizer's magenta panel, measured at 0.96 -- a clean
-    # rectangle carrying a one-pixel thread down the carton's edge that halved
-    # its polygon's fill. That folder left the design group when a
-    # re-acquisition replaced its photograph with a frame holding two cartons,
-    # so the exemption went with the spec it described. None of the six specs
-    # rebuilt on the new photography needs one.
-    BOX_FILL_EXEMPT = set()
-
-    def test_no_spec_field_is_the_reference_s_own_lettering(self):
+    def test_every_spec_field_is_a_component_a_person_called_print(self):
         """A spec carrying letter outlines prints the REFERENCE's words.
 
         Xanax shipped that way: "XANAX" clustered with the purple edge bar, its
         "XA" survived as one component covering 3.4% of the face, and the
-        renderer built it as geometry beside our own brand -- the D-7 reader
-        came back with "XAXa" off a carton printing "Xanax".
+        renderer built it as geometry beside our own brand -- the D-7 reader came
+        back with "XAXa" off a carton printing "Xanax".
 
-        Restated here rather than imported. A test that asks the fitter's own
-        predicate whether the fitter was right cannot answer the question.
+        WHAT THIS USED TO CHECK, AND WHY IT NO LONGER CAN. Until Phase B the
+        fitter admitted a component on geometry -- it runs off the face, it reads
+        as a block, or its pixels fill their own bounding box -- so this test
+        restated that geometry and kept a list of measured exemptions. The rule
+        has been replaced. `print_truth.json` now states, once per component and
+        by hand, whether it is printed design, an object lying in front of the
+        carton, a letterform, a logo, a photograph, or one surface counted twice;
+        `fit()` emits the `print` components and nothing else.
+
+        Re-asserting the old geometry would now flag ordinary design: fourteen
+        parts across nine cartons float inside the face without being blocks --
+        Modalert's red top rule, Lexotanil's two hexagons, Atarax's ring
+        segments, Valium Brand's blue hexagon. Filling the exemption list with
+        them would record that the admission rule changed while pretending it
+        had not, which is worse than dropping the check.
+
+        WHAT IS CHECKED INSTEAD, and it is stronger in the direction that
+        matters: the spec must be exactly the `print` set, both ways round. A
+        part with no matching component means the fitter drew something nobody
+        classified; a `print` component with no part means it dropped something
+        somebody did. Neither is reachable through the fitter's own predicate,
+        because the truth file is written by a different program from a
+        different source -- the photograph itself.
+
+        WHAT IS GIVEN UP, stated rather than glossed: a person could still call
+        a wordmark `print`, and no test can catch that. What catches it is
+        `scripts/label_print.py --aid`, which tints every component by its class
+        over the rectified face, so a wordmark labelled as design is visible at a
+        glance. The guarantee moved from a proxy to a judgement, and the judgement
+        is recorded per component with its area and its bounding box.
         """
         import json as _json
         from src.design_group import TEMPLATES_DIR, TEMPLATE_SAMPLE
-        loose = set()
         for folder in sorted(TEMPLATE_SAMPLE):
-            spec = _json.loads(
-                (TEMPLATES_DIR / folder / "design_spec.json").read_text(encoding="utf-8"))
-            aspect = float(spec["face_aspect"])
-            # The fitter's margin is 0.01 of the face's LONGER side in pixels;
-            # these coordinates are normalised per axis, so it is not the same
-            # number on both.
-            margin_u = 0.01 * max(1.0, aspect)
-            margin_v = margin_u / aspect
-            for field in spec["fields"]:
-                for part in field["parts"]:
-                    us = [p[0] for p in part["outline"]]
-                    vs = [p[1] for p in part["outline"]]
-                    off = (min(us) <= margin_u or max(us) >= 1 - margin_u
-                           or min(vs) <= margin_v or max(vs) >= 1 - margin_v)
-                    if off or part["kind"] == "block":
+            root = TEMPLATES_DIR / folder
+            spec = _json.loads((root / "design_spec.json").read_text(encoding="utf-8"))
+            truth = _json.loads((root / "print_truth.json").read_text(encoding="utf-8"))
+            printed = [c for c in truth["components"]
+                       if c.get("class") == "print" and not c.get("vanished")]
+            with self.subTest(folder=folder):
+                # Matched on the recorded area and bounding box rather than by
+                # re-running the segmentation: this reads what both sides wrote
+                # down, so it cannot agree with the fitter by sharing its code.
+                unmatched = []
+                by_role = {}
+                for c in printed:
+                    by_role.setdefault(c["role"], []).append(c)
+                for field in spec["fields"]:
+                    if field.get("surface", "front") != "front":
                         continue
-                    loose.add((folder, field["role"], part["area_pct"]))
-        self.assertEqual(
-            loose, self.BOX_FILL_EXEMPT,
-            "a spec field floats inside the face and is not a printed block, "
-            "which is what a traced wordmark looks like. Every exemption is "
-            "listed with the box-fill that earned it; a new one has to be "
-            "measured, not assumed.")
+                    for part in field["parts"]:
+                        us = [p[0] for p in part["outline"]]
+                        vs = [p[1] for p in part["outline"]]
+                        hit = None
+                        for c in by_role.get(field["role"], []):
+                            if abs(c["area_pct"] - part["area_pct"]) > 0.06:
+                                continue
+                            u0, v0, u1, v1 = c["bbox_uv"]
+                            if (min(us) >= u0 - 0.02 and max(us) <= u1 + 0.02
+                                    and min(vs) >= v0 - 0.02 and max(vs) <= v1 + 0.02):
+                                hit = c
+                                break
+                        if hit is None:
+                            unmatched.append((field["role"], part["area_pct"]))
+                        else:
+                            by_role[field["role"]].remove(hit)
+                self.assertEqual(
+                    unmatched, [],
+                    f"{folder}: the spec draws a field no component was "
+                    f"classified `print`. Either the fitter emitted something "
+                    f"nobody looked at, or the partition moved under "
+                    f"print_truth.json -- re-run label_print.py --init.")
+                left = [(r, c["key"], c["area_pct"])
+                        for r, cs in by_role.items() for c in cs]
+                self.assertEqual(
+                    left, [],
+                    f"{folder}: a component classified `print` reached no field. "
+                    f"The spec is missing design the photograph carries and a "
+                    f"person confirmed.")
+
+
+    def test_every_hole_the_spec_cuts_is_one_a_person_called_a_window(self):
+        """Cutting the wrong hole prints another package's dosage on our carton.
+
+        A hole in a printed field is board, and there are two reasons for that
+        and only two: the carton leaves it unprinted, or the carton reverses its
+        own TYPE out of the field. Both are the same pixels, so nothing in the
+        segmentation separates them -- three instruments were tried and all
+        three were measured failing, which is why `print_truth.json` carries a
+        class per hole and `fit()` cuts `window` and nothing else.
+
+        The stake is the invariant this project holds hardest. `59-min` is a
+        20 mg Cialis whose reference photograph is a 10 mg pack; `344-min` is
+        Modafinil Generic whose photograph is Modalert 200; `404-min`'s 72 holes
+        spell "Ritalin 10 mg Tabletten" and "50 Tabletten/N2". Cut those and the
+        board shows through our field in the shape of the other package's brand
+        and dose -- the same act as printing a plausible LOT, which the driver
+        already refuses.
+
+        Checked both ways round and off the RECORDED numbers, so it shares no
+        code with the fitter: a ring the truth has no window for means something
+        was cut that nobody looked at, and a window with no ring means a real
+        hole was filled in.
+        """
+        import json as _json
+        from src.design_group import (TEMPLATES_DIR, TEMPLATE_SAMPLE,
+                                      FOLDER_BY_STEM)
+        from src.marks_decision import load as _load_decision
+        _DECISION = _load_decision()
+        STEM_BY_FOLDER = {f: s for s, f in FOLDER_BY_STEM.items()}
+        cut = 0
+        for folder in sorted(TEMPLATE_SAMPLE):
+            root = TEMPLATES_DIR / folder
+            spec = _json.loads((root / "design_spec.json").read_text(encoding="utf-8"))
+            truth = _json.loads((root / "print_truth.json").read_text(encoding="utf-8"))
+            # Contract 1.10 widens WHICH holes may be cut and not by how much:
+            # a `mark` hole the owner approved BY NAME in MARKS_DECISION.md is
+            # cut too, and nothing else is. The decision is read here rather
+            # than a class list being relaxed, so the guard still fails on any
+            # hole no person allowed -- which is the whole point of it.
+            stem = STEM_BY_FOLDER.get(folder)
+            approved = {k for s, k in _DECISION.holes if s == stem}
+            windows = [h for h in truth.get("holes", [])
+                       if not h.get("vanished")
+                       and (h.get("class") == "window" or h.get("key") in approved)]
+            with self.subTest(folder=folder):
+                unmatched = []
+                for field in spec["fields"]:
+                    for part in field["parts"]:
+                        for ring in part.get("holes") or []:
+                            us = [q[0] for q in ring]
+                            vs = [q[1] for q in ring]
+                            hit = None
+                            for hole in windows:
+                                u0, v0, u1, v1 = hole["bbox_uv"]
+                                if (min(us) >= u0 - 0.01 and max(us) <= u1 + 0.01
+                                        and min(vs) >= v0 - 0.01
+                                        and max(vs) <= v1 + 0.01):
+                                    hit = hole
+                                    break
+                            if hit is None:
+                                unmatched.append((field["role"], round(min(us), 3),
+                                                  round(min(vs), 3)))
+                            else:
+                                windows.remove(hit)
+                                cut += 1
+                self.assertEqual(
+                    unmatched, [],
+                    f"{folder}: the spec cuts a hole that is neither a window "
+                    f"nor a mark the owner approved by name. If it is the "
+                    f"reference's own lettering, our field will show board in "
+                    f"the shape of another package's words.")
+                self.assertEqual(
+                    [h["key"] for h in windows], [],
+                    f"{folder}: a hole a person called a window reached no ring. "
+                    f"The spec fills a region the carton leaves open -- which is "
+                    f"how one Adderall field came to enclose 9.07 times its ink.")
+        self.assertGreaterEqual(
+            cut, 5, "no spec cuts a hole, so this test asserts nothing")
+
+    def test_a_hole_is_only_ever_asked_about_inside_a_printed_component(self):
+        """The truth enumerates holes of `print` components and of nothing else.
+
+        A hole in a component the label already dropped is not a question anyone
+        has to answer: the component is not in the spec, so neither is its
+        interior. Keeping the two populations aligned this way is what lets a
+        hole be named off its component's own key rather than by a second
+        enumeration that could drift from the first.
+        """
+        import json as _json
+        from src.design_group import TEMPLATES_DIR, TEMPLATE_SAMPLE
+        for folder in sorted(TEMPLATE_SAMPLE):
+            truth = _json.loads(
+                (TEMPLATES_DIR / folder / "print_truth.json").read_text(encoding="utf-8"))
+            printed = {c["key"] for c in truth["components"]
+                       if c.get("class") == "print" and not c.get("vanished")}
+            stray = sorted({h["of"] for h in truth.get("holes", [])
+                            if not h.get("vanished")} - printed)
+            with self.subTest(folder=folder):
+                self.assertEqual(
+                    stray, [],
+                    f"{folder}: holes are enumerated inside components that are "
+                    f"not `print`. Re-run label_print.py --init.")
 
 
 class TestAnOutlineIsARegion(unittest.TestCase):
@@ -819,6 +985,178 @@ class TestAnOutlineIsARegion(unittest.TestCase):
         with self.assertRaises(ValueError) as ctx:
             validate_manifest(manifest)
         self.assertIn("crosses itself", str(ctx.exception))
+
+    def test_the_contract_rejects_a_tangled_hole_and_says_which(self):
+        """Contract 1.8 checks the holes on the same footing as the outline.
+
+        A part is its outline minus its holes, so a hole that crosses itself is
+        a tangled region boundary and reaches the render the same way -- the
+        driver hands both to Blender as cyclic splines of one curve, where the
+        tessellation and PIL's even-odd scanline disagree exactly as they did on
+        `340-min`.
+        """
+        stem = self._design_stems()[0]
+        manifest = json.loads(
+            (self.MANIFESTS / f"{stem}.json").read_text(encoding="utf-8"))
+        part = manifest["design"]["fields"][0]["parts"][0]
+        part["holes"] = [[[0.2, 0.2], [0.4, 0.4], [0.4, 0.2], [0.2, 0.4]]]
+        with self.assertRaises(ValueError) as ctx:
+            validate_manifest(manifest)
+        self.assertIn("hole 0", str(ctx.exception))
+        self.assertIn("crosses itself", str(ctx.exception))
+
+    def test_a_part_that_does_not_say_whether_it_has_holes_is_refused(self):
+        """`holes` is required and may be empty, and the difference matters.
+
+        A 1.7 part carries no such key. Read as 1.8 it is not a part with no
+        holes, it is a part whose holes are unknown -- and filling them in
+        silence is the packshot this group had been rendering: Adderall's brand
+        enclosing 9.07 times its own ink, 53.48% of a face it inks 5.90% of.
+        """
+        from jsonschema import ValidationError
+        stem = self._design_stems()[0]
+        manifest = json.loads(
+            (self.MANIFESTS / f"{stem}.json").read_text(encoding="utf-8"))
+        manifest["design"]["fields"][0]["parts"][0].pop("holes")
+        with self.assertRaises(ValidationError):
+            validate_manifest(manifest)
+
+    def test_a_part_that_does_not_say_what_colour_it_is_is_refused(self):
+        """Contract 1.9, on the same footing as `holes` above.
+
+        A 1.8 part carries no `fill`. Read as 1.9 it is not a part painted its
+        field's colour, it is a part whose colour is unknown -- and painting it
+        the field's in silence is what 33 of the group's 75 parts should not be:
+        `152_Artvigil`'s `brand#1` is declared `#E05506` and is `#2D3336` in the
+        photograph, over 6.47% of the face.
+        """
+        from jsonschema import ValidationError
+        stem = self._design_stems()[0]
+        manifest = json.loads(
+            (self.MANIFESTS / f"{stem}.json").read_text(encoding="utf-8"))
+        manifest["design"]["fields"][0]["parts"][0].pop("fill")
+        with self.assertRaises(ValidationError):
+            validate_manifest(manifest)
+
+    def test_every_design_part_states_its_own_colour(self):
+        """And the shipped manifests carry it, which is the other half."""
+        seen = own = 0
+        for stem in self._design_stems():
+            manifest = json.loads(
+                (self.MANIFESTS / f"{stem}.json").read_text(encoding="utf-8"))
+            for field in (manifest.get("design") or {}).get("fields") or []:
+                for i, part in enumerate(field.get("parts") or []):
+                    seen += 1
+                    self.assertIn(
+                        "fill", part,
+                        f"{stem} {field.get('role')}#{i} carries no fill")
+                    if part["fill"] != field["fill"]:
+                        own += 1
+        self.assertGreater(seen, 0, "no design parts were checked at all")
+        self.assertGreater(
+            own, 0,
+            "not one part in the catalogue differs from its field's colour. "
+            "Contract 1.9 exists because 33 of the group's 75 do; a manifest "
+            "set where none does means the producer has been switched off.")
+
+    # The exact outline that showed the repair was scoring itself on the wrong
+    # quantity. Ritalin's `highlight#1`, simplified at a 0.001 face width: a
+    # 22-vertex ring crossing itself six times, its two long edges running the
+    # full width of the face a thousandth apart. Kept here rather than
+    # regenerated because it is evidence, and the tolerance it came from is not
+    # the committed one.
+    RITALIN_TANGLE = [
+        [0.0, 0.5405], [0.0036, 0.9628], [0.0055, 0.9672], [0.0082, 0.9628],
+        [0.01, 0.965], [0.0109, 0.9737], [0.0082, 0.9759], [0.0073, 0.9825],
+        [0.0109, 0.9912], [0.0682, 0.9956], [0.0782, 0.9912], [0.1464, 0.9912],
+        [0.1645, 0.9978], [0.1809, 0.9934], [0.1873, 0.9978], [0.1973, 0.9934],
+        [0.2073, 0.9978], [0.2191, 0.9978], [0.2218, 0.9934], [0.5336, 0.9978],
+        [0.0, 0.9978], [0.0, 0.5427],
+    ]
+
+    def test_the_index_finds_exactly_what_testing_every_pair_finds(self):
+        """`ring_crossings` is indexed by a grid; an index that misses a crossing
+        would let a tangled ring reach the driver as a region.
+
+        Checked against the full pairwise scan on every ring the group carries
+        AND on 300 deterministic random rings, because the group's rings are all
+        traced round printed shapes and share a shape of their own.
+        """
+        import random
+        from src.design_group import _crosses, ring_crossings, spec_path
+
+        def brute(poly):
+            n, out = len(poly), []
+            for i in range(n):
+                for j in range(i + 1, n):
+                    if (j + 1) % n == i or (i + 1) % n == j:
+                        continue
+                    if _crosses(poly[i], poly[(i + 1) % n],
+                                poly[j], poly[(j + 1) % n]):
+                        out.append((i, j))
+            return out
+
+        rings = [[(float(a), float(b)) for a, b in self.RITALIN_TANGLE]]
+        for stem in self._design_stems():
+            path = spec_path(stem)
+            if path is None or not path.exists():
+                continue
+            spec = json.loads(path.read_text(encoding="utf-8"))
+            for field in spec.get("fields") or []:
+                for part in field.get("parts") or []:
+                    o = [(float(a), float(b)) for a, b in part["outline"]]
+                    if len(o) >= 4:
+                        rings.append(o)
+        rng = random.Random(7)
+        for _ in range(300):
+            rings.append([(rng.random(), rng.random())
+                          for _ in range(rng.randint(4, 40))])
+        for n, ring in enumerate(rings):
+            with self.subTest(ring=n, verts=len(ring)):
+                self.assertEqual(ring_crossings(ring), brute(ring))
+
+    def test_a_repair_that_cannot_keep_the_region_raises(self):
+        """The repair used to choose by the SHOELACE area, which on a ring that
+        crosses itself is a signed cancellation and not what an even-odd fill
+        covers. On this outline it dropped two vertices and turned 0.36% of the
+        face into 11.87% -- it did not lose the region, it invented one
+        thirty-three times larger and put it on the carton. Nothing failed.
+
+        Now it either keeps the region or says it cannot.
+        """
+        from src.design_group import RingRepairFailed, simple_ring
+        with self.assertRaises(RingRepairFailed) as ctx:
+            simple_ring(self.RITALIN_TANGLE)
+        self.assertIn("kept only", str(ctx.exception))
+
+    def test_the_objective_is_the_fill_and_not_the_shoelace_sum(self):
+        """A figure eight is the case that separates them: its lobes cancel in
+        the shoelace sum and both are covered by an even-odd fill. A repair
+        judged on the first is judged on a number unrelated to what is painted.
+        """
+        try:
+            import numpy as np
+            from PIL import Image, ImageDraw
+        except ImportError as e:  # pragma: no cover - environment, not logic
+            self.skipTest(f"Pillow/numpy unavailable: {e}")
+        eight = [(0.1, 0.1), (0.5, 0.1), (0.1, 0.9), (0.5, 0.9)]
+        n = len(eight)
+        shoelace = abs(sum(eight[i][0] * eight[(i + 1) % n][1]
+                           - eight[(i + 1) % n][0] * eight[i][1]
+                           for i in range(n))) / 2
+
+        def fill(poly, size=400):
+            im = Image.new("L", (size, size), 0)
+            ImageDraw.Draw(im).polygon(
+                [(u * size, v * size) for u, v in poly], fill=255)
+            return (np.asarray(im) > 0)
+
+        covered = float(fill(eight).mean())
+        self.assertLess(shoelace, 1e-9,
+                        "this ring no longer cancels; pick another figure eight")
+        self.assertGreater(covered, 0.05,
+                           "an even-odd fill covers both lobes, so the two "
+                           "measures must disagree for this test to mean anything")
 
     def test_the_repair_keeps_the_region_that_was_verified(self):
         """Dropping vertices must not redraw the field. Measured against the

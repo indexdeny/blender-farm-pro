@@ -113,9 +113,25 @@ except Exception as e:
 
 
 def extract_text(image) -> tuple[bool, str]:
-    """Run OCR on a path or an already-loaded image.
+    """Run OCR on a path or an already-loaded image, in BOTH polarities.
 
     Returns (success, text_or_error).
+
+    Read twice, as-is and inverted, because a pharmaceutical carton
+    REVERSES type out of its dark fields as a matter of normal design --
+    Kamagra sets its dosage and unit count white inside a teal field --
+    while Tesseract is built for dark type on a light ground. A single
+    pass therefore reports a correctly printed row as missing, which is a
+    fact about the reader and not about the packshot.
+
+    Measured over the barrier's nine-SKU sample: the inverted pass
+    recovers `344-min`'s unit count and costs nothing anywhere else. It
+    is a union and not a replacement, so a row that only reads in the
+    normal polarity is not traded away for one that only reads inverted.
+
+    It does not rescue every reversed row -- `64-min` still comes back as
+    "3 30 Pind" -- because contrast is not the only thing wrong with
+    those rows. Those stay in `KNOWN_OCR_MISSES` with their own causes.
     """
     if not _TESSERACT_AVAILABLE:
         return False, _TESSERACT_ERROR
@@ -125,9 +141,14 @@ def extract_text(image) -> tuple[bool, str]:
         # module-level name never exists -- and isinstance(image, Image.Image)
         # would raise NameError instead of reporting "OCR unavailable".
         from PIL import Image as _Image
+        from PIL import ImageOps as _ImageOps
         img = image if isinstance(image, _Image.Image) else _Image.open(image)
         # Use --psm 6 (uniform text block) for better coverage on a label grid
         text = pytesseract.image_to_string(img, config="--psm 6")
+        # Converted first: ImageOps.invert refuses RGBA and palette modes,
+        # and the fixtures carry both.
+        flipped = _ImageOps.invert(img.convert("RGB"))
+        text += "\n" + pytesseract.image_to_string(flipped, config="--psm 6")
         return True, text
     except Exception as e:
         return False, str(e)

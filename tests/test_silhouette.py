@@ -16,6 +16,7 @@ model reproduces those pixels, it is doing the same arithmetic Blender is.
 import json
 import math
 import re
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -215,6 +216,46 @@ class TestMeasuredSilhouette(unittest.TestCase):
             from PIL import Image  # noqa: F401
         except ImportError as e:  # pragma: no cover - environment, not logic
             self.skipTest(f"Pillow/numpy unavailable: {e}")
+
+    def test_own_render_can_use_an_independent_object_mask(self):
+        import numpy as np
+        from PIL import Image
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            rgb = np.full((40, 60, 3), 255, np.uint8)
+            rgb[8:28, 10:40] = 180
+            rgb[28:34, 10:40] = 238  # contact shadow, not carton
+            mask = np.zeros((40, 60), np.uint8)
+            mask[8:28, 10:40] = 255
+            image_path = root / "render.png"
+            mask_path = root / "render.object.png"
+            Image.fromarray(rgb).save(image_path)
+            Image.fromarray(mask).save(mask_path)
+
+            self.assertEqual(
+                silhouette.measured_silhouette_px(
+                    image_path, threshold=250, erode_r=0,
+                    object_mask_path=mask_path),
+                (10.0, 8.0, 39.0, 27.0))
+            self.assertEqual(
+                silhouette.measured_silhouette_px(
+                    image_path, threshold=250, erode_r=0),
+                (10.0, 8.0, 39.0, 33.0))
+
+    def test_object_mask_dimensions_must_match_its_render(self):
+        import numpy as np
+        from PIL import Image
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            image_path = root / "render.png"
+            mask_path = root / "render.object.png"
+            Image.fromarray(np.full((20, 30, 3), 255, np.uint8)).save(image_path)
+            Image.fromarray(np.full((10, 30), 255, np.uint8)).save(mask_path)
+            with self.assertRaisesRegex(ValueError, "dimensions"):
+                silhouette.measured_silhouette_px(
+                    image_path, object_mask_path=mask_path)
 
     def test_erosion_is_what_makes_the_measurement_possible_at_all(self):
         # Without it the backdrop's own Cycles noise -- individual pixels down to

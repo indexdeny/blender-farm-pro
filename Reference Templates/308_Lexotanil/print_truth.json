@@ -1,0 +1,496 @@
+{
+  "schema": "print_truth/1",
+  "sku": "308-min",
+  "source_image": "Lexotanil_front_raw.webp",
+  "front_face_px": [
+    [
+      112,
+      248
+    ],
+    [
+      495,
+      186
+    ],
+    [
+      495,
+      350
+    ],
+    [
+      112,
+      392
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    438
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 0.017,
+    "highlight": 1.279,
+    "type": 0.83
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#01898F",
+      "area_pct": 1.8,
+      "bbox_uv": [
+        0.8509,
+        0.3562,
+        0.9709,
+        0.5548
+      ],
+      "centroid_uv": [
+        0.9107,
+        0.4557
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#01898F",
+      "area_pct": 1.793,
+      "bbox_uv": [
+        0.8464,
+        0.5845,
+        0.9673,
+        0.7854
+      ],
+      "centroid_uv": [
+        0.9071,
+        0.6846
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.308,
+      "bbox_uv": [
+        0.1927,
+        0.847,
+        0.2727,
+        0.9361
+      ],
+      "centroid_uv": [
+        0.2286,
+        0.8932
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.296,
+      "bbox_uv": [
+        0.2709,
+        0.3447,
+        0.3509,
+        0.4475
+      ],
+      "centroid_uv": [
+        0.3102,
+        0.3845
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.23,
+      "bbox_uv": [
+        0.1009,
+        0.3562,
+        0.1664,
+        0.4498
+      ],
+      "centroid_uv": [
+        0.1347,
+        0.4074
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.2,
+      "bbox_uv": [
+        0.1682,
+        0.3607,
+        0.2255,
+        0.4384
+      ],
+      "centroid_uv": [
+        0.1981,
+        0.3992
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.2,
+      "bbox_uv": [
+        0.8445,
+        0.5799,
+        0.9691,
+        0.7922
+      ],
+      "centroid_uv": [
+        0.9079,
+        0.6847
+      ],
+      "class": "blend",
+      "reason": "antialiased rim of the green hexagon"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.19,
+      "bbox_uv": [
+        0.1009,
+        0.8676,
+        0.1464,
+        0.9566
+      ],
+      "centroid_uv": [
+        0.1249,
+        0.9113
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.173,
+      "bbox_uv": [
+        0.8482,
+        0.3516,
+        0.9727,
+        0.5616
+      ],
+      "centroid_uv": [
+        0.9097,
+        0.4566
+      ],
+      "class": "blend",
+      "reason": "antialiased rim of the blue hexagon"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.119,
+      "bbox_uv": [
+        0.1591,
+        0.8744,
+        0.1918,
+        0.9429
+      ],
+      "centroid_uv": [
+        0.1752,
+        0.9128
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#8",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.112,
+      "bbox_uv": [
+        0.4436,
+        0.0388,
+        0.4664,
+        0.105
+      ],
+      "centroid_uv": [
+        0.4549,
+        0.0727
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#9",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.108,
+      "bbox_uv": [
+        0.0991,
+        0.1142,
+        0.1391,
+        0.274
+      ],
+      "centroid_uv": [
+        0.1135,
+        0.2062
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#10",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.105,
+      "bbox_uv": [
+        0.1418,
+        0.621,
+        0.1809,
+        0.6941
+      ],
+      "centroid_uv": [
+        0.1605,
+        0.6555
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#11",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.104,
+      "bbox_uv": [
+        0.3555,
+        0.1233,
+        0.3964,
+        0.2397
+      ],
+      "centroid_uv": [
+        0.3753,
+        0.1797
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#12",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.103,
+      "bbox_uv": [
+        0.1409,
+        0.1507,
+        0.1827,
+        0.2671
+      ],
+      "centroid_uv": [
+        0.162,
+        0.2143
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#13",
+      "role": "highlight",
+      "fill": "#889191",
+      "area_pct": 0.103,
+      "bbox_uv": [
+        0.1836,
+        0.6119,
+        0.2109,
+        0.7169
+      ],
+      "centroid_uv": [
+        0.198,
+        0.6624
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.217,
+      "bbox_uv": [
+        0.2327,
+        0.1438,
+        0.2736,
+        0.2489
+      ],
+      "centroid_uv": [
+        0.253,
+        0.1976
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.216,
+      "bbox_uv": [
+        0.3573,
+        0.1301,
+        0.3936,
+        0.2329
+      ],
+      "centroid_uv": [
+        0.375,
+        0.1772
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.21,
+      "bbox_uv": [
+        0.1436,
+        0.1553,
+        0.18,
+        0.2626
+      ],
+      "centroid_uv": [
+        0.1603,
+        0.2073
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#3",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.203,
+      "bbox_uv": [
+        0.3136,
+        0.1347,
+        0.3473,
+        0.2397
+      ],
+      "centroid_uv": [
+        0.332,
+        0.1901
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#4",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.199,
+      "bbox_uv": [
+        0.1018,
+        0.1233,
+        0.1373,
+        0.2671
+      ],
+      "centroid_uv": [
+        0.1107,
+        0.2086
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#5",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.183,
+      "bbox_uv": [
+        0.1891,
+        0.1507,
+        0.2245,
+        0.2557
+      ],
+      "centroid_uv": [
+        0.2067,
+        0.2039
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#6",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.155,
+      "bbox_uv": [
+        0.2809,
+        0.1142,
+        0.3064,
+        0.2443
+      ],
+      "centroid_uv": [
+        0.2922,
+        0.1792
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#7",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.131,
+      "bbox_uv": [
+        0.4255,
+        0.0776,
+        0.4345,
+        0.2237
+      ],
+      "centroid_uv": [
+        0.4304,
+        0.1503
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#8",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.109,
+      "bbox_uv": [
+        0.1445,
+        0.6256,
+        0.18,
+        0.6872
+      ],
+      "centroid_uv": [
+        0.1617,
+        0.6534
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#9",
+      "role": "type",
+      "fill": "#44474F",
+      "area_pct": 0.105,
+      "bbox_uv": [
+        0.1864,
+        0.621,
+        0.2091,
+        0.7123
+      ],
+      "centroid_uv": [
+        0.1985,
+        0.6624
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

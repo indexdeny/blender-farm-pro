@@ -1,0 +1,229 @@
+{
+  "manifest_version": "1.10",
+  "sku_id": "149-min.jpg",
+  "product_code": "149-min",
+  "template_id": "T1",
+  "is_bottle_override": false,
+  "packaging_geometry": "BLISTER",
+  "carton": {
+    "width_mm": 115.0,
+    "height_mm": 44.5395,
+    "depth_mm": 48.0,
+    "passport_dimensions": {
+      "width_mm": 115.0,
+      "height_mm": 55.0,
+      "depth_mm": 48.0,
+      "source": "passport_secondary"
+    },
+    "source": "design_spec",
+    "features": [
+      "Braille",
+      "DataMatrix_Zone",
+      "Tamper_Evident_Seal"
+    ],
+    "material": "GZ-Cardboard (Pharmaceutical Grade)"
+  },
+  "design": {
+    "spec_version": "0.1",
+    "face_aspect": 0.3873,
+    "substrate": "#DCDCDC",
+    "fields": [
+      {
+        "role": "brand",
+        "z": 0,
+        "fill": "#C84569",
+        "coverage_pct": 21.6,
+        "parts": [
+          {
+            "kind": "field",
+            "area_pct": 9.7,
+            "smoothness": 0.76,
+            "fill": "#F64D48",
+            "outline": [
+              [
+                0.0164,
+                0.0469
+              ],
+              [
+                0.2164,
+                0.054
+              ],
+              [
+                0.2455,
+                0.0587
+              ],
+              [
+                0.4055,
+                0.0657
+              ],
+              [
+                0.5418,
+                0.0775
+              ],
+              [
+                0.6982,
+                0.0845
+              ],
+              [
+                0.9264,
+                0.1033
+              ],
+              [
+                0.9264,
+                0.2019
+              ],
+              [
+                0.7636,
+                0.1901
+              ],
+              [
+                0.7373,
+                0.1925
+              ],
+              [
+                0.6264,
+                0.1831
+              ],
+              [
+                0.6191,
+                0.1854
+              ],
+              [
+                0.5655,
+                0.1784
+              ],
+              [
+                0.5491,
+                0.1808
+              ],
+              [
+                0.52,
+                0.1761
+              ],
+              [
+                0.5073,
+                0.1784
+              ],
+              [
+                0.4127,
+                0.1737
+              ],
+              [
+                0.24,
+                0.1596
+              ],
+              [
+                0.0182,
+                0.1549
+              ],
+              [
+                0.0164,
+                0.1526
+              ],
+              [
+                0.0164,
+                0.0493
+              ]
+            ],
+            "holes": [],
+            "mark_holes": []
+          },
+          {
+            "kind": "block",
+            "area_pct": 9.3,
+            "smoothness": 0.56,
+            "fill": "#7333B8",
+            "outline": [
+              [
+                0.2509,
+                0.6925
+              ],
+              [
+                0.6891,
+                0.7089
+              ],
+              [
+                0.8155,
+                0.7089
+              ],
+              [
+                0.7618,
+                0.9319
+              ],
+              [
+                0.7,
+                0.9343
+              ],
+              [
+                0.4036,
+                0.9272
+              ],
+              [
+                0.1955,
+                0.9272
+              ],
+              [
+                0.1964,
+                0.9178
+              ],
+              [
+                0.25,
+                0.6948
+              ]
+            ],
+            "holes": [],
+            "mark_holes": []
+          },
+          {
+            "kind": "block",
+            "area_pct": 0.4,
+            "smoothness": 0.33,
+            "fill": "#6009B0",
+            "outline": [
+              [
+                0.9445,
+                0.108
+              ],
+              [
+                0.9836,
+                0.1103
+              ],
+              [
+                0.9827,
+                0.2136
+              ],
+              [
+                0.9609,
+                0.2136
+              ],
+              [
+                0.9436,
+                0.2089
+              ],
+              [
+                0.9445,
+                0.1103
+              ]
+            ],
+            "holes": [],
+            "mark_holes": []
+          }
+        ]
+      }
+    ],
+    "marks": [],
+    "type_rows": {},
+    "source_image": "Modalert_front_raw.webp"
+  },
+  "palette": {
+    "primary": "#DDA7A5",
+    "accent": "#6B2D5C",
+    "background": "#FFFFFF"
+  },
+  "label_content": {
+    "brand_name_display": "Modalert",
+    "active_ingredient_display": "Modafinil",
+    "dosage_display": "200mg",
+    "unit_count_display": "30 Pills"
+  }
+}

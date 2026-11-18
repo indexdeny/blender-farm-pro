@@ -1,0 +1,171 @@
+{
+  "spec_version": "0.1",
+  "sku": "135-min.jpg",
+  "source_image": "Ativan_front_raw.webp",
+  "face_aspect": 1.54,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#E1E5DF",
+  "fields": [
+    {
+      "role": "brand",
+      "fill": "#032F5D",
+      "coverage_pct": 15.3,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 11.7,
+          "smoothness": 0.17,
+          "outline": [
+            [
+              0.0082,
+              0.0
+            ],
+            [
+              0.9991,
+              0.0035
+            ],
+            [
+              0.9991,
+              0.1269
+            ],
+            [
+              0.0073,
+              0.1275
+            ],
+            [
+              0.0009,
+              0.1198
+            ],
+            [
+              0.0082,
+              0.0006
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "highlight",
+      "fill": "#AD3A9D",
+      "coverage_pct": 7.9,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 4.0,
+          "smoothness": 0.14,
+          "outline": [
+            [
+              0.53,
+              0.4292
+            ],
+            [
+              0.5482,
+              0.4303
+            ],
+            [
+              0.5418,
+              0.5313
+            ],
+            [
+              0.1255,
+              0.5478
+            ],
+            [
+              0.1073,
+              0.5466
+            ],
+            [
+              0.1118,
+              0.4421
+            ],
+            [
+              0.5291,
+              0.4298
+            ]
+          ]
+        },
+        {
+          "kind": "field",
+          "area_pct": 3.3,
+          "smoothness": 0.14,
+          "outline": [
+            [
+              0.0064,
+              0.0159
+            ],
+            [
+              0.0,
+              0.124
+            ],
+            [
+              0.0073,
+              0.1281
+            ],
+            [
+              0.9991,
+              0.1275
+            ],
+            [
+              0.9991,
+              0.1582
+            ],
+            [
+              0.0,
+              0.1612
+            ],
+            [
+              0.0064,
+              0.0165
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "glyph_components_dropped": 0,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 0,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 0.9423,
+    "excluded_as_glyphs_pct": 0.0,
+    "iou_by_field": {
+      "brand": 0.717,
+      "highlight": 0.853
+    },
+    "vertices": 20
+  },
+  "type_rows": {
+    "brand_name_display": {
+      "u0": 0.1186,
+      "u1": 0.5964,
+      "v0": 0.193,
+      "v1": 0.2683,
+      "cap_frac": 0.0709,
+      "cap_top_v": 0.1959,
+      "align": "LEFT",
+      "read_as": "Ativan’"
+    },
+    "active_ingredient_display": {
+      "u0": 0.1177,
+      "u1": 0.5623,
+      "v0": 0.286,
+      "v1": 0.34,
+      "cap_frac": 0.0406,
+      "cap_top_v": 0.2877,
+      "align": "LEFT",
+      "read_as": "lorazepam"
+    },
+    "unit_count_display": {
+      "u0": 0.2668,
+      "u1": 0.7595,
+      "v0": 0.9298,
+      "v1": 0.9944,
+      "cap_frac": 0.0608,
+      "cap_top_v": 0.9323,
+      "align": "CENTER",
+      "read_as": "con 80 tabletas"
+    }
+  },
+  "type_rows_note": "GEOMETRY ONLY. `read_as` records the reference's own words, which are how each row was identified and are NOT what gets printed: the renderer draws the manifest's strings. The reference and the catalogue often carry different products -- Motiron for Ritalin, Aspendos for Modafinil."
+}
