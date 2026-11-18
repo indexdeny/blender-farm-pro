@@ -1,0 +1,227 @@
+{
+ "threshold": 0.85,
+ "n_marks": 22,
+ "n_letterform": 11,
+ "rows": [
+  {
+   "sku": "135-min",
+   "folder": "135_Ativan",
+   "key": "brand#0/hole#0",
+   "source": "hole",
+   "area_pct": 0.942,
+   "vertices": 56,
+   "solidity": 0.934,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "150-min",
+   "folder": "150_Waklert",
+   "key": "brand#4",
+   "source": "component",
+   "area_pct": 0.321,
+   "vertices": 42,
+   "solidity": 0.679,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "152-min",
+   "folder": "152_Artvigil",
+   "key": "brand#26",
+   "source": "component",
+   "area_pct": 0.12,
+   "vertices": 43,
+   "solidity": 0.19,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "155-min",
+   "folder": "155_Imovane",
+   "key": "highlight#2",
+   "source": "component",
+   "area_pct": 0.152,
+   "vertices": 66,
+   "solidity": 0.593,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "157-min",
+   "folder": "157_Valium",
+   "key": "type#8",
+   "source": "component",
+   "area_pct": 0.231,
+   "vertices": 11,
+   "solidity": 0.998,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "221-min",
+   "folder": "221_Inderal",
+   "key": "brand#0/hole#0",
+   "source": "hole",
+   "area_pct": 0.258,
+   "vertices": 39,
+   "solidity": 0.623,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "221-min",
+   "folder": "221_Inderal",
+   "key": "brand#0/hole#13",
+   "source": "hole",
+   "area_pct": 0.028,
+   "vertices": 10,
+   "solidity": 0.683,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "221-min",
+   "folder": "221_Inderal",
+   "key": "brand#0/hole#25",
+   "source": "hole",
+   "area_pct": 0.01,
+   "vertices": 9,
+   "solidity": 0.993,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "230-min",
+   "folder": "230_Slimex",
+   "key": "brand#8",
+   "source": "component",
+   "area_pct": 0.303,
+   "vertices": 13,
+   "solidity": 0.919,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "230-min",
+   "folder": "230_Slimex",
+   "key": "brand#9",
+   "source": "component",
+   "area_pct": 0.154,
+   "vertices": 5,
+   "solidity": 1.0,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "272-min",
+   "folder": "272_Valium_Brand",
+   "key": "brand#1",
+   "source": "component",
+   "area_pct": 0.411,
+   "vertices": 15,
+   "solidity": 0.998,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "272-min",
+   "folder": "272_Valium_Brand",
+   "key": "brand#13",
+   "source": "component",
+   "area_pct": 0.116,
+   "vertices": 16,
+   "solidity": 0.697,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "357-min",
+   "folder": "357_Adderall",
+   "key": "highlight#0/hole#0",
+   "source": "hole",
+   "area_pct": 0.647,
+   "vertices": 43,
+   "solidity": 0.907,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "357-min",
+   "folder": "357_Adderall",
+   "key": "highlight#0/hole#4",
+   "source": "hole",
+   "area_pct": 0.024,
+   "vertices": 17,
+   "solidity": 0.589,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "357-min",
+   "folder": "357_Adderall",
+   "key": "highlight#0/hole#5",
+   "source": "hole",
+   "area_pct": 0.014,
+   "vertices": 10,
+   "solidity": 0.825,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "404-min",
+   "folder": "404_Ritalin",
+   "key": "type#19",
+   "source": "component",
+   "area_pct": 0.115,
+   "vertices": 14,
+   "solidity": 0.53,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "404-min",
+   "folder": "404_Ritalin",
+   "key": "type#20",
+   "source": "component",
+   "area_pct": 0.106,
+   "vertices": 14,
+   "solidity": 0.998,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "64-min",
+   "folder": "64_Kamagra",
+   "key": "highlight#7",
+   "source": "component",
+   "area_pct": 0.395,
+   "vertices": 34,
+   "solidity": 0.323,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "64-min",
+   "folder": "64_Kamagra",
+   "key": "highlight#17",
+   "source": "component",
+   "area_pct": 0.184,
+   "vertices": 26,
+   "solidity": 0.359,
+   "reads_as": "letterform"
+  },
+  {
+   "sku": "64-min",
+   "folder": "64_Kamagra",
+   "key": "highlight#18",
+   "source": "component",
+   "area_pct": 0.119,
+   "vertices": 17,
+   "solidity": 0.999,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "64-min",
+   "folder": "64_Kamagra",
+   "key": "highlight#21",
+   "source": "component",
+   "area_pct": 0.103,
+   "vertices": 15,
+   "solidity": 0.998,
+   "reads_as": "blob"
+  },
+  {
+   "sku": "74-min",
+   "folder": "74_Viagra",
+   "key": "brand#0/hole#0",
+   "source": "hole",
+   "area_pct": 1.418,
+   "vertices": 47,
+   "solidity": 0.918,
+   "reads_as": "blob"
+  }
+ ]
+}

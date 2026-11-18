@@ -1,0 +1,697 @@
+{
+  "schema": "print_truth/1",
+  "sku": "340-min",
+  "source_image": "Xanax_Pfizer_front_raw.webp",
+  "front_face_px": [
+    [
+      300,
+      578
+    ],
+    [
+      988,
+      370
+    ],
+    [
+      1052,
+      600
+    ],
+    [
+      365,
+      810
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    367
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.305,
+    "highlight": 2.43,
+    "secondary_1": 1.195
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 7.855,
+      "bbox_uv": [
+        0.7945,
+        0.0218,
+        0.9991,
+        0.9973
+      ],
+      "centroid_uv": [
+        0.8737,
+        0.4579
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.592,
+      "bbox_uv": [
+        0.9482,
+        0.6185,
+        0.9991,
+        0.9973
+      ],
+      "centroid_uv": [
+        0.9771,
+        0.795
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.448,
+      "bbox_uv": [
+        0.3827,
+        0.5477,
+        0.4436,
+        0.6703
+      ],
+      "centroid_uv": [
+        0.4126,
+        0.6044
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.405,
+      "bbox_uv": [
+        0.4482,
+        0.5368,
+        0.4873,
+        0.6894
+      ],
+      "centroid_uv": [
+        0.469,
+        0.6111
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.369,
+      "bbox_uv": [
+        0.3155,
+        0.5313,
+        0.3545,
+        0.6839
+      ],
+      "centroid_uv": [
+        0.3341,
+        0.6092
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.36,
+      "bbox_uv": [
+        0.27,
+        0.545,
+        0.3109,
+        0.6975
+      ],
+      "centroid_uv": [
+        0.2899,
+        0.6239
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.348,
+      "bbox_uv": [
+        0.2027,
+        0.5613,
+        0.2409,
+        0.7112
+      ],
+      "centroid_uv": [
+        0.2218,
+        0.6372
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.32,
+      "bbox_uv": [
+        0.9536,
+        0.0817,
+        0.9991,
+        0.4196
+      ],
+      "centroid_uv": [
+        0.9728,
+        0.2839
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#B60D7F",
+      "area_pct": 0.162,
+      "bbox_uv": [
+        0.9409,
+        0.5858,
+        0.9755,
+        0.733
+      ],
+      "centroid_uv": [
+        0.9592,
+        0.6576
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 26.641,
+      "bbox_uv": [
+        0.2491,
+        0.3406,
+        0.9355,
+        0.9973
+      ],
+      "centroid_uv": [
+        0.6087,
+        0.7529
+      ],
+      "class": "blend",
+      "reason": "board split off by the lighting gradient, 0.090 from the substrate colour"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.655,
+      "bbox_uv": [
+        0.5473,
+        0.158,
+        0.6773,
+        0.4142
+      ],
+      "centroid_uv": [
+        0.6256,
+        0.2677
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.493,
+      "bbox_uv": [
+        0.9045,
+        0.0954,
+        0.9509,
+        0.4223
+      ],
+      "centroid_uv": [
+        0.9318,
+        0.2852
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.481,
+      "bbox_uv": [
+        0.9582,
+        0.0899,
+        0.9991,
+        0.3678
+      ],
+      "centroid_uv": [
+        0.9797,
+        0.2502
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.288,
+      "bbox_uv": [
+        0.9855,
+        0.6703,
+        0.9991,
+        0.9837
+      ],
+      "centroid_uv": [
+        0.9941,
+        0.8325
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.23,
+      "bbox_uv": [
+        0.4255,
+        0.7493,
+        0.4536,
+        0.8501
+      ],
+      "centroid_uv": [
+        0.4399,
+        0.7994
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.172,
+      "bbox_uv": [
+        0.1327,
+        0.8229,
+        0.1609,
+        0.9973
+      ],
+      "centroid_uv": [
+        0.1501,
+        0.9544
+      ],
+      "class": "object",
+      "reason": "carton bottom-left edge"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.138,
+      "bbox_uv": [
+        0.5145,
+        0.2398,
+        0.5391,
+        0.436
+      ],
+      "centroid_uv": [
+        0.5235,
+        0.3408
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#8",
+      "role": "highlight",
+      "fill": "#D8D8CE",
+      "area_pct": 0.13,
+      "bbox_uv": [
+        0.8845,
+        0.0,
+        0.9118,
+        0.2807
+      ],
+      "centroid_uv": [
+        0.9025,
+        0.1755
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#0",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 8.64,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.1073,
+        0.9973
+      ],
+      "centroid_uv": [
+        0.0489,
+        0.5329
+      ],
+      "class": "object",
+      "reason": "a second carton standing to the left in the same photograph"
+    },
+    {
+      "key": "secondary_1#1",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 3.01,
+      "bbox_uv": [
+        0.2009,
+        0.2425,
+        0.4136,
+        0.5232
+      ],
+      "centroid_uv": [
+        0.3057,
+        0.3859
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#2",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 1.899,
+      "bbox_uv": [
+        0.4109,
+        0.2071,
+        0.5173,
+        0.4687
+      ],
+      "centroid_uv": [
+        0.4636,
+        0.338
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#3",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 1.73,
+      "bbox_uv": [
+        0.8864,
+        0.0,
+        0.9991,
+        0.5232
+      ],
+      "centroid_uv": [
+        0.9545,
+        0.1691
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "secondary_1#4",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 1.553,
+      "bbox_uv": [
+        0.5227,
+        0.188,
+        0.6282,
+        0.4414
+      ],
+      "centroid_uv": [
+        0.5717,
+        0.3245
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#5",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 1.467,
+      "bbox_uv": [
+        0.6282,
+        0.1553,
+        0.7355,
+        0.4142
+      ],
+      "centroid_uv": [
+        0.6794,
+        0.2864
+      ],
+      "class": "type"
+    },
+    {
+      "key": "secondary_1#6",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 0.937,
+      "bbox_uv": [
+        0.9209,
+        0.5804,
+        0.9991,
+        0.9973
+      ],
+      "centroid_uv": [
+        0.9619,
+        0.7961
+      ],
+      "class": "object",
+      "reason": "blister of pills at the right"
+    },
+    {
+      "key": "secondary_1#7",
+      "role": "secondary_1",
+      "fill": "#170E34",
+      "area_pct": 0.147,
+      "bbox_uv": [
+        0.5309,
+        0.7112,
+        0.5718,
+        0.8311
+      ],
+      "centroid_uv": [
+        0.5517,
+        0.7707
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 0.141,
+      "bbox_uv": [
+        0.9109,
+        0.4768,
+        0.9418,
+        0.6131
+      ],
+      "centroid_uv": [
+        0.9265,
+        0.5334
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.1,
+      "bbox_uv": [
+        0.9245,
+        0.4332,
+        0.9618,
+        0.5014
+      ],
+      "centroid_uv": [
+        0.9418,
+        0.4669
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#2",
+      "of": "brand#0",
+      "area_pct": 0.054,
+      "bbox_uv": [
+        0.9373,
+        0.5259,
+        0.9645,
+        0.6213
+      ],
+      "centroid_uv": [
+        0.9506,
+        0.5604
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#3",
+      "of": "brand#0",
+      "area_pct": 0.051,
+      "bbox_uv": [
+        0.9336,
+        0.5586,
+        0.9627,
+        0.6567
+      ],
+      "centroid_uv": [
+        0.9486,
+        0.6067
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#4",
+      "of": "brand#0",
+      "area_pct": 0.042,
+      "bbox_uv": [
+        0.9164,
+        0.5695,
+        0.9345,
+        0.6458
+      ],
+      "centroid_uv": [
+        0.9259,
+        0.6106
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#5",
+      "of": "brand#0",
+      "area_pct": 0.034,
+      "bbox_uv": [
+        0.9509,
+        0.485,
+        0.9636,
+        0.5204
+      ],
+      "centroid_uv": [
+        0.9571,
+        0.5032
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#6",
+      "of": "brand#0",
+      "area_pct": 0.031,
+      "bbox_uv": [
+        0.98,
+        0.5286,
+        0.99,
+        0.5749
+      ],
+      "centroid_uv": [
+        0.9854,
+        0.5547
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#7",
+      "of": "brand#0",
+      "area_pct": 0.026,
+      "bbox_uv": [
+        0.9082,
+        0.4169,
+        0.92,
+        0.4768
+      ],
+      "centroid_uv": [
+        0.914,
+        0.4439
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#8",
+      "of": "brand#0",
+      "area_pct": 0.025,
+      "bbox_uv": [
+        0.9364,
+        0.5123,
+        0.95,
+        0.5613
+      ],
+      "centroid_uv": [
+        0.9438,
+        0.537
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#9",
+      "of": "brand#0",
+      "area_pct": 0.015,
+      "bbox_uv": [
+        0.9273,
+        0.6049,
+        0.9355,
+        0.6403
+      ],
+      "centroid_uv": [
+        0.9321,
+        0.6248
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#10",
+      "of": "brand#0",
+      "area_pct": 0.011,
+      "bbox_uv": [
+        0.9182,
+        0.1008,
+        0.9236,
+        0.1253
+      ],
+      "centroid_uv": [
+        0.921,
+        0.1125
+      ],
+      "class": "object"
+    },
+    {
+      "key": "brand#0/hole#11",
+      "of": "brand#0",
+      "area_pct": 0.011,
+      "bbox_uv": [
+        0.9364,
+        0.4114,
+        0.9455,
+        0.4305
+      ],
+      "centroid_uv": [
+        0.9417,
+        0.4213
+      ],
+      "class": "object"
+    }
+  ]
+}

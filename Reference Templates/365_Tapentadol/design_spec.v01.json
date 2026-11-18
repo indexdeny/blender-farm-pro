@@ -1,0 +1,95 @@
+{
+  "spec_version": "0.1",
+  "sku": "365-min.jpg",
+  "source_image": "Tapentadol_front_raw.jpg",
+  "face_aspect": 0.4791,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#E9DCDC",
+  "fields": [
+    {
+      "role": "brand",
+      "fill": "#FD7902",
+      "coverage_pct": 12.2,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 9.6,
+          "smoothness": 0.0,
+          "outline": [
+            [
+              0.9927,
+              0.888
+            ],
+            [
+              0.9991,
+              0.888
+            ],
+            [
+              0.9991,
+              0.9981
+            ],
+            [
+              0.0627,
+              0.9981
+            ],
+            [
+              0.0627,
+              0.9051
+            ],
+            [
+              0.9918,
+              0.8899
+            ]
+          ]
+        },
+        {
+          "kind": "field",
+          "area_pct": 1.5,
+          "smoothness": 0.43,
+          "outline": [
+            [
+              0.0009,
+              0.0
+            ],
+            [
+              0.0155,
+              0.0
+            ],
+            [
+              0.0191,
+              0.8786
+            ],
+            [
+              0.0191,
+              0.9981
+            ],
+            [
+              0.0064,
+              0.9981
+            ],
+            [
+              0.0055,
+              0.962
+            ],
+            [
+              0.0009,
+              0.0019
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "glyph_components_dropped": 0,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 1,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 0.9843,
+    "excluded_as_glyphs_pct": 1.54,
+    "iou_by_field": {
+      "brand": 0.875
+    },
+    "vertices": 13
+  }
+}

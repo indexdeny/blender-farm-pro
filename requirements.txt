@@ -9,6 +9,28 @@ rich>=13.0                 # pretty console logging + run summary report
 pydantic>=2.0              # Stage 1: schema models (schemas/common.py, via pharma_pkg routing)
 jsonschema>=4.0            # validates the Stage 1 -> Stage 2 render-manifest contract
 numpy>=1.24                # pixel measurement in tests and scripts/catalogue_sweep.py
+CairoSVG>=2.9.0            # physical baseline: independent SVG artwork rasterization
+fonttools>=4.62.1          # physical baseline: vendored TTF outlines; no system fonts
+
+# ── Design transfer: measurement only, NOT the shipping tracer ──────────────
+# Used by src/vectorise.py and tests/test_vectorise.py. It is deliberately NOT
+# wired into scripts/fit_design_spec.py: replacing the Moore-walk tracer with a
+# curve fit was tried, measured against all 75 printed components of the design
+# group, and REJECTED. Like for like against each component's own pixels the
+# spline fit scores 0.8649 where the shipped polyline scores 0.8855, and no
+# setting of filter_speckle, corner_threshold or length_threshold reaches the
+# polyline at all (best of eight, 0.8649; worst, 0.8588). See
+# 00_PROJECT_STATE/TOOLING_MIGRATION.md for the full negative result.
+#
+# The module stays because it is the instrument that produced that measurement
+# and someone will want to re-run it. NOT wanted by
+# 05_assets/blender/render_driver.py, which runs inside Blender's own bundled
+# interpreter where it cannot be installed.
+#
+# SciPy is optional for scripts/render_mark_evidence.py (see
+# requirements-measurement.txt). It is not needed by the two-SKU physical path.
+# scikit-image, shapely and opencv-python are not core render dependencies.
+vtracer>=0.6.15            # src/vectorise.py — a measured and rejected alternative tracer
 
 # ── Optional ────────────────────────────────────────────────────────────────
 # Only needed for the OCR QA diagnostic (render_qa.py), NOT the core pipeline.

@@ -171,19 +171,27 @@ def _catalogue_aspect(folder: Path) -> float | None:
         return None
 
 
-def segment(folder: Path):
-    """Rectify a reference face and partition it into named fields.
+def rectified_face(folder: Path):
+    """The folder's front face, flattened. Computed, never cached.
 
-    Split out of `measure` so the D-2 spec fitter works from exactly the same
-    partition the D-1 measurement reported. Two implementations of "the same"
-    segmentation is the shape of defect this project has already been bitten by
-    twice -- once in render_qa's two copies of one fold, once in the sweep's two
-    ideas of what a report covers.
+    Split out of `segment` so `design_qa` can obtain the SAME rectified face
+    without going through a file. It used to read one from
+    `02_processing/reference_measurement/{folder}.flat.png`, which is a derived
+    artefact keyed by folder name, and both ways of going stale duly happened:
+    `aa28834` renamed two folders and orphaned their previews, so the report
+    printed 0.0% agreement for two cartons for two days; and `304_Sonata`'s
+    corners were set six hours after every preview in that directory was
+    written, so its face was quietly out of date for five days with no name
+    lost at all.
 
-    Returns (flat, labels, named) where `flat` is the rectified RGB image,
-    `labels` is one k-means label per pixel, and `named` maps
-    substrate/brand/highlight/type to a group dict (or None where that role did
-    not separate).
+    Nothing here needs a cache. The face is a perspective warp of one JPEG --
+    `flatten_face` and nothing else, no k-means, no clustering -- and the
+    project already applies exactly this reasoning to the other side of the
+    same comparison: `design_qa.render_fresh` deletes and re-renders our own
+    PNG every run because a stale one makes the comparison worthless. The
+    reference is the same comparison and gets the same treatment.
+
+    Returns (flat, source, corners) so a caller can record what it read.
     """
     meta_path = folder / "metadata.json"
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
@@ -202,12 +210,31 @@ def segment(folder: Path):
     if not source or not (folder / source).exists():
         raise SystemExit(f"{folder.name}: source image {source!r} not found")
 
-    # The reference is rectified to its OWN proportions -- flatten_face's default,
-    # the averaged edge ratio of the quad. What the catalogue thinks this SKU
-    # measures is recorded next to it, not imposed on it.
-    aspect = None
+    # The reference is rectified to its OWN proportions -- flatten_face's
+    # default, the averaged edge ratio of the quad. What the catalogue thinks
+    # this SKU measures is recorded next to it, not imposed on it.
+    return flatten_face(folder / source, corners, out_width=OUT_WIDTH,
+                        aspect=None), source, corners
 
-    flat = flatten_face(folder / source, corners, out_width=OUT_WIDTH, aspect=aspect)
+
+def segment(folder: Path):
+    """Rectify a reference face and partition it into named fields.
+
+    Split out of `measure` so the D-2 spec fitter works from exactly the same
+    partition the D-1 measurement reported. Two implementations of "the same"
+    segmentation is the shape of defect this project has already been bitten by
+    twice -- once in render_qa's two copies of one fold, once in the sweep's two
+    ideas of what a report covers.
+
+    Returns (flat, labels, named, meta, source): `flat` is the rectified RGB
+    image, `labels` is one k-means label per pixel, `named` maps
+    substrate/brand/highlight/type to a group dict (or None where that role did
+    not separate), `meta` is the folder's metadata and `source` the photograph
+    it was rectified from. All five callers unpack five; this said three.
+    """
+    meta_path = folder / "metadata.json"
+    meta = json.loads(meta_path.read_text(encoding="utf-8"))
+    flat, source, corners = rectified_face(folder)
     raw = np.asarray(flat).astype(float) / 255.0
     a = _flatten_illumination(raw)
     s, v = _hsv(a)

@@ -8,13 +8,15 @@
   "fields": [
     {
       "role": "brand",
+      "z": 0,
       "fill": "#3569D6",
       "coverage_pct": 17.3,
       "parts": [
         {
-          "kind": "block",
+          "kind": "field",
           "area_pct": 17.2,
-          "smoothness": 0.14,
+          "smoothness": 0.67,
+          "fill": "#3569D6",
           "outline": [
             [
               0.9736,
@@ -26,7 +28,43 @@
             ],
             [
               0.9991,
+              0.7011
+            ],
+            [
+              0.9964,
+              0.7047
+            ],
+            [
+              0.9991,
+              0.7083
+            ],
+            [
+              0.9991,
               0.846
+            ],
+            [
+              0.68,
+              0.8605
+            ],
+            [
+              0.6618,
+              0.8587
+            ],
+            [
+              0.48,
+              0.8678
+            ],
+            [
+              0.4609,
+              0.8659
+            ],
+            [
+              0.3764,
+              0.8714
+            ],
+            [
+              0.2818,
+              0.8714
             ],
             [
               0.0609,
@@ -41,30 +79,98 @@
               0.6902
             ],
             [
+              0.0936,
+              0.692
+            ],
+            [
+              0.1573,
+              0.6884
+            ],
+            [
+              0.3364,
+              0.6884
+            ],
+            [
+              0.4809,
+              0.683
+            ],
+            [
+              0.5055,
+              0.6848
+            ],
+            [
+              0.6609,
+              0.6793
+            ],
+            [
+              0.68,
+              0.6812
+            ],
+            [
+              0.73,
+              0.6775
+            ],
+            [
+              0.75,
+              0.6793
+            ],
+            [
+              0.8018,
+              0.6757
+            ],
+            [
+              0.8227,
+              0.6775
+            ],
+            [
               0.9727,
               0.6739
             ]
-          ]
+          ],
+          "holes": [],
+          "mark_holes": []
         }
       ]
     },
     {
       "role": "highlight",
+      "z": 1,
       "fill": "#52C147",
       "coverage_pct": 7.5,
       "parts": [
         {
           "kind": "block",
           "area_pct": 4.1,
-          "smoothness": 0.33,
+          "smoothness": 0.58,
+          "fill": "#52C147",
           "outline": [
             [
               0.0,
               0.0
             ],
             [
+              0.0127,
+              0.0036
+            ],
+            [
+              0.0609,
+              0.0036
+            ],
+            [
+              0.0664,
+              0.0054
+            ],
+            [
               0.0682,
               0.0091
+            ],
+            [
+              0.07,
+              0.1467
+            ],
+            [
+              0.0691,
+              0.2192
             ],
             [
               0.0709,
@@ -75,6 +181,10 @@
               0.5851
             ],
             [
+              0.0655,
+              0.5888
+            ],
+            [
               0.0,
               0.587
             ],
@@ -82,22 +192,31 @@
               0.0,
               0.0018
             ]
-          ]
+          ],
+          "holes": [],
+          "mark_holes": []
         }
       ]
     }
   ],
-  "glyph_components_dropped": 0,
-  "flat_fields_dropped": 0,
-  "ink_components_dropped": 0,
+  "marks": [],
+  "components_dropped": 17,
+  "dropped_by_class": {
+    "unrepresentable": 1,
+    "type": 16
+  },
+  "holes_filled_by_class": {
+    "lettering": 3
+  },
+  "truth": "print_truth.json",
   "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
   "verification": {
-    "pixel_agreement": 0.9487,
-    "excluded_as_glyphs_pct": 0.0,
+    "pixel_agreement": 0.9869,
+    "excluded_as_glyphs_pct": 3.48,
     "iou_by_field": {
-      "brand": 0.911,
-      "highlight": 0.54
+      "brand": 0.932,
+      "highlight": 0.992
     },
-    "vertices": 13
+    "vertices": 39
   }
 }

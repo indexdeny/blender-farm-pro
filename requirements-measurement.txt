@@ -1,0 +1,2 @@
+# Optional historical mark-measurement tooling; not a core renderer dependency.
+scipy==1.15.3

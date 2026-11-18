@@ -37,9 +37,12 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from src.deskew import flatten_face  # noqa: E402
 from src.design_group import FOLDER_BY_STEM, TEMPLATES_DIR, load_design  # noqa: E402
+from src.mark_geometry import drawable_mark_parts  # noqa: E402
 from src.utils import load_config, resolve_path  # noqa: E402
 from scripts.calibrate_render import appearance, load_curve  # noqa: E402
-from scripts.fit_design_spec import rasterise  # noqa: E402
+from scripts.measure_reference_face import rectified_face  # noqa: E402
+from scripts.fit_design_spec import part_region, rasterise  # noqa: E402
+from scripts.design_coverage import spec_index  # noqa: E402
 from scripts.measure_reference_face import _flatten_illumination  # noqa: E402
 
 _CFG = load_config()
@@ -78,6 +81,19 @@ ON_LINE_MIN = 0.03
 def _hex_rgb(h: str) -> np.ndarray:
     h = h.lstrip("#")
     return np.array([int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)])
+
+
+def _front_palette_entries(spec: dict) -> tuple[list[dict], list[tuple[str, str]], list[int]]:
+    """Return the palette vocabulary for the front-face instrument only."""
+    fields = [field for field in (spec.get("fields") or [])
+              if field.get("surface", "front") == "front"]
+    entries = [("substrate", spec["substrate"])]
+    to_field = [0]
+    for n, field in enumerate(fields):
+        for colour in dict.fromkeys(part["fill"] for part in field["parts"]):
+            entries.append((field["role"], colour))
+            to_field.append(n + 1)
+    return fields, entries, to_field
 
 
 def flatten_on_substrate(rgb: np.ndarray, substrate_core: np.ndarray) -> np.ndarray:
@@ -456,13 +472,26 @@ def measure(stem: str, preview: bool = False) -> dict:
     spec = load_design(stem)
     folder = TEMPLATES_DIR / FOLDER_BY_STEM[stem]
 
-    palette = np.stack([_hex_rgb(spec["substrate"])]
-                       + [_hex_rgb(f["fill"]) for f in spec["fields"]])
+    # CONTRACT 1.9: the palette is the set of colours the spec actually PAINTS,
+    # which is one per distinct part fill and no longer one per field. A field
+    # whose parts disagree needs both entries or the classifier has no word for
+    # one of them; under 1.8, and under 1.9's Stage A, every part carries its
+    # field's colour and this reduces to exactly the old palette.
+    #
+    # `to_field` maps each entry back to the field it belongs to, and every
+    # REPORTED figure is computed on the mapped indices. That is what keeps
+    # `field_iou_worst` a statement about fields while the classifier works in
+    # colours -- otherwise splitting a field into two paints would silently
+    # redefine the headline, which is precisely how contract 1.9's first attempt
+    # ended up comparing two instruments instead of two renders.
+    front_fields, entries, to_field = _front_palette_entries(spec)
+    palette = np.stack([_hex_rgb(c) for _, c in entries])
+    to_field = np.array(to_field)
+    n_report = len(front_fields) + 1
     gaps = [float(np.linalg.norm(palette[i] - palette[j]))
             for i in range(len(palette)) for j in range(i + 1, len(palette))]
     closest = min(gaps) if gaps else 1.0
-    on_line, on_line_who = _collinearity(palette,
-                                         ["substrate"] + [f["role"] for f in spec["fields"]])
+    on_line, on_line_who = _collinearity(palette, [r for r, _ in entries])
     aspect = float(spec["face_aspect"])
     size = (OUT_WIDTH, max(1, round(OUT_WIDTH * aspect)))
 
@@ -475,12 +504,48 @@ def measure(stem: str, preview: bool = False) -> dict:
     view = json.loads(png.with_suffix(".view.json").read_text(encoding="utf-8"))
     ours = flatten_face(png, view["front_face_px"], out_width=OUT_WIDTH, aspect=aspect)
     ours_raw = np.asarray(ours.convert("RGB")).astype(float) / 255.0
-    core = _substrate_core(t_idx)
+    # CONTRACT 1.10: the substrate core is where the spec draws the BOARD, and a
+    # mark is not the board however much it resembles one. `74_Viagra`'s Pfizer
+    # oval is `#D8D9D5` against a substrate of `#DDDEDB` -- **0.0364** apart, so
+    # it classifies as substrate and joins the core, and the illumination plane
+    # is then fitted through a region the spec paints separately. Measured, that
+    # moved the carton's brand `region_colour_gap` 0.0857 -> 0.1305 for a mark
+    # drawn exactly where it belongs.
+    mark_area = np.zeros(ours_raw.shape[:2], bool)
+    for mark in (spec.get("marks") or []):
+        for part in drawable_mark_parts(mark):
+            region = part_region(part, *size)
+            if region is not None:
+                mark_area |= np.asarray(region)
+    core = _substrate_core(t_idx) & ~mark_area
     # ColourError always reads the PLANE. It asks whether a region is the colour
     # it should be, so its illumination estimate must not be able to absorb the
     # design -- a blur can, which is the defect recorded against Kamagra below.
     ours_flat = flatten_on_substrate(ours_raw, core)
     scored = scored_mask(ours_flat, palette, t_idx)
+    # CONTRACT 1.10: a mark's area leaves the scored set, the same exclusion
+    # `verify()` and `design_coverage` make and for a sharper reason here -- a
+    # mark's colour is NOT in this palette. The palette is the set of colours the
+    # spec paints as FIELDS, so every mark pixel would classify to whichever
+    # entry happens to be nearest, on both sides, and land in some field's IoU
+    # having nothing to do with that field.
+    #
+    # Adding the mark colours to the palette was the other option and is worse:
+    # `field_iou_worst` would then be a statement about fields and marks at
+    # once, which is exactly the silent redefinition `to_field` exists to stop.
+    #
+    # `region_colour_gap` still judges them, and is the right instrument for it:
+    # its regions come from `spec_index`, which gives a mark its own index, so a
+    # mark is scored on whether our render puts the measured colour where the
+    # photograph has it -- without a vocabulary that has no word for it.
+    # Kept before the exclusion, because `region_colour_gap` SHOULD judge a mark
+    # and the figures below should not. The gap has no vocabulary -- its regions
+    # come from `spec_index`, which gives a mark its own index -- so it can ask
+    # the one question that matters here: does our render put the measured
+    # colour where the photograph has it? Excluding marks from this too was the
+    # first attempt and it left them judged by nothing at all.
+    scored_all = scored
+    scored = scored & ~mark_area
 
     # The CLASSIFIER takes whichever model leaves the substrate flattest. Neither
     # is right everywhere and the difference is not small: on `59-min` the plane
@@ -533,17 +598,23 @@ def measure(stem: str, preview: bool = False) -> dict:
     colour_err = _colour_error(ours_flat, t_idx, palette, scored)
     response, colour_residual = _response(ours_flat, t_idx, palette, scored)
 
-    ref_path = PREVIEW_DIR / f"{folder.name}.flat.png"
-    ref_idx = ref_mask = None
-    if ref_path.exists():
-        ref = Image.open(ref_path).resize(size, Image.LANCZOS)
-        ref_idx, _bare = _classify(ref, palette, core)
-        # The photograph carries type too, and its glyph rims blend the same
-        # way. Same mask, same reason.
-        ref_mask = scored_mask(
-            _flatten_illumination(np.asarray(ref.convert("RGB")).astype(float) / 255.0,
-                                  FLATTEN_RADIUS_DIV),
-            palette, t_idx)
+    # Computed, not looked up. This used to read
+    # `{PREVIEW_DIR}/{folder.name}.flat.png`, a derived artefact keyed by folder
+    # name, and it went stale both ways it can: a rename orphaned two of them and
+    # the report printed 0.0% agreement rather than saying so, and one carton's
+    # corners were set after the directory was last written so its face was six
+    # hours out of date for five days. `rectified_face` is a perspective warp of
+    # one JPEG and costs nothing beside the render this function has already
+    # made -- and `render_fresh` re-renders OUR side every run for exactly this
+    # reason.
+    ref = rectified_face(folder)[0].resize(size, Image.LANCZOS)
+    ref_idx, _bare = _classify(ref, palette, core)
+    # The photograph carries type too, and its glyph rims blend the same way.
+    # Same mask, same reason.
+    ref_mask = scored_mask(
+        _flatten_illumination(np.asarray(ref.convert("RGB")).astype(float) / 255.0,
+                              FLATTEN_RADIUS_DIV),
+        palette, t_idx)
 
     result = {
         "sku": stem,
@@ -561,7 +632,8 @@ def measure(stem: str, preview: bool = False) -> dict:
                                            ).sum(), 1)), 4),
         "illumination": chosen,
         "illumination_residual": {k: round(v, 4) for k, v in residual.items()},
-        "render_vs_spec": _agreement(o_idx, t_idx, scored, len(palette)),
+        "render_vs_spec": _agreement(to_field[o_idx], to_field[t_idx],
+                                     scored, n_report),
         # Agreement is area-weighted and a substrate is 55-99.9% of these faces,
         # so a field can be missed entirely without moving it: Ritalin's field
         # is 1.6% of its carton. The worst FIELD is the figure that shows a
@@ -570,8 +642,8 @@ def measure(stem: str, preview: bool = False) -> dict:
         "field_iou_worst": None,
         # The figure's own uncertainty, measured rather than assumed.
         "agreement_spread": round(abs(
-            _agreement(o_idx, t_idx, scored, len(palette))["agreement"]
-            - _agreement(alt_idx, t_idx, scored, len(palette))["agreement"]), 4),
+            _agreement(to_field[o_idx], to_field[t_idx], scored, n_report)["agreement"]
+            - _agreement(to_field[alt_idx], to_field[t_idx], scored, n_report)["agreement"]), 4),
         "colour_error_by_region": colour_err,
         "colour_error_worst": (max([v for v in colour_err.values() if v is not None],
                                    default=None)),
@@ -582,6 +654,15 @@ def measure(stem: str, preview: bool = False) -> dict:
         "colour_residual_worst": (max([v for v in colour_residual.values() if v is not None],
                                       default=None)),
         "spec_vs_reference": (spec.get("verification") or {}).get("pixel_agreement"),
+        # What each palette index MEANS, because under contract 1.9 it is no
+        # longer the field index. `colour_error_by_region` and its residual are
+        # keyed by painted colour, and a field whose parts disagree owns more
+        # than one of them -- without this the reader cannot tell that entries 1
+        # and 2 are one field. The agreements are keyed by FIELD and are mapped
+        # through `to_field` before they are computed, so they are unaffected.
+        "palette_entries": [{"index": i, "role": role, "fill": col,
+                             "field": int(to_field[i]) - 1 if i else None}
+                            for i, (role, col) in enumerate(entries)],
     }
     fields = [v for k, v in result["render_vs_spec"]["iou"].items()
               if int(k) > 0 and v is not None]
@@ -590,19 +671,65 @@ def measure(stem: str, preview: bool = False) -> dict:
     # are gone. A field measured on a sliver has to say so rather than report a
     # confident number about very little of itself.
     kept = []
-    for k in range(1, len(palette)):
-        whole = (t_idx == k)
+    f_idx = to_field[t_idx]
+    for k in range(1, n_report):
+        whole = (f_idx == k)
         if whole.sum() >= 200:
             kept.append(float((whole & scored).sum() / whole.sum()))
     result["field_kept_min"] = round(min(kept), 4) if kept else None
+    # Always present, and null is now unreachable rather than merely unlikely:
+    # `rectified_face` raises rather than returning nothing. The key is kept
+    # optional in shape because the report is read by things that predate this,
+    # and because a figure that was never taken must never print as a figure
+    # that came out zero -- which is what an absent key did for two days.
+    result["render_vs_reference"] = None
     if ref_idx is not None:
-        result["render_vs_reference"] = _agreement(o_idx, ref_idx,
-                                                   scored & ref_mask, len(palette))
+        result["render_vs_reference"] = _agreement(
+            to_field[o_idx], to_field[ref_idx], scored & ref_mask, n_report)
+
+    # ── A COLOUR COMPARISON THAT SURVIVES THE PALETTE MOVING ────────────────
+    # `render_vs_reference` above is an agreement between two index maps, and
+    # BOTH are produced by classifying against `palette`. So it moves whenever
+    # the palette does -- which is every time a part is painted a different
+    # colour. Contract 1.9 was built, measured and rolled back partly on that:
+    # its before and after were two instruments rather than two renders
+    # (00_PROJECT_STATE/PART_FILL.md).
+    #
+    # This asks the same question without a vocabulary. The regions come from
+    # `spec_index`, which builds them from `part_region` -- GEOMETRY, the same
+    # outlines the fitter traced -- so they do not move when paint does. Inside
+    # each region both sides are MEASURED and differenced. No classification, no
+    # palette, no nearest-colour anything.
+    #
+    # WHAT IT INHERITS, said here rather than discovered later: the regions are
+    # the spec's, and the spec approximates the reference to `spec~ref`, 95-100%
+    # across the group. This is not a direct measurement of the photograph; it is
+    # a measurement inside the spec's idea of where things are.
+    #
+    # Both sides are levelled on the substrate the same way, because comparing a
+    # flattened render against a raw photograph would report the illumination
+    # rather than the paint.
+    ref_raw = np.asarray(ref.convert("RGB")).astype(float) / 255.0
+    ref_flat = flatten_on_substrate(ref_raw, core)
+    geo = spec_index(spec, *size)
+    gap = {}
+    for k in sorted(set(int(v) for v in np.unique(geo))):
+        sel = (geo == k) & scored_all
+        if int(sel.sum()) < 50:
+            # A region measured on almost nothing says so, rather than
+            # reporting a confident number about very little of itself.
+            gap[k] = None
+            continue
+        gap[k] = round(float(np.linalg.norm(
+            ours_flat[sel].mean(0) - ref_flat[sel].mean(0))), 4)
+    result["region_colour_gap"] = gap
+    _g = [v for v in gap.values() if v is not None]
+    result["region_colour_gap_worst"] = round(max(_g), 4) if _g else None
 
     if preview:
         PREVIEW_DIR.mkdir(parents=True, exist_ok=True)
         strip = Image.new("RGB", (size[0], size[1] * 3 + 24), (255, 255, 255))
-        strip.paste(Image.open(ref_path).resize(size) if ref_path.exists() else target, (0, 0))
+        strip.paste(rectified_face(folder)[0].resize(size), (0, 0))
         strip.paste(target, (0, size[1] + 12))
         strip.paste(ours, (0, 2 * size[1] + 24))
         strip.save(PREVIEW_DIR / f"{folder.name}.qa.png")
@@ -631,18 +758,24 @@ def main() -> int:
         flag = "" if r["separable"] else "  (palette not separable)"
         if r["palette_on_line"] is not None and r["palette_on_line"] < ON_LINE_MIN:
             flag += f"  ({r['palette_on_line_who']}, {r['palette_on_line']:.3f})"
-        # A dash, not a zero: too few regions to fit the picture's response is
-        # not the same as nothing left after fitting it.
+        # A dash, not a zero, in every column that can be absent. Too few
+        # regions to fit the picture's response is not the same as nothing left
+        # after fitting it; a carton with no field is not a carton whose worst
+        # field matches nothing; and a photograph that was never rectified is
+        # not a render that resembles it on no pixel. Four columns printed a
+        # zero for all of those, with the right idiom already on this line.
+        def pct(x):
+            return "--" if x is None else f"{100 * x:.1f}%"
+
         resid = r["colour_residual_worst"]
-        resid_txt = "--" if resid is None else f"{resid:.3f}"
-        fiw = r["field_iou_worst"]
+        cerr = r["colour_error_worst"]
         print(f"{stem:9s} {r['folder']:32s} "
-              f"{(100 * sr if sr else 0):8.1f}% "
+              f"{pct(sr):>9s} "
               f"{100 * r['render_vs_spec']['agreement']:11.1f}% "
-              f"{(100 * fiw if fiw is not None else 0):9.1f}% "
-              f"{100 * r.get('render_vs_reference', {}).get('agreement', 0):10.1f}% "
-              f"{(r['colour_error_worst'] if r['colour_error_worst'] is not None else 0):8.3f} "
-              f"{resid_txt:>8s} "
+              f"{pct(r['field_iou_worst']):>10s} "
+              f"{pct((r.get('render_vs_reference') or {}).get('agreement')):>11s} "
+              f"{('--' if cerr is None else f'{cerr:.3f}'):>9s} "
+              f"{('--' if resid is None else f'{resid:.3f}'):>8s} "
               f"+-{100 * r['agreement_spread']:4.1f}{flag}")
 
     out = PROJECT_ROOT / "00_PROJECT_STATE" / "design_qa.json"

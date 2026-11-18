@@ -1,20 +1,236 @@
 {
   "spec_version": "0.1",
-  "sku": "23_T1_Lexotanil",
+  "sku": "308-min.jpg",
   "source_image": "Lexotanil_front_raw.webp",
   "face_aspect": 0.3982,
   "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
   "substrate": "#CACDC5",
-  "fields": [],
-  "glyph_components_dropped": 2,
-  "flat_fields_dropped": 0,
-  "ink_components_dropped": 0,
+  "fields": [
+    {
+      "role": "brand",
+      "z": 0,
+      "fill": "#01898F",
+      "coverage_pct": 3.6,
+      "parts": [
+        {
+          "kind": "field",
+          "area_pct": 1.8,
+          "smoothness": 0.28,
+          "fill": "#007BBE",
+          "outline": [
+            [
+              0.9436,
+              0.3562
+            ],
+            [
+              0.9473,
+              0.3607
+            ],
+            [
+              0.9473,
+              0.3653
+            ],
+            [
+              0.9536,
+              0.3813
+            ],
+            [
+              0.9709,
+              0.4452
+            ],
+            [
+              0.9545,
+              0.5091
+            ],
+            [
+              0.9473,
+              0.5297
+            ],
+            [
+              0.9473,
+              0.5342
+            ],
+            [
+              0.9445,
+              0.5411
+            ],
+            [
+              0.9291,
+              0.5434
+            ],
+            [
+              0.9264,
+              0.5479
+            ],
+            [
+              0.9155,
+              0.5457
+            ],
+            [
+              0.9027,
+              0.5525
+            ],
+            [
+              0.8918,
+              0.5502
+            ],
+            [
+              0.8891,
+              0.5548
+            ],
+            [
+              0.8782,
+              0.5548
+            ],
+            [
+              0.8727,
+              0.5457
+            ],
+            [
+              0.8509,
+              0.4703
+            ],
+            [
+              0.8518,
+              0.4566
+            ],
+            [
+              0.8636,
+              0.4224
+            ],
+            [
+              0.8655,
+              0.4087
+            ],
+            [
+              0.8682,
+              0.4041
+            ],
+            [
+              0.8709,
+              0.3881
+            ],
+            [
+              0.8782,
+              0.3676
+            ],
+            [
+              0.9427,
+              0.3584
+            ]
+          ],
+          "holes": [],
+          "mark_holes": []
+        },
+        {
+          "kind": "field",
+          "area_pct": 1.8,
+          "smoothness": 0.45,
+          "fill": "#01A035",
+          "outline": [
+            [
+              0.94,
+              0.5845
+            ],
+            [
+              0.9464,
+              0.5959
+            ],
+            [
+              0.9673,
+              0.6689
+            ],
+            [
+              0.9627,
+              0.6941
+            ],
+            [
+              0.9564,
+              0.71
+            ],
+            [
+              0.9427,
+              0.7626
+            ],
+            [
+              0.9355,
+              0.7717
+            ],
+            [
+              0.9227,
+              0.7717
+            ],
+            [
+              0.8745,
+              0.7854
+            ],
+            [
+              0.8636,
+              0.7603
+            ],
+            [
+              0.8627,
+              0.7511
+            ],
+            [
+              0.8464,
+              0.7009
+            ],
+            [
+              0.8473,
+              0.6918
+            ],
+            [
+              0.8655,
+              0.6324
+            ],
+            [
+              0.8727,
+              0.6005
+            ],
+            [
+              0.9009,
+              0.5959
+            ],
+            [
+              0.9109,
+              0.589
+            ],
+            [
+              0.92,
+              0.5913
+            ],
+            [
+              0.9245,
+              0.5868
+            ],
+            [
+              0.9391,
+              0.5868
+            ]
+          ],
+          "holes": [],
+          "mark_holes": []
+        }
+      ]
+    }
+  ],
+  "marks": [],
+  "components_dropped": 24,
+  "dropped_by_class": {
+    "type": 22,
+    "blend": 2
+  },
+  "holes_filled_by_class": {},
+  "truth": "print_truth.json",
   "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
   "verification": {
-    "pixel_agreement": 1.0,
-    "excluded_as_glyphs_pct": 3.59,
-    "iou_by_field": {},
-    "vertices": 0
+    "pixel_agreement": 0.9995,
+    "excluded_as_glyphs_pct": 6.21,
+    "iou_by_field": {
+      "brand": 0.987
+    },
+    "vertices": 45
   },
   "type_rows": {
     "brand_name_display": {

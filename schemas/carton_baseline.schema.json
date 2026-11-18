@@ -1,0 +1,738 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Physical baseline design spec, millimetres",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "mode",
+    "sku",
+    "authorization",
+    "dimensions_mm",
+    "geometry",
+    "atlas",
+    "colors",
+    "assets",
+    "elements",
+    "materials",
+    "stage",
+    "render",
+    "validation"
+  ],
+  "properties": {
+    "version": {
+      "const": "1.0"
+    },
+    "mode": {
+      "const": "physical_baseline"
+    },
+    "sku": {
+      "type": "string",
+      "pattern": "^[0-9]+-min$"
+    },
+    "authorization": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dimensions_mm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height",
+        "depth",
+        "source"
+      ],
+      "properties": {
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "depth": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "source": {
+          "$ref": "#/$defs/source"
+        }
+      }
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "board_thickness_mm",
+        "bevel_mm",
+        "bevel_segments",
+        "panel_gap_mm",
+        "tuck_depth_mm",
+        "dust_depth_mm",
+        "glue_width_mm",
+        "crease_width_mm",
+        "crease_depth_mm",
+        "foil_thickness_mm",
+        "braille_segments",
+        "braille_rings",
+        "ring_segments",
+        "crease_position_mm"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "board_thickness_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bevel_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "bevel_segments": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "minimum": 2
+        },
+        "panel_gap_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "tuck_depth_mm": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "dust_depth_mm": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "glue_width_mm": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "crease_width_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "crease_depth_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "foil_thickness_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "braille_segments": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "minimum": 8
+        },
+        "braille_rings": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "minimum": 2
+        },
+        "ring_segments": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "minimum": 2
+        },
+        "crease_position_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "atlas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "dpi",
+        "width_mm",
+        "gutter_mm"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "dpi": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "minimum": 600
+        },
+        "width_mm": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "gutter_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "colors": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "hex",
+          "lab",
+          "source"
+        ],
+        "properties": {
+          "hex": {
+            "type": "string",
+            "pattern": "^#[0-9a-fA-F]{6}$"
+          },
+          "lab": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "source": {
+            "$ref": "#/$defs/source"
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "source"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "source": {
+            "$ref": "#/$defs/source"
+          }
+        }
+      }
+    },
+    "elements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "panel",
+          "kind",
+          "bbox_mm",
+          "source"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "panel": {
+            "enum": [
+              "front",
+              "back",
+              "left",
+              "right",
+              "top",
+              "bottom"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "text",
+              "vector",
+              "band",
+              "braille",
+              "emboss",
+              "foil",
+              "barcode",
+              "path"
+            ]
+          },
+          "bbox_mm": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "source": {
+            "$ref": "#/$defs/source"
+          },
+          "path_mm": {
+            "type": "string",
+            "minLength": 1
+          },
+          "shape": {
+            "enum": [
+              "rounded_rect",
+              "ellipse"
+            ]
+          }
+        }
+      }
+    },
+    "materials": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "paper_roughness",
+        "ink_roughness",
+        "foil_roughness",
+        "grain_roughness_amplitude",
+        "grain_height_mm",
+        "grain_correlation_px",
+        "height_range_mm",
+        "ior",
+        "coat_weight",
+        "coat_roughness",
+        "anisotropy",
+        "foil_colors",
+        "foil_line_pitch_mm",
+        "foil_line_width_mm",
+        "specular_ior_level"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "paper_roughness": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "ink_roughness": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "foil_roughness": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "grain_roughness_amplitude": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "grain_height_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "grain_correlation_px": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height_range_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "ior": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "minimum": 1
+        },
+        "coat_weight": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "coat_roughness": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "anisotropy": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        },
+        "foil_colors": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "foil_line_pitch_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "foil_line_width_mm": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "specular_ior_level": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "stage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "world_color",
+        "world_strength",
+        "background_color",
+        "floor_size_mm",
+        "target_mm",
+        "sweep_radius_mm",
+        "sweep_start_mm",
+        "sweep_height_mm",
+        "sweep_segments",
+        "lights",
+        "cameras",
+        "sweep_radial_segments"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "world_color": {
+          "type": "string",
+          "minLength": 1
+        },
+        "world_strength": {
+          "type": "number"
+        },
+        "background_color": {
+          "type": "string",
+          "minLength": 1
+        },
+        "floor_size_mm": {
+          "type": "integer"
+        },
+        "target_mm": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "integer"
+          }
+        },
+        "sweep_radius_mm": {
+          "type": "integer"
+        },
+        "sweep_start_mm": {
+          "type": "integer"
+        },
+        "sweep_height_mm": {
+          "type": "integer"
+        },
+        "sweep_segments": {
+          "type": "integer"
+        },
+        "lights": {
+          "type": "array",
+          "minItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "position_mm",
+              "size_mm",
+              "energy_w",
+              "color"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "position_mm": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "integer"
+                }
+              },
+              "size_mm": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "energy_w": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "color": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "cameras": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "azimuth_deg",
+              "elevation_deg",
+              "roll_deg",
+              "lens_mm",
+              "sensor_mm",
+              "distance_mm"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "minLength": 1
+              },
+              "azimuth_deg": {
+                "type": "number"
+              },
+              "elevation_deg": {
+                "type": "number"
+              },
+              "roll_deg": {
+                "type": "number"
+              },
+              "lens_mm": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "sensor_mm": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "distance_mm": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            }
+          }
+        },
+        "sweep_radial_segments": {
+          "type": "integer",
+          "exclusiveMinimum": 32
+        }
+      }
+    },
+    "render": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "engine",
+        "device",
+        "resolution",
+        "samples",
+        "seed",
+        "denoiser",
+        "denoising_device",
+        "adaptive_sampling",
+        "view_transform",
+        "look",
+        "exposure",
+        "gamma",
+        "max_bounces",
+        "transparent_bounces",
+        "filter_width",
+        "png_depth",
+        "png_compression",
+        "threads",
+        "denoising_threads",
+        "png_metadata_policy",
+        "reset_between_views"
+      ],
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/source"
+        },
+        "engine": {
+          "const": "CYCLES"
+        },
+        "device": {
+          "enum": [
+            "CPU",
+            "GPU"
+          ]
+        },
+        "resolution": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "minimum": 2048
+        },
+        "samples": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "denoiser": {
+          "enum": [
+            "OPENIMAGEDENOISE",
+            "NONE"
+          ]
+        },
+        "denoising_device": {
+          "enum": [
+            "CPU",
+            "GPU"
+          ]
+        },
+        "adaptive_sampling": {
+          "type": "boolean"
+        },
+        "view_transform": {
+          "const": "Standard"
+        },
+        "look": {
+          "const": "None"
+        },
+        "exposure": {
+          "type": "number"
+        },
+        "gamma": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "max_bounces": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "transparent_bounces": {
+          "type": "integer",
+          "exclusiveMinimum": 0
+        },
+        "filter_width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "png_depth": {
+          "enum": [
+            "8",
+            "16"
+          ]
+        },
+        "png_compression": {
+          "type": "integer",
+          "exclusiveMinimum": 0,
+          "maximum": 100
+        },
+        "threads": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1024
+        },
+        "denoising_threads": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "png_metadata_policy": {
+          "const": "color_only"
+        },
+        "reset_between_views": {
+          "const": true
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": [
+        "source",
+        "reference_colors",
+        "control_regions_mm"
+      ]
+    },
+    "layout_profile": {
+      "enum": [
+        "viagra",
+        "cialis",
+        "cialis_professional",
+        "cialis_super_active",
+        "kamagra"
+      ]
+    },
+    "effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["foil", "braille", "emboss"],
+      "properties": {
+        "foil": {"$ref": "#/$defs/effect"},
+        "braille": {"$ref": "#/$defs/effect"},
+        "emboss": {"$ref": "#/$defs/effect"}
+      }
+    },
+    "palette_roles": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary",
+        "accent",
+        "background"
+      ],
+      "properties": {
+        "primary": {
+          "type": "string"
+        },
+        "accent": {
+          "type": "string"
+        },
+        "background": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"layout_profile": {"enum": ["cialis_professional", "cialis_super_active", "kamagra"]}}, "required": ["layout_profile"]},
+      "then": {"required": ["effects"]}
+    }
+  ],
+  "$defs": {
+    "source": {
+      "enum": [
+        "template",
+        "measured",
+        "authored",
+        "estimated"
+      ]
+    },
+    "effect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "source", "reason", "production_status"],
+      "properties": {
+        "status": {"enum": ["present", "absent"]},
+        "source": {"$ref": "#/$defs/source"},
+        "reason": {"type": "string", "minLength": 1},
+        "production_status": {"enum": ["confirmed", "unknown"]}
+      }
+    }
+  }
+}

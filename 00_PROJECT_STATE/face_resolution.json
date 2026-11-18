@@ -1,0 +1,296 @@
+{
+  "schema": "face_resolution/1",
+  "out_width": 1100,
+  "min_face_px": 350,
+  "folders_measured": 28,
+  "folders_below_threshold": [
+    "135_Ativan",
+    "151_Provigil",
+    "156_Xanax",
+    "304_Sonata",
+    "357_Adderall",
+    "362_Hydrocodone"
+  ],
+  "rows": [
+    {
+      "folder": "59_Cialis",
+      "sku": "59-min.jpg",
+      "source_image": "raw_cialis_front.png",
+      "face_px": "856x538",
+      "face_w": 855.8,
+      "face_h": 538.0,
+      "upscale_to_out_width": 1.29,
+      "below_threshold": false
+    },
+    {
+      "folder": "60_Cialis_Professional",
+      "sku": "60-min.jpg",
+      "source_image": "Cialis Professional_front_raw.webp",
+      "face_px": "628x628",
+      "face_w": 627.6,
+      "face_h": 627.5,
+      "upscale_to_out_width": 1.75,
+      "below_threshold": false
+    },
+    {
+      "folder": "62_Cialis_Super_Active",
+      "sku": "62-min.jpg",
+      "source_image": "Cialis Super Active_front_raw.png",
+      "face_px": "413x248",
+      "face_w": 413.4,
+      "face_h": 247.5,
+      "upscale_to_out_width": 2.66,
+      "below_threshold": false
+    },
+    {
+      "folder": "64_Kamagra",
+      "sku": "64-min.jpg",
+      "source_image": "raw_Kamagra_front_01.png",
+      "face_px": "590x829",
+      "face_w": 590.5,
+      "face_h": 829.0,
+      "upscale_to_out_width": 1.86,
+      "below_threshold": false
+    },
+    {
+      "folder": "74_Viagra",
+      "sku": "74-min.jpg",
+      "source_image": "raw_viagra_front.png",
+      "face_px": "760x579",
+      "face_w": 759.8,
+      "face_h": 579.1,
+      "upscale_to_out_width": 1.45,
+      "below_threshold": false
+    },
+    {
+      "folder": "133_Ambien",
+      "sku": "133-min.jpg",
+      "source_image": "Ambien_front_raw.jpg",
+      "face_px": "407x180",
+      "face_w": 407.0,
+      "face_h": 180.5,
+      "upscale_to_out_width": 2.7,
+      "below_threshold": false
+    },
+    {
+      "folder": "134_Atarax",
+      "sku": "134-min.jpg",
+      "source_image": "Atarax_front_raw.jpg",
+      "face_px": "459x259",
+      "face_w": 459.4,
+      "face_h": 259.0,
+      "upscale_to_out_width": 2.39,
+      "below_threshold": false
+    },
+    {
+      "folder": "135_Ativan",
+      "sku": "135-min.jpg",
+      "source_image": "Ativan_front_raw.webp",
+      "face_px": "302x465",
+      "face_w": 301.9,
+      "face_h": 465.1,
+      "upscale_to_out_width": 3.64,
+      "below_threshold": true
+    },
+    {
+      "folder": "149_Modalert",
+      "sku": "149-min.jpg",
+      "source_image": "Modalert_front_raw.webp",
+      "face_px": "548x212",
+      "face_w": 548.2,
+      "face_h": 212.2,
+      "upscale_to_out_width": 2.01,
+      "below_threshold": false
+    },
+    {
+      "folder": "150_Waklert",
+      "sku": "150-min.jpg",
+      "source_image": "Waklert_front_raw.webp",
+      "face_px": "587x287",
+      "face_w": 587.0,
+      "face_h": 286.6,
+      "upscale_to_out_width": 1.87,
+      "below_threshold": false
+    },
+    {
+      "folder": "151_Provigil",
+      "sku": "151-min.jpg",
+      "source_image": "Provigil_front_raw.jpg",
+      "face_px": "147x248",
+      "face_w": 147.1,
+      "face_h": 247.5,
+      "upscale_to_out_width": 7.48,
+      "below_threshold": true
+    },
+    {
+      "folder": "152_Artvigil",
+      "sku": "152-min.jpg",
+      "source_image": "Artvigil_front_raw.webp",
+      "face_px": "1050x543",
+      "face_w": 1050.1,
+      "face_h": 543.0,
+      "upscale_to_out_width": 1.05,
+      "below_threshold": false
+    },
+    {
+      "folder": "155_Imovane",
+      "sku": "155-min.jpg",
+      "source_image": "Imovane_front_raw.jpg",
+      "face_px": "446x340",
+      "face_w": 445.9,
+      "face_h": 340.5,
+      "upscale_to_out_width": 2.47,
+      "below_threshold": false
+    },
+    {
+      "folder": "156_Xanax",
+      "sku": "156-min.jpg",
+      "source_image": "Xanax_front_raw.jpg",
+      "face_px": "260x179",
+      "face_w": 259.9,
+      "face_h": 179.0,
+      "upscale_to_out_width": 4.23,
+      "below_threshold": true
+    },
+    {
+      "folder": "157_Valium",
+      "sku": "157-min.jpg",
+      "source_image": "Valium_front_raw.png",
+      "face_px": "684x484",
+      "face_w": 684.4,
+      "face_h": 484.0,
+      "upscale_to_out_width": 1.61,
+      "below_threshold": false
+    },
+    {
+      "folder": "158_Klonopin",
+      "sku": "158-min.jpg",
+      "source_image": "Klonopin_front_raw.jpg",
+      "face_px": "398x200",
+      "face_w": 397.6,
+      "face_h": 199.5,
+      "upscale_to_out_width": 2.77,
+      "below_threshold": false
+    },
+    {
+      "folder": "221_Inderal",
+      "sku": "221-min.jpg",
+      "source_image": "Inderal_front_raw.webp",
+      "face_px": "500x315",
+      "face_w": 500.2,
+      "face_h": 315.0,
+      "upscale_to_out_width": 2.2,
+      "below_threshold": false
+    },
+    {
+      "folder": "230_Slimex",
+      "sku": "230-min.jpg",
+      "source_image": "Slimex_front_raw.jpg",
+      "face_px": "887x437",
+      "face_w": 887.1,
+      "face_h": 437.0,
+      "upscale_to_out_width": 1.24,
+      "below_threshold": false
+    },
+    {
+      "folder": "272_Valium_Brand",
+      "sku": "272-min.jpg",
+      "source_image": "Valium Brand_front_raw.jpg",
+      "face_px": "393x157",
+      "face_w": 392.7,
+      "face_h": 156.5,
+      "upscale_to_out_width": 2.8,
+      "below_threshold": false
+    },
+    {
+      "folder": "304_Sonata",
+      "sku": "304-min.jpg",
+      "source_image": "Sonata_front_raw.jpg",
+      "face_px": "278x182",
+      "face_w": 277.7,
+      "face_h": 182.0,
+      "upscale_to_out_width": 3.96,
+      "below_threshold": true
+    },
+    {
+      "folder": "308_Lexotanil",
+      "sku": "308-min.jpg",
+      "source_image": "Lexotanil_front_raw.webp",
+      "face_px": "387x154",
+      "face_w": 386.6,
+      "face_h": 154.0,
+      "upscale_to_out_width": 2.85,
+      "below_threshold": false
+    },
+    {
+      "folder": "340_Xanax_Pfizer",
+      "sku": "340-min.jpg",
+      "source_image": "Xanax_Pfizer_front_raw.webp",
+      "face_px": "719x240",
+      "face_w": 718.6,
+      "face_h": 239.8,
+      "upscale_to_out_width": 1.53,
+      "below_threshold": false
+    },
+    {
+      "folder": "344_Modafinil_Generic",
+      "sku": "344-min.jpg",
+      "source_image": "Modafinil Generic_front_raw.webp",
+      "face_px": "548x212",
+      "face_w": 548.2,
+      "face_h": 212.2,
+      "upscale_to_out_width": 2.01,
+      "below_threshold": false
+    },
+    {
+      "folder": "346_Modvigil",
+      "sku": "346-min.jpg",
+      "source_image": "Modvigil_front_raw.webp",
+      "face_px": "1128x526",
+      "face_w": 1128.3,
+      "face_h": 526.5,
+      "upscale_to_out_width": 0.97,
+      "below_threshold": false
+    },
+    {
+      "folder": "357_Adderall",
+      "sku": "357-min.jpg",
+      "source_image": "Adderall_front_face.png",
+      "face_px": "134x172",
+      "face_w": 134.0,
+      "face_h": 172.0,
+      "upscale_to_out_width": 8.21,
+      "below_threshold": true
+    },
+    {
+      "folder": "362_Hydrocodone",
+      "sku": "362-min.jpg",
+      "source_image": "Hydrocodone_front_face.png",
+      "face_px": "322x406",
+      "face_w": 322.0,
+      "face_h": 406.0,
+      "upscale_to_out_width": 3.42,
+      "below_threshold": true
+    },
+    {
+      "folder": "365_Tapentadol",
+      "sku": "365-min.jpg",
+      "source_image": "Tapentadol_front_raw.jpg",
+      "face_px": "425x204",
+      "face_w": 425.0,
+      "face_h": 203.5,
+      "upscale_to_out_width": 2.59,
+      "below_threshold": false
+    },
+    {
+      "folder": "404_Ritalin",
+      "sku": "404-min.jpg",
+      "source_image": "Ritalin_front_raw.webp",
+      "face_px": "737x306",
+      "face_w": 736.6,
+      "face_h": 306.0,
+      "upscale_to_out_width": 1.49,
+      "below_threshold": false
+    }
+  ]
+}

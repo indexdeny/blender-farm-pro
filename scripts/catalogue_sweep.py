@@ -139,10 +139,10 @@ SPREAD_TOLERANCE_PP = 10.0  # deviation from the template's median frame fill
 # reference floor, and that is a known rig gap rather than a per-SKU defect.
 FRONT_FACE_MIN, FRONT_FACE_MAX = 230.0, 245.0
 
-# Object-versus-backdrop threshold. The backdrop is emissive and renders a flat
-# ~255 with no cast shadow, so a plain luminance cut separates the carton
-# cleanly; 243 is the value used for the same measurement during the 2026-08-02
-# audit, where it produced consistent figures on both renders and references.
+# Legacy object-versus-backdrop threshold. New sweep renders always request the
+# driver's independent object mask, because contact shadow is intentionally
+# darker than the backdrop and must not enlarge the carton. The threshold stays
+# only for explicitly reused pre-mask artifacts and reference-style fixtures.
 SILHOUETTE_MAX_LUMA = 243
 
 _CFG = load_config()
@@ -158,7 +158,8 @@ _FINGERPRINT: dict | None = None
 
 
 # ── Measurement ──────────────────────────────────────────────────────────────
-def measure(png_path: Path, manifest_path: Path) -> dict:
+def measure(png_path: Path, manifest_path: Path,
+            object_mask_path: Path | None = None) -> dict:
     """Geometry and brightness of one rendered packshot.
 
     Front-face brightness comes from src.measure, shared with the calibration
@@ -172,12 +173,15 @@ def measure(png_path: Path, manifest_path: Path) -> dict:
     grey = np.asarray(Image.open(png_path).convert("L")).astype(float)
     height, width = grey.shape
 
-    ys, xs = np.nonzero(grey < SILHOUETTE_MAX_LUMA)
-    if ys.size == 0:
+    try:
+        from src.silhouette import measured_silhouette_px
+        left, top, right, bottom = measured_silhouette_px(
+            png_path, threshold=SILHOUETTE_MAX_LUMA, erode_r=0,
+            object_mask_path=object_mask_path)
+    except AssertionError:
         return {"measured": False, "reason": "no object found against the backdrop"}
-
-    top, bottom = int(ys.min()), int(ys.max())
-    left, right = int(xs.min()), int(xs.max())
+    top, bottom = int(top), int(bottom)
+    left, right = int(left), int(right)
     frac_w = 100.0 * (right - left + 1) / width
     frac_h = 100.0 * (bottom - top + 1) / height
     margins = {"top": top, "bottom": height - 1 - bottom,
@@ -185,6 +189,8 @@ def measure(png_path: Path, manifest_path: Path) -> dict:
 
     result = {
         "measured": True,
+        "silhouette_source": ("object_mask" if object_mask_path is not None
+                              else "luminance"),
         "resolution": [width, height],
         "frame_fill_width_pct": round(frac_w, 1),
         "frame_fill_height_pct": round(frac_h, 1),
@@ -305,14 +311,33 @@ def check_scene(stem: str) -> dict:
 
 
 # ── Rendering ────────────────────────────────────────────────────────────────
+def render_command(stem: str) -> list[str]:
+    """One diagnostic render with beauty and independent derived masks."""
+    blender = _CFG["blender"]
+    resolution = blender.get("resolution", [2048, 2048])
+    return [
+        str(BLENDER_EXE), "--background", "--factory-startup",
+        "--python", str(resolve_path(blender["driver_script"])), "--",
+        "--job", str(MANIFEST_DIR / f"{stem}.json"),
+        "--out", str(OUT_DIR / f"{stem}.png"),
+        "--object-mask", str(OUT_DIR / f"{stem}.object.png"),
+        "--shadow-mask", str(OUT_DIR / f"{stem}.shadow.png"),
+        "--engine-type", blender.get("engine_type", "CYCLES"),
+        "--samples", str(blender.get("samples", 16)),
+        "--res-x", str(resolution[0]), "--res-y", str(resolution[1]),
+        "--device", blender.get("device", "CPU"),
+    ]
+
+
 def render_one(stem: str) -> tuple[bool, float, str]:
-    """Render a single SKU through the normal Stage 2 entry point."""
+    """Render one canonical manifest and its masks in the same Blender run."""
     start = time.time()
     try:
         proc = subprocess.run(
-            [sys.executable, "-m", "src.blender_renderer", "--from", stem, "--limit", "1"],
+            render_command(stem),
             cwd=str(PROJECT_ROOT), capture_output=True, text=True,
-            stdin=subprocess.DEVNULL, timeout=600,
+            stdin=subprocess.DEVNULL,
+            timeout=_CFG["blender"].get("render_timeout", 300),
         )
     except subprocess.TimeoutExpired:
         return False, time.time() - start, "renderer timed out after 600s"
@@ -320,9 +345,13 @@ def render_one(stem: str) -> tuple[bool, float, str]:
         return False, time.time() - start, f"{type(e).__name__}: {e}"
 
     elapsed = time.time() - start
-    if not (OUT_DIR / f"{stem}.png").exists():
+    required = [OUT_DIR / f"{stem}.png", OUT_DIR / f"{stem}.object.png",
+                OUT_DIR / f"{stem}.shadow.png"]
+    if proc.returncode != 0 or not all(path.exists() for path in required):
         tail = (proc.stderr or proc.stdout or "")[-400:]
-        return False, elapsed, f"no PNG written (rc={proc.returncode}): {tail}"
+        missing = [path.name for path in required if not path.exists()]
+        return False, elapsed, (f"render incomplete (rc={proc.returncode}, "
+                                f"missing={missing}): {tail}")
     return True, elapsed, ""
 
 
@@ -357,7 +386,10 @@ def record_for(stem: str, label: str, rendered: bool, seconds, error: str) -> di
         if is_stale(png):
             rec["render_predates_driver"] = True
         try:
-            rec["measurement"] = measure(png, manifest_path)
+            mask = OUT_DIR / f"{stem}.object.png"
+            rec["measurement"] = measure(
+                png, manifest_path,
+                object_mask_path=mask if mask.exists() else None)
         except Exception as e:  # noqa: BLE001 - a corrupt PNG is a finding, not a crash
             rec["measurement"] = {"measured": False,
                                   "reason": f"{type(e).__name__}: {e}"}
@@ -714,6 +746,8 @@ def sweep(group_name: str, limit: int | None, force: bool) -> int:
     try:
         for i, (stem, label) in enumerate(group, 1):
             png = OUT_DIR / f"{stem}.png"
+            object_mask = OUT_DIR / f"{stem}.object.png"
+            shadow_mask = OUT_DIR / f"{stem}.shadow.png"
             # Resume asks whether this driver rendered the SKU, not merely whether
             # a PNG exists. Existence was the old question, and it let a baseline
             # be assembled out of five driver generations -- eight of the first
@@ -721,13 +755,21 @@ def sweep(group_name: str, limit: int | None, force: bool) -> int:
             # Detecting that in the report was only half the answer: a sweep that
             # KNOWS a render is stale should replace it, not describe it.
             stale = png.exists() and is_stale(png)
-            if png.exists() and not force and not stale:
+            missing_masks = png.exists() and not (
+                object_mask.exists() and shadow_mask.exists())
+            if png.exists() and not force and not stale and not missing_masks:
                 print(f"[{i}/{len(group)}] {stem} — already rendered, measuring only")
                 records.append(record_for(stem, label, True, None, ""))
                 continue
-            if png.exists():
-                png.unlink()
-            why = "re-rendering (older than the driver)" if stale and not force else "rendering..."
+            for artifact in (png, object_mask, shadow_mask):
+                if artifact.exists():
+                    artifact.unlink()
+            if stale and not force:
+                why = "re-rendering (older than the driver)"
+            elif missing_masks and not force:
+                why = "re-rendering (derived masks missing)"
+            else:
+                why = "rendering..."
             print(f"[{i}/{len(group)}] {stem} — {why}", flush=True)
             ok, secs, err = render_one(stem)
             rec = record_for(stem, label, ok, secs, err)

@@ -1,0 +1,477 @@
+{
+  "schema": "print_truth/1",
+  "sku": "155-min",
+  "source_image": "Imovane_front_raw.jpg",
+  "front_face_px": [
+    [
+      113,
+      192
+    ],
+    [
+      553,
+      117
+    ],
+    [
+      553,
+      460
+    ],
+    [
+      113,
+      530
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    840
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 0.732,
+    "highlight": 2.732
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.967,
+      "bbox_uv": [
+        0.0936,
+        0.1095,
+        0.2218,
+        0.2381
+      ],
+      "centroid_uv": [
+        0.156,
+        0.1718
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.595,
+      "bbox_uv": [
+        0.2418,
+        0.1131,
+        0.3218,
+        0.2417
+      ],
+      "centroid_uv": [
+        0.2806,
+        0.1764
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.568,
+      "bbox_uv": [
+        0.51,
+        0.1155,
+        0.5818,
+        0.2381
+      ],
+      "centroid_uv": [
+        0.5455,
+        0.1735
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.533,
+      "bbox_uv": [
+        0.4155,
+        0.1131,
+        0.4873,
+        0.2405
+      ],
+      "centroid_uv": [
+        0.4563,
+        0.1812
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.464,
+      "bbox_uv": [
+        0.2509,
+        0.3464,
+        0.3364,
+        0.4333
+      ],
+      "centroid_uv": [
+        0.293,
+        0.3881
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.459,
+      "bbox_uv": [
+        0.6009,
+        0.1155,
+        0.6709,
+        0.2381
+      ],
+      "centroid_uv": [
+        0.6318,
+        0.1747
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.457,
+      "bbox_uv": [
+        0.0336,
+        0.0667,
+        0.0627,
+        0.2381
+      ],
+      "centroid_uv": [
+        0.0479,
+        0.1519
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.413,
+      "bbox_uv": [
+        0.33,
+        0.1155,
+        0.4055,
+        0.2381
+      ],
+      "centroid_uv": [
+        0.3675,
+        0.1701
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.348,
+      "bbox_uv": [
+        0.3473,
+        0.3464,
+        0.4,
+        0.4631
+      ],
+      "centroid_uv": [
+        0.373,
+        0.4044
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.315,
+      "bbox_uv": [
+        0.5382,
+        0.3071,
+        0.5864,
+        0.4238
+      ],
+      "centroid_uv": [
+        0.5585,
+        0.3726
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#10",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.293,
+      "bbox_uv": [
+        0.1545,
+        0.3202,
+        0.2036,
+        0.4345
+      ],
+      "centroid_uv": [
+        0.1792,
+        0.3751
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#11",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.215,
+      "bbox_uv": [
+        0.0445,
+        0.3214,
+        0.1018,
+        0.4369
+      ],
+      "centroid_uv": [
+        0.0757,
+        0.359
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#12",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.209,
+      "bbox_uv": [
+        0.4745,
+        0.344,
+        0.5227,
+        0.4286
+      ],
+      "centroid_uv": [
+        0.5022,
+        0.3894
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#13",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.185,
+      "bbox_uv": [
+        0.6327,
+        0.3429,
+        0.6773,
+        0.4226
+      ],
+      "centroid_uv": [
+        0.6517,
+        0.3812
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#14",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.168,
+      "bbox_uv": [
+        0.6018,
+        0.306,
+        0.6182,
+        0.4238
+      ],
+      "centroid_uv": [
+        0.609,
+        0.3621
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#15",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.163,
+      "bbox_uv": [
+        0.4336,
+        0.3238,
+        0.4682,
+        0.4286
+      ],
+      "centroid_uv": [
+        0.4503,
+        0.3772
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#16",
+      "role": "brand",
+      "fill": "#6932A9",
+      "area_pct": 0.147,
+      "bbox_uv": [
+        0.6864,
+        0.3214,
+        0.7164,
+        0.4214
+      ],
+      "centroid_uv": [
+        0.6999,
+        0.3726
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.674,
+      "bbox_uv": [
+        0.0,
+        0.9036,
+        0.8455,
+        0.9881
+      ],
+      "centroid_uv": [
+        0.4253,
+        0.9501
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.249,
+      "bbox_uv": [
+        0.09,
+        0.1071,
+        0.2227,
+        0.2417
+      ],
+      "centroid_uv": [
+        0.1542,
+        0.1694
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.152,
+      "bbox_uv": [
+        0.8173,
+        0.9405,
+        0.8991,
+        0.9833
+      ],
+      "centroid_uv": [
+        0.86,
+        0.9618
+      ],
+      "class": "mark",
+      "reason": "sanofi aventis wordmark"
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.152,
+      "bbox_uv": [
+        0.5091,
+        0.1107,
+        0.5827,
+        0.2405
+      ],
+      "centroid_uv": [
+        0.5462,
+        0.1807
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#4",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.124,
+      "bbox_uv": [
+        0.1582,
+        0.4952,
+        0.2218,
+        0.5512
+      ],
+      "centroid_uv": [
+        0.1876,
+        0.528
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#5",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.119,
+      "bbox_uv": [
+        0.2264,
+        0.7,
+        0.2764,
+        0.7536
+      ],
+      "centroid_uv": [
+        0.2503,
+        0.728
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#6",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.115,
+      "bbox_uv": [
+        0.3282,
+        0.1107,
+        0.4091,
+        0.2417
+      ],
+      "centroid_uv": [
+        0.372,
+        0.1608
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#7",
+      "role": "highlight",
+      "fill": "#9D92BC",
+      "area_pct": 0.106,
+      "bbox_uv": [
+        0.03,
+        0.0631,
+        0.0664,
+        0.2417
+      ],
+      "centroid_uv": [
+        0.0474,
+        0.1519
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

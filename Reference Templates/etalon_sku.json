@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "status": "declared, not yet applied",
+  "status_note": "No module imports or reads this file. It is a declaration: the two front-face silhouettes the catalogue actually renders, written down once in a form code can later read, instead of being rediscovered from the manifests every time someone asks what the catalogue's shapes are. While that stays true the render is unchanged by this file's existence -- all 391 manifests under 04_passports/render_manifests/ are byte-identical with and without it. Wiring it into Stage 1 is a separate decision and a separate change.",
+  "governs": "face_aspect, and nothing else. An etalon assigns the proportion of the FRONT FACE; the carton's DEPTH stays the passport's. Depth is not decoration here: the side panel is the only visible per-SKU geometry the camera still shows -- 22.6% of the box's width at 48mm depth against 10.3% at 18mm -- and it is the panel that carries the Code 128, the LOT rule and the EXP rule. An etalon that normalised depth as well would print those onto a panel the SKU does not have.",
+  "never_overrides": "A SKU that has a measured design_spec.json. The 28 SKU named in src/design_group.TEMPLATE_SAMPLE are judged against real packaging photography, and their face_aspect is a measurement of that photograph; an etalon is a catalogue-wide default for the 363 SKU nothing has measured. The default never wins over the measurement, under any condition.",
+  "match_tolerance": 0.15,
+  "tolerance_evidence": "Measured, not chosen. rectangle-standard matches 242 SKU at +/-15% and 308 at +/-20%. The 66 SKU that appear between those two thresholds are the aspect ~0.5 cluster (71 SKU) being drawn in -- a second population, not this one's tail. +/-15% covers the 0.6 mode and stops at its edge; +/-20% merges two modes and reports them as one.",
+  "note": "Both etalons carry the SAME passport dimension string: 110x50x18mm. Nothing in the catalogue's own geometry separates them. Only the photographed front face does, 0.6291 against 1.1018 -- and those are the two ends of the catalogue's bimodal face, not two readings of one shape. That is why the controlling quantity is face_aspect and not a dimension string: an etalon keyed on `110x50x18mm` would match both of these at once, which is precisely the distinction it exists to make.",
+  "provenance": "face_aspect is copied from the source folder's design_spec.json, where it was measured off the photograph named in source_image. It is not recalculated here. scene_dimensions_mm is DERIVED from it: the passport's long edge, 110mm, multiplied or divided by face_aspect according to which way the face falls -- 110 * 0.6291 = 69.201 for the landscape rectangle, 110 / 1.1018 = 99.837 for the portrait near-square -- with depth left at the passport's 18mm. These are the figures reshape_to_design() already writes into these two SKU's manifests, recorded rather than invented.",
+  "catalogue_support_note": "How many of the 391 catalogue SKU have a front-face aspect within the stated fraction of this etalon's face_aspect.",
+  "etalons": {
+    "rectangle-standard": {
+      "source_sku": "59-min",
+      "source_folder": "59_Cialis",
+      "source_image": "raw_cialis_front.png",
+      "face_aspect": 0.6291,
+      "scene_dimensions_mm": {
+        "width_mm": 110.0,
+        "height_mm": 69.201,
+        "depth_mm": 18.0
+      },
+      "passport_dimensions_mm": {
+        "width_mm": 110.0,
+        "height_mm": 50.0,
+        "depth_mm": 18.0
+      },
+      "catalogue_support": {
+        "within_5pct": 238,
+        "within_15pct": 242,
+        "within_20pct": 308
+      }
+    },
+    "square-standard": {
+      "source_sku": "74-min",
+      "source_folder": "74_Viagra",
+      "source_image": "raw_viagra_front.png",
+      "face_aspect": 1.1018,
+      "scene_dimensions_mm": {
+        "width_mm": 99.837,
+        "height_mm": 110.0,
+        "depth_mm": 18.0
+      },
+      "passport_dimensions_mm": {
+        "width_mm": 110.0,
+        "height_mm": 50.0,
+        "depth_mm": 18.0
+      },
+      "catalogue_support": {
+        "within_5pct": 4,
+        "within_15pct": 18,
+        "within_20pct": 19
+      }
+    }
+  }
+}

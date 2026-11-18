@@ -211,7 +211,7 @@ def measure(stem: str, preview: bool = False, reuse: bool = False) -> dict:
     manifest = json.loads((MANIFEST_DIR / f"{stem}.json").read_text(encoding="utf-8"))
     printed = {r: (manifest.get("label_content") or {}).get(r) for r in ROLES}
 
-    parts = [(f.get("fill"), p["outline"])
+    parts = [(f.get("fill"), p["outline"], p.get("holes") or [])
              for f in (spec.get("fields") or []) for p in (f.get("parts") or [])
              if len(p.get("outline") or []) >= 3]
     ours = locate(face, printed, parts)

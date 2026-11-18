@@ -1,0 +1,265 @@
+{
+  "spec_version": "0.1",
+  "sku": "60-min.jpg",
+  "source_image": "Cialis Professional_front_raw.webp",
+  "face_aspect": 1.0,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#E6E7F0",
+  "fields": [
+    {
+      "role": "brand",
+      "fill": "#E0AE31",
+      "coverage_pct": 8.6,
+      "parts": [
+        {
+          "kind": "block",
+          "area_pct": 5.7,
+          "smoothness": 0.33,
+          "outline": [
+            [
+              0.2518,
+              0.5445
+            ],
+            [
+              0.8827,
+              0.5455
+            ],
+            [
+              0.8955,
+              0.55
+            ],
+            [
+              0.8827,
+              0.6355
+            ],
+            [
+              0.8509,
+              0.6445
+            ],
+            [
+              0.2545,
+              0.6473
+            ],
+            [
+              0.2436,
+              0.6391
+            ],
+            [
+              0.2436,
+              0.5536
+            ],
+            [
+              0.2509,
+              0.5455
+            ]
+          ]
+        },
+        {
+          "kind": "field",
+          "area_pct": 1.4,
+          "smoothness": 0.6,
+          "outline": [
+            [
+              0.72,
+              0.9355
+            ],
+            [
+              0.7764,
+              0.9382
+            ],
+            [
+              0.8291,
+              0.9509
+            ],
+            [
+              0.8782,
+              0.9736
+            ],
+            [
+              0.9073,
+              0.9991
+            ],
+            [
+              0.6027,
+              0.9991
+            ],
+            [
+              0.6164,
+              0.9773
+            ],
+            [
+              0.6482,
+              0.9536
+            ],
+            [
+              0.6909,
+              0.9391
+            ],
+            [
+              0.7191,
+              0.9364
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "role": "highlight",
+      "fill": "#274F2D",
+      "coverage_pct": 14.1,
+      "parts": [
+        {
+          "kind": "field",
+          "area_pct": 3.9,
+          "smoothness": 0.43,
+          "outline": [
+            [
+              0.7982,
+              0.0055
+            ],
+            [
+              0.8455,
+              0.0073
+            ],
+            [
+              0.8436,
+              0.0118
+            ],
+            [
+              0.8527,
+              0.0127
+            ],
+            [
+              0.8618,
+              0.0091
+            ],
+            [
+              0.85,
+              0.0073
+            ],
+            [
+              0.8873,
+              0.0082
+            ],
+            [
+              0.8836,
+              0.01
+            ],
+            [
+              0.89,
+              0.0127
+            ],
+            [
+              0.9991,
+              0.0109
+            ],
+            [
+              0.9991,
+              0.5364
+            ],
+            [
+              0.9364,
+              0.6427
+            ],
+            [
+              0.8736,
+              0.7073
+            ],
+            [
+              0.9164,
+              0.6391
+            ],
+            [
+              0.9518,
+              0.5536
+            ],
+            [
+              0.9718,
+              0.4618
+            ],
+            [
+              0.9736,
+              0.3673
+            ],
+            [
+              0.9536,
+              0.2555
+            ],
+            [
+              0.9245,
+              0.1764
+            ],
+            [
+              0.8682,
+              0.08
+            ],
+            [
+              0.7991,
+              0.0055
+            ]
+          ]
+        },
+        {
+          "kind": "field",
+          "area_pct": 1.7,
+          "smoothness": 0.6,
+          "outline": [
+            [
+              0.9991,
+              0.5564
+            ],
+            [
+              0.9955,
+              0.7064
+            ],
+            [
+              0.9364,
+              0.7491
+            ],
+            [
+              0.8618,
+              0.7864
+            ],
+            [
+              0.78,
+              0.8118
+            ],
+            [
+              0.72,
+              0.8191
+            ],
+            [
+              0.8118,
+              0.7682
+            ],
+            [
+              0.8991,
+              0.6982
+            ],
+            [
+              0.95,
+              0.6409
+            ],
+            [
+              0.9991,
+              0.5573
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "glyph_components_dropped": 2,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 0,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 0.9167,
+    "excluded_as_glyphs_pct": 2.02,
+    "iou_by_field": {
+      "brand": 0.77,
+      "highlight": 0.449
+    },
+    "vertices": 50
+  }
+}

@@ -1,0 +1,544 @@
+{
+  "schema": "print_truth/1",
+  "sku": "74-min",
+  "source_image": "raw_viagra_front.png",
+  "front_face_px": [
+    [
+      184,
+      153
+    ],
+    [
+      958,
+      105
+    ],
+    [
+      960,
+      656
+    ],
+    [
+      223,
+      759
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    838
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.157,
+    "recovered_01": 0.0,
+    "recovered_02": 0.0,
+    "recovered_03": 0.0
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 19.799,
+      "bbox_uv": [
+        0.0,
+        0.0036,
+        0.2291,
+        0.9988
+      ],
+      "centroid_uv": [
+        0.1061,
+        0.5125
+      ],
+      "class": "print",
+      "reason": "the navy Pfizer band, now reaching the face edge on 91% of rows"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 1.945,
+      "bbox_uv": [
+        0.8818,
+        0.0835,
+        0.9991,
+        0.253
+      ],
+      "centroid_uv": [
+        0.941,
+        0.1688
+      ],
+      "class": "print",
+      "reason": "the indigo block top-right"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 1.136,
+      "bbox_uv": [
+        0.7209,
+        0.7315,
+        0.8155,
+        0.9702
+      ],
+      "centroid_uv": [
+        0.7522,
+        0.8767
+      ],
+      "class": "object",
+      "reason": "inside the holographic sticker"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 1.032,
+      "bbox_uv": [
+        0.8164,
+        0.7315,
+        0.9018,
+        0.9714
+      ],
+      "centroid_uv": [
+        0.874,
+        0.8281
+      ],
+      "class": "object",
+      "reason": "inside the holographic sticker"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.473,
+      "bbox_uv": [
+        0.7809,
+        0.8317,
+        0.8855,
+        0.9702
+      ],
+      "centroid_uv": [
+        0.8343,
+        0.9009
+      ],
+      "class": "object",
+      "reason": "inside the holographic sticker"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.464,
+      "bbox_uv": [
+        0.75,
+        0.7327,
+        0.8527,
+        0.864
+      ],
+      "centroid_uv": [
+        0.8025,
+        0.7917
+      ],
+      "class": "object",
+      "reason": "inside the holographic sticker"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.371,
+      "bbox_uv": [
+        0.6055,
+        0.0979,
+        0.6909,
+        0.1671
+      ],
+      "centroid_uv": [
+        0.6451,
+        0.1289
+      ],
+      "class": "type",
+      "reason": "letter of VIAGRA"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.371,
+      "bbox_uv": [
+        0.5027,
+        0.099,
+        0.6009,
+        0.1706
+      ],
+      "centroid_uv": [
+        0.5525,
+        0.137
+      ],
+      "class": "type",
+      "reason": "letter of VIAGRA"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.32,
+      "bbox_uv": [
+        0.6945,
+        0.0943,
+        0.7909,
+        0.1647
+      ],
+      "centroid_uv": [
+        0.743,
+        0.1325
+      ],
+      "class": "type",
+      "reason": "letter of VIAGRA"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.311,
+      "bbox_uv": [
+        0.4155,
+        0.1038,
+        0.51,
+        0.173
+      ],
+      "centroid_uv": [
+        0.4634,
+        0.1421
+      ],
+      "class": "type",
+      "reason": "letter of VIAGRA"
+    },
+    {
+      "key": "brand#10",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.248,
+      "bbox_uv": [
+        0.3055,
+        0.1074,
+        0.3909,
+        0.1754
+      ],
+      "centroid_uv": [
+        0.3472,
+        0.1396
+      ],
+      "class": "type",
+      "reason": "letter of VIAGRA"
+    },
+    {
+      "key": "brand#11",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.145,
+      "bbox_uv": [
+        0.4455,
+        0.2196,
+        0.4791,
+        0.2864
+      ],
+      "centroid_uv": [
+        0.4632,
+        0.2517
+      ],
+      "class": "type",
+      "reason": "glyph of the dosage row"
+    },
+    {
+      "key": "brand#12",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.144,
+      "bbox_uv": [
+        0.3891,
+        0.2196,
+        0.4391,
+        0.2685
+      ],
+      "centroid_uv": [
+        0.4141,
+        0.2425
+      ],
+      "class": "type",
+      "reason": "glyph of the dosage row"
+    },
+    {
+      "key": "brand#13",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.132,
+      "bbox_uv": [
+        0.3927,
+        0.1062,
+        0.4127,
+        0.1742
+      ],
+      "centroid_uv": [
+        0.4031,
+        0.14
+      ],
+      "class": "type",
+      "reason": "the I of VIAGRA"
+    },
+    {
+      "key": "brand#14",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.117,
+      "bbox_uv": [
+        0.3364,
+        0.2076,
+        0.3673,
+        0.2709
+      ],
+      "centroid_uv": [
+        0.3517,
+        0.2395
+      ],
+      "class": "type",
+      "reason": "glyph of the dosage row"
+    },
+    {
+      "key": "brand#15",
+      "role": "brand",
+      "fill": "#012958",
+      "area_pct": 0.106,
+      "bbox_uv": [
+        0.3009,
+        0.2088,
+        0.3318,
+        0.2721
+      ],
+      "centroid_uv": [
+        0.3168,
+        0.2406
+      ],
+      "class": "type",
+      "reason": "glyph of the dosage row"
+    },
+    {
+      "key": "recovered_01#0",
+      "role": "recovered_01",
+      "fill": "#AAC1DB",
+      "area_pct": 3.952,
+      "bbox_uv": [
+        0.1955,
+        0.0,
+        0.2682,
+        0.9988
+      ],
+      "centroid_uv": [
+        0.2337,
+        0.503
+      ],
+      "class": "print"
+    },
+    {
+      "key": "recovered_02#0",
+      "role": "recovered_02",
+      "fill": "#8EB8CC",
+      "area_pct": 0.167,
+      "bbox_uv": [
+        0.74,
+        0.7458,
+        0.79,
+        0.8496
+      ],
+      "centroid_uv": [
+        0.7635,
+        0.8051
+      ],
+      "class": "object",
+      "reason": "holographic sticker fragment, owner excluded"
+    },
+    {
+      "key": "recovered_03#0",
+      "role": "recovered_03",
+      "fill": "#7B8EB7",
+      "area_pct": 0.133,
+      "bbox_uv": [
+        0.0245,
+        0.0,
+        0.1955,
+        0.0084
+      ],
+      "centroid_uv": [
+        0.1004,
+        0.0034
+      ],
+      "class": "blend",
+      "reason": "top edge highlight, same printed surface"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#636671",
+      "area_pct": 2.806,
+      "bbox_uv": [
+        0.7264,
+        0.7314,
+        0.9055,
+        0.9719
+      ],
+      "centroid_uv": [
+        0.8124,
+        0.8426
+      ],
+      "class": "object",
+      "reason": "holographic security sticker",
+      "vanished": true
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#636671",
+      "area_pct": 0.546,
+      "bbox_uv": [
+        0.7864,
+        0.8315,
+        0.8891,
+        0.9719
+      ],
+      "centroid_uv": [
+        0.8393,
+        0.906
+      ],
+      "class": "object",
+      "reason": "inside the holographic sticker",
+      "vanished": true
+    },
+    {
+      "key": "highlight#2",
+      "role": "highlight",
+      "fill": "#636671",
+      "area_pct": 0.227,
+      "bbox_uv": [
+        0.0,
+        0.3114,
+        0.0227,
+        0.6569
+      ],
+      "centroid_uv": [
+        0.0045,
+        0.4474
+      ],
+      "class": "blend",
+      "reason": "left crease remnant, same surface as the band",
+      "vanished": true
+    },
+    {
+      "key": "highlight#3",
+      "role": "highlight",
+      "fill": "#636671",
+      "area_pct": 0.181,
+      "bbox_uv": [
+        0.0,
+        0.0232,
+        0.0245,
+        0.1966
+      ],
+      "centroid_uv": [
+        0.0084,
+        0.0921
+      ],
+      "class": "blend",
+      "reason": "left crease remnant, same surface as the band",
+      "vanished": true
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "object",
+    "blend",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 1.418,
+      "bbox_uv": [
+        0.0436,
+        0.1122,
+        0.2027,
+        0.2375
+      ],
+      "centroid_uv": [
+        0.1249,
+        0.1744
+      ],
+      "class": "mark",
+      "reason": "the white Pfizer oval — a logo container, printed white on the band, not board left unprinted"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.015,
+      "bbox_uv": [
+        0.0227,
+        0.6557,
+        0.0373,
+        0.6703
+      ],
+      "centroid_uv": [
+        0.0301,
+        0.663
+      ],
+      "class": "blend",
+      "reason": "speckle in the flat band",
+      "vanished": true
+    },
+    {
+      "key": "brand#0/hole#2",
+      "of": "brand#0",
+      "area_pct": 0.012,
+      "bbox_uv": [
+        0.0482,
+        0.6447,
+        0.0609,
+        0.6606
+      ],
+      "centroid_uv": [
+        0.0538,
+        0.6521
+      ],
+      "class": "blend",
+      "reason": "speckle in the flat band",
+      "vanished": true
+    },
+    {
+      "key": "brand#0/hole#3",
+      "of": "brand#0",
+      "area_pct": 0.011,
+      "bbox_uv": [
+        0.0373,
+        0.3162,
+        0.0509,
+        0.3272
+      ],
+      "centroid_uv": [
+        0.0444,
+        0.3215
+      ],
+      "class": "blend",
+      "reason": "speckle in the flat band",
+      "vanished": true
+    }
+  ]
+}

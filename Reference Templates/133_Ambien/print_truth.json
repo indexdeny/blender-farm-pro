@@ -1,0 +1,597 @@
+{
+  "schema": "print_truth/1",
+  "sku": "133-min",
+  "source_image": "Ambien_front_raw.jpg",
+  "front_face_px": [
+    [
+      72,
+      66
+    ],
+    [
+      478,
+      38
+    ],
+    [
+      478,
+      218
+    ],
+    [
+      72,
+      247
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    488
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 0.412,
+    "type": 1.014
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 20.575,
+      "bbox_uv": [
+        0.0,
+        0.0266,
+        0.2173,
+        0.998
+      ],
+      "centroid_uv": [
+        0.109,
+        0.5136
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 2.525,
+      "bbox_uv": [
+        0.8364,
+        0.1639,
+        0.9773,
+        0.3873
+      ],
+      "centroid_uv": [
+        0.906,
+        0.2757
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.298,
+      "bbox_uv": [
+        0.3527,
+        0.7684,
+        0.3955,
+        0.8893
+      ],
+      "centroid_uv": [
+        0.3745,
+        0.8288
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.275,
+      "bbox_uv": [
+        0.2564,
+        0.7439,
+        0.3409,
+        0.9283
+      ],
+      "centroid_uv": [
+        0.3074,
+        0.849
+      ],
+      "class": "mark",
+      "reason": "Hemofarm monogram"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.208,
+      "bbox_uv": [
+        0.4264,
+        0.8135,
+        0.4709,
+        0.8893
+      ],
+      "centroid_uv": [
+        0.4477,
+        0.8514
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.203,
+      "bbox_uv": [
+        0.5755,
+        0.8135,
+        0.62,
+        0.8893
+      ],
+      "centroid_uv": [
+        0.5973,
+        0.8504
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.123,
+      "bbox_uv": [
+        0.2682,
+        0.7971,
+        0.2927,
+        0.8709
+      ],
+      "centroid_uv": [
+        0.2807,
+        0.8341
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.109,
+      "bbox_uv": [
+        0.5009,
+        0.7705,
+        0.5209,
+        0.8914
+      ],
+      "centroid_uv": [
+        0.5085,
+        0.8279
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.102,
+      "bbox_uv": [
+        0.4736,
+        0.8135,
+        0.4982,
+        0.8914
+      ],
+      "centroid_uv": [
+        0.4857,
+        0.8511
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#FF973E",
+      "area_pct": 0.101,
+      "bbox_uv": [
+        0.52,
+        0.8135,
+        0.5464,
+        0.8893
+      ],
+      "centroid_uv": [
+        0.5344,
+        0.8597
+      ],
+      "class": "mark",
+      "reason": "Hemofarm wordmark"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.832,
+      "bbox_uv": [
+        0.4282,
+        0.2111,
+        0.52,
+        0.3361
+      ],
+      "centroid_uv": [
+        0.4739,
+        0.2704
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.76,
+      "bbox_uv": [
+        0.34,
+        0.1701,
+        0.42,
+        0.3381
+      ],
+      "centroid_uv": [
+        0.3798,
+        0.264
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.679,
+      "bbox_uv": [
+        0.5327,
+        0.166,
+        0.5927,
+        0.334
+      ],
+      "centroid_uv": [
+        0.5588,
+        0.26
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#3",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.552,
+      "bbox_uv": [
+        0.71,
+        0.209,
+        0.7673,
+        0.332
+      ],
+      "centroid_uv": [
+        0.7383,
+        0.2688
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#4",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.537,
+      "bbox_uv": [
+        0.6373,
+        0.2111,
+        0.7,
+        0.3361
+      ],
+      "centroid_uv": [
+        0.6675,
+        0.2728
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#5",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.252,
+      "bbox_uv": [
+        0.6055,
+        0.2152,
+        0.6255,
+        0.334
+      ],
+      "centroid_uv": [
+        0.6155,
+        0.2746
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#6",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.168,
+      "bbox_uv": [
+        0.5973,
+        0.4262,
+        0.6464,
+        0.5082
+      ],
+      "centroid_uv": [
+        0.6216,
+        0.4609
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#7",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.162,
+      "bbox_uv": [
+        0.3627,
+        0.3975,
+        0.4018,
+        0.5082
+      ],
+      "centroid_uv": [
+        0.3824,
+        0.454
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#8",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.14,
+      "bbox_uv": [
+        0.5173,
+        0.3975,
+        0.5482,
+        0.5082
+      ],
+      "centroid_uv": [
+        0.5351,
+        0.4605
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#9",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.14,
+      "bbox_uv": [
+        0.4636,
+        0.4262,
+        0.4945,
+        0.5389
+      ],
+      "centroid_uv": [
+        0.4766,
+        0.4752
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#10",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.133,
+      "bbox_uv": [
+        0.5564,
+        0.4262,
+        0.5891,
+        0.5082
+      ],
+      "centroid_uv": [
+        0.5718,
+        0.4669
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#11",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.12,
+      "bbox_uv": [
+        0.8964,
+        0.248,
+        0.9318,
+        0.3012
+      ],
+      "centroid_uv": [
+        0.914,
+        0.2722
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#12",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.12,
+      "bbox_uv": [
+        0.9382,
+        0.2459,
+        0.9618,
+        0.3217
+      ],
+      "centroid_uv": [
+        0.9505,
+        0.2828
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#13",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.118,
+      "bbox_uv": [
+        0.4064,
+        0.4283,
+        0.4391,
+        0.5102
+      ],
+      "centroid_uv": [
+        0.4227,
+        0.469
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#14",
+      "role": "type",
+      "fill": "#333333",
+      "area_pct": 0.102,
+      "bbox_uv": [
+        0.8691,
+        0.2275,
+        0.89,
+        0.3012
+      ],
+      "centroid_uv": [
+        0.8794,
+        0.2645
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 0.219,
+      "bbox_uv": [
+        0.0127,
+        0.2848,
+        0.0182,
+        0.7295
+      ],
+      "centroid_uv": [
+        0.0154,
+        0.5195
+      ],
+      "class": "blend"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.013,
+      "bbox_uv": [
+        0.0173,
+        0.7439,
+        0.0182,
+        0.8197
+      ],
+      "centroid_uv": [
+        0.0178,
+        0.7781
+      ],
+      "class": "blend"
+    },
+    {
+      "key": "brand#0/hole#2",
+      "of": "brand#0",
+      "area_pct": 0.01,
+      "bbox_uv": [
+        0.0145,
+        0.127,
+        0.0164,
+        0.209
+      ],
+      "centroid_uv": [
+        0.0152,
+        0.1632
+      ],
+      "class": "blend"
+    },
+    {
+      "key": "brand#1/hole#0",
+      "of": "brand#1",
+      "area_pct": 0.172,
+      "bbox_uv": [
+        0.9382,
+        0.2418,
+        0.9627,
+        0.3217
+      ],
+      "centroid_uv": [
+        0.9504,
+        0.2819
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#1/hole#1",
+      "of": "brand#1",
+      "area_pct": 0.145,
+      "bbox_uv": [
+        0.8682,
+        0.2254,
+        0.89,
+        0.3012
+      ],
+      "centroid_uv": [
+        0.8794,
+        0.2641
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#1/hole#2",
+      "of": "brand#1",
+      "area_pct": 0.129,
+      "bbox_uv": [
+        0.8964,
+        0.2439,
+        0.9327,
+        0.3053
+      ],
+      "centroid_uv": [
+        0.9141,
+        0.2727
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#1/hole#3",
+      "of": "brand#1",
+      "area_pct": 0.075,
+      "bbox_uv": [
+        0.8455,
+        0.2295,
+        0.8609,
+        0.3033
+      ],
+      "centroid_uv": [
+        0.8558,
+        0.2624
+      ],
+      "class": "lettering"
+    }
+  ]
+}

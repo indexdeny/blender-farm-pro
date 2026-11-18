@@ -1,0 +1,46 @@
+{
+  "manifest_version": "1.10",
+  "sku_id": "151-min.jpg",
+  "product_code": "151-min",
+  "template_id": "T1",
+  "is_bottle_override": false,
+  "packaging_geometry": "BLISTER",
+  "carton": {
+    "width_mm": 65.37112973197837,
+    "height_mm": 110.0,
+    "depth_mm": 18.0,
+    "passport_dimensions": {
+      "width_mm": 110.0,
+      "height_mm": 50.0,
+      "depth_mm": 18.0,
+      "source": "passport_secondary"
+    },
+    "source": "design_spec",
+    "features": [
+      "Braille",
+      "DataMatrix_Zone",
+      "Tamper_Evident_Seal"
+    ],
+    "material": "GZ-Cardboard (Pharmaceutical Grade)"
+  },
+  "design": {
+    "spec_version": "0.1",
+    "face_aspect": 1.6827,
+    "substrate": "#0E25A7",
+    "fields": [],
+    "marks": [],
+    "type_rows": {},
+    "source_image": "Provigil_front_raw.jpg"
+  },
+  "palette": {
+    "primary": "#DDA7A5",
+    "accent": "#6B2D5C",
+    "background": "#FFFFFF"
+  },
+  "label_content": {
+    "brand_name_display": "Provigil",
+    "active_ingredient_display": "Modafinil",
+    "dosage_display": "200mg",
+    "unit_count_display": "30 Pills"
+  }
+}

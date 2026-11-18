@@ -1,0 +1,42 @@
+{
+  "spec_version": "0.1",
+  "sku": "155-min.jpg",
+  "source_image": "Imovane_front_raw.jpg",
+  "face_aspect": 0.7636,
+  "coordinates": "u across, v down, both 0..1 of the FRONT FACE",
+  "substrate": "#DFDED8",
+  "fields": [],
+  "glyph_components_dropped": 1,
+  "flat_fields_dropped": 0,
+  "ink_components_dropped": 0,
+  "excluded": "manufacturer logos and holographic elements are not represented: the owner's decision, so the substrate shows through where they sit on the reference",
+  "verification": {
+    "pixel_agreement": 1.0,
+    "excluded_as_glyphs_pct": 0.97,
+    "iou_by_field": {},
+    "vertices": 0
+  },
+  "type_rows": {
+    "dosage_display": {
+      "u0": 0.0432,
+      "u1": 0.4018,
+      "v0": 0.3179,
+      "v1": 0.4655,
+      "cap_frac": 0.114,
+      "cap_top_v": 0.3179,
+      "align": "LEFT",
+      "read_as": "7,5 mg"
+    },
+    "unit_count_display": {
+      "u0": 0.0432,
+      "u1": 0.1682,
+      "v0": 0.869,
+      "v1": 0.9274,
+      "cap_frac": 0.055,
+      "cap_top_v": 0.8713,
+      "align": "LEFT",
+      "read_as": "20 db"
+    }
+  },
+  "type_rows_note": "GEOMETRY ONLY. `read_as` records the reference's own words, which are how each row was identified and are NOT what gets printed: the renderer draws the manifest's strings. The reference and the catalogue often carry different products -- Motiron for Ritalin, Aspendos for Modafinil."
+}

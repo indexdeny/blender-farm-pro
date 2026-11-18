@@ -1,0 +1,261 @@
+{
+  "schema": "print_truth/1",
+  "sku": "230-min",
+  "source_image": "Slimex_front_raw.jpg",
+  "front_face_px": [
+    [
+      255,
+      482
+    ],
+    [
+      1140,
+      448
+    ],
+    [
+      1140,
+      862
+    ],
+    [
+      255,
+      942
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    542
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.147,
+    "highlight": 1.346
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 1.056,
+      "bbox_uv": [
+        0.3009,
+        0.2472,
+        0.3955,
+        0.4188
+      ],
+      "centroid_uv": [
+        0.3483,
+        0.3325
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.782,
+      "bbox_uv": [
+        0.3927,
+        0.2472,
+        0.4655,
+        0.4188
+      ],
+      "centroid_uv": [
+        0.4262,
+        0.3335
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.729,
+      "bbox_uv": [
+        0.1318,
+        0.2417,
+        0.1991,
+        0.4207
+      ],
+      "centroid_uv": [
+        0.1659,
+        0.3328
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.72,
+      "bbox_uv": [
+        0.4555,
+        0.2491,
+        0.5455,
+        0.4188
+      ],
+      "centroid_uv": [
+        0.5007,
+        0.3342
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.538,
+      "bbox_uv": [
+        0.2,
+        0.2454,
+        0.2591,
+        0.4188
+      ],
+      "centroid_uv": [
+        0.2243,
+        0.3503
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.386,
+      "bbox_uv": [
+        0.2655,
+        0.2454,
+        0.3027,
+        0.4188
+      ],
+      "centroid_uv": [
+        0.2839,
+        0.3325
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.373,
+      "bbox_uv": [
+        0.6109,
+        0.5812,
+        0.6845,
+        0.9004
+      ],
+      "centroid_uv": [
+        0.6571,
+        0.781
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a person"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.306,
+      "bbox_uv": [
+        0.0,
+        0.9428,
+        0.4645,
+        0.9557
+      ],
+      "centroid_uv": [
+        0.1992,
+        0.9484
+      ],
+      "class": "unrepresentable",
+      "reason": "printed rule about 6px tall in the rectified face; Douglas-Peucker at 0.004 of the face width flattens it into a self-crossing ring the repair cannot restore"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.303,
+      "bbox_uv": [
+        0.0382,
+        0.7269,
+        0.1345,
+        0.8432
+      ],
+      "centroid_uv": [
+        0.0693,
+        0.7861
+      ],
+      "class": "mark",
+      "reason": "Neptune Laboratories logo"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#C96D18",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.0327,
+        0.7177,
+        0.14,
+        0.8542
+      ],
+      "centroid_uv": [
+        0.0859,
+        0.7797
+      ],
+      "class": "mark",
+      "reason": "Neptune Laboratories logo"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#101436",
+      "area_pct": 18.657,
+      "bbox_uv": [
+        0.6409,
+        0.0166,
+        0.9255,
+        0.8985
+      ],
+      "centroid_uv": [
+        0.7779,
+        0.465
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a person"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#101436",
+      "area_pct": 0.393,
+      "bbox_uv": [
+        0.6091,
+        0.8081,
+        0.6782,
+        0.9004
+      ],
+      "centroid_uv": [
+        0.6338,
+        0.8623
+      ],
+      "class": "unrepresentable",
+      "reason": "photographic insert of a person"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

@@ -18,8 +18,12 @@
   ],
   "properties": {
     "manifest_version": {
-      "description": "Contract version. Consumers must reject a major version they do not know. Additive optional fields keep the version; removing or repurposing a field requires a bump. 1.1 added label_content.active_ingredient_display as REQUIRED, which is deliberately not an additive-optional change: a manifest written before it exists must fail validation and be regenerated rather than silently produce a packshot with a missing label row. 1.2 added carton.features and carton.material for the same reason - the side panel is drawn from them, and a stale manifest would render a panel missing its declared zones. 1.3 REPURPOSES carton.width_mm/height_mm/depth_mm: they are now art-directed scene geometry rather than the carton's real size, and the real size moved to carton.passport_dimensions. That is the one change a consumer must never miss - a 1.2 manifest read as 1.3 would print invented measurements on pharmaceutical packaging - so the version is pinned and a 1.2 file fails validation until Stage 1 regenerates it. 1.6 adds product_code as REQUIRED, and it is a separation rather than an addition: sku_id is the catalogue's KEY and comes from SKU.csv's first column, which is named `picture` and holds the source image's filename. The side panel prints the identifier under the barcode and encodes it into the Code 128, so all 391 cartons carried `.jpg` on them as a scannable product code. A 1.5 manifest read as 1.6 would print a filename on pharmaceutical packaging, which is why the version is pinned rather than the field made optional.",
-      "const": "1.6"
+      "description": "A 1.6 manifest read as 1.7 would build fields in an order the renderer invents, so the version is pinned rather than the field defaulted. 1.8 adds design.fields[].parts[].holes as REQUIRED, possibly empty: a part is its outline MINUS its holes, and until now it was the ring alone. A boundary trace of a shape with holes in it is a correct trace and a wrong region -- measured over the group's 74 printed parts, the traced rings enclose 1.192 times the ink they describe, and 357_Adderall's brand#1 encloses 9.07 times its own, filling 53.48% of a face it inks 5.90% of. A 1.7 manifest read as 1.8 would fill every hole in silence, which is exactly the packshot the group has been rendering, so the version is pinned rather than the field defaulted to empty. 1.9 adds design.fields[].parts[].fill as REQUIRED: a field's fill is the median of its whole CLUSTER while a part is one region of it, and measured over the group's 75 printed parts 33 sit at or beyond SAME_SURFACE_MAX from the colour they are painted -- 152_Artvigil's brand#1 is declared #E05506 and is #2D3336 in the photograph, over 6.47% of the face. A 1.8 part read as 1.9 is not a part painted its field's colour, it is a part whose colour is unknown, so the version is pinned rather than the field defaulted to the field's. 1.10 adds design.marks[], REQUIRED and usually empty: the marks the OWNER approved in 00_PROJECT_STATE/MARKS_DECISION.md, each carrying the print_truth key that permitted it. A 1.9 manifest read as 1.10 is not a carton with no marks, it is a carton whose marks were never decided -- and that decision is a person's, not a default any producer may supply. 1.11 adds optional ordered design.marks[].parts: the existing outline/holes/fill remains the base region and pairing envelope; additional outline/holes/fill regions overlay it in array order. Parts require 1.11 so a 1.10 consumer rejects their version rather than silently dropping their colours. Manifests without parts remain 1.10.",
+      "enum": [
+        "1.10",
+        "1.11",
+        "1.13"
+      ]
     },
     "sku_id": {
       "description": "Opaque SKU identifier, matching the passport's sku_id and keying into 03_knowledge_graph/SKU.csv. Never parse as a number, and never PRINT it: it carries the source image's file extension. Print product_code.",
@@ -188,12 +192,14 @@
     },
     "design": {
       "type": "object",
+      "additionalProperties": false,
       "description": "Contract 1.4. The measured design of a real carton, present ONLY for the eleven SKU with reference photography under Reference Templates/. Optional across the catalogue because 380 SKU have no reference to measure; NOT optional for those eleven, which src/design_group.py raises MissingDesignSpec for rather than letting them fall back to the generic art direction and render a plausible carton in the wrong colours. Coordinates are u across, v down, both 0..1 of the FRONT FACE -- not of the picture, and not of the silhouette.",
       "required": [
         "spec_version",
         "face_aspect",
         "substrate",
-        "fields"
+        "fields",
+        "marks"
       ],
       "properties": {
         "spec_version": {
@@ -211,14 +217,211 @@
         "source_image": {
           "type": "string"
         },
+        "carton_profile": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "profile_version",
+            "edge_radius_frac",
+            "board_thickness_frac",
+            "visible_flaps",
+            "visible_seams",
+            "surface_finish",
+            "measurement_ref"
+          ],
+          "properties": {
+            "profile_version": {
+              "const": "1.0"
+            },
+            "edge_radius_frac": {
+              "$ref": "#/$defs/unitFraction"
+            },
+            "board_thickness_frac": {
+              "$ref": "#/$defs/unitFraction"
+            },
+            "visible_flaps": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "surface",
+                  "u0",
+                  "u1",
+                  "v0",
+                  "v1",
+                  "stand_off_frac"
+                ],
+                "properties": {
+                  "surface": {
+                    "$ref": "#/$defs/designSurface"
+                  },
+                  "u0": {
+                    "$ref": "#/$defs/unitFraction"
+                  },
+                  "u1": {
+                    "$ref": "#/$defs/unitFraction"
+                  },
+                  "v0": {
+                    "$ref": "#/$defs/unitFraction"
+                  },
+                  "v1": {
+                    "$ref": "#/$defs/unitFraction"
+                  },
+                  "stand_off_frac": {
+                    "$ref": "#/$defs/unitFraction"
+                  }
+                }
+              }
+            },
+            "visible_seams": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "surface",
+                  "polyline",
+                  "width_frac",
+                  "gap_frac"
+                ],
+                "properties": {
+                  "surface": {
+                    "$ref": "#/$defs/designSurface"
+                  },
+                  "polyline": {
+                    "type": "array",
+                    "minItems": 2,
+                    "items": {
+                      "$ref": "#/$defs/unitPoint"
+                    }
+                  },
+                  "width_frac": {
+                    "$ref": "#/$defs/unitFraction"
+                  },
+                  "gap_frac": {
+                    "$ref": "#/$defs/unitFraction"
+                  }
+                }
+              }
+            },
+            "surface_finish": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "roughness",
+                "micro_bump"
+              ],
+              "properties": {
+                "roughness": {
+                  "$ref": "#/$defs/unitFraction"
+                },
+                "micro_bump": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "scale",
+                    "strength",
+                    "distance_frac",
+                    "seed"
+                  ],
+                  "properties": {
+                    "scale": {
+                      "type": "number",
+                      "exclusiveMinimum": 0
+                    },
+                    "strength": {
+                      "$ref": "#/$defs/unitFraction"
+                    },
+                    "distance_frac": {
+                      "$ref": "#/$defs/unitFraction"
+                    },
+                    "seed": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            },
+            "measurement_ref": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "reference_aux_text": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "text",
+              "surface",
+              "bbox",
+              "align",
+              "font_role",
+              "source_image",
+              "source_sha256",
+              "confidence",
+              "conflict_check"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "surface": {
+                "$ref": "#/$defs/designSurface"
+              },
+              "bbox": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "$ref": "#/$defs/unitFraction"
+                }
+              },
+              "align": {
+                "enum": [
+                  "LEFT",
+                  "CENTER",
+                  "RIGHT"
+                ]
+              },
+              "font_role": {
+                "enum": [
+                  "regular",
+                  "bold"
+                ]
+              },
+              "source_image": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_sha256": {
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{64}$"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0.98,
+                "maximum": 1
+              },
+              "conflict_check": {
+                "const": "pass"
+              }
+            }
+          }
+        },
         "fields": {
           "type": "array",
           "items": {
             "type": "object",
             "required": [
-              "role",
               "fill",
-              "parts"
+              "parts",
+              "role",
+              "z"
             ],
             "properties": {
               "role": {
@@ -231,12 +434,47 @@
               "coverage_pct": {
                 "type": "number"
               },
+              "surface": {
+                "$ref": "#/$defs/designSurface"
+              },
+              "evidence": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "source_image",
+                  "source_sha256",
+                  "confidence",
+                  "note"
+                ],
+                "properties": {
+                  "source_image": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{64}$"
+                  },
+                  "confidence": {
+                    "type": "number",
+                    "minimum": 0.98,
+                    "maximum": 1
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
               "parts": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "required": [
-                    "outline"
+                    "outline",
+                    "holes",
+                    "fill",
+                    "mark_holes"
                   ],
                   "properties": {
                     "area_pct": {
@@ -259,9 +497,43 @@
                           "type": "number"
                         }
                       }
+                    },
+                    "holes": {
+                      "type": "array",
+                      "description": "Enclosed background this part does NOT cover, one ring per hole, in the outline's own coordinates. Required and may be empty: a part is its outline MINUS its holes, so a spec that omits the key is not a part with no holes but a part whose holes are unknown, and filling them is how Adderall's brand came to cover 53.48% of a face it inks 5.90% of.",
+                      "items": {
+                        "type": "array",
+                        "minItems": 3,
+                        "items": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    },
+                    "fill": {
+                      "type": "string",
+                      "pattern": "^#[0-9A-Fa-f]{6}$",
+                      "description": "Contract 1.9. The colour THIS PART is painted, which is not always its field's: a field's fill is the median of the whole cluster segment() found, and a part is one region of that cluster. Required and often identical to the field's, because a part whose colour is absent is a part whose colour is unknown, not a part that agrees. Measured over the group's 75 printed parts, 33 sit at or beyond SAME_SURFACE_MAX from the colour they are painted, across 20 of the 28 cartons -- see 00_PROJECT_STATE/FIT_COLOUR.md."
+                    },
+                    "mark_holes": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "description": "Contract 1.10. Indices into `holes` that are approved MARKS rather than windows, so the pairing rule is checkable on a manifest at all: without it a cut mark hole and a window are both just rings, and 'a mark hole cut with nothing drawn into it' -- which shows board through our field in the shape of another company's logo -- would be indistinguishable from an ordinary window. Required and usually empty."
                     }
                   }
                 }
+              },
+              "z": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Paint order. A field with a LOWER z is drawn first, so a higher z covers it. Explicit rather than implied by list position, because the driver and the QA raster consume the same list through different mechanisms and only an explicit value makes them agree."
               }
             }
           }
@@ -316,6 +588,112 @@
               }
             }
           }
+        },
+        "marks": {
+          "type": "array",
+          "description": "Owner-approved marks, each retaining one key and pairing envelope. The base region is outline minus holes, painted with fill. In 1.11 optional parts overlay the base in array order, each with its own fill and holes, wholly inside the envelope. A hole-source mark pairs using its OUTER outline with the host field mark_hole; parts do not create additional marks or pairing keys. Semantic validation rejects non-simple rings, nonfinite UV coordinates, invalid holes and any part edge outside the envelope. Strict geometric checks and rejection of unknown mark properties apply to compound marks carrying parts; legacy marks retain their previous acceptance rules.",
+          "items": {
+            "type": "object",
+            "required": [
+              "role",
+              "key",
+              "source",
+              "fill",
+              "outline",
+              "holes",
+              "z"
+            ],
+            "properties": {
+              "role": {
+                "type": "string",
+                "description": "the field whose cluster the mark was found in"
+              },
+              "key": {
+                "type": "string",
+                "description": "the print_truth key -- `role#i` for a component, `role#i/hole#j` for a hole -- so any drawn mark can be put back against the row of MARKS_DECISION.md that permitted it"
+              },
+              "source": {
+                "enum": [
+                  "component",
+                  "hole"
+                ]
+              },
+              "fill": {
+                "type": "string",
+                "pattern": "^#[0-9A-Fa-f]{6}$"
+              },
+              "area_pct": {
+                "type": "number"
+              },
+              "outline": {
+                "type": "array",
+                "minItems": 3,
+                "items": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              },
+              "holes": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "minItems": 3,
+                  "items": {
+                    "type": "array",
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "items": {
+                      "type": "number"
+                    }
+                  }
+                },
+                "description": "Voids strictly inside the base outline; simple, disjoint rings, without nesting or boundary contact."
+              },
+              "z": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "always past the last field -- a mark is printed ON a surface"
+              },
+              "parts": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/$defs/markPart"
+                },
+                "description": "Contract 1.11 only. Additional coloured regions painted after the base, in array order. Each part lies wholly inside the outer pairing envelope. Hole winding is irrelevant; no malformed geometry is repaired."
+              }
+            },
+            "unevaluatedProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "required": [
+                    "parts"
+                  ]
+                },
+                "then": {
+                  "properties": {
+                    "outline": {
+                      "$ref": "#/$defs/markRing"
+                    },
+                    "holes": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/$defs/markRing"
+                      }
+                    }
+                  }
+                },
+                "else": {
+                  "additionalProperties": true
+                }
+              }
+            ]
+          }
         }
       }
     },
@@ -324,13 +702,169 @@
       "type": "string",
       "minLength": 1,
       "pattern": "^(?!.*\\.(?i:jpg|jpeg|png|webp|json)$).+$"
+    },
+    "physical_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "spec",
+        "artwork"
+      ],
+      "properties": {
+        "spec": {
+          "type": "object",
+          "description": "Validated using carton_baseline.schema.json by the canonical validate_manifest."
+        },
+        "artwork": {
+          "type": "object",
+          "required": [
+            "maps",
+            "atlas",
+            "elements",
+            "spec_sha256",
+            "dpi",
+            "generation_seconds"
+          ],
+          "properties": {
+            "spec_sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "maps": {
+              "type": "object",
+              "required": [
+                "base_color",
+                "roughness",
+                "normal",
+                "height",
+                "metallic"
+              ]
+            }
+          }
+        }
+      }
     }
   },
   "$defs": {
+    "unitFraction": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "designSurface": {
+      "enum": [
+        "front",
+        "top",
+        "left"
+      ]
+    },
+    "unitPoint": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/unitFraction"
+      }
+    },
     "hexColour": {
       "description": "sRGB colour as an uppercase-or-lowercase six-digit hex triplet with a leading hash.",
       "type": "string",
       "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "markRing": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "array",
+        "minItems": 2,
+        "maxItems": 2,
+        "items": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "markPart": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outline",
+        "holes",
+        "fill"
+      ],
+      "properties": {
+        "outline": {
+          "$ref": "#/$defs/markRing"
+        },
+        "holes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/markRing"
+          }
+        },
+        "fill": {
+          "type": "string",
+          "pattern": "^#[0-9A-Fa-f]{6}$"
+        }
+      }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "manifest_version": {
+            "const": "1.10"
+          }
+        },
+        "required": [
+          "manifest_version"
+        ]
+      },
+      "then": {
+        "properties": {
+          "design": {
+            "properties": {
+              "marks": {
+                "items": {
+                  "not": {
+                    "required": [
+                      "parts"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "manifest_version": {
+            "const": "1.13"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "physical_baseline"
+        ],
+        "not": {
+          "required": [
+            "design"
+          ]
+        }
+      },
+      "else": {
+        "not": {
+          "required": [
+            "physical_baseline"
+          ]
+        }
+      }
+    }
+  ]
 }

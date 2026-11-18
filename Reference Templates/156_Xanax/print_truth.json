@@ -1,0 +1,238 @@
+{
+  "schema": "print_truth/1",
+  "sku": "156-min",
+  "source_image": "Xanax_front_raw.jpg",
+  "front_face_px": [
+    [
+      171,
+      170
+    ],
+    [
+      424,
+      102
+    ],
+    [
+      424,
+      296
+    ],
+    [
+      169,
+      334
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    758
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.854,
+    "type": 0.819
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 7.727,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.0791,
+        0.9987
+      ],
+      "centroid_uv": [
+        0.0383,
+        0.506
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 4.328,
+      "bbox_uv": [
+        0.8618,
+        0.2309,
+        0.9682,
+        0.6517
+      ],
+      "centroid_uv": [
+        0.9139,
+        0.4383
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 0.52,
+      "bbox_uv": [
+        0.47,
+        0.5831,
+        0.5591,
+        0.6728
+      ],
+      "centroid_uv": [
+        0.5135,
+        0.6246
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 0.494,
+      "bbox_uv": [
+        0.1627,
+        0.5633,
+        0.23,
+        0.6913
+      ],
+      "centroid_uv": [
+        0.1961,
+        0.6259
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 0.475,
+      "bbox_uv": [
+        0.2818,
+        0.558,
+        0.3473,
+        0.686
+      ],
+      "centroid_uv": [
+        0.3155,
+        0.6238
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 0.455,
+      "bbox_uv": [
+        0.3573,
+        0.5567,
+        0.4209,
+        0.6807
+      ],
+      "centroid_uv": [
+        0.3896,
+        0.6181
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 0.414,
+      "bbox_uv": [
+        0.5709,
+        0.5805,
+        0.6245,
+        0.6979
+      ],
+      "centroid_uv": [
+        0.5993,
+        0.6372
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#ED68BF",
+      "area_pct": 0.106,
+      "bbox_uv": [
+        0.3082,
+        0.4354,
+        0.3818,
+        0.5013
+      ],
+      "centroid_uv": [
+        0.3457,
+        0.4736
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#4F4B48",
+      "area_pct": 2.622,
+      "bbox_uv": [
+        0.1591,
+        0.1939,
+        0.4364,
+        0.3641
+      ],
+      "centroid_uv": [
+        0.2976,
+        0.2873
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#4F4B48",
+      "area_pct": 2.007,
+      "bbox_uv": [
+        0.5736,
+        0.219,
+        0.8045,
+        0.3707
+      ],
+      "centroid_uv": [
+        0.6877,
+        0.3015
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#4F4B48",
+      "area_pct": 1.396,
+      "bbox_uv": [
+        0.4482,
+        0.2111,
+        0.5691,
+        0.3668
+      ],
+      "centroid_uv": [
+        0.5077,
+        0.2907
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

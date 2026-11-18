@@ -1,0 +1,1634 @@
+{
+  "schema": "print_truth/1",
+  "sku": "404-min",
+  "source_image": "Ritalin_front_raw.webp",
+  "front_face_px": [
+    [
+      148,
+      195
+    ],
+    [
+      888,
+      185
+    ],
+    [
+      888,
+      492
+    ],
+    [
+      155,
+      500
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    457
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 2.39,
+    "highlight": 0.577,
+    "type": 2.225
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#726058",
+      "area_pct": 0.631,
+      "bbox_uv": [
+        0.0082,
+        0.9497,
+        0.8018,
+        0.9978
+      ],
+      "centroid_uv": [
+        0.3164,
+        0.9889
+      ],
+      "class": "object",
+      "reason": "carton bottom edge in shadow"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#CCCEC4",
+      "area_pct": 39.092,
+      "bbox_uv": [
+        0.0673,
+        0.0,
+        0.5445,
+        0.9869
+      ],
+      "centroid_uv": [
+        0.32,
+        0.5103
+      ],
+      "class": "print"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#CCCEC4",
+      "area_pct": 0.422,
+      "bbox_uv": [
+        0.0,
+        0.5405,
+        0.5336,
+        0.9978
+      ],
+      "centroid_uv": [
+        0.1386,
+        0.9381
+      ],
+      "class": "print"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.337,
+      "bbox_uv": [
+        0.39,
+        0.105,
+        0.4336,
+        0.2144
+      ],
+      "centroid_uv": [
+        0.4114,
+        0.1571
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.319,
+      "bbox_uv": [
+        0.08,
+        0.0656,
+        0.1136,
+        0.2079
+      ],
+      "centroid_uv": [
+        0.0953,
+        0.1326
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.318,
+      "bbox_uv": [
+        0.3327,
+        0.0678,
+        0.3636,
+        0.2144
+      ],
+      "centroid_uv": [
+        0.3484,
+        0.1411
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#3",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.278,
+      "bbox_uv": [
+        0.4409,
+        0.1072,
+        0.4673,
+        0.2495
+      ],
+      "centroid_uv": [
+        0.4545,
+        0.1768
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#4",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.247,
+      "bbox_uv": [
+        0.1527,
+        0.2998,
+        0.1791,
+        0.4398
+      ],
+      "centroid_uv": [
+        0.1648,
+        0.3768
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#5",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.211,
+      "bbox_uv": [
+        0.2264,
+        0.1028,
+        0.2527,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.2398,
+        0.1539
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#6",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.21,
+      "bbox_uv": [
+        0.3173,
+        0.337,
+        0.3436,
+        0.442
+      ],
+      "centroid_uv": [
+        0.3298,
+        0.3878
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#7",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.209,
+      "bbox_uv": [
+        0.1618,
+        0.1007,
+        0.1882,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.1764,
+        0.1575
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#8",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.205,
+      "bbox_uv": [
+        0.2009,
+        0.3326,
+        0.2264,
+        0.442
+      ],
+      "centroid_uv": [
+        0.2131,
+        0.3868
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#9",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.204,
+      "bbox_uv": [
+        0.12,
+        0.3326,
+        0.1464,
+        0.4398
+      ],
+      "centroid_uv": [
+        0.1339,
+        0.388
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#10",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.203,
+      "bbox_uv": [
+        0.2855,
+        0.3348,
+        0.3109,
+        0.442
+      ],
+      "centroid_uv": [
+        0.2974,
+        0.3878
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#11",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.189,
+      "bbox_uv": [
+        0.0818,
+        0.2976,
+        0.1136,
+        0.4376
+      ],
+      "centroid_uv": [
+        0.098,
+        0.3533
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#12",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.164,
+      "bbox_uv": [
+        0.1355,
+        0.0656,
+        0.1555,
+        0.2079
+      ],
+      "centroid_uv": [
+        0.1451,
+        0.1369
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#13",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.157,
+      "bbox_uv": [
+        0.3091,
+        0.07,
+        0.3255,
+        0.2123
+      ],
+      "centroid_uv": [
+        0.3202,
+        0.1373
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#14",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.2327,
+        0.2998,
+        0.2527,
+        0.4398
+      ],
+      "centroid_uv": [
+        0.2422,
+        0.3708
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#15",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.153,
+      "bbox_uv": [
+        0.2591,
+        0.2998,
+        0.2782,
+        0.442
+      ],
+      "centroid_uv": [
+        0.2684,
+        0.371
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#16",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.145,
+      "bbox_uv": [
+        0.1555,
+        0.9519,
+        0.2418,
+        0.9891
+      ],
+      "centroid_uv": [
+        0.1904,
+        0.9726
+      ],
+      "class": "print"
+    },
+    {
+      "key": "type#17",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.142,
+      "bbox_uv": [
+        0.1955,
+        0.0656,
+        0.2045,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.2001,
+        0.1367
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#18",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.133,
+      "bbox_uv": [
+        0.1855,
+        0.2998,
+        0.1945,
+        0.4398
+      ],
+      "centroid_uv": [
+        0.1899,
+        0.3704
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#19",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.115,
+      "bbox_uv": [
+        0.5564,
+        0.0722,
+        0.5773,
+        0.2079
+      ],
+      "centroid_uv": [
+        0.5657,
+        0.1417
+      ],
+      "class": "mark",
+      "reason": "Novartis wordmark"
+    },
+    {
+      "key": "type#20",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.106,
+      "bbox_uv": [
+        0.7018,
+        0.1247,
+        0.7382,
+        0.2079
+      ],
+      "centroid_uv": [
+        0.7202,
+        0.1653
+      ],
+      "class": "mark",
+      "reason": "Novartis wordmark"
+    },
+    {
+      "key": "type#21",
+      "role": "type",
+      "fill": "#0B081D",
+      "area_pct": 0.101,
+      "bbox_uv": [
+        0.5409,
+        0.9912,
+        0.8509,
+        0.9978
+      ],
+      "centroid_uv": [
+        0.6819,
+        0.9944
+      ],
+      "class": "object",
+      "reason": "carton bottom edge in shadow"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "highlight#0/hole#0",
+      "of": "highlight#0",
+      "area_pct": 0.453,
+      "bbox_uv": [
+        0.3318,
+        0.0656,
+        0.3636,
+        0.2144
+      ],
+      "centroid_uv": [
+        0.3482,
+        0.1407
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#1",
+      "of": "highlight#0",
+      "area_pct": 0.416,
+      "bbox_uv": [
+        0.0791,
+        0.0635,
+        0.1145,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.0953,
+        0.1306
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#2",
+      "of": "highlight#0",
+      "area_pct": 0.4,
+      "bbox_uv": [
+        0.3891,
+        0.1028,
+        0.4345,
+        0.2144
+      ],
+      "centroid_uv": [
+        0.4116,
+        0.1572
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#3",
+      "of": "highlight#0",
+      "area_pct": 0.372,
+      "bbox_uv": [
+        0.44,
+        0.105,
+        0.4682,
+        0.2516
+      ],
+      "centroid_uv": [
+        0.4543,
+        0.1756
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#4",
+      "of": "highlight#0",
+      "area_pct": 0.338,
+      "bbox_uv": [
+        0.1518,
+        0.2976,
+        0.18,
+        0.4398
+      ],
+      "centroid_uv": [
+        0.1649,
+        0.3778
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#5",
+      "of": "highlight#0",
+      "area_pct": 0.268,
+      "bbox_uv": [
+        0.1618,
+        0.0985,
+        0.1891,
+        0.2123
+      ],
+      "centroid_uv": [
+        0.1763,
+        0.1587
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#6",
+      "of": "highlight#0",
+      "area_pct": 0.261,
+      "bbox_uv": [
+        0.1191,
+        0.3304,
+        0.1473,
+        0.442
+      ],
+      "centroid_uv": [
+        0.1338,
+        0.3891
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#7",
+      "of": "highlight#0",
+      "area_pct": 0.26,
+      "bbox_uv": [
+        0.2,
+        0.3326,
+        0.2273,
+        0.442
+      ],
+      "centroid_uv": [
+        0.2133,
+        0.3855
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#8",
+      "of": "highlight#0",
+      "area_pct": 0.258,
+      "bbox_uv": [
+        0.2845,
+        0.3326,
+        0.3118,
+        0.4442
+      ],
+      "centroid_uv": [
+        0.2976,
+        0.3869
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#9",
+      "of": "highlight#0",
+      "area_pct": 0.257,
+      "bbox_uv": [
+        0.2255,
+        0.1007,
+        0.2536,
+        0.2123
+      ],
+      "centroid_uv": [
+        0.2398,
+        0.1548
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#10",
+      "of": "highlight#0",
+      "area_pct": 0.252,
+      "bbox_uv": [
+        0.3164,
+        0.3348,
+        0.3436,
+        0.4442
+      ],
+      "centroid_uv": [
+        0.3298,
+        0.3879
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#11",
+      "of": "highlight#0",
+      "area_pct": 0.229,
+      "bbox_uv": [
+        0.0809,
+        0.2954,
+        0.1145,
+        0.4398
+      ],
+      "centroid_uv": [
+        0.098,
+        0.353
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#12",
+      "of": "highlight#0",
+      "area_pct": 0.197,
+      "bbox_uv": [
+        0.1345,
+        0.0635,
+        0.1564,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.1453,
+        0.1367
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#13",
+      "of": "highlight#0",
+      "area_pct": 0.19,
+      "bbox_uv": [
+        0.3082,
+        0.0678,
+        0.3264,
+        0.2144
+      ],
+      "centroid_uv": [
+        0.3202,
+        0.1374
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#14",
+      "of": "highlight#0",
+      "area_pct": 0.187,
+      "bbox_uv": [
+        0.2582,
+        0.2998,
+        0.2791,
+        0.442
+      ],
+      "centroid_uv": [
+        0.2685,
+        0.3711
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#15",
+      "of": "highlight#0",
+      "area_pct": 0.187,
+      "bbox_uv": [
+        0.2318,
+        0.2998,
+        0.2536,
+        0.442
+      ],
+      "centroid_uv": [
+        0.2423,
+        0.3708
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#16",
+      "of": "highlight#0",
+      "area_pct": 0.17,
+      "bbox_uv": [
+        0.1945,
+        0.0635,
+        0.2055,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.2001,
+        0.1368
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#17",
+      "of": "highlight#0",
+      "area_pct": 0.162,
+      "bbox_uv": [
+        0.1845,
+        0.2976,
+        0.1955,
+        0.442
+      ],
+      "centroid_uv": [
+        0.1899,
+        0.3699
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#18",
+      "of": "highlight#0",
+      "area_pct": 0.151,
+      "bbox_uv": [
+        0.2609,
+        0.0613,
+        0.2882,
+        0.1269
+      ],
+      "centroid_uv": [
+        0.2744,
+        0.0945
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#19",
+      "of": "highlight#0",
+      "area_pct": 0.12,
+      "bbox_uv": [
+        0.1191,
+        0.0985,
+        0.13,
+        0.2101
+      ],
+      "centroid_uv": [
+        0.1244,
+        0.1544
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#20",
+      "of": "highlight#0",
+      "area_pct": 0.116,
+      "bbox_uv": [
+        0.21,
+        0.1007,
+        0.22,
+        0.2123
+      ],
+      "centroid_uv": [
+        0.2153,
+        0.155
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#21",
+      "of": "highlight#0",
+      "area_pct": 0.075,
+      "bbox_uv": [
+        0.1073,
+        0.8818,
+        0.1227,
+        0.9344
+      ],
+      "centroid_uv": [
+        0.1151,
+        0.9082
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#22",
+      "of": "highlight#0",
+      "area_pct": 0.074,
+      "bbox_uv": [
+        0.0864,
+        0.6039,
+        0.1091,
+        0.6586
+      ],
+      "centroid_uv": [
+        0.0978,
+        0.6318
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#23",
+      "of": "highlight#0",
+      "area_pct": 0.073,
+      "bbox_uv": [
+        0.0836,
+        0.5208,
+        0.1136,
+        0.5777
+      ],
+      "centroid_uv": [
+        0.099,
+        0.5487
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#24",
+      "of": "highlight#0",
+      "area_pct": 0.067,
+      "bbox_uv": [
+        0.4773,
+        0.6105,
+        0.4927,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.486,
+        0.6429
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#25",
+      "of": "highlight#0",
+      "area_pct": 0.066,
+      "bbox_uv": [
+        0.3482,
+        0.6105,
+        0.3636,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.357,
+        0.6415
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#26",
+      "of": "highlight#0",
+      "area_pct": 0.066,
+      "bbox_uv": [
+        0.2664,
+        0.6083,
+        0.2818,
+        0.663
+      ],
+      "centroid_uv": [
+        0.2749,
+        0.6408
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#27",
+      "of": "highlight#0",
+      "area_pct": 0.066,
+      "bbox_uv": [
+        0.1845,
+        0.6214,
+        0.2,
+        0.6761
+      ],
+      "centroid_uv": [
+        0.1914,
+        0.6434
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#28",
+      "of": "highlight#0",
+      "area_pct": 0.063,
+      "bbox_uv": [
+        0.1745,
+        0.8818,
+        0.1891,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.181,
+        0.9134
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#29",
+      "of": "highlight#0",
+      "area_pct": 0.058,
+      "bbox_uv": [
+        0.1782,
+        0.5383,
+        0.1936,
+        0.5799
+      ],
+      "centroid_uv": [
+        0.1858,
+        0.559
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#30",
+      "of": "highlight#0",
+      "area_pct": 0.058,
+      "bbox_uv": [
+        0.3782,
+        0.6236,
+        0.3945,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.3863,
+        0.6439
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#31",
+      "of": "highlight#0",
+      "area_pct": 0.057,
+      "bbox_uv": [
+        0.44,
+        0.6236,
+        0.4564,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.4479,
+        0.6448
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#32",
+      "of": "highlight#0",
+      "area_pct": 0.056,
+      "bbox_uv": [
+        0.2836,
+        0.884,
+        0.3027,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2935,
+        0.9101
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#33",
+      "of": "highlight#0",
+      "area_pct": 0.049,
+      "bbox_uv": [
+        0.1555,
+        0.895,
+        0.1718,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.1634,
+        0.9175
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#34",
+      "of": "highlight#0",
+      "area_pct": 0.047,
+      "bbox_uv": [
+        0.2855,
+        0.6214,
+        0.3009,
+        0.663
+      ],
+      "centroid_uv": [
+        0.293,
+        0.6451
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#35",
+      "of": "highlight#0",
+      "area_pct": 0.047,
+      "bbox_uv": [
+        0.1136,
+        0.6193,
+        0.1291,
+        0.6608
+      ],
+      "centroid_uv": [
+        0.1209,
+        0.6384
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#36",
+      "of": "highlight#0",
+      "area_pct": 0.046,
+      "bbox_uv": [
+        0.2,
+        0.895,
+        0.2155,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2074,
+        0.9148
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#37",
+      "of": "highlight#0",
+      "area_pct": 0.046,
+      "bbox_uv": [
+        0.2218,
+        0.6214,
+        0.2373,
+        0.663
+      ],
+      "centroid_uv": [
+        0.2292,
+        0.6405
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#38",
+      "of": "highlight#0",
+      "area_pct": 0.046,
+      "bbox_uv": [
+        0.0891,
+        0.8818,
+        0.1045,
+        0.9344
+      ],
+      "centroid_uv": [
+        0.0966,
+        0.9079
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#39",
+      "of": "highlight#0",
+      "area_pct": 0.045,
+      "bbox_uv": [
+        0.2364,
+        0.8972,
+        0.2518,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2442,
+        0.9154
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#40",
+      "of": "highlight#0",
+      "area_pct": 0.04,
+      "bbox_uv": [
+        0.3073,
+        0.8862,
+        0.3218,
+        0.9387
+      ],
+      "centroid_uv": [
+        0.3146,
+        0.913
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#41",
+      "of": "highlight#0",
+      "area_pct": 0.039,
+      "bbox_uv": [
+        0.4145,
+        0.6105,
+        0.4291,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.4207,
+        0.6388
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#42",
+      "of": "highlight#0",
+      "area_pct": 0.038,
+      "bbox_uv": [
+        0.1418,
+        0.6061,
+        0.1564,
+        0.6608
+      ],
+      "centroid_uv": [
+        0.1485,
+        0.6345
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#43",
+      "of": "highlight#0",
+      "area_pct": 0.037,
+      "bbox_uv": [
+        0.2036,
+        0.6061,
+        0.2173,
+        0.6608
+      ],
+      "centroid_uv": [
+        0.2092,
+        0.6349
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#44",
+      "of": "highlight#0",
+      "area_pct": 0.037,
+      "bbox_uv": [
+        0.3136,
+        0.6083,
+        0.3282,
+        0.663
+      ],
+      "centroid_uv": [
+        0.3202,
+        0.6368
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#45",
+      "of": "highlight#0",
+      "area_pct": 0.036,
+      "bbox_uv": [
+        0.1355,
+        0.523,
+        0.15,
+        0.5777
+      ],
+      "centroid_uv": [
+        0.1408,
+        0.5542
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#46",
+      "of": "highlight#0",
+      "area_pct": 0.034,
+      "bbox_uv": [
+        0.1518,
+        0.5383,
+        0.1655,
+        0.5799
+      ],
+      "centroid_uv": [
+        0.1586,
+        0.559
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#47",
+      "of": "highlight#0",
+      "area_pct": 0.034,
+      "bbox_uv": [
+        0.1591,
+        0.6214,
+        0.1736,
+        0.6761
+      ],
+      "centroid_uv": [
+        0.1664,
+        0.6459
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#48",
+      "of": "highlight#0",
+      "area_pct": 0.033,
+      "bbox_uv": [
+        0.3309,
+        0.6236,
+        0.3464,
+        0.6783
+      ],
+      "centroid_uv": [
+        0.3382,
+        0.6483
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#49",
+      "of": "highlight#0",
+      "area_pct": 0.033,
+      "bbox_uv": [
+        0.2555,
+        0.8972,
+        0.27,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2628,
+        0.9152
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#50",
+      "of": "highlight#0",
+      "area_pct": 0.032,
+      "bbox_uv": [
+        0.1336,
+        0.8796,
+        0.1527,
+        0.9344
+      ],
+      "centroid_uv": [
+        0.1435,
+        0.8991
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#51",
+      "of": "highlight#0",
+      "area_pct": 0.032,
+      "bbox_uv": [
+        0.2409,
+        0.6214,
+        0.2555,
+        0.6608
+      ],
+      "centroid_uv": [
+        0.2476,
+        0.6393
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#52",
+      "of": "highlight#0",
+      "area_pct": 0.03,
+      "bbox_uv": [
+        0.1191,
+        0.0635,
+        0.1291,
+        0.0897
+      ],
+      "centroid_uv": [
+        0.124,
+        0.0767
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#53",
+      "of": "highlight#0",
+      "area_pct": 0.03,
+      "bbox_uv": [
+        0.21,
+        0.0656,
+        0.22,
+        0.0919
+      ],
+      "centroid_uv": [
+        0.215,
+        0.0786
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#54",
+      "of": "highlight#0",
+      "area_pct": 0.029,
+      "bbox_uv": [
+        0.3973,
+        0.6236,
+        0.4109,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.4034,
+        0.6443
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#55",
+      "of": "highlight#0",
+      "area_pct": 0.024,
+      "bbox_uv": [
+        0.1955,
+        0.523,
+        0.2036,
+        0.5799
+      ],
+      "centroid_uv": [
+        0.1998,
+        0.5493
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#56",
+      "of": "highlight#0",
+      "area_pct": 0.024,
+      "bbox_uv": [
+        0.2055,
+        0.523,
+        0.2127,
+        0.5799
+      ],
+      "centroid_uv": [
+        0.2091,
+        0.5488
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#57",
+      "of": "highlight#0",
+      "area_pct": 0.023,
+      "bbox_uv": [
+        0.1309,
+        0.6105,
+        0.1391,
+        0.6608
+      ],
+      "centroid_uv": [
+        0.1352,
+        0.6351
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#58",
+      "of": "highlight#0",
+      "area_pct": 0.023,
+      "bbox_uv": [
+        0.3027,
+        0.6127,
+        0.3109,
+        0.663
+      ],
+      "centroid_uv": [
+        0.307,
+        0.6374
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#59",
+      "of": "highlight#0",
+      "area_pct": 0.023,
+      "bbox_uv": [
+        0.2173,
+        0.8862,
+        0.2255,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2214,
+        0.911
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#60",
+      "of": "highlight#0",
+      "area_pct": 0.023,
+      "bbox_uv": [
+        0.2264,
+        0.8862,
+        0.2345,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2307,
+        0.912
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#61",
+      "of": "highlight#0",
+      "area_pct": 0.023,
+      "bbox_uv": [
+        0.1673,
+        0.5295,
+        0.1755,
+        0.5799
+      ],
+      "centroid_uv": [
+        0.1717,
+        0.5532
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#62",
+      "of": "highlight#0",
+      "area_pct": 0.02,
+      "bbox_uv": [
+        0.4336,
+        0.6105,
+        0.4364,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.435,
+        0.6373
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#63",
+      "of": "highlight#0",
+      "area_pct": 0.019,
+      "bbox_uv": [
+        0.1773,
+        0.6061,
+        0.1809,
+        0.6608
+      ],
+      "centroid_uv": [
+        0.1788,
+        0.6327
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#64",
+      "of": "highlight#0",
+      "area_pct": 0.019,
+      "bbox_uv": [
+        0.3682,
+        0.6236,
+        0.3764,
+        0.663
+      ],
+      "centroid_uv": [
+        0.3706,
+        0.6398
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#65",
+      "of": "highlight#0",
+      "area_pct": 0.019,
+      "bbox_uv": [
+        0.1927,
+        0.8818,
+        0.1964,
+        0.9344
+      ],
+      "centroid_uv": [
+        0.1946,
+        0.9088
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#66",
+      "of": "highlight#0",
+      "area_pct": 0.019,
+      "bbox_uv": [
+        0.46,
+        0.6258,
+        0.4682,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.4623,
+        0.6419
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#67",
+      "of": "highlight#0",
+      "area_pct": 0.017,
+      "bbox_uv": [
+        0.1245,
+        0.5383,
+        0.1327,
+        0.5777
+      ],
+      "centroid_uv": [
+        0.1275,
+        0.5543
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#68",
+      "of": "highlight#0",
+      "area_pct": 0.015,
+      "bbox_uv": [
+        0.2727,
+        0.884,
+        0.2809,
+        0.9365
+      ],
+      "centroid_uv": [
+        0.2768,
+        0.9106
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#69",
+      "of": "highlight#0",
+      "area_pct": 0.015,
+      "bbox_uv": [
+        0.1173,
+        0.5383,
+        0.12,
+        0.5777
+      ],
+      "centroid_uv": [
+        0.1186,
+        0.558
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#70",
+      "of": "highlight#0",
+      "area_pct": 0.015,
+      "bbox_uv": [
+        0.4709,
+        0.6258,
+        0.4736,
+        0.6652
+      ],
+      "centroid_uv": [
+        0.4723,
+        0.6452
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "highlight#0/hole#71",
+      "of": "highlight#0",
+      "area_pct": 0.014,
+      "bbox_uv": [
+        0.26,
+        0.6236,
+        0.2627,
+        0.663
+      ],
+      "centroid_uv": [
+        0.2613,
+        0.6428
+      ],
+      "class": "lettering"
+    }
+  ]
+}

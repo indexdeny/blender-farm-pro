@@ -1,0 +1,222 @@
+{
+  "schema": "print_truth/1",
+  "sku": "62-min",
+  "source_image": "Cialis Super Active_front_raw.png",
+  "front_face_px": [
+    [
+      65,
+      58
+    ],
+    [
+      478,
+      40
+    ],
+    [
+      478,
+      288
+    ],
+    [
+      65,
+      305
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    659
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.647,
+    "type": 0.895
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#E9B44B",
+      "area_pct": 19.495,
+      "bbox_uv": [
+        0.0,
+        0.0622,
+        0.43,
+        0.9985
+      ],
+      "centroid_uv": [
+        0.1427,
+        0.5952
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#E9B44B",
+      "area_pct": 3.91,
+      "bbox_uv": [
+        0.6773,
+        0.6859,
+        0.9991,
+        0.9985
+      ],
+      "centroid_uv": [
+        0.9058,
+        0.9027
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#E9B44B",
+      "area_pct": 1.36,
+      "bbox_uv": [
+        0.6227,
+        0.3733,
+        0.7445,
+        0.4856
+      ],
+      "centroid_uv": [
+        0.684,
+        0.4296
+      ],
+      "class": "print"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 1.425,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.9991,
+        0.0592
+      ],
+      "centroid_uv": [
+        0.5872,
+        0.0087
+      ],
+      "class": "object",
+      "reason": "box lid and top edge above the printed face"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 0.526,
+      "bbox_uv": [
+        0.2582,
+        0.3126,
+        0.3336,
+        0.4932
+      ],
+      "centroid_uv": [
+        0.2887,
+        0.4058
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 0.506,
+      "bbox_uv": [
+        0.3873,
+        0.3596,
+        0.4518,
+        0.4901
+      ],
+      "centroid_uv": [
+        0.421,
+        0.4295
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#3",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 0.37,
+      "bbox_uv": [
+        0.5455,
+        0.3566,
+        0.5945,
+        0.4871
+      ],
+      "centroid_uv": [
+        0.5696,
+        0.4231
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#4",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 0.304,
+      "bbox_uv": [
+        0.47,
+        0.305,
+        0.4927,
+        0.4886
+      ],
+      "centroid_uv": [
+        0.4782,
+        0.3997
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#5",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 0.23,
+      "bbox_uv": [
+        0.5027,
+        0.3596,
+        0.5282,
+        0.4871
+      ],
+      "centroid_uv": [
+        0.5193,
+        0.4191
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#6",
+      "role": "type",
+      "fill": "#3D3333",
+      "area_pct": 0.229,
+      "bbox_uv": [
+        0.3455,
+        0.3627,
+        0.37,
+        0.4901
+      ],
+      "centroid_uv": [
+        0.3611,
+        0.4209
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}

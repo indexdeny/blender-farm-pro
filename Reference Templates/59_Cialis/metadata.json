@@ -1,5 +1,5 @@
 {
-  "sku_id": "59-min",
+  "sku_id": "59-min.jpg",
   "artifact_type": "reverse_engineering_passport",
   "schema_version": "2.0",
   "product_name": "Cialis",
@@ -17,7 +17,9 @@
     "unit_count_display": "30 Pills"
   },
   "reference_images": [
-    "raw_cialis_front.png"
+    "raw_cialis_front.png",
+    "back.webp",
+    "blister.webp"
   ],
   "quality_gate": {
     "reverse_engineering_passport_present": true,

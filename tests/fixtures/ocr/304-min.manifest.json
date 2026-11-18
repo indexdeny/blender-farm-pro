@@ -1,0 +1,152 @@
+{
+  "manifest_version": "1.10",
+  "sku_id": "304-min.jpg",
+  "product_code": "304-min",
+  "template_id": "T1",
+  "is_bottle_override": false,
+  "packaging_geometry": "BLISTER",
+  "carton": {
+    "width_mm": 110.0,
+    "height_mm": 72.10499999999999,
+    "depth_mm": 18.0,
+    "passport_dimensions": {
+      "width_mm": 110.0,
+      "height_mm": 50.0,
+      "depth_mm": 18.0,
+      "source": "passport_secondary"
+    },
+    "source": "design_spec",
+    "features": [
+      "Braille",
+      "DataMatrix_Zone",
+      "Tamper_Evident_Seal"
+    ],
+    "material": "GZ-Cardboard (Pharmaceutical Grade)"
+  },
+  "design": {
+    "spec_version": "0.1",
+    "face_aspect": 0.6555,
+    "substrate": "#E0E3EB",
+    "fields": [
+      {
+        "role": "highlight",
+        "z": 0,
+        "fill": "#8C848F",
+        "coverage_pct": 3.4,
+        "parts": [
+          {
+            "kind": "field",
+            "area_pct": 0.1,
+            "smoothness": 0.1,
+            "fill": "#7C968F",
+            "outline": [
+              [
+                0.9445,
+                0.1831
+              ],
+              [
+                0.9791,
+                0.1886
+              ],
+              [
+                0.9827,
+                0.1928
+              ],
+              [
+                0.9827,
+                0.2552
+              ],
+              [
+                0.9782,
+                0.2607
+              ],
+              [
+                0.9436,
+                0.258
+              ],
+              [
+                0.9391,
+                0.2552
+              ],
+              [
+                0.9391,
+                0.1886
+              ],
+              [
+                0.94,
+                0.1859
+              ],
+              [
+                0.9436,
+                0.1845
+              ]
+            ],
+            "holes": [
+              [
+                [
+                  0.9445,
+                  0.1914
+                ],
+                [
+                  0.97,
+                  0.1942
+                ],
+                [
+                  0.9782,
+                  0.1969
+                ],
+                [
+                  0.9791,
+                  0.1997
+                ],
+                [
+                  0.9773,
+                  0.2386
+                ],
+                [
+                  0.9782,
+                  0.2483
+                ],
+                [
+                  0.9745,
+                  0.2524
+                ],
+                [
+                  0.9709,
+                  0.2497
+                ],
+                [
+                  0.9455,
+                  0.251
+                ],
+                [
+                  0.9427,
+                  0.2469
+                ],
+                [
+                  0.9445,
+                  0.1928
+                ]
+              ]
+            ],
+            "mark_holes": []
+          }
+        ]
+      }
+    ],
+    "marks": [],
+    "type_rows": {},
+    "source_image": "Sonata_front_raw.jpg"
+  },
+  "palette": {
+    "primary": "#003366",
+    "accent": "#0D5FB8",
+    "background": "#FFFFFF"
+  },
+  "label_content": {
+    "brand_name_display": "Sonata",
+    "active_ingredient_display": "Zaleplon",
+    "dosage_display": "10mg",
+    "unit_count_display": "30 Pills"
+  }
+}

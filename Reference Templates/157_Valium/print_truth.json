@@ -1,0 +1,473 @@
+{
+  "schema": "print_truth/1",
+  "sku": "157-min",
+  "source_image": "Valium_front_raw.png",
+  "front_face_px": [
+    [
+      114,
+      192
+    ],
+    [
+      795,
+      100
+    ],
+    [
+      795,
+      615
+    ],
+    [
+      114,
+      645
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    778
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 0.495,
+    "type": 0.992
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#DE56A4",
+      "area_pct": 14.831,
+      "bbox_uv": [
+        0.0,
+        0.3586,
+        0.9991,
+        0.5463
+      ],
+      "centroid_uv": [
+        0.5062,
+        0.4602
+      ],
+      "class": "print"
+    },
+    {
+      "key": "type#0",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.833,
+      "bbox_uv": [
+        0.0,
+        0.0,
+        0.03,
+        0.2738
+      ],
+      "centroid_uv": [
+        0.0148,
+        0.135
+      ],
+      "class": "print"
+    },
+    {
+      "key": "type#1",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.453,
+      "bbox_uv": [
+        0.35,
+        0.0527,
+        0.4364,
+        0.144
+      ],
+      "centroid_uv": [
+        0.3923,
+        0.0946
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#2",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.402,
+      "bbox_uv": [
+        0.0636,
+        0.0,
+        0.1455,
+        0.117
+      ],
+      "centroid_uv": [
+        0.1042,
+        0.0556
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#3",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.333,
+      "bbox_uv": [
+        0.1418,
+        0.4216,
+        0.2164,
+        0.4936
+      ],
+      "centroid_uv": [
+        0.1783,
+        0.4555
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#4",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.32,
+      "bbox_uv": [
+        0.1436,
+        0.0334,
+        0.2009,
+        0.1247
+      ],
+      "centroid_uv": [
+        0.1759,
+        0.0821
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#5",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.311,
+      "bbox_uv": [
+        0.2264,
+        0.4254,
+        0.2745,
+        0.527
+      ],
+      "centroid_uv": [
+        0.2525,
+        0.4733
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#6",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.303,
+      "bbox_uv": [
+        0.28,
+        0.0463,
+        0.3345,
+        0.135
+      ],
+      "centroid_uv": [
+        0.3074,
+        0.0939
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#7",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.249,
+      "bbox_uv": [
+        0.0664,
+        0.3959,
+        0.1136,
+        0.491
+      ],
+      "centroid_uv": [
+        0.0893,
+        0.4428
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#8",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.231,
+      "bbox_uv": [
+        0.7818,
+        0.7841,
+        0.9545,
+        0.9332
+      ],
+      "centroid_uv": [
+        0.8653,
+        0.8594
+      ],
+      "class": "mark",
+      "reason": "Roche hexagon logo"
+    },
+    {
+      "key": "type#9",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.208,
+      "bbox_uv": [
+        0.2164,
+        0.0013,
+        0.2327,
+        0.1272
+      ],
+      "centroid_uv": [
+        0.2248,
+        0.0648
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#10",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.194,
+      "bbox_uv": [
+        0.07,
+        0.1838,
+        0.1227,
+        0.2776
+      ],
+      "centroid_uv": [
+        0.0926,
+        0.2309
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#11",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.162,
+      "bbox_uv": [
+        0.3936,
+        0.2301,
+        0.4536,
+        0.2995
+      ],
+      "centroid_uv": [
+        0.423,
+        0.26
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#12",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.157,
+      "bbox_uv": [
+        0.5155,
+        0.2378,
+        0.5745,
+        0.3059
+      ],
+      "centroid_uv": [
+        0.5451,
+        0.2676
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#13",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.154,
+      "bbox_uv": [
+        0.2955,
+        0.2237,
+        0.3355,
+        0.3201
+      ],
+      "centroid_uv": [
+        0.3114,
+        0.2641
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#14",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.143,
+      "bbox_uv": [
+        0.0564,
+        0.8869,
+        0.1164,
+        0.9704
+      ],
+      "centroid_uv": [
+        0.0865,
+        0.9282
+      ],
+      "class": "print"
+    },
+    {
+      "key": "type#15",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.141,
+      "bbox_uv": [
+        0.2491,
+        0.0437,
+        0.2645,
+        0.1298
+      ],
+      "centroid_uv": [
+        0.2568,
+        0.0863
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#16",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.122,
+      "bbox_uv": [
+        0.1536,
+        0.2134,
+        0.1918,
+        0.2841
+      ],
+      "centroid_uv": [
+        0.1751,
+        0.2521
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#17",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.116,
+      "bbox_uv": [
+        0.2455,
+        0.2198,
+        0.2855,
+        0.2905
+      ],
+      "centroid_uv": [
+        0.2634,
+        0.2532
+      ],
+      "class": "type"
+    },
+    {
+      "key": "type#18",
+      "role": "type",
+      "fill": "#1F0A24",
+      "area_pct": 0.115,
+      "bbox_uv": [
+        0.3436,
+        0.2262,
+        0.3791,
+        0.2956
+      ],
+      "centroid_uv": [
+        0.3642,
+        0.2639
+      ],
+      "class": "type"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": [
+    {
+      "key": "brand#0/hole#0",
+      "of": "brand#0",
+      "area_pct": 0.385,
+      "bbox_uv": [
+        0.2264,
+        0.4254,
+        0.2745,
+        0.527
+      ],
+      "centroid_uv": [
+        0.2522,
+        0.4708
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#1",
+      "of": "brand#0",
+      "area_pct": 0.333,
+      "bbox_uv": [
+        0.1418,
+        0.4216,
+        0.2164,
+        0.4936
+      ],
+      "centroid_uv": [
+        0.1783,
+        0.4555
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "brand#0/hole#2",
+      "of": "brand#0",
+      "area_pct": 0.249,
+      "bbox_uv": [
+        0.0664,
+        0.3959,
+        0.1136,
+        0.491
+      ],
+      "centroid_uv": [
+        0.0893,
+        0.4428
+      ],
+      "class": "lettering"
+    },
+    {
+      "key": "type#14/hole#0",
+      "of": "type#14",
+      "area_pct": 0.131,
+      "bbox_uv": [
+        0.0618,
+        0.8946,
+        0.1109,
+        0.928
+      ],
+      "centroid_uv": [
+        0.0867,
+        0.913
+      ],
+      "class": "window"
+    },
+    {
+      "key": "type#14/hole#1",
+      "of": "type#14",
+      "area_pct": 0.13,
+      "bbox_uv": [
+        0.0618,
+        0.9293,
+        0.1109,
+        0.9627
+      ],
+      "centroid_uv": [
+        0.0863,
+        0.9442
+      ],
+      "class": "window"
+    }
+  ]
+}

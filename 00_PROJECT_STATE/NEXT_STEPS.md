@@ -50,6 +50,38 @@ tuning anything it might move. Housekeeping is independent throughout.
    `T_VERT_VIAL` reshapes to 172x170 and meters as landscape although it photographs
    portrait. The driver cannot import `src.silhouette` to ask.
 
+## Corners, and what they carried
+
+12. **Six more cartons are suspected of the same corner error `74_Viagra` had.**
+   Screened by the rectified face's aspect against the aspect our own carton is
+   built to: seven of 28 sit at 2.20-3.70 and the rest at 1.60 and below, with
+   nothing between. `74-min` is fixed; `151-min` 3.70, `135-min` 3.22, `64-min`
+   3.09, `362-min` 2.77, `357-min` 2.68 and `60-min` 2.20 are not. Each costs a
+   third pass of hand classification, because a label is only valid for the
+   corners it was made against. Two of them -- `64-min` and `59-min`'s neighbour
+   `74-min` -- carry figures other records cite as live.
+
+13. **`type_rows` has no corner guard, and `fit()` carries it forward.**
+   `print_truth.json` records its corners and `verify()` refuses when they move;
+   `type_rows` records nothing. On `74_Viagra` that put all four measured rows
+   where the old crop had them, three of them printing in ink their own
+   background hides. Re-measuring fixed it, but nothing would have said so.
+   Give `type_rows` the same corner record `print_truth.json` has.
+
+14. **`label_print --init` merges old classes onto new components** while
+   rewriting the corners it validates against, so a corner change silently
+   re-attaches every label to a different region. Refuse the merge when the
+   corners differ, or drop the classes and say so.
+
+15. **Xanax.** `340-min` sits at the opposite end of the corner screen (0.698)
+   and prints 64.40% of its face against 7.86% classified -- the group's worst
+   labelling gap, 8.2x. A different defect from `74-min`'s; not diagnosed.
+
+16. **A fourth printed colour does not fit the segmentation.** `74_Viagra`
+   prints `#ADC5DE` between its band and its substrate, u 0.233-0.269, and the
+   k-means at k=4 has no cluster left for it. Raising k moves every published
+   figure for all 28 cartons.
+
 ## Throughput, when it starts to hurt
 
 6. **Keep one Blender process alive for a batch.** About 20 s of each render is

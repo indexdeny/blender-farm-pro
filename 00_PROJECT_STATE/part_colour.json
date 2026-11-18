@@ -1,0 +1,2108 @@
+{
+  "schema": "part_colour/1",
+  "rim_px": 2.0,
+  "bench": [
+    {
+      "case": "field/lighter-far",
+      "mask_px": 62496,
+      "mask_pct": 39.06,
+      "truth": "#2E3336",
+      "neighbour": "#E05405",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2E3336",
+          "err": 0.002
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "field/darker-far",
+      "mask_px": 62496,
+      "mask_pct": 39.06,
+      "truth": "#2E3336",
+      "neighbour": "#052E26",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2E3336",
+          "err": 0.0015
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "field/lighter-near",
+      "mask_px": 62500,
+      "mask_pct": 39.062,
+      "truth": "#2E3336",
+      "neighbour": "#42474A",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2E3336",
+          "err": 0.0024
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "field/darker-near",
+      "mask_px": 62496,
+      "mask_pct": 39.06,
+      "truth": "#2E3336",
+      "neighbour": "#1C2124",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2E3336",
+          "err": 0.0014
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "strip/lighter-far",
+      "mask_px": 1916,
+      "mask_pct": 1.198,
+      "truth": "#2E3336",
+      "neighbour": "#E05405",
+      "by": {
+        "median_full": {
+          "hex": "#393533",
+          "err": 0.0453
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2F3336",
+          "err": 0.0047
+        },
+        "modal_peak": {
+          "hex": "#343434",
+          "err": 0.0247
+        },
+        "unmixed": {
+          "hex": "#393533",
+          "err": 0.0453
+        }
+      }
+    },
+    {
+      "case": "strip/darker-far",
+      "mask_px": 1916,
+      "mask_pct": 1.198,
+      "truth": "#2E3336",
+      "neighbour": "#052E26",
+      "by": {
+        "median_full": {
+          "hex": "#2C3335",
+          "err": 0.0078
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#293334",
+          "err": 0.0192
+        },
+        "unmixed": {
+          "hex": "#2C3335",
+          "err": 0.0078
+        }
+      }
+    },
+    {
+      "case": "strip/lighter-near",
+      "mask_px": 1920,
+      "mask_pct": 1.2,
+      "truth": "#2E3336",
+      "neighbour": "#42474A",
+      "by": {
+        "median_full": {
+          "hex": "#2F3437",
+          "err": 0.0081
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#303538",
+          "err": 0.0174
+        },
+        "unmixed": {
+          "hex": "#2F3437",
+          "err": 0.0081
+        }
+      }
+    },
+    {
+      "case": "strip/darker-near",
+      "mask_px": 1916,
+      "mask_pct": 1.198,
+      "truth": "#2E3336",
+      "neighbour": "#1C2124",
+      "by": {
+        "median_full": {
+          "hex": "#2C3134",
+          "err": 0.0124
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2B3033",
+          "err": 0.0171
+        },
+        "unmixed": {
+          "hex": "#2C3134",
+          "err": 0.0124
+        }
+      }
+    },
+    {
+      "case": "blob/lighter-far",
+      "mask_px": 249,
+      "mask_pct": 0.156,
+      "truth": "#2E3336",
+      "neighbour": "#E05405",
+      "by": {
+        "median_full": {
+          "hex": "#2F3336",
+          "err": 0.0047
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#303335",
+          "err": 0.0089
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "blob/darker-far",
+      "mask_px": 249,
+      "mask_pct": 0.156,
+      "truth": "#2E3336",
+      "neighbour": "#052E26",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2B3335",
+          "err": 0.0107
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "blob/lighter-near",
+      "mask_px": 249,
+      "mask_pct": 0.156,
+      "truth": "#2E3336",
+      "neighbour": "#42474A",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2F3437",
+          "err": 0.0107
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    },
+    {
+      "case": "blob/darker-near",
+      "mask_px": 249,
+      "mask_pct": 0.156,
+      "truth": "#2E3336",
+      "neighbour": "#1C2124",
+      "by": {
+        "median_full": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        },
+        "modal_peak": {
+          "hex": "#2C3134",
+          "err": 0.01
+        },
+        "unmixed": {
+          "hex": "#2E3336",
+          "err": 0.0018
+        }
+      }
+    }
+  ],
+  "group": [
+    {
+      "folder": "59_Cialis",
+      "key": "brand#0",
+      "area_pct": 18.584,
+      "cluster": "#3F5A0A",
+      "by": {
+        "median_full": {
+          "hex": "#3F5B06",
+          "from_cluster": 0.0162
+        },
+        "median_eroded_adaptive": {
+          "hex": "#3C5A02",
+          "from_cluster": 0.0335
+        },
+        "modal_peak": {
+          "hex": "#3C5804",
+          "from_cluster": 0.028
+        },
+        "unmixed": {
+          "hex": "#3C5902",
+          "from_cluster": 0.0337
+        }
+      }
+    },
+    {
+      "folder": "59_Cialis",
+      "key": "brand#1",
+      "area_pct": 3.795,
+      "cluster": "#3F5A0A",
+      "by": {
+        "median_full": {
+          "hex": "#496320",
+          "from_cluster": 0.1011
+        },
+        "median_eroded_adaptive": {
+          "hex": "#49631D",
+          "from_cluster": 0.0913
+        },
+        "modal_peak": {
+          "hex": "#4A631E",
+          "from_cluster": 0.0968
+        },
+        "unmixed": {
+          "hex": "#49621F",
+          "from_cluster": 0.0965
+        }
+      }
+    },
+    {
+      "folder": "59_Cialis",
+      "key": "brand#2",
+      "area_pct": 1.644,
+      "cluster": "#3F5A0A",
+      "by": {
+        "median_full": {
+          "hex": "#4C610D",
+          "from_cluster": 0.0591
+        },
+        "median_eroded_adaptive": {
+          "hex": "#4A610E",
+          "from_cluster": 0.0535
+        },
+        "modal_peak": {
+          "hex": "#4B610D",
+          "from_cluster": 0.057
+        },
+        "unmixed": {
+          "hex": "#4C610C",
+          "from_cluster": 0.0584
+        }
+      }
+    },
+    {
+      "folder": "59_Cialis",
+      "key": "highlight#0",
+      "area_pct": 14.138,
+      "cluster": "#DCDBD2",
+      "by": {
+        "median_full": {
+          "hex": "#DBDAD3",
+          "from_cluster": 0.0068
+        },
+        "median_eroded_adaptive": {
+          "hex": "#DBDBD6",
+          "from_cluster": 0.0162
+        },
+        "modal_peak": {
+          "hex": "#DBDBD6",
+          "from_cluster": 0.0159
+        },
+        "unmixed": {
+          "hex": "#DBDBD6",
+          "from_cluster": 0.0162
+        }
+      }
+    },
+    {
+      "folder": "59_Cialis",
+      "key": "highlight#1",
+      "area_pct": 3.252,
+      "cluster": "#DCDBD2",
+      "by": {
+        "median_full": {
+          "hex": "#DEDDD4",
+          "from_cluster": 0.0136
+        },
+        "median_eroded_adaptive": {
+          "hex": "#DEDDD4",
+          "from_cluster": 0.0136
+        },
+        "modal_peak": {
+          "hex": "#DDDCD4",
+          "from_cluster": 0.01
+        },
+        "unmixed": {
+          "hex": "#DEDDD4",
+          "from_cluster": 0.0136
+        }
+      }
+    },
+    {
+      "folder": "59_Cialis",
+      "key": "highlight#2",
+      "area_pct": 1.467,
+      "cluster": "#DCDBD2",
+      "by": {
+        "median_full": {
+          "hex": "#D7CBAF",
+          "from_cluster": 0.1522
+        },
+        "median_eroded_adaptive": {
+          "hex": "#D4C7AB",
+          "from_cluster": 0.1747
+        },
+        "modal_peak": {
+          "hex": "#DACEB3",
+          "from_cluster": 0.1329
+        },
+        "unmixed": {
+          "hex": "#D7CBAF",
+          "from_cluster": 0.1522
+        }
+      }
+    },
+    {
+      "folder": "59_Cialis",
+      "key": "highlight#3",
+      "area_pct": 0.916,
+      "cluster": "#DCDBD2",
+      "by": {
+        "median_full": {
+          "hex": "#E4E4DA",
+          "from_cluster": 0.0567
+        },
+        "median_eroded_adaptive": {
+          "hex": "#E1E1DB",
+          "from_cluster": 0.0467
+        },
+        "modal_peak": {
+          "hex": "#DCDCD5",
+          "from_cluster": 0.0142
+        },
+        "unmixed": {
+          "hex": "#F9F9F3",
+          "from_cluster": 0.2086
+        }
+      }
+    },
+    {
+      "folder": "60_Cialis_Professional",
+      "key": "brand#0",
+      "area_pct": 5.716,
+      "cluster": "#E0AE31",
+      "by": {
+        "median_full": {
+          "hex": "#E0AF2F",
+          "from_cluster": 0.0088
+        },
+        "median_eroded_adaptive": {
+          "hex": "#E1AF2F",
+          "from_cluster": 0.0096
+        },
+        "modal_peak": {
+          "hex": "#E0AE2D",
+          "from_cluster": 0.015
+        },
+        "unmixed": {
+          "hex": "#E0AE2E",
+          "from_cluster": 0.0118
+        }
+      }
+    },
+    {
+      "folder": "60_Cialis_Professional",
+      "key": "highlight#0",
+      "area_pct": 3.947,
+      "cluster": "#274F2D",
+      "by": {
+        "median_full": {
+          "hex": "#264D28",
+          "from_cluster": 0.0215
+        },
+        "median_eroded_adaptive": {
+          "hex": "#254D27",
+          "from_cluster": 0.026
+        },
+        "modal_peak": {
+          "hex": "#224925",
+          "from_cluster": 0.0432
+        },
+        "unmixed": {
+          "hex": "#244B27",
+          "from_cluster": 0.0306
+        }
+      }
+    },
+    {
+      "folder": "60_Cialis_Professional",
+      "key": "highlight#1",
+      "area_pct": 1.68,
+      "cluster": "#274F2D",
+      "by": {
+        "median_full": {
+          "hex": "#597C4C",
+          "from_cluster": 0.2905
+        },
+        "median_eroded_adaptive": {
+          "hex": "#547A47",
+          "from_cluster": 0.2645
+        },
+        "modal_peak": {
+          "hex": "#537846",
+          "from_cluster": 0.255
+        },
+        "unmixed": {
+          "hex": "#587B4B",
+          "from_cluster": 0.2838
+        }
+      }
+    },
+    {
+      "folder": "60_Cialis_Professional",
+      "key": "highlight#12",
+      "area_pct": 0.157,
+      "cluster": "#274F2D",
+      "by": {
+        "median_full": {
+          "hex": "#505C5F",
+          "from_cluster": 0.2586
+        },
+        "median_eroded_adaptive": {
+          "hex": "#3A4649",
+          "from_cluster": 0.1373
+        },
+        "modal_peak": {
+          "hex": "#455254",
+          "from_cluster": 0.1933
+        },
+        "unmixed": {
+          "hex": "#445053",
+          "from_cluster": 0.1875
+        }
+      }
+    },
+    {
+      "folder": "62_Cialis_Super_Active",
+      "key": "brand#0",
+      "area_pct": 19.495,
+      "cluster": "#E9B44B",
+      "by": {
+        "median_full": {
+          "hex": "#E8B74F",
+          "from_cluster": 0.02
+        },
+        "median_eroded_adaptive": {
+          "hex": "#E8B449",
+          "from_cluster": 0.0088
+        },
+        "modal_peak": {
+          "hex": "#E8B850",
+          "from_cluster": 0.0275
+        },
+        "unmixed": {
+          "hex": "#E8B74F",
+          "from_cluster": 0.02
+        }
+      }
+    },
+    {
+      "folder": "62_Cialis_Super_Active",
+      "key": "brand#1",
+      "area_pct": 3.91,
+      "cluster": "#E9B44B",
+      "by": {
+        "median_full": {
+          "hex": "#EAB032",
+          "from_cluster": 0.0994
+        },
+        "median_eroded_adaptive": {
+          "hex": "#EAB032",
+          "from_cluster": 0.0994
+        },
+        "modal_peak": {
+          "hex": "#EAAF31",
+          "from_cluster": 0.1034
+        },
+        "unmixed": {
+          "hex": "#EAB032",
+          "from_cluster": 0.0994
+        }
+      }
+    },
+    {
+      "folder": "62_Cialis_Super_Active",
+      "key": "brand#2",
+      "area_pct": 1.36,
+      "cluster": "#E9B44B",
+      "by": {
+        "median_full": {
+          "hex": "#EBB23A",
+          "from_cluster": 0.0676
+        },
+        "median_eroded_adaptive": {
+          "hex": "#ECB83A",
+          "from_cluster": 0.0695
+        },
+        "modal_peak": {
+          "hex": "#EAB238",
+          "from_cluster": 0.0748
+        },
+        "unmixed": {
+          "hex": "#EAB239",
+          "from_cluster": 0.0713
+        }
+      }
+    },
+    {
+      "folder": "64_Kamagra",
+      "key": "brand#0",
+      "area_pct": 32.511,
+      "cluster": "#00463B",
+      "by": {
+        "median_full": {
+          "hex": "#00463A",
+          "from_cluster": 0.0039
+        },
+        "median_eroded_adaptive": {
+          "hex": "#00473C",
+          "from_cluster": 0.0055
+        },
+        "modal_peak": {
+          "hex": "#00453A",
+          "from_cluster": 0.0052
+        },
+        "unmixed": {
+          "hex": "#00483D",
+          "from_cluster": 0.0111
+        }
+      }
+    },
+    {
+      "folder": "64_Kamagra",
+      "key": "highlight#1",
+      "area_pct": 4.948,
+      "cluster": "#002F26",
+      "by": {
+        "median_full": {
+          "hex": "#004136",
+          "from_cluster": 0.0944
+        },
+        "median_eroded_adaptive": {
+          "hex": "#004136",
+          "from_cluster": 0.0944
+        },
+        "modal_peak": {
+          "hex": "#004236",
+          "from_cluster": 0.096
+        },
+        "unmixed": {
+          "hex": "#003F33",
+          "from_cluster": 0.0808
+        }
+      }
+    },
+    {
+      "folder": "64_Kamagra",
+      "key": "highlight#3",
+      "area_pct": 0.975,
+      "cluster": "#002F26",
+      "by": {
+        "median_full": {
+          "hex": "#043C2F",
+          "from_cluster": 0.064
+        },
+        "median_eroded_adaptive": {
+          "hex": "#054134",
+          "from_cluster": 0.0915
+        },
+        "modal_peak": {
+          "hex": "#044032",
+          "from_cluster": 0.0827
+        },
+        "unmixed": {
+          "hex": "#073429",
+          "from_cluster": 0.0357
+        }
+      }
+    },
+    {
+      "folder": "64_Kamagra",
+      "key": "highlight#4",
+      "area_pct": 0.916,
+      "cluster": "#002F26",
+      "by": {
+        "median_full": {
+          "hex": "#033B2F",
+          "from_cluster": 0.06
+        },
+        "median_eroded_adaptive": {
+          "hex": "#023F32",
+          "from_cluster": 0.0788
+        },
+        "modal_peak": {
+          "hex": "#043F32",
+          "from_cluster": 0.0796
+        },
+        "unmixed": {
+          "hex": "#043228",
+          "from_cluster": 0.0211
+        }
+      }
+    },
+    {
+      "folder": "64_Kamagra",
+      "key": "highlight#5",
+      "area_pct": 0.88,
+      "cluster": "#002F26",
+      "by": {
+        "median_full": {
+          "hex": "#033B2E",
+          "from_cluster": 0.0578
+        },
+        "median_eroded_adaptive": {
+          "hex": "#023F32",
+          "from_cluster": 0.0788
+        },
+        "modal_peak": {
+          "hex": "#033F32",
+          "from_cluster": 0.0793
+        },
+        "unmixed": {
+          "hex": "#043127",
+          "from_cluster": 0.018
+        }
+      }
+    },
+    {
+      "folder": "64_Kamagra",
+      "key": "highlight#6",
+      "area_pct": 0.853,
+      "cluster": "#002F26",
+      "by": {
+        "median_full": {
+          "hex": "#033A2E",
+          "from_cluster": 0.0546
+        },
+        "median_eroded_adaptive": {
+          "hex": "#023F32",
+          "from_cluster": 0.0788
+        },
+        "modal_peak": {
+          "hex": "#044032",
+          "from_cluster": 0.082
+        },
+        "unmixed": {
+          "hex": "#042B22",
+          "from_cluster": 0.0272
+        }
+      }
+    },
+    {
+      "folder": "74_Viagra",
+      "key": "brand#0",
+      "area_pct": 19.799,
+      "cluster": "#012958",
+      "by": {
+        "median_full": {
+          "hex": "#002857",
+          "from_cluster": 0.0068
+        },
+        "median_eroded_adaptive": {
+          "hex": "#002756",
+          "from_cluster": 0.0118
+        },
+        "modal_peak": {
+          "hex": "#012957",
+          "from_cluster": 0.003
+        },
+        "unmixed": {
+          "hex": "#002857",
+          "from_cluster": 0.0068
+        }
+      }
+    },
+    {
+      "folder": "74_Viagra",
+      "key": "brand#1",
+      "area_pct": 1.945,
+      "cluster": "#012958",
+      "by": {
+        "median_full": {
+          "hex": "#2B2A97",
+          "from_cluster": 0.297
+        },
+        "median_eroded_adaptive": {
+          "hex": "#282996",
+          "from_cluster": 0.2872
+        },
+        "modal_peak": {
+          "hex": "#2B2B97",
+          "from_cluster": 0.2985
+        },
+        "unmixed": {
+          "hex": "#2B2A97",
+          "from_cluster": 0.297
+        }
+      }
+    },
+    {
+      "folder": "133_Ambien",
+      "key": "brand#0",
+      "area_pct": 20.575,
+      "cluster": "#FF973E",
+      "by": {
+        "median_full": {
+          "hex": "#FF973E",
+          "from_cluster": 0.0
+        },
+        "median_eroded_adaptive": {
+          "hex": "#FF973E",
+          "from_cluster": 0.0
+        },
+        "modal_peak": {
+          "hex": "#FF973D",
+          "from_cluster": 0.0059
+        },
+        "unmixed": {
+          "hex": "#FF973E",
+          "from_cluster": 0.0
+        }
+      }
+    },
+    {
+      "folder": "133_Ambien",
+      "key": "brand#1",
+      "area_pct": 2.525,
+      "cluster": "#FF973E",
+      "by": {
+        "median_full": {
+          "hex": "#FE9638",
+          "from_cluster": 0.0242
+        },
+        "median_eroded_adaptive": {
+          "hex": "#FF9738",
+          "from_cluster": 0.0235
+        },
+        "modal_peak": {
+          "hex": "#FD9637",
+          "from_cluster": 0.0274
+        },
+        "unmixed": {
+          "hex": "#FE9638",
+          "from_cluster": 0.0242
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "brand#0",
+      "area_pct": 1.289,
+      "cluster": "#A6CFD0",
+      "by": {
+        "median_full": {
+          "hex": "#A0D1D2",
+          "from_cluster": 0.026
+        },
+        "median_eroded_adaptive": {
+          "hex": "#9BD3D4",
+          "from_cluster": 0.0485
+        },
+        "modal_peak": {
+          "hex": "#9ED1D2",
+          "from_cluster": 0.0327
+        },
+        "unmixed": {
+          "hex": "#9FD0D2",
+          "from_cluster": 0.0288
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "brand#1",
+      "area_pct": 1.233,
+      "cluster": "#A6CFD0",
+      "by": {
+        "median_full": {
+          "hex": "#A9D7D8",
+          "from_cluster": 0.0459
+        },
+        "median_eroded_adaptive": {
+          "hex": "#A5D8DA",
+          "from_cluster": 0.0529
+        },
+        "modal_peak": {
+          "hex": "#A9D7D8",
+          "from_cluster": 0.048
+        },
+        "unmixed": {
+          "hex": "#A8D7D8",
+          "from_cluster": 0.0451
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "brand#2",
+      "area_pct": 1.129,
+      "cluster": "#A6CFD0",
+      "by": {
+        "median_full": {
+          "hex": "#9FCED1",
+          "from_cluster": 0.028
+        },
+        "median_eroded_adaptive": {
+          "hex": "#9BCFD2",
+          "from_cluster": 0.0438
+        },
+        "modal_peak": {
+          "hex": "#9FCED1",
+          "from_cluster": 0.029
+        },
+        "unmixed": {
+          "hex": "#9ECDD0",
+          "from_cluster": 0.0323
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "brand#3",
+      "area_pct": 1.097,
+      "cluster": "#A6CFD0",
+      "by": {
+        "median_full": {
+          "hex": "#AAD6D7",
+          "from_cluster": 0.0419
+        },
+        "median_eroded_adaptive": {
+          "hex": "#A6D7D9",
+          "from_cluster": 0.0472
+        },
+        "modal_peak": {
+          "hex": "#A9D6D7",
+          "from_cluster": 0.0415
+        },
+        "unmixed": {
+          "hex": "#A9D5D7",
+          "from_cluster": 0.038
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "brand#4",
+      "area_pct": 0.222,
+      "cluster": "#A6CFD0",
+      "by": {
+        "median_full": {
+          "hex": "#CBC9C9",
+          "from_cluster": 0.1495
+        },
+        "median_eroded_adaptive": {
+          "hex": "#C3C2C2",
+          "from_cluster": 0.1362
+        },
+        "modal_peak": {
+          "hex": "#CCCACA",
+          "from_cluster": 0.1514
+        },
+        "unmixed": {
+          "hex": "#C8C7C7",
+          "from_cluster": 0.1414
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "type#4",
+      "area_pct": 0.354,
+      "cluster": "#18181A",
+      "by": {
+        "median_full": {
+          "hex": "#0D0D10",
+          "from_cluster": 0.0725
+        },
+        "median_eroded_adaptive": {
+          "hex": "#0D0D10",
+          "from_cluster": 0.0725
+        },
+        "modal_peak": {
+          "hex": "#0C0C0F",
+          "from_cluster": 0.0772
+        },
+        "unmixed": {
+          "hex": "#0C0C0F",
+          "from_cluster": 0.0793
+        }
+      }
+    },
+    {
+      "folder": "134_Atarax",
+      "key": "type#6",
+      "area_pct": 0.335,
+      "cluster": "#18181A",
+      "by": {
+        "median_full": {
+          "hex": "#0A0A0C",
+          "from_cluster": 0.0951
+        },
+        "median_eroded_adaptive": {
+          "hex": "#0A0A0C",
+          "from_cluster": 0.0951
+        },
+        "modal_peak": {
+          "hex": "#09090C",
+          "from_cluster": 0.0997
+        },
+        "unmixed": {
+          "hex": "#0A090C",
+          "from_cluster": 0.0974
+        }
+      }
+    },
+    {
+      "folder": "135_Ativan",
+      "key": "brand#0",
+      "area_pct": 11.705,
+      "cluster": "#032F5D",
+      "by": {
+        "median_full": {
+          "hex": "#022E5C",
+          "from_cluster": 0.0068
+        },
+        "median_eroded_adaptive": {
+          "hex": "#022E5C",
+          "from_cluster": 0.0068
+        },
+        "modal_peak": {
+          "hex": "#032E5C",
+          "from_cluster": 0.0051
+        },
+        "unmixed": {
+          "hex": "#022E5C",
+          "from_cluster": 0.0068
+        }
+      }
+    },
+    {
+      "folder": "135_Ativan",
+      "key": "highlight#0",
+      "area_pct": 4.012,
+      "cluster": "#AD3A9D",
+      "by": {
+        "median_full": {
+          "hex": "#CF3BA0",
+          "from_cluster": 0.1339
+        },
+        "median_eroded_adaptive": {
+          "hex": "#D03BA2",
+          "from_cluster": 0.1387
+        },
+        "modal_peak": {
+          "hex": "#CF3BA1",
+          "from_cluster": 0.1341
+        },
+        "unmixed": {
+          "hex": "#CF3BA0",
+          "from_cluster": 0.1339
+        }
+      }
+    },
+    {
+      "folder": "135_Ativan",
+      "key": "highlight#1",
+      "area_pct": 3.286,
+      "cluster": "#AD3A9D",
+      "by": {
+        "median_full": {
+          "hex": "#A5299A",
+          "from_cluster": 0.0746
+        },
+        "median_eroded_adaptive": {
+          "hex": "#A7299C",
+          "from_cluster": 0.0708
+        },
+        "modal_peak": {
+          "hex": "#A5299A",
+          "from_cluster": 0.076
+        },
+        "unmixed": {
+          "hex": "#A5299A",
+          "from_cluster": 0.0746
+        }
+      }
+    },
+    {
+      "folder": "149_Modalert",
+      "key": "brand#0",
+      "area_pct": 9.667,
+      "cluster": "#C84569",
+      "by": {
+        "median_full": {
+          "hex": "#F54E49",
+          "from_cluster": 0.2194
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F64D48",
+          "from_cluster": 0.2242
+        },
+        "modal_peak": {
+          "hex": "#F54D48",
+          "from_cluster": 0.2218
+        },
+        "unmixed": {
+          "hex": "#F54E49",
+          "from_cluster": 0.2194
+        }
+      }
+    },
+    {
+      "folder": "149_Modalert",
+      "key": "brand#1",
+      "area_pct": 9.34,
+      "cluster": "#C84569",
+      "by": {
+        "median_full": {
+          "hex": "#7334B6",
+          "from_cluster": 0.4547
+        },
+        "median_eroded_adaptive": {
+          "hex": "#7333B8",
+          "from_cluster": 0.4605
+        },
+        "modal_peak": {
+          "hex": "#7334B7",
+          "from_cluster": 0.4574
+        },
+        "unmixed": {
+          "hex": "#7334B6",
+          "from_cluster": 0.4547
+        }
+      }
+    },
+    {
+      "folder": "149_Modalert",
+      "key": "brand#2",
+      "area_pct": 0.424,
+      "cluster": "#C84569",
+      "by": {
+        "median_full": {
+          "hex": "#600BAF",
+          "from_cluster": 0.5417
+        },
+        "median_eroded_adaptive": {
+          "hex": "#6009B0",
+          "from_cluster": 0.547
+        },
+        "modal_peak": {
+          "hex": "#600BB0",
+          "from_cluster": 0.5426
+        },
+        "unmixed": {
+          "hex": "#600BAF",
+          "from_cluster": 0.5417
+        }
+      }
+    },
+    {
+      "folder": "150_Waklert",
+      "key": "brand#0",
+      "area_pct": 9.807,
+      "cluster": "#AE6335",
+      "by": {
+        "median_full": {
+          "hex": "#C8632A",
+          "from_cluster": 0.1107
+        },
+        "median_eroded_adaptive": {
+          "hex": "#CA642A",
+          "from_cluster": 0.118
+        },
+        "modal_peak": {
+          "hex": "#C96329",
+          "from_cluster": 0.1174
+        },
+        "unmixed": {
+          "hex": "#C8632A",
+          "from_cluster": 0.1107
+        }
+      }
+    },
+    {
+      "folder": "150_Waklert",
+      "key": "brand#3",
+      "area_pct": 0.444,
+      "cluster": "#AE6335",
+      "by": {
+        "median_full": {
+          "hex": "#25545A",
+          "from_cluster": 0.5596
+        },
+        "median_eroded_adaptive": {
+          "hex": "#22535A",
+          "from_cluster": 0.5713
+        },
+        "modal_peak": {
+          "hex": "#225258",
+          "from_cluster": 0.5694
+        },
+        "unmixed": {
+          "hex": "#225158",
+          "from_cluster": 0.5703
+        }
+      }
+    },
+    {
+      "folder": "150_Waklert",
+      "key": "highlight#1",
+      "area_pct": 1.059,
+      "cluster": "#EFDACD",
+      "by": {
+        "median_full": {
+          "hex": "#F4DDCE",
+          "from_cluster": 0.0232
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F8DFCE",
+          "from_cluster": 0.0406
+        },
+        "modal_peak": {
+          "hex": "#F4DFCF",
+          "from_cluster": 0.0297
+        },
+        "unmixed": {
+          "hex": "#FBDFCC",
+          "from_cluster": 0.0511
+        }
+      }
+    },
+    {
+      "folder": "152_Artvigil",
+      "key": "brand#0",
+      "area_pct": 9.052,
+      "cluster": "#E05506",
+      "by": {
+        "median_full": {
+          "hex": "#F46F03",
+          "from_cluster": 0.1292
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F46F03",
+          "from_cluster": 0.1292
+        },
+        "modal_peak": {
+          "hex": "#F36F03",
+          "from_cluster": 0.1263
+        },
+        "unmixed": {
+          "hex": "#F46F03",
+          "from_cluster": 0.1292
+        }
+      }
+    },
+    {
+      "folder": "152_Artvigil",
+      "key": "brand#1",
+      "area_pct": 6.491,
+      "cluster": "#E05506",
+      "by": {
+        "median_full": {
+          "hex": "#2D3336",
+          "from_cluster": 0.7389
+        },
+        "median_eroded_adaptive": {
+          "hex": "#2D3336",
+          "from_cluster": 0.7389
+        },
+        "modal_peak": {
+          "hex": "#2D3336",
+          "from_cluster": 0.7389
+        },
+        "unmixed": {
+          "hex": "#2D3336",
+          "from_cluster": 0.7389
+        }
+      }
+    },
+    {
+      "folder": "152_Artvigil",
+      "key": "brand#2",
+      "area_pct": 1.02,
+      "cluster": "#E05506",
+      "by": {
+        "median_full": {
+          "hex": "#E04F06",
+          "from_cluster": 0.0235
+        },
+        "median_eroded_adaptive": {
+          "hex": "#E04F06",
+          "from_cluster": 0.0235
+        },
+        "modal_peak": {
+          "hex": "#E04F06",
+          "from_cluster": 0.0242
+        },
+        "unmixed": {
+          "hex": "#E04F06",
+          "from_cluster": 0.0235
+        }
+      }
+    },
+    {
+      "folder": "155_Imovane",
+      "key": "highlight#0",
+      "area_pct": 0.674,
+      "cluster": "#9D92BC",
+      "by": {
+        "median_full": {
+          "hex": "#8E9DC2",
+          "from_cluster": 0.0766
+        },
+        "median_eroded_adaptive": {
+          "hex": "#8A98C0",
+          "from_cluster": 0.0797
+        },
+        "modal_peak": {
+          "hex": "#8897C0",
+          "from_cluster": 0.0848
+        },
+        "unmixed": {
+          "hex": "#8796BE",
+          "from_cluster": 0.088
+        }
+      }
+    },
+    {
+      "folder": "156_Xanax",
+      "key": "brand#0",
+      "area_pct": 7.727,
+      "cluster": "#ED68BF",
+      "by": {
+        "median_full": {
+          "hex": "#EE62BF",
+          "from_cluster": 0.0239
+        },
+        "median_eroded_adaptive": {
+          "hex": "#ED61BF",
+          "from_cluster": 0.0275
+        },
+        "modal_peak": {
+          "hex": "#F061BF",
+          "from_cluster": 0.0313
+        },
+        "unmixed": {
+          "hex": "#EE62BF",
+          "from_cluster": 0.0239
+        }
+      }
+    },
+    {
+      "folder": "156_Xanax",
+      "key": "brand#1",
+      "area_pct": 4.328,
+      "cluster": "#ED68BF",
+      "by": {
+        "median_full": {
+          "hex": "#F568C4",
+          "from_cluster": 0.037
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F666C5",
+          "from_cluster": 0.0431
+        },
+        "modal_peak": {
+          "hex": "#F768C4",
+          "from_cluster": 0.0444
+        },
+        "unmixed": {
+          "hex": "#F568C4",
+          "from_cluster": 0.037
+        }
+      }
+    },
+    {
+      "folder": "157_Valium",
+      "key": "brand#0",
+      "area_pct": 14.831,
+      "cluster": "#DE56A4",
+      "by": {
+        "median_full": {
+          "hex": "#DE56A4",
+          "from_cluster": 0.0
+        },
+        "median_eroded_adaptive": {
+          "hex": "#DF56A5",
+          "from_cluster": 0.0055
+        },
+        "modal_peak": {
+          "hex": "#DE55A4",
+          "from_cluster": 0.0048
+        },
+        "unmixed": {
+          "hex": "#DE55A4",
+          "from_cluster": 0.0039
+        }
+      }
+    },
+    {
+      "folder": "157_Valium",
+      "key": "type#0",
+      "area_pct": 0.833,
+      "cluster": "#1F0A24",
+      "by": {
+        "median_full": {
+          "hex": "#083BC7",
+          "from_cluster": 0.6735
+        },
+        "median_eroded_adaptive": {
+          "hex": "#083BC8",
+          "from_cluster": 0.6773
+        },
+        "modal_peak": {
+          "hex": "#073BC7",
+          "from_cluster": 0.6752
+        },
+        "unmixed": {
+          "hex": "#083BC7",
+          "from_cluster": 0.6735
+        }
+      }
+    },
+    {
+      "folder": "157_Valium",
+      "key": "type#14",
+      "area_pct": 0.143,
+      "cluster": "#1F0A24",
+      "by": {
+        "median_full": {
+          "hex": "#2E162D",
+          "from_cluster": 0.0832
+        },
+        "median_eroded_adaptive": {
+          "hex": "#1C031C",
+          "from_cluster": 0.0433
+        },
+        "modal_peak": {
+          "hex": "#1D051C",
+          "from_cluster": 0.0389
+        },
+        "unmixed": {
+          "hex": "#210820",
+          "from_cluster": 0.0192
+        }
+      }
+    },
+    {
+      "folder": "158_Klonopin",
+      "key": "brand#0",
+      "area_pct": 17.211,
+      "cluster": "#3569D6",
+      "by": {
+        "median_full": {
+          "hex": "#3569D6",
+          "from_cluster": 0.0
+        },
+        "median_eroded_adaptive": {
+          "hex": "#3569D6",
+          "from_cluster": 0.0
+        },
+        "modal_peak": {
+          "hex": "#3467D6",
+          "from_cluster": 0.0068
+        },
+        "unmixed": {
+          "hex": "#3568D6",
+          "from_cluster": 0.0039
+        }
+      }
+    },
+    {
+      "folder": "158_Klonopin",
+      "key": "highlight#0",
+      "area_pct": 4.148,
+      "cluster": "#52C147",
+      "by": {
+        "median_full": {
+          "hex": "#51C343",
+          "from_cluster": 0.018
+        },
+        "median_eroded_adaptive": {
+          "hex": "#50C342",
+          "from_cluster": 0.0225
+        },
+        "modal_peak": {
+          "hex": "#50C343",
+          "from_cluster": 0.0183
+        },
+        "unmixed": {
+          "hex": "#51C343",
+          "from_cluster": 0.018
+        }
+      }
+    },
+    {
+      "folder": "221_Inderal",
+      "key": "brand#0",
+      "area_pct": 11.296,
+      "cluster": "#4A235E",
+      "by": {
+        "median_full": {
+          "hex": "#4A235E",
+          "from_cluster": 0.0
+        },
+        "median_eroded_adaptive": {
+          "hex": "#4A235E",
+          "from_cluster": 0.0
+        },
+        "modal_peak": {
+          "hex": "#4A235D",
+          "from_cluster": 0.0057
+        },
+        "unmixed": {
+          "hex": "#4A235E",
+          "from_cluster": 0.0
+        }
+      }
+    },
+    {
+      "folder": "221_Inderal",
+      "key": "highlight#0",
+      "area_pct": 7.927,
+      "cluster": "#F1897A",
+      "by": {
+        "median_full": {
+          "hex": "#F28978",
+          "from_cluster": 0.0088
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F38877",
+          "from_cluster": 0.0147
+        },
+        "modal_peak": {
+          "hex": "#F28878",
+          "from_cluster": 0.009
+        },
+        "unmixed": {
+          "hex": "#F28978",
+          "from_cluster": 0.0088
+        }
+      }
+    },
+    {
+      "folder": "221_Inderal",
+      "key": "highlight#1",
+      "area_pct": 4.429,
+      "cluster": "#F1897A",
+      "by": {
+        "median_full": {
+          "hex": "#F18979",
+          "from_cluster": 0.0039
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F28978",
+          "from_cluster": 0.0088
+        },
+        "modal_peak": {
+          "hex": "#F18979",
+          "from_cluster": 0.0052
+        },
+        "unmixed": {
+          "hex": "#F18979",
+          "from_cluster": 0.0039
+        }
+      }
+    },
+    {
+      "folder": "221_Inderal",
+      "key": "highlight#2",
+      "area_pct": 1.618,
+      "cluster": "#F1897A",
+      "by": {
+        "median_full": {
+          "hex": "#F28A7A",
+          "from_cluster": 0.0055
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F38A75",
+          "from_cluster": 0.0215
+        },
+        "modal_peak": {
+          "hex": "#F38979",
+          "from_cluster": 0.0086
+        },
+        "unmixed": {
+          "hex": "#F28A79",
+          "from_cluster": 0.0068
+        }
+      }
+    },
+    {
+      "folder": "272_Valium_Brand",
+      "key": "brand#0",
+      "area_pct": 3.098,
+      "cluster": "#09517A",
+      "by": {
+        "median_full": {
+          "hex": "#0179E1",
+          "from_cluster": 0.4344
+        },
+        "median_eroded_adaptive": {
+          "hex": "#007AE4",
+          "from_cluster": 0.4471
+        },
+        "modal_peak": {
+          "hex": "#0279E3",
+          "from_cluster": 0.4408
+        },
+        "unmixed": {
+          "hex": "#0179E1",
+          "from_cluster": 0.4344
+        }
+      }
+    },
+    {
+      "folder": "304_Sonata",
+      "key": "highlight#1",
+      "area_pct": 0.122,
+      "cluster": "#8C848F",
+      "by": {
+        "median_full": {
+          "hex": "#8DA79F",
+          "from_cluster": 0.151
+        },
+        "median_eroded_adaptive": {
+          "hex": "#7C968F",
+          "from_cluster": 0.0944
+        },
+        "modal_peak": {
+          "hex": "#8DA79F",
+          "from_cluster": 0.15
+        },
+        "unmixed": {
+          "hex": "#859D96",
+          "from_cluster": 0.1054
+        }
+      }
+    },
+    {
+      "folder": "308_Lexotanil",
+      "key": "brand#0",
+      "area_pct": 1.8,
+      "cluster": "#01898F",
+      "by": {
+        "median_full": {
+          "hex": "#017BBD",
+          "from_cluster": 0.1886
+        },
+        "median_eroded_adaptive": {
+          "hex": "#007BBE",
+          "from_cluster": 0.1924
+        },
+        "modal_peak": {
+          "hex": "#017BBD",
+          "from_cluster": 0.1886
+        },
+        "unmixed": {
+          "hex": "#007BBD",
+          "from_cluster": 0.1886
+        }
+      }
+    },
+    {
+      "folder": "308_Lexotanil",
+      "key": "brand#1",
+      "area_pct": 1.793,
+      "cluster": "#01898F",
+      "by": {
+        "median_full": {
+          "hex": "#029F36",
+          "from_cluster": 0.3595
+        },
+        "median_eroded_adaptive": {
+          "hex": "#01A035",
+          "from_cluster": 0.3643
+        },
+        "modal_peak": {
+          "hex": "#029F36",
+          "from_cluster": 0.3585
+        },
+        "unmixed": {
+          "hex": "#019F36",
+          "from_cluster": 0.3595
+        }
+      }
+    },
+    {
+      "folder": "340_Xanax_Pfizer",
+      "key": "brand#0",
+      "area_pct": 7.855,
+      "cluster": "#B60D7F",
+      "by": {
+        "median_full": {
+          "hex": "#BA087F",
+          "from_cluster": 0.0251
+        },
+        "median_eroded_adaptive": {
+          "hex": "#BE0783",
+          "from_cluster": 0.0422
+        },
+        "modal_peak": {
+          "hex": "#BF0885",
+          "from_cluster": 0.0466
+        },
+        "unmixed": {
+          "hex": "#BA087F",
+          "from_cluster": 0.0251
+        }
+      }
+    },
+    {
+      "folder": "344_Modafinil_Generic",
+      "key": "brand#0",
+      "area_pct": 9.667,
+      "cluster": "#C84569",
+      "by": {
+        "median_full": {
+          "hex": "#F54E49",
+          "from_cluster": 0.2194
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F64D48",
+          "from_cluster": 0.2242
+        },
+        "modal_peak": {
+          "hex": "#F54D48",
+          "from_cluster": 0.2218
+        },
+        "unmixed": {
+          "hex": "#F54E49",
+          "from_cluster": 0.2194
+        }
+      }
+    },
+    {
+      "folder": "344_Modafinil_Generic",
+      "key": "brand#1",
+      "area_pct": 9.34,
+      "cluster": "#C84569",
+      "by": {
+        "median_full": {
+          "hex": "#7334B6",
+          "from_cluster": 0.4547
+        },
+        "median_eroded_adaptive": {
+          "hex": "#7333B8",
+          "from_cluster": 0.4605
+        },
+        "modal_peak": {
+          "hex": "#7334B7",
+          "from_cluster": 0.4574
+        },
+        "unmixed": {
+          "hex": "#7334B6",
+          "from_cluster": 0.4547
+        }
+      }
+    },
+    {
+      "folder": "344_Modafinil_Generic",
+      "key": "brand#2",
+      "area_pct": 0.424,
+      "cluster": "#C84569",
+      "by": {
+        "median_full": {
+          "hex": "#600BAF",
+          "from_cluster": 0.5417
+        },
+        "median_eroded_adaptive": {
+          "hex": "#6009B0",
+          "from_cluster": 0.547
+        },
+        "modal_peak": {
+          "hex": "#600BB0",
+          "from_cluster": 0.5426
+        },
+        "unmixed": {
+          "hex": "#600BAF",
+          "from_cluster": 0.5417
+        }
+      }
+    },
+    {
+      "folder": "357_Adderall",
+      "key": "brand#0",
+      "area_pct": 6.351,
+      "cluster": "#167389",
+      "by": {
+        "median_full": {
+          "hex": "#04768D",
+          "from_cluster": 0.0733
+        },
+        "median_eroded_adaptive": {
+          "hex": "#03768D",
+          "from_cluster": 0.077
+        },
+        "modal_peak": {
+          "hex": "#04758C",
+          "from_cluster": 0.072
+        },
+        "unmixed": {
+          "hex": "#03768D",
+          "from_cluster": 0.077
+        }
+      }
+    },
+    {
+      "folder": "357_Adderall",
+      "key": "brand#1",
+      "area_pct": 5.899,
+      "cluster": "#167389",
+      "by": {
+        "median_full": {
+          "hex": "#0F7287",
+          "from_cluster": 0.0288
+        },
+        "median_eroded_adaptive": {
+          "hex": "#087288",
+          "from_cluster": 0.0552
+        },
+        "modal_peak": {
+          "hex": "#067389",
+          "from_cluster": 0.0629
+        },
+        "unmixed": {
+          "hex": "#0C7288",
+          "from_cluster": 0.0396
+        }
+      }
+    },
+    {
+      "folder": "357_Adderall",
+      "key": "highlight#0",
+      "area_pct": 22.232,
+      "cluster": "#F1F3FA",
+      "by": {
+        "median_full": {
+          "hex": "#F3F4FA",
+          "from_cluster": 0.0088
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F5F5FA",
+          "from_cluster": 0.0175
+        },
+        "modal_peak": {
+          "hex": "#F4F5FA",
+          "from_cluster": 0.0136
+        },
+        "unmixed": {
+          "hex": "#F6F6FB",
+          "from_cluster": 0.0232
+        }
+      }
+    },
+    {
+      "folder": "357_Adderall",
+      "key": "highlight#1",
+      "area_pct": 1.258,
+      "cluster": "#F1F3FA",
+      "by": {
+        "median_full": {
+          "hex": "#EFF3FD",
+          "from_cluster": 0.0141
+        },
+        "median_eroded_adaptive": {
+          "hex": "#F1F5FE",
+          "from_cluster": 0.0175
+        },
+        "modal_peak": {
+          "hex": "#F2F7FD",
+          "from_cluster": 0.0202
+        },
+        "unmixed": {
+          "hex": "#F3F8FF",
+          "from_cluster": 0.0288
+        }
+      }
+    },
+    {
+      "folder": "362_Hydrocodone",
+      "key": "brand#0",
+      "area_pct": 10.639,
+      "cluster": "#6A072D",
+      "by": {
+        "median_full": {
+          "hex": "#B20839",
+          "from_cluster": 0.2863
+        },
+        "median_eroded_adaptive": {
+          "hex": "#B20839",
+          "from_cluster": 0.2863
+        },
+        "modal_peak": {
+          "hex": "#B20738",
+          "from_cluster": 0.2847
+        },
+        "unmixed": {
+          "hex": "#B20839",
+          "from_cluster": 0.2863
+        }
+      }
+    },
+    {
+      "folder": "362_Hydrocodone",
+      "key": "brand#1",
+      "area_pct": 0.64,
+      "cluster": "#6A072D",
+      "by": {
+        "median_full": {
+          "hex": "#240201",
+          "from_cluster": 0.3248
+        },
+        "median_eroded_adaptive": {
+          "hex": "#200201",
+          "from_cluster": 0.3382
+        },
+        "modal_peak": {
+          "hex": "#210201",
+          "from_cluster": 0.3351
+        },
+        "unmixed": {
+          "hex": "#220100",
+          "from_cluster": 0.3338
+        }
+      }
+    },
+    {
+      "folder": "365_Tapentadol",
+      "key": "brand#0",
+      "area_pct": 9.605,
+      "cluster": "#FD7902",
+      "by": {
+        "median_full": {
+          "hex": "#FD8402",
+          "from_cluster": 0.0431
+        },
+        "median_eroded_adaptive": {
+          "hex": "#FD8902",
+          "from_cluster": 0.0627
+        },
+        "modal_peak": {
+          "hex": "#FD8302",
+          "from_cluster": 0.0411
+        },
+        "unmixed": {
+          "hex": "#FD8302",
+          "from_cluster": 0.0392
+        }
+      }
+    },
+    {
+      "folder": "365_Tapentadol",
+      "key": "brand#1",
+      "area_pct": 1.47,
+      "cluster": "#FD7902",
+      "by": {
+        "median_full": {
+          "hex": "#F91A0A",
+          "from_cluster": 0.3742
+        },
+        "median_eroded_adaptive": {
+          "hex": "#FA1B06",
+          "from_cluster": 0.3691
+        },
+        "modal_peak": {
+          "hex": "#F91706",
+          "from_cluster": 0.3868
+        },
+        "unmixed": {
+          "hex": "#FA1809",
+          "from_cluster": 0.3816
+        }
+      }
+    },
+    {
+      "folder": "365_Tapentadol",
+      "key": "secondary_1#0",
+      "area_pct": 1.537,
+      "cluster": "#384B36",
+      "by": {
+        "median_full": {
+          "hex": "#093A39",
+          "from_cluster": 0.1964
+        },
+        "median_eroded_adaptive": {
+          "hex": "#053732",
+          "from_cluster": 0.2154
+        },
+        "modal_peak": {
+          "hex": "#054044",
+          "from_cluster": 0.2111
+        },
+        "unmixed": {
+          "hex": "#063330",
+          "from_cluster": 0.2188
+        }
+      }
+    },
+    {
+      "folder": "404_Ritalin",
+      "key": "highlight#0",
+      "area_pct": 39.092,
+      "cluster": "#CCCEC4",
+      "by": {
+        "median_full": {
+          "hex": "#CCCEC4",
+          "from_cluster": 0.0
+        },
+        "median_eroded_adaptive": {
+          "hex": "#CCCEC4",
+          "from_cluster": 0.0
+        },
+        "modal_peak": {
+          "hex": "#CCCEC3",
+          "from_cluster": 0.0031
+        },
+        "unmixed": {
+          "hex": "#CCCEC4",
+          "from_cluster": 0.0
+        }
+      }
+    },
+    {
+      "folder": "404_Ritalin",
+      "key": "highlight#1",
+      "area_pct": 0.422,
+      "cluster": "#CCCEC4",
+      "by": {
+        "median_full": {
+          "hex": "#BFB59F",
+          "from_cluster": 0.1824
+        },
+        "median_eroded_adaptive": {
+          "hex": "#D4CAB8",
+          "from_cluster": 0.0587
+        },
+        "modal_peak": {
+          "hex": "#ADB0A2",
+          "from_cluster": 0.2139
+        },
+        "unmixed": {
+          "hex": "#C8BAA5",
+          "from_cluster": 0.1455
+        }
+      }
+    },
+    {
+      "folder": "404_Ritalin",
+      "key": "type#16",
+      "area_pct": 0.145,
+      "cluster": "#0B081D",
+      "by": {
+        "median_full": {
+          "hex": "#0C0D1D",
+          "from_cluster": 0.02
+        },
+        "median_eroded_adaptive": {
+          "hex": "#08091B",
+          "from_cluster": 0.0147
+        },
+        "modal_peak": {
+          "hex": "#090A1A",
+          "from_cluster": 0.0179
+        },
+        "unmixed": {
+          "hex": "#090A1A",
+          "from_cluster": 0.0162
+        }
+      }
+    }
+  ]
+}

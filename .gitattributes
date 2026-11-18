@@ -1,0 +1,4 @@
+# Asset SHA-256 contracts require byte-preserving checkouts on every platform.
+assets/sources/** -text
+tests/fixtures/physical/*.json -text
+docs/portfolio/*.webp binary

@@ -1,0 +1,106 @@
+{
+  "sku_id": "64-min.jpg",
+  "artifact_type": "design_passport",
+  "schema_version": "3.0",
+  "product_name": "Kamagra",
+  "active_ingredient": "Sildenafil Citrate",
+  "template_id": "T1",
+  "label_content": {
+    "brand_name_display": "KAMAGRA-100",
+    "dosage_display": "100 mg",
+    "unit_count_display": "04"
+  },
+  "palette": {
+    "primary": "#084838",
+    "accent": "#D88878",
+    "background": "#E8D8C8"
+  },
+  "color_zones": [
+    {
+      "id": "ZONE_01",
+      "hex": "#E8D8C8",
+      "area_pct": 47.08
+    },
+    {
+      "id": "ZONE_02",
+      "hex": "#084838",
+      "area_pct": 38.08
+    },
+    {
+      "id": "ZONE_03",
+      "hex": "#088878",
+      "area_pct": 7.25
+    },
+    {
+      "id": "ZONE_04",
+      "hex": "#D88878",
+      "area_pct": 1.93
+    }
+  ],
+  "coordinate_space": "design zones are approximate; camera is not reconstructed",
+  "measurement_source": "scripts/reference_measure.py, 2026-08-07",
+  "reference_images": [
+    "raw_Kamagra_front_01.png"
+  ],
+  "quality_gate": {
+    "design_passport_present": true,
+    "colour_system_measured": true,
+    "single_source": true,
+    "colour_shares_include_loose_tablet": true
+  },
+  "status": "complete_single_source",
+  "source_tier": null,
+  "packaging_market": "in",
+  "market_evidence": "\"Sildenafil Citrate Tablets IP\" — Indian Pharmacopoeia",
+  "front_face_px": [
+    [
+      405,
+      105
+    ],
+    [
+      994,
+      87
+    ],
+    [
+      994,
+      897
+    ],
+    [
+      405,
+      953
+    ]
+  ],
+  "front_face_measurement": {
+    "source_image": "raw_Kamagra_front_01.png",
+    "order": "TL, TR, BR, BL — the order render_driver.py emits, so src/deskew.flatten_face reads it unchanged",
+    "method": "set by hand against a coordinate overlay, then verified by rectifying and inspecting the result",
+    "corner_quality": "good",
+    "corner_note": "narrow black sliver of background at the right"
+  },
+  "design_measurement": {
+    "source_image": "raw_Kamagra_front_01.png",
+    "rectified_px": [
+      1100,
+      1544
+    ],
+    "reference_aspect": 1.4036,
+    "catalogue_aspect": 0.4545,
+    "fields": {
+      "brand": {
+        "pct": 34.0,
+        "hex": "#00463B"
+      },
+      "substrate": {
+        "pct": 45.6,
+        "hex": "#E3DACD"
+      },
+      "highlight": {
+        "pct": 20.3,
+        "hex": "#002F26"
+      },
+      "type": null
+    },
+    "method": "rectified with src/deskew.flatten_face from hand-set corners; type split by value < 0.35, remainder k-means k=3 labelled by saturation and value, not by hue",
+    "note": "shares are of the FRONT FACE. The `color_zones` block counts the whole photograph, background included, and the two are not comparable."
+  }
+}

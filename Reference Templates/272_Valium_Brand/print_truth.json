@@ -1,0 +1,344 @@
+{
+  "schema": "print_truth/1",
+  "sku": "272-min",
+  "source_image": "Valium Brand_front_raw.jpg",
+  "front_face_px": [
+    [
+      60,
+      60
+    ],
+    [
+      450,
+      106
+    ],
+    [
+      422,
+      260
+    ],
+    [
+      32,
+      214
+    ]
+  ],
+  "rectified_px": [
+    1100,
+    438
+  ],
+  "enumerate_min_frac": 0.001,
+  "residue_pct_by_role": {
+    "brand": 1.78,
+    "highlight": 2.276
+  },
+  "classes": [
+    "print",
+    "object",
+    "type",
+    "unrepresentable",
+    "mark",
+    "blend",
+    "unclassified"
+  ],
+  "components": [
+    {
+      "key": "brand#0",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 3.098,
+      "bbox_uv": [
+        0.7764,
+        0.137,
+        0.9618,
+        0.3744
+      ],
+      "centroid_uv": [
+        0.8695,
+        0.2551
+      ],
+      "class": "print"
+    },
+    {
+      "key": "brand#1",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.411,
+      "bbox_uv": [
+        0.8073,
+        0.3904,
+        0.9991,
+        0.6575
+      ],
+      "centroid_uv": [
+        0.905,
+        0.5177
+      ],
+      "class": "mark",
+      "reason": "Roche hexagon logo"
+    },
+    {
+      "key": "brand#2",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.27,
+      "bbox_uv": [
+        0.34,
+        0.2877,
+        0.4009,
+        0.3858
+      ],
+      "centroid_uv": [
+        0.3696,
+        0.3317
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#3",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.255,
+      "bbox_uv": [
+        0.0509,
+        0.3767,
+        0.0936,
+        0.4954
+      ],
+      "centroid_uv": [
+        0.0702,
+        0.4314
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#4",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.239,
+      "bbox_uv": [
+        0.2291,
+        0.1667,
+        0.2855,
+        0.2603
+      ],
+      "centroid_uv": [
+        0.257,
+        0.2091
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#5",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.234,
+      "bbox_uv": [
+        0.2491,
+        0.3288,
+        0.2873,
+        0.4566
+      ],
+      "centroid_uv": [
+        0.2656,
+        0.3825
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#6",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.18,
+      "bbox_uv": [
+        0.0509,
+        0.21,
+        0.0936,
+        0.3242
+      ],
+      "centroid_uv": [
+        0.0712,
+        0.2686
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#7",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.171,
+      "bbox_uv": [
+        0.2955,
+        0.3128,
+        0.3309,
+        0.4018
+      ],
+      "centroid_uv": [
+        0.3143,
+        0.3594
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#8",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.164,
+      "bbox_uv": [
+        0.1227,
+        0.3767,
+        0.1564,
+        0.4658
+      ],
+      "centroid_uv": [
+        0.1412,
+        0.4228
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#9",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.163,
+      "bbox_uv": [
+        0.2045,
+        0.347,
+        0.2391,
+        0.4338
+      ],
+      "centroid_uv": [
+        0.2205,
+        0.3902
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#10",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.157,
+      "bbox_uv": [
+        0.1836,
+        0.1918,
+        0.2173,
+        0.2763
+      ],
+      "centroid_uv": [
+        0.2009,
+        0.2378
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#11",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.151,
+      "bbox_uv": [
+        0.0991,
+        0.226,
+        0.1309,
+        0.3082
+      ],
+      "centroid_uv": [
+        0.117,
+        0.2685
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#12",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.15,
+      "bbox_uv": [
+        0.1645,
+        0.3584,
+        0.1973,
+        0.4521
+      ],
+      "centroid_uv": [
+        0.1804,
+        0.406
+      ],
+      "class": "type"
+    },
+    {
+      "key": "brand#13",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.116,
+      "bbox_uv": [
+        0.8427,
+        0.4863,
+        0.8755,
+        0.5799
+      ],
+      "centroid_uv": [
+        0.8578,
+        0.5288
+      ],
+      "class": "mark",
+      "reason": "Roche hexagon logo"
+    },
+    {
+      "key": "brand#14",
+      "role": "brand",
+      "fill": "#09517A",
+      "area_pct": 0.111,
+      "bbox_uv": [
+        0.1609,
+        0.5251,
+        0.1855,
+        0.6142
+      ],
+      "centroid_uv": [
+        0.1746,
+        0.5681
+      ],
+      "class": "type"
+    },
+    {
+      "key": "highlight#0",
+      "role": "highlight",
+      "fill": "#7A7F82",
+      "area_pct": 8.346,
+      "bbox_uv": [
+        0.2627,
+        0.7352,
+        0.9991,
+        0.9977
+      ],
+      "centroid_uv": [
+        0.7518,
+        0.9144
+      ],
+      "class": "object",
+      "reason": "blister lying in front of the carton"
+    },
+    {
+      "key": "highlight#1",
+      "role": "highlight",
+      "fill": "#7A7F82",
+      "area_pct": 0.103,
+      "bbox_uv": [
+        0.9609,
+        0.0,
+        0.9991,
+        0.2215
+      ],
+      "centroid_uv": [
+        0.98,
+        0.0953
+      ],
+      "class": "object",
+      "reason": "carton right edge"
+    }
+  ],
+  "hole_classes": [
+    "window",
+    "lettering",
+    "mark",
+    "unclassified"
+  ],
+  "hole_min_frac": 0.0001,
+  "holes": []
+}
