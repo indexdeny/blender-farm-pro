@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # PharmaGen PRO — Operations Manual
 
 > The operator runbook: how to run the pipeline, read its state, and recover from

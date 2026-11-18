@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # Risk Register
 
 > **Phase:** v1.0.0 Final Release Engineering · **Date:** 2026-06-28

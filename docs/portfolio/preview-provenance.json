@@ -1,0 +1,40 @@
+[
+  {
+    "sku": "74-min",
+    "original_filename": "74-min-hero.png",
+    "original_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+    "preview": "74-min.webp",
+    "preview_sha256": "1843763e379ecf1f0733b1cf4425859a1014b8fa778668be7c52abd12d2d9e23",
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "decoded_rgba_sha256": "1f5750a67c8a337f791580c1127ce8e784a717d3cf27668ae13100ffde6076a0",
+    "decoded_pixels_identical": true,
+    "preview_bytes": 1872074,
+    "original_bytes": 3955005,
+    "acceptance": "Owner-reported workplace acceptance",
+    "exact_creation_git_revision": null,
+    "publication_rights": "OWNER_CONFIRMED_FOR_THIS_PORTFOLIO_PUBLICATION",
+    "rights_instruments_independently_inspected": false
+  },
+  {
+    "sku": "59-min",
+    "original_filename": "59-min-hero.png",
+    "original_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+    "preview": "59-min.webp",
+    "preview_sha256": "e3bd664b073e95e011e258a07b93501e16f773c24a2dfd94e2c71245f8101f3a",
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "decoded_rgba_sha256": "024537662d741f6a97deae388d248ddbfe8d069e41c13643d16e648d0ecbac37",
+    "decoded_pixels_identical": true,
+    "preview_bytes": 2068654,
+    "original_bytes": 4466227,
+    "acceptance": "Owner-reported workplace acceptance",
+    "exact_creation_git_revision": null,
+    "publication_rights": "OWNER_CONFIRMED_FOR_THIS_PORTFOLIO_PUBLICATION",
+    "rights_instruments_independently_inspected": false
+  }
+]

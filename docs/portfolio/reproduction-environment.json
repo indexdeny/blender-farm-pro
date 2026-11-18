@@ -1,0 +1,28 @@
+{
+  "python": "3.10.11",
+  "blender": "5.1.2",
+  "blender_build": "ec6e62d40fa9",
+  "platform": "Windows x64",
+  "packages": {
+    "Pillow": "12.2.0",
+    "numpy": "2.2.6",
+    "CairoSVG": "2.9.0",
+    "fonttools": "4.62.1",
+    "jsonschema": "4.26.0",
+    "PyYAML": "6.0.2"
+  },
+  "render_inputs_sha256": {
+    "src\\carton_artwork.py": "91e2486d7978260f084f4295b0d5d826f467ee76c027c411e96cb63078239df9",
+    "src\\carton_dieline.py": "00b16bb52707246f5cbc2b9d5f4f4eaed9ce2224eb6430c5683dd7b6c72caa79",
+    "src\\carton_materials.py": "524364f7b79470c5161b19214a5bfbfd9c51152464311525d6ebbc1e5163cbad",
+    "src\\carton_mesh.py": "770fdecbb32a627b660bbac49ac0b1186bd9debaf2f6ada999d7cb3a9b266f1c",
+    "src\\carton_scene.py": "3ceb9387e86b60554945a00087263663c0b2b486ba2767f162437e2802829e6d",
+    "src\\carton_spec.py": "c3f69c5d1ab938a1c8d2e9ac3112171a4428b02ea4bf755d9555f2ffc012b650",
+    "src\\carton_stage.py": "42d06ff7732b944c30d1642c749caff2d7e8fb6de1a3cb5671730bc83fd643d2",
+    "src\\carton_validate.py": "c05f428a6c2ae52ec2aa3d2c6237dae5cfba835ebfb04b895a87bd30c4c1488b",
+    "05_assets\\blender\\render_driver.py": "68cfdc30d5ec41147eaba3974396f7b0f6587b9c2a7dbccf436743ed0102de74",
+    "Reference Templates\\59_Cialis\\design_spec.json": "2b5c8835582c05f7f3be2098d1e53cd61adc89538961b2508e682093339d53a1",
+    "Reference Templates\\74_Viagra\\design_spec.json": "a51b3582b6ca86caf28974b3c3de9c2dcbc1247874912abbef9b33b2311a8911"
+  },
+  "physical_main_dispatch_ast_unchanged": true
+}

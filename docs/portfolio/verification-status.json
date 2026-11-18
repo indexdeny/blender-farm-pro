@@ -1,0 +1,20 @@
+{
+  "status": "PREPARED — PUBLICATION VERIFICATION PENDING",
+  "date": "2026-11-19",
+  "published": false,
+  "code_commit": "f20565b3c67412197f37b46226edc9fc165b4887",
+  "master_sha": "не опубликован",
+  "local_unittest_cli": {
+    "tests_run": 624,
+    "success_statuses": 611,
+    "method_skips": 13,
+    "class_fixture_skip_records": 1,
+    "class_fixture_unexecuted_methods": 4,
+    "unittest_skip_records": 14,
+    "failures": 0,
+    "errors": 0
+  },
+  "published_unittest": null,
+  "rights_basis": "Owner-confirmed portfolio permission; no independent instruments review",
+  "exact_original_reproduction": false
+}

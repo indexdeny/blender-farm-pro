@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # Acceptance Test
 
 > A single hand-over gate. Run top to bottom from the project root; tick each box.

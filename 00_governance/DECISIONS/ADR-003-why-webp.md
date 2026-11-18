@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # ADR-003: WEBP (1600×1600, ≤500 KB) as the final asset format
 
 **Status:** Accepted · **Date:** reconstructed 2026-06-28 · **[confirm with author]**

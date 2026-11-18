@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # PharmaGen PRO — Deployment Guide
 
 > How to stand up PharmaGen PRO from scratch on a new machine, keep it updated,

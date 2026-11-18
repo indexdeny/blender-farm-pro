@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # ADR-006: Unified `main.py` + subprocess orchestration
 
 **Status:** Accepted · **Date:** 2026-06-27

@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # PharmaGen PRO — Project History
 
 > A narrative of how the product evolved — **not** a changelog. It exists so a new

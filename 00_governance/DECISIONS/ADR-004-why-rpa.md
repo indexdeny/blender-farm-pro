@@ -1,3 +1,5 @@
+> Historical inherited record; not current two-SKU certification. Not independently revalidated. Current status: [release report](../../FINAL_PORTFOLIO_RELEASE_REPORT.md).
+
 # ADR-004: Selenium RPA (browser) instead of an image API
 
 **Status:** Accepted · **Date:** reconstructed 2026-06-28 · **[confirm with author]**
