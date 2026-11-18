@@ -1,12 +1,12 @@
 # FINAL_TEST_RESULTS
 
-Дата: 2026-11-19. Статус: **PREPARED — PUBLICATION VERIFICATION PENDING**. Область: только 74-min / Viagra и 59-min / Cialis.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**. Область: только 74-min / Viagra и 59-min / Cialis.
 
 ## Тесты
 
 Локальный чистый source-copy run: `python -B -m unittest discover -s tests -v`, Ran624 in750.709s, `OK (skipped=14)`. Журнал содержит611 успешных test statuses и13 method skips; ещё один class-level fixture skip исключает4 метода и отдельно не входит в testsRun. Не вычислять число pass простым624−14.
 
-Published clean-checkout structured run ещё не завершён; результат не подменяется локальным.
+Structured published clean-checkout run: collected=628, testsRun=624, passed=611, failed=0, errors=0, skip records=14, exit=0, seconds=707.234. Подробный счёт method/class fixture skips и GitHub receipt: [published-verification.json](docs/portfolio/published-verification.json).
 
 Первая clean попытка выявила missing-photography FAIL и class-fixture SystemExit, оборвавший suite после601 ok. Fixture handling исправлен; quality assertions не ослаблены. Первый успешный unittest log сохранён целиком; private run wrapper после завершения тестов ошибся при postprocessing kind-name и не сохранил return-code JSON. Ошибка обвязки исправлена, журнал unittest не переписан; authoritative published structured run учитывает successes/skips напрямую.
 

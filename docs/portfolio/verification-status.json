@@ -1,9 +1,9 @@
 {
-  "status": "PREPARED — PUBLICATION VERIFICATION PENDING",
+  "status": "READY WITH LIMITATIONS",
   "date": "2026-11-19",
-  "published": false,
+  "published": true,
   "code_commit": "f20565b3c67412197f37b46226edc9fc165b4887",
-  "master_sha": "не опубликован",
+  "master_sha": "08a1b3182402d90cae4ee2439193a680a0f32633",
   "local_unittest_cli": {
     "tests_run": 624,
     "success_statuses": 611,
@@ -14,7 +14,20 @@
     "failures": 0,
     "errors": 0
   },
-  "published_unittest": null,
+  "published_unittest": {
+    "runner": "stdlib unittest discovery with success/skip accounting",
+    "status": "PASS_WITH_SKIPS",
+    "collected_test_cases": 628,
+    "standard_tests_run": 624,
+    "passed": 611,
+    "failed": 0,
+    "errors": 0,
+    "skip_records": 14,
+    "failed_ids": [],
+    "error_ids": [],
+    "seconds": 707.234,
+    "exit_code": 0
+  },
   "rights_basis": "Owner-confirmed portfolio permission; no independent instruments review",
   "exact_original_reproduction": false
 }

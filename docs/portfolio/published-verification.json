@@ -1,0 +1,140 @@
+{
+  "status": "READY WITH LIMITATIONS",
+  "verified_public_checkout": "08a1b3182402d90cae4ee2439193a680a0f32633",
+  "code_commit": "f20565b3c67412197f37b46226edc9fc165b4887",
+  "clean_clone_before_testing": {
+    "tracked_files": 2206,
+    "clean": true,
+    "private_generated_cache_present": false
+  },
+  "unittest": {
+    "runner": "stdlib unittest discovery with success/skip accounting",
+    "status": "PASS_WITH_SKIPS",
+    "collected_test_cases": 628,
+    "standard_tests_run": 624,
+    "passed": 611,
+    "failed": 0,
+    "errors": 0,
+    "skip_records": 14,
+    "method_skips": [
+      {
+        "test": "test_blender_carton.TestRenderedLuminance.test_every_shape_and_size_lands_in_the_reference_band",
+        "reason": "slow: renders real packshots; set PHARMAGEN_SLOW_TESTS=1"
+      },
+      {
+        "test": "test_blender_carton.TestRenderedLuminance.test_no_face_of_the_carton_is_blown_to_white",
+        "reason": "slow: renders real packshots; set PHARMAGEN_SLOW_TESTS=1"
+      },
+      {
+        "test": "test_carton_profile.TestProfileMeasurement.test_provenance_reads_exactly_the_seven_approved_carton_jpgs",
+        "reason": "NOT VERIFIED: optional seven-photo carton dataset is not installed"
+      },
+      {
+        "test": "test_design_qa.TestTheReferenceFaceIsComputedAndNeverCached.test_one_implementation_of_the_rectified_face",
+        "reason": "NOT VERIFIED: optional reference photography is not installed"
+      },
+      {
+        "test": "test_reference_regions.TestRecoverSubstrateRegions.test_design_coverage_indexes_the_recovered_print_region",
+        "reason": "NOT VERIFIED: optional reference photography is not installed"
+      },
+      {
+        "test": "test_reference_regions.TestRecoverSubstrateRegions.test_fitter_and_labeller_receive_the_same_recovered_mask",
+        "reason": "NOT VERIFIED: optional reference photography is not installed"
+      },
+      {
+        "test": "test_reference_regions.TestRecoverSubstrateRegions.test_viagra_light_blue_stripe_is_not_substrate",
+        "reason": "NOT VERIFIED: optional reference photography is not installed"
+      },
+      {
+        "test": "test_reference_templates.TestEveryPhotographedFolderIsInTheBarrier.test_the_sample_names_no_folder_without_a_photograph",
+        "reason": "NOT VERIFIED: optional reference photography dataset is not installed"
+      },
+      {
+        "test": "test_render_qa.TestOCRAgainstAFreshRender.test_a_fresh_render_of_the_fixture_sku_still_reads",
+        "reason": "set PHARMAGEN_SLOW_TESTS=1 to re-render the fixture SKU"
+      },
+      {
+        "test": "test_render_qa.TestOCRAgainstAFreshRender.test_the_fixtures_and_a_fresh_render_miss_exactly_the_same_rows",
+        "reason": "set PHARMAGEN_SLOW_TESTS=1 to re-render the fixture SKU"
+      },
+      {
+        "test": "test_render_qa.TestOCRAgainstAFreshRender.test_the_template_sample_fixtures_still_match_a_fresh_render",
+        "reason": "set PHARMAGEN_SLOW_TESTS=1 to re-render the fixture SKU"
+      },
+      {
+        "test": "test_silhouette.TestMeasuredSilhouette.test_erosion_is_what_makes_the_measurement_possible_at_all",
+        "reason": "blender_test_renders/ holds no current-era render to measure"
+      },
+      {
+        "test": "test_silhouette.TestMeasuredSilhouette.test_the_measurement_is_bracketed_by_the_two_models",
+        "reason": "blender_test_renders/ holds no current-era render to measure"
+      }
+    ],
+    "class_fixture_skips": [
+      {
+        "fixture": "setUpClass (test_viagra_edge_producer.TestProducerEdgeRegression)",
+        "reason": "NOT VERIFIED: optional producer reference photography is not installed",
+        "unexecuted_case_ids": [
+          "test_viagra_edge_producer.TestProducerEdgeRegression.test_final_band_preserves_straight_edges",
+          "test_viagra_edge_producer.TestProducerEdgeRegression.test_final_navy_and_blue_share_one_exact_edge",
+          "test_viagra_edge_producer.TestProducerEdgeRegression.test_final_navy_left_is_continuous_with_reviewed_side_ink",
+          "test_viagra_edge_producer.TestProducerEdgeRegression.test_pfizer_preserves_disconnected_letters_and_their_counters"
+        ]
+      }
+    ],
+    "failed_ids": [],
+    "error_ids": [],
+    "seconds": 707.234,
+    "exit_code": 0
+  },
+  "unittest_log_sha256": "a6cdeb61eaf487269163714c42f095b82303bba9bcebc24ce621fcf1f851e0e7",
+  "github": {
+    "status": "PASS",
+    "repository": "indexdeny/blender-farm-pro",
+    "default_branch": "master",
+    "master_sha": "08a1b3182402d90cae4ee2439193a680a0f32633",
+    "readme_git_blob_sha": "8200c5f9adbae0d06807584269f660b373e277e5",
+    "readme_matches_clone": true,
+    "exact_required_status": true,
+    "previews": [
+      {
+        "path": "docs/portfolio/74-min.webp",
+        "git_blob_sha": "468b0770abe806eb6db57b7f50753bb7bd5566f2",
+        "sha256": "1843763e379ecf1f0733b1cf4425859a1014b8fa778668be7c52abd12d2d9e23",
+        "bytes": 1872074,
+        "http_status": 200,
+        "content_type": "image/webp",
+        "decoded_pixels_match_accepted_provenance": true
+      },
+      {
+        "path": "docs/portfolio/59-min.webp",
+        "git_blob_sha": "56897111ddaede449d877f463e8ed231bc93efca",
+        "sha256": "e3bd664b073e95e011e258a07b93501e16f773c24a2dfd94e2c71245f8101f3a",
+        "bytes": 2068654,
+        "http_status": 200,
+        "content_type": "image/webp",
+        "decoded_pixels_match_accepted_provenance": true
+      }
+    ],
+    "pr1": {
+      "html_url": "https://github.com/indexdeny/blender-farm-pro/pull/1",
+      "number": 1,
+      "merge_commit_sha": "08a1b3182402d90cae4ee2439193a680a0f32633",
+      "merged": true
+    }
+  },
+  "source_preservation": {
+    "worktrees_unchanged": true,
+    "preexisting_refs_preserved": true,
+    "additional_app_capture_refs": 1,
+    "accepted_png_unchanged": true,
+    "prior_bundles_unchanged": true
+  },
+  "limits": [
+    "Exact historical creation Git revisions remain unknown.",
+    "Fresh renders are visually consistent but do not equal the historical original pixels.",
+    "Optional photography and slow checks remain not verified.",
+    "Owner confirmed portfolio publication rights; instruments were not independently inspected.",
+    "Historical R-004 flake remains unresolved."
+  ]
+}

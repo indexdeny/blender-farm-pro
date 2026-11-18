@@ -1,6 +1,6 @@
 # ACCEPTED_RENDER_PROVENANCE
 
-Дата: 2026-11-19. Статус: **PREPARED — PUBLICATION VERIFICATION PENDING**. Область: только 74-min / Viagra и 59-min / Cialis.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**. Область: только 74-min / Viagra и 59-min / Cialis.
 
 ## Принятые оригиналы
 

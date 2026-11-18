@@ -1,6 +1,6 @@
 # RENDERER_SCOPE_DECISION
 
-Дата: 2026-11-19. Статус: **PREPARED — PUBLICATION VERIFICATION PENDING**. Область: только 74-min / Viagra и 59-min / Cialis.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**. Область: только 74-min / Viagra и 59-min / Cialis.
 
 `reference_projection` — исторический фото-texture/camera/exposure эксперимент. Ни текущие catalogue specs, ни сохранённая accepted physical цепочка двух hero не требуют его активации. Physical builder отдельно запрещает фотографические поля.
 

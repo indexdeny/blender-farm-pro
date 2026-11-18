@@ -1,10 +1,10 @@
 # FINAL_PORTFOLIO_RELEASE_REPORT
 
-Дата: 2026-11-19. Статус: **PREPARED — PUBLICATION VERIFICATION PENDING**. Область: только 74-min / Viagra и 59-min / Cialis.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**. Область: только 74-min / Viagra и 59-min / Cialis.
 
 ## Резюме
 
-R&D prototype с двумя принятыми packaging examples; дальнейшая визуальная разработка каталога прекращена из-за бюджета. Current public state: master `не опубликован`, publication=False, default=не изменён. Не объявлять готовность, пока published checks не завершены.
+R&D prototype с двумя принятыми packaging examples; дальнейшая визуальная разработка каталога прекращена из-за бюджета. Проверенный public checkout: master `08a1b3182402d90cae4ee2439193a680a0f32633`, publication=True, default=master. GitHub и clean-checkout проверки завершены; последующий report-only commit сохраняет проверенный runtime.
 
 ## Что сохранено и выбрано
 
@@ -20,7 +20,7 @@ Primary candidate033632e + descendant rendererbd849c1/uncommitted implementation
 - Physical fresh renders exit0;121 object records, camera matrices, render contract/shader inputs совпали с historical scene evidence; numeric geometry/layout/material gates PASS.
 - Current images отличаются от original на652/501 pixels, max1/255; composition visually preserved. Не byte-identical. Точный creation Git revision UNKNOWN.
 - Required assets/dependencies проверены; independent code review не выявил P0/P1, optional SciPy declaration исправлена.
-- Published clean-checkout structured run ещё не завершён; результат не подменяется локальным.
+- Structured published clean-checkout run: collected=628, testsRun=624, passed=611, failed=0, errors=0, skip records=14, exit=0, seconds=707.234. Подробный счёт method/class fixture skips и GitHub receipt: [published-verification.json](docs/portfolio/published-verification.json).
 
 ## Что не доказано
 
@@ -28,7 +28,9 @@ Exact historical reproduction; factory dimensions/coating/optics; manufacturer c
 
 ## Проверка публикации
 
-PR: не создан. GitHub default/master/README/two previews/clean checkout evidence фиксируется после фактических API/clone проверок. Source refs и old branches не удаляются. Финальные report-only обновления не меняют проверенный runtime/code tree.
+PR: https://github.com/indexdeny/blender-farm-pro/pull/1. GitHub API подтвердил default master, README совпал с клоном, оба WebP возвращают HTTP200/image-webp и совпадают по SHA-256 и decoded RGBA. Клон получен непосредственно с GitHub без private generated caches; структурированный full suite завершён exit0. Машинный receipt: [published-verification.json](docs/portfolio/published-verification.json). Source refs и old branches не удалялись. Финальные report-only обновления не меняют проверенный runtime/code tree.
+
+Финальная проверка исходника подтвердила неизменность четырёх worktree statuses, обоих accepted PNG, трёх bundles и всех существовавших source refs. Наблюдалось добавление служебной Codex turn-capture ref; ни одна прежняя ref не сдвинулась. Это отдельно учтено, а не названо byte-identical Git metadata.
 
 ## Документы
 
