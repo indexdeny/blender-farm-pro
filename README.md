@@ -78,6 +78,7 @@ Validation includes syntax compilation, schema/manifest generation, driver smoke
 
 ## 10. Verified Results
 
+- Published clean-checkout unittest: 611 passed, 0 failed, 0 errors; 14 skip records (method and class-fixture counts are detailed in the [verification receipt](docs/portfolio/published-verification.json)).
 - The owner identified exactly the two examples above as accepted.
 - Their original SHA-256 values match the preserved recovery evidence.
 - The historical source archive and recorded closure artifact chain were hash-checked.

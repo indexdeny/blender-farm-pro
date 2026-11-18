@@ -1,10 +1,10 @@
 # PORTFOLIO_PUBLICATION_SUMMARY
 
-Дата: 2026-11-19. Статус: **PREPARED — PUBLICATION VERIFICATION PENDING**. Область: только 74-min / Viagra и 59-min / Cialis.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**. Область: только 74-min / Viagra и 59-min / Cialis.
 
-Target: [indexdeny/blender-farm-pro](https://github.com/indexdeny/blender-farm-pro). Public parent: `c066fbc71ff1f4c5ca2f06b6faaf2a376f7be486`. Code commit: `f20565b3c67412197f37b46226edc9fc165b4887`. Master at last verification: `не опубликован`. PR: не создан.
+Target: [indexdeny/blender-farm-pro](https://github.com/indexdeny/blender-farm-pro). Public parent: `c066fbc71ff1f4c5ca2f06b6faaf2a376f7be486`. Code commit: `f20565b3c67412197f37b46226edc9fc165b4887`. Master at last verification: `08a1b3182402d90cae4ee2439193a680a0f32633`. PR: https://github.com/indexdeny/blender-farm-pro/pull/1.
 
-Publication performed: **FALSE**. GitHub default branch verified master: **FALSE**. Published README/previews and clean clone verified: **FALSE**.
+Publication performed: **TRUE**. GitHub default branch verified master: **TRUE**. Published README/previews and clean clone verified: **TRUE**.
 
 Выбран один recovered source end-state в новых commits поверх публичного master; приватная development history не переписана и не публикуется целиком. `dev`, `corner-trial-74-viagra` и остальные source refs сохранены.
 

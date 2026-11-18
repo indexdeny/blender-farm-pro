@@ -1,6 +1,6 @@
 # CLEANUP_MANIFEST
 
-Дата: 2026-11-19. Статус: **PREPARED — PUBLICATION VERIFICATION PENDING**. Область: только 74-min / Viagra и 59-min / Cialis.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**. Область: только 74-min / Viagra и 59-min / Cialis.
 
 ## Состав
 
@@ -19,7 +19,7 @@
 | KEEP_TEST | 143 |
 | REMOVE_FROM_TRACKING | 1488 |
 
-Все named files и основания: [cleanup-files.json](docs/portfolio/cleanup-files.json). Точный final public набор содержит 2206 файлов на момент отчёта; development-tree и public-parent counts различаются из-за разных исходных веток. Удалено из tracking публичного parent 816 путей. Эти числа не считаются уменьшением исторической Git-базы.
+Все named files и основания: [cleanup-files.json](docs/portfolio/cleanup-files.json). Точный final public набор содержит 2207 файлов на момент отчёта; development-tree и public-parent counts различаются из-за разных исходных веток. Удалено из tracking публичного parent 816 путей. Эти числа не считаются уменьшением исторической Git-базы.
 
 ## Безопасность
 
