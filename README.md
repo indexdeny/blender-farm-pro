@@ -13,10 +13,10 @@ Python/Blender Cycles pipeline for procedural 3D pharmaceutical packaging, edita
 
 | Evidence | Verified scope |
 |---|---|
-| Historical images | Two accepted2048×2048 originals; lossless previews retain their pixels |
-| Saved scenes | Replay matched accepted RGBA pixels in the checked Blender5.1.2 CPU environment |
-| Fresh procedural generation | Matches prior baseline; differs from historical originals by652/501 pixels,max1/255 |
-| Automated tests | Historical code verification:611passed,0failures/errors,14skip records; no new suite run for this presentation-only change |
+| Historical images | Two accepted 2048×2048 originals; lossless previews retain their pixels |
+| Saved scenes | Replay matched accepted RGBA pixels in the checked Blender 5.1.2 CPU environment |
+| Fresh procedural generation | Matches prior baseline; differs from historical originals by 652/501 pixels, max 1/255 |
+| Automated tests | Historical code verification: 611 passed, 0 failures/errors, 14 skip records; no new suite run for this presentation-only change |
 
 [Architecture and validation](FINAL_SCENE_AND_MASKS_AUDIT.md) · [LinkedIn portfolio kit](docs/linkedin/README.md) · [Development-source audit](docs/portfolio/BEFORE_AFTER_SOURCE_AUDIT.md)
 
