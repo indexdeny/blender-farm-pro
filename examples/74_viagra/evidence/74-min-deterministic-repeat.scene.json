@@ -1,0 +1,6623 @@
+{
+  "dimensions_spec_mm": {
+    "width": 110,
+    "height": 50,
+    "depth": 18,
+    "source": "template"
+  },
+  "objects": [
+    {
+      "name": "front",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          -8.999999612569809,
+          -8.679999969899654
+        ],
+        [
+          0.007499999810534064,
+          49.992501735687256
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "e570613073b61cd8ef81414b23a828b21e567edae6a3a419f629726554894061",
+      "uv_sha256": "71ba910108780d78f1ee27c95f78759e676aeba1c9a6d5cb27410112f8005afa",
+      "nontriangles": 0,
+      "signed_volume_mm3": 1757.070135380734,
+      "bevel_mm": 0.12,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "back",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          8.679999969899654,
+          8.999999612569809
+        ],
+        [
+          0.007499999810534064,
+          49.992501735687256
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "fadcaefa72da535b73bbf3cbeb5c20500c1e1d75c0269c23b89e4730f734b405",
+      "uv_sha256": "53f1040279ec89bdc007e5043a847f9961f9a1f7920c8d01d492ad83002c2a31",
+      "nontriangles": 0,
+      "signed_volume_mm3": 1757.070135380734,
+      "bevel_mm": 0.12,
+      "panel": "back",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "left",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.999999701976776,
+          -54.680000990629196
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          0.007499999810534064,
+          49.992501735687256
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "e79f5485ed90906aec469fd8a515abc3e55fb8ed14385ea083f0d994758ef480",
+      "uv_sha256": "1ad4b698f9771ad730de02a8de09d857ab3a8b0fa388fda09b6df1b7f346f623",
+      "nontriangles": 0,
+      "signed_volume_mm3": 286.7560906415073,
+      "bevel_mm": 0.12,
+      "panel": "left",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "right",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          54.680000990629196,
+          54.999999701976776
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          0.007499999810534064,
+          49.992501735687256
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "626c0d09395603c178d065a3226a4fddad351ea02d586f667daf27be843bce52",
+      "uv_sha256": "47a1526bf924699d7447afa0ce5fd2d412bbae5b4f8205a524c8162cd89b77be",
+      "nontriangles": 0,
+      "signed_volume_mm3": 286.7560906415073,
+      "bevel_mm": 0.12,
+      "panel": "right",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          49.67999830842018,
+          50.00000074505806
+        ]
+      ],
+      "vertices": 180,
+      "triangles": 356,
+      "mesh_sha256": "0ba00a9114896f5879f32e34b5986330097e5ecc5d8f3417c62636e498d4e846",
+      "uv_sha256": "643a69ecc7616de077c0cb21cb3c8a49e01f28efb0f8c12ee294a63288dfa4fb",
+      "nontriangles": 0,
+      "signed_volume_mm3": 630.294376745748,
+      "bevel_mm": 0.12,
+      "panel": "top",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": 0.055,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          0.0,
+          0.31999999191612005
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "b07dfbb7662bbe42f7d49a0e996acacfd146c1dbd8988e9e1529c5c3f2468e8a",
+      "uv_sha256": "9f70625b7825462ad982d548e7fbf22bce4b4ec5596083fc517068653862d809",
+      "nontriangles": 0,
+      "signed_volume_mm3": 631.2544734839173,
+      "bevel_mm": 0.12,
+      "panel": "bottom",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top_tuck",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          54.680000990629196
+        ],
+        [
+          8.3600003272295,
+          8.679999969899654
+        ],
+        [
+          43.68000105023384,
+          49.67999830842018
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "bc0c0b9a115530812a6e5bd168475b866c5f27d821fb7b8f49d3f8bcc299acef",
+      "uv_sha256": "6149824aea61688421cc404955f63aa00ac37f2223b938673d2fa7db73dfbafa",
+      "nontriangles": 0,
+      "signed_volume_mm3": 208.40850782286046,
+      "bevel_mm": 0.12,
+      "panel": "back",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom_tuck",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          54.680000990629196
+        ],
+        [
+          -8.679999969899654,
+          -8.3600003272295
+        ],
+        [
+          0.31999999191612005,
+          6.320000160485506
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "d5922465f387df58caaf90fa5faca949292c9b8dd2a2a81d0304b911780bf124",
+      "uv_sha256": "de7777131f3269e3c0bc4387bf6da4921f1a079c6eaedb8d665e3fa392eaa3fa",
+      "nontriangles": 0,
+      "signed_volume_mm3": 208.41010076464013,
+      "bevel_mm": 0.12,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top_dust_left",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          -46.67999967932701
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          49.3599995970726,
+          49.67999830842018
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "2373e8ae76f5cd92707a889837d0c328e7c99369c2211dd5834a5e35a0cc127e",
+      "uv_sha256": "9884dfe68eec38db5f2e24de78178b40d88066444c19ab5ec003f0abc29ece70",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09766329871424,
+      "bevel_mm": 0.12,
+      "panel": "top",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top_dust_right",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          46.67999967932701,
+          54.680000990629196
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          49.3599995970726,
+          49.67999830842018
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "0135da4c0552628a6a739a8768843381b2935c2f9f396b4f31940aa5da126020",
+      "uv_sha256": "5d2ac4b4bcecc17a979017c424f4fb4293a6a87e03f5f4b5ab5b521a9908b6b7",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09705745000991,
+      "bevel_mm": 0.12,
+      "panel": "top",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom_dust_left",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          -46.67999967932701
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          0.31999999191612005,
+          0.6399999838322401
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "5ef25aa9de43ba73c4bc316e8a0f068f566d2fa3b8d3d0130699226de9f446e3",
+      "uv_sha256": "4a96f3948973fbb92e9ccf22b3e4e8ea9fc556fd9b1d5f6195a7bbd5d2a2207b",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09716724239343,
+      "bevel_mm": 0.12,
+      "panel": "bottom",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom_dust_right",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          46.67999967932701,
+          54.680000990629196
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          0.31999999191612005,
+          0.6399999838322401
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "d3600b14e638c9a91442e33cdbbcdea568426aa2e74232394cf7d23d806ff3d3",
+      "uv_sha256": "f06c917f313da40bbda21b8156d60450501bc1b6ffae1b9a1b7c6649d7a69cf4",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09720039642851,
+      "bevel_mm": 0.12,
+      "panel": "bottom",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "glue_seam",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          47.68000170588493,
+          54.680000990629196
+        ],
+        [
+          8.3600003272295,
+          8.679999969899654
+        ],
+        [
+          0.31999999191612005,
+          49.67999830842018
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "ac4e3beb6fda4824503c39307a52180d37eece098531044e7d3c3ea88803a567",
+      "uv_sha256": "8a57272ffe658ea8b461faf3b38b73e51f1bb66f531fe06782b4ddb347067a35",
+      "nontriangles": 0,
+      "signed_volume_mm3": 109.79969603076731,
+      "bevel_mm": 0.12,
+      "panel": "back",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_000",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -23.000000044703484,
+          -21.549999713897705
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "1aabddbbf3121d39c6d263e9174a6a356f47aea6cb6371c2a9883f3137970f16",
+      "uv_sha256": "4cf7acaba185b171d4725ded76253f4bfa4ca38635e0b38b780cbc46f93308b6",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20126308952761557,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_001",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -23.000000044703484,
+          -21.549999713897705
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          21.050000563263893,
+          22.50000089406967
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "d26ac182fde7230abe1ad3f83d5c446743864598ab6de36a3e6b707f3bc6a5f7",
+      "uv_sha256": "266b18f39e7e8a60bf8647c67493dfdc8c7182b50a6f49252b7213842c7f2111",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2007629143948214,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_002",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -23.000000044703484,
+          -21.549999713897705
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          18.549999222159386,
+          19.999999552965164
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "e06762720ccacf35986deb1eee9e45b2e7ebf3591403c947c66e4f55f329a648",
+      "uv_sha256": "60ad5b95601b5b08cc89fbaca4d157867915541de18f83119e4ea1671c27b9a0",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20047251821549655,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_003",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -20.500000566244125,
+          -19.050000235438347
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          18.549999222159386,
+          19.999999552965164
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "5acef367a7e3a72559255e01a49d56fee1e481bc707d6ba497ed7371f99bbe79",
+      "uv_sha256": "dc747b61c73633df168936359382c5db7b4a2afa30216b2b2fd781c4c8d38720",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20075652367353655,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_004",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -17.000000923871994,
+          -15.549999661743641
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          21.050000563263893,
+          22.50000089406967
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "f5376a7bbf16dadc114fe82e4f77dc9c031122942cbb48d227d3971a44896ba4",
+      "uv_sha256": "69ce968b9070de6d87bba6bc1cf902ce094a417bd53cb5bbe05dce281dad3f91",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20058078115114916,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_005",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -14.499999582767487,
+          -13.050000183284283
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "8f12f9c85599c16a741bdea874dfb1cc99fddb1311f94fcd19f69fb490ac561e",
+      "uv_sha256": "ffc06553a79f6f50642c7f239b574bccc94e29c747e17285767dfaf7133eb8e8",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20072503844244646,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_006",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -10.999999940395355,
+          -9.549999609589577
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "7ccad844dbe1a47ef68c52c15a88977e5d9356fe20ac5e29f9051d53f1fb358e",
+      "uv_sha256": "259697b0bef1db43b0ed83285515bbd811c79609f83e42f23d2f989b166f7eea",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20050555660233707,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_007",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -4.999999888241291,
+          -3.5500000230968
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "b98220b21908c2e743a753d42a076ec81527231cb0861369982968c3e9326fba",
+      "uv_sha256": "03c9e7fe8ef2a0056ba9451eca73a0b224cced1b810f56191b24e583e616b42f",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20060172309435317,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_008",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -4.999999888241291,
+          -3.5500000230968
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          21.050000563263893,
+          22.50000089406967
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "042bc56b6c3f12a683b36edf62d84004b016425eca2e3ccc6bdef338f1556096",
+      "uv_sha256": "f2ef520486943a8f64cefd666fade7068965bade68d9e5f294775a9ee683024a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20068062431729408,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_009",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -2.4999999441206455,
+          -1.0499999625608325
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "7decaa81012f22a7770fe13904c050330516510b2f0fe41b990c925c8e58abc8",
+      "uv_sha256": "c2638de0a5a51bded9b146556191c20a1e9bfe15e2cc38221da84f257f9fde12",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20072017890375074,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_010",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -2.4999999441206455,
+          -1.0499999625608325
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          21.050000563263893,
+          22.50000089406967
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "e936aa53bb10f91bca25057faa678c0d8a63ebc6f47251df542654541592e390",
+      "uv_sha256": "804bbff0a93c62534770ef16875a967d32887673c3ad8c8e14fa0595e5e21792",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20069536194970367,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_011",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          1.0000000474974513,
+          2.4500000290572643
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "a3047c7d9bce10051ca3fab522427e22ef3ca7958a660b045a00e1ab5c6029d7",
+      "uv_sha256": "8be9f6d7b95df77aed38b119fd846cf96c921cfeed434abb000dfbd2de3dad31",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2007266228232224,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_012",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          1.0000000474974513,
+          2.4500000290572643
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          21.050000563263893,
+          22.50000089406967
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "95f43ea5e199ed445af37828495558ae19bdc41726974ebf69c2633b961faaf7",
+      "uv_sha256": "79421d260204fbe5e99ffe93dfb8ebf309996c560747d0881ed7aafdcbe22d3a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20068073851991974,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_013",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          1.0000000474974513,
+          2.4500000290572643
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          18.549999222159386,
+          19.999999552965164
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "e6069bfeaf8ef17c7c810f4ab1664977826009c6cb589eb2268c7919a95d1e05",
+      "uv_sha256": "9e0bdbcb5c78cb68a0caaa1fad9c363bf69a04ff083e0b32571d730e347457ec",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2006922267261409,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_014",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          3.5000001080334187,
+          4.94999997317791
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          21.050000563263893,
+          22.50000089406967
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "8108da1acb6d07f3131809ab91251c1cc3e2d89c5ab6a90d7e341dcc0999c175",
+      "uv_sha256": "7b2c3e05d09681b7c765cdf54df385877004a79e604af6ee7cbfe0d169ef9ee6",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2006986319034527,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_015",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          7.000000216066837,
+          8.449999615550041
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          23.55000004172325,
+          25.00000037252903
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "f39f94e2302f3f4d0d835be42000c1b9d8e7ed9e70f208104edde794ed1f1198",
+      "uv_sha256": "230aa82387cd7c4f0aae2960904cf9c362b858f75af7ac61d5f7b324ee142d0a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20058983178176654,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_016",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -23.000000044703484,
+          -21.549999713897705
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          10.54999977350235,
+          12.000000104308128
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "6727957af568ae89f2e89f1f9da63ed236227738939ad9b941f052a26ad41aa7",
+      "uv_sha256": "8dbfe79c44ecaf41817e284313585bfbc0346871930c305b4ba8989eeaf5f645",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20086039544582965,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_017",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -20.500000566244125,
+          -19.050000235438347
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "3d5e55d690089e29548fe5fa7071270d4e85dd5e08db4cb09d6c7e130de96952",
+      "uv_sha256": "4e877b90775044191aec1e4c97730ce970b82b6c806ff5697b6f3b85ca7ca4d2",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2005998237889856,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_018",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -20.500000566244125,
+          -19.050000235438347
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "efc59777e7fd87ac78ed9e1bbaaa2d149ac372569406776f5bcaa8c1f5c303c6",
+      "uv_sha256": "0d594d727b4859638cf0444986165ae9b4b9b75ec783762509617f4ed8fbf3bf",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20061382416391918,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_019",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -20.500000566244125,
+          -19.050000235438347
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          10.54999977350235,
+          12.000000104308128
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "360f070a09aca3f8a0157e3bfa88fc1c054871e9e484ccc4ff12abcb2837caa0",
+      "uv_sha256": "937faf14ca106d294f144fe751f5394ccbd0b7e7df6a598aca898e9fa2f7f9d6",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20069317504164147,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_020",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -17.000000923871994,
+          -15.549999661743641
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "38615ef7424ac287ca9a9f80cce3641e148d6cb77ef60e5bf35e274a56d134a7",
+      "uv_sha256": "e0e944ec0a50ce7036f07cd6014ef1bf83181150796d1bfea35b9e2023ce940b",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20083484875144092,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_021",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -10.999999940395355,
+          -9.549999609589577
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "13be3009cbc37a15ab5dbec95384642ba68211a8e56cd35ba976fa6910c4ab9d",
+      "uv_sha256": "d9b0057bf2b539a5ec78397df18140ef63418ff85b757dac81d4a7b68ebec9d2",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20066759365277956,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_022",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -8.500000461935997,
+          -7.0500001311302185
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "c8aaef38b8f5a17776851ac32f464c02dc4176f5f3549f9a5bcfd8cd2fb424b1",
+      "uv_sha256": "f167aa148fb83162485034eff798bb393c78e07121ad63f8014651ad3b403632",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2006669084370072,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_023",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -8.500000461935997,
+          -7.0500001311302185
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "22ba87c51a165224a753e00a9157ae5dad026691951d98a64ab669c0da205b5f",
+      "uv_sha256": "d663cafcdef53839fac3950c0eac9c1329abcad2bba9101474fbf4fe7e84f090",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20080800347196934,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_024",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -4.999999888241291,
+          -3.5500000230968
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "12cbb5127f9069cf7ec7d89f5d9a9a24f18a20f001f47c53ed19759929541703",
+      "uv_sha256": "25013c02b93642cdca20dcf4fb88c3fbd011a591ab8fcba08fdffd8c3cb6e878",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20069649298940923,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_025",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -2.4999999441206455,
+          -1.0499999625608325
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "66f6e8f1bd2985d646301744dcdbaedb9adc9ca049a4e074afbaf044b50d9af1",
+      "uv_sha256": "c5ae08cff0f239bbd3a9ae990537a96735019faff7641dcbf8436a3b8325461f",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20070946293859793,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_026",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -2.4999999441206455,
+          -1.0499999625608325
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "73e337c47755e5239b961cdc57804049892e1e6554163646c0c0a99cdd2069c4",
+      "uv_sha256": "4fa8b52d9a8641fdf3680afa898404561592711d3cde4001f5cfd5d6c0d995ca",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20073316157424345,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_027",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          7.000000216066837,
+          8.449999615550041
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "52d08290292b5184e4c1afc8804da3a999c6f3d126b1ed19550d140ea0cf35b3",
+      "uv_sha256": "f3ebaebf7ff7bf6f984aa87b7cf9b269cebe5c60974998a7279d39ef29816cf1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20064241356328666,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_028",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          7.000000216066837,
+          8.449999615550041
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          10.54999977350235,
+          12.000000104308128
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "8d6bc5b459f0366e70ac1e2a8a270a8d867eeefe34f2639ad395067a66b80573",
+      "uv_sha256": "f7e2ae0a6eb342dbf1c843c395d58341ba51a96139b47dbb539fb1c1b383927b",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20062486163115645,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_029",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          9.499999694526196,
+          10.950000025331974
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "c54da255f9c1d2c5592e19c11af3c1a6b409e1c3909ee79cbee9d58e422cdfd7",
+      "uv_sha256": "da0982586fb4413fc197909e6fad8ca72633506607e86f15ec14b12b5a18a4c9",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2005153681983185,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_030",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          13.000000268220901,
+          14.449999667704105
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "c15efbeba14aaaa7abd71dcc1ff8cbff5154a292a3145b9d1af5bc73f9f3fb7e",
+      "uv_sha256": "efe3e003a21ed8f4fa659390bb28262f1936e9382b7b7342bb7c454f8c73f3ff",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2009731177772995,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_031",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          13.000000268220901,
+          14.449999667704105
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "feeee2f746484d69e73c723ed89f558dd117fc8fae1e142239cb961eb1a9d222",
+      "uv_sha256": "53b60315110ba00289a19a9fb4446c7aba743b0934815efd9b55dbcaffc80464",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2006859146456511,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_032",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          15.49999974668026,
+          16.950000077486038
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          15.549999661743641,
+          17.000000923871994
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "d591adb057e6e3920cd1c80edf9d9eaa4853489c21e3589c09e2d016eb7993c0",
+      "uv_sha256": "cf40afe002d4e4df52c463743c19e99bd08c255ca27c936b5ebcef0bb0f8d912",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20080085048427687,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_033",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          15.49999974668026,
+          16.950000077486038
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          13.050000183284283,
+          14.499999582767487
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "133e54d85e034987407fea877c4fda356689ee320c046ce62788b290d69bdae4",
+      "uv_sha256": "4039c46725ba2c9deab94a529fcb13266fbe09e265fec43abda3863129445448",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20076057483109294,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_000",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          49.94000121951103,
+          50.06000027060509
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          25.63999965786934,
+          26.359999552369118
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "b20a712be07f6fe617ef0f29be34340cf982215a75a5c3a1cd09494b91a59fe3",
+      "uv_sha256": "d1e6fde50260b5a03879bce6087cf6d25a8e9c491914bd736431c57e256f93a2",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0010793218171064316,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_001",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          49.71907660365105,
+          49.97499659657478
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          24.18558858335018,
+          24.90364946424961
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "c024c20858fc15177394a866698368cb6ad94491d6e7969944f593edff5f8ca9",
+      "uv_sha256": "48daa31bf3351f666f43a5deb92c203d7a2f6a89594bea2bfa7278062d095ba1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004875242444266344,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_002",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          49.20239746570587,
+          49.58723857998848
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          22.80838042497635,
+          23.497305810451508
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "a41555197fc95d3c88e81d6c361fd340d555b6d6213ab50f3b3f6a78416059b0",
+      "uv_sha256": "7aec01914d7c6b91946e868d9399711b95d42b5811add6544202f5a112e299fd",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004655955832827682,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_003",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          48.41422662138939,
+          48.912011086940765
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          21.57023921608925,
+          22.20076508820057
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "5f30ed735c07dc734e0b4a5ac059b860581213008242b084fd739e2d7fed4187",
+      "uv_sha256": "4af458be456db9714f2265b1136a878f86aeae37403d9c08d931b406532dbd23",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004404214767767908,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_004",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          47.38761484622955,
+          47.98021912574768
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          20.523883402347565,
+          21.072089672088623
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "638a0f974e49e9d29a10d576fcc02017608497255cd1fd2c7af745b16f79371c",
+      "uv_sha256": "df438bc49545a189781f55017c639b5194a49010f1095953b5700c5e68483b67",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.006715483538540527,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_005",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          46.16853594779968,
+          46.83146998286247
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          19.716158509254456,
+          20.159482955932617
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "b9608107ee77acaf050305d6f8c5cca4d78af1e9e965b9e501adb34f0e0bc522",
+      "uv_sha256": "4cdb6d8cdde928200a8035c45889f6b9c8b3ab21cc43f662612ed44a0a0b3895",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004028496684097439,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_006",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          44.809430837631226,
+          45.516807585954666
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          19.18153092265129,
+          19.503677263855934
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "8aed189ae1b661ca01a7b67a754bb4faed29c0609dd8119213b1c86cda5a548b",
+      "uv_sha256": "7eb780ff6900dfd29af1991c58b7fbac308e630f47878a38be0205638015adff",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004088069834908017,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_007",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          43.37027668952942,
+          44.09312456846237
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          18.943918868899345,
+          19.13277432322502
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "4c3eaa9dfaebd285ca9c739d5b0d899e5c015b0e985187249f2506307572c121",
+      "uv_sha256": "f2729d37b679c5eb913e2940e925f3d71b8085b393a9d339e4e8ee6a4ea962c1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0029802411262204874,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_008",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          41.90687835216522,
+          42.629726231098175
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          18.943918868899345,
+          19.13277432322502
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "c7223a6dab181172c49a0d6fd55431ad6a18a9f15eac6235b65df3db64c7606a",
+      "uv_sha256": "9eb4560fe54af83280db7cae1b25fce527f8707ee7f7c0dd7908296cf31c840e",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0040890294622508575,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_009",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          40.48319533467293,
+          41.19056835770607
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          19.18153092265129,
+          19.503677263855934
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "19b818f5da68e0170e578d77a4bc02d9d8adcdc51fc7a4ae9bc55c2e428b8eec",
+      "uv_sha256": "ad6a9b88b68900187484ae3e1d8c69bfe79d97ab328ec7ea9533561cc05fb99c",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004933559004758895,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_010",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          39.16853293776512,
+          39.83147069811821
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          19.716158509254456,
+          20.159482955932617
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "728443da609dd15bfa742fef2e4b86fd9bf74e4d4ba5836e9fbee57deb079ffc",
+      "uv_sha256": "ffb341d54f25b7ba4eff087451f9a151772ddd0743156dc01130082b1366ba8b",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.005005283532117949,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_011",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          38.01978379487991,
+          38.61239179968834
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          20.523883402347565,
+          21.072089672088623
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "2545931f4b842bf9d43898bae319b54192d16bc39d7c24f9f6cea239dd2d3b18",
+      "uv_sha256": "33356496983c48c66f98b696c4aa6f8f4119a10231f0c838bebbfc84fff9b8d3",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.005240267032874476,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_012",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          37.08798810839653,
+          37.58577257394791
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          21.57023921608925,
+          22.20076508820057
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "157befb24e6a61432707e313b31af5fe5b553d4b99b34b093c8561b79fd8ee63",
+      "uv_sha256": "e9aff79e68158b9ec41e6fe2c7223da397647e1f8dc17c48f600a77443aef490",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004779168525046851,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_013",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          36.412760615348816,
+          36.797601729631424
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          22.80838042497635,
+          23.497305810451508
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "c90fdc5122d00c0aa11946f9a49f6e210d76bf666ae3a6c137fd1c699e0996f6",
+      "uv_sha256": "df75396095f3cb474591aecc6f7e408b6e3055bc0b13553a09728e04ea4c352c",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004577088446030971,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_014",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          36.02500632405281,
+          36.28092631697655
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          24.185584858059883,
+          24.90364946424961
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "f44ef6b45ddec379276f99199ccf52aaff82383c19e7802e4040ca43f238f0d5",
+      "uv_sha256": "7112f64d8a05242b3b4a7f0469d61bba17fcb9c6d000a32ae9602f79d468cf6b",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0026447319811592246,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_015",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          35.93999892473221,
+          36.06000170111656
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          25.63999965786934,
+          26.359999552369118
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "4db83e0c3928bd320880ea8ca2629f36212563615cb8bfdbd3dc136e08381e49",
+      "uv_sha256": "1885f73a50d347c78d21d8adbb1016dd559aad850fe1e52d25c64da69310f182",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.003552510137912662,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_016",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          36.02500632405281,
+          36.28092631697655
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          27.096351608633995,
+          27.814412489533424
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "dae5ef89f5f67f1cdf4f0cf749e13ba3876b9ced66aca215bf97e1a6538ec823",
+      "uv_sha256": "bb96aab675c2854f4ba5ae2c901096deb8236facf2e073e5d50070a36b62d4b2",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.007106051568931843,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_017",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          36.412760615348816,
+          36.797598004341125
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          28.50269339978695,
+          29.191618785262108
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "66dd1f2fb1e2fe6a5f40c07d3c25947ad41f40f084a0e66a01db322721920869",
+      "uv_sha256": "6b9aba9d88e218cb39cb95df5040776ed0c6873f30c1734c544690074c658046",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.001333358770616603,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_018",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          37.08798810839653,
+          37.58577257394791
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          29.799235984683037,
+          30.429761856794357
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "bf3e180d12d96a54bae624b4f43c57dc78d0769f0ce12b91e727fa29b60a71e3",
+      "uv_sha256": "5cc82779be100e05873f520971bfab58d0356f7c4e670690777eb8b7ac6260c4",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0028536322610461665,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_019",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          38.019780069589615,
+          38.61239552497864
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          30.927911400794983,
+          31.476110219955444
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "60dd08b85dc6b35b81ced684894104ee689fb388d634950c48471cfc441c6d92",
+      "uv_sha256": "329e45e1fbcef5b6f5cc1247a71f13abb9d07118958082c731f36f3ff2c063c1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0068456568719521835,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_020",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          39.16853293776512,
+          39.83146324753761
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          31.84051439166069,
+          32.28383883833885
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "1d17e9eb3eb68f410bb89e2d718f6103dcc762f5fd899f48fe43bd811db75e64",
+      "uv_sha256": "58aa84855463f3195e5a4fa0f157e9c4aa886351452d22547920711631aba58e",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.003944736952452691,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_021",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          40.48319533467293,
+          41.19056090712547
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          32.49632194638252,
+          32.81846269965172
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "282fec465d90b9aff6afe6ddfdc9279551f3463658baa3308aa48a3d84b549be",
+      "uv_sha256": "00fa50ad943bd583d2da4d52614e0806d6d5e9a9e4182d9b4359b5e04c0cbaf7",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.007080780045053634,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_022",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          41.90687835216522,
+          42.629726231098175
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          32.867226749658585,
+          33.05608034133911
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "d05d1a1bbfc34ef0b00b8b6c91d92dc076a759199da59a82c5ba3a70f0fad047",
+      "uv_sha256": "c344cea6516f6057f7faa6ab02a58ff593f7282373152af35ba3cfd5b313d8d8",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.002155898145191568,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_023",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          43.37027668952942,
+          44.09312456846237
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          32.867226749658585,
+          33.05608034133911
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "6c06654c341f1f6010fc199827040461a32a9aa256b23b23042bbe40cc4c4314",
+      "uv_sha256": "32c8935d71eac925addbeadd90aecce4560a814c682c9d939cd0f81cc6e3a2c7",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004244417895852643,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_024",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          44.809430837631226,
+          45.51680013537407
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          32.49632194638252,
+          32.818470150232315
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "a9274a7bb7dfb5e037801666580c8e3ffce0fc65d983dca7d019a1e65ae3d138",
+      "uv_sha256": "f33864b00bc3b3787c13dbdb26a5d05fe575a94e6865a1199e529aea627910cb",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.004325208810898595,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_025",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          46.16853594779968,
+          46.83146998286247
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          31.84051439166069,
+          32.28383883833885
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "474915911c523e547e3a2e0df04080f3c084489978f241f7478601fff1162c8f",
+      "uv_sha256": "5bbc26344d08d8a78c9aae16e132b2f4faf1c9af0b6e1e0794b737a0c0fbb3b3",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.003215357378498013,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_026",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          47.387607395648956,
+          47.98021912574768
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          30.927911400794983,
+          31.476110219955444
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "3e38c21b2bead49d62c45f8c4acccbd97d79c9c94aee176dd3193946cef20ff0",
+      "uv_sha256": "a9570b99d561a19ea95f51db90de6d5d95c8fe5d1d0f4b62b9357611690a89f1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.00606788541577158,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_027",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          48.41422662138939,
+          48.912011086940765
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          29.799235984683037,
+          30.429761856794357
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "b4fed951e08f71fc13e3e39d43d36d7d33f48af1c20ac80138f8c740e311ab3f",
+      "uv_sha256": "a435b64efe4d855c3954c1d6b54b76b387f63c51a526818366419a7c4529bd1f",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.0010219883388636471,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_028",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          49.20239746570587,
+          49.58723857998848
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          28.50269339978695,
+          29.191618785262108
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "554e21d7dc4a5afa0530ab62fb1e9c3fc56faf11e3982ae31848b89be29a75c0",
+      "uv_sha256": "c03a71b43c9e224a1b37eef455aaf263955ab13a2974e5d82b95d724466e6ec3",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.006988413500952859,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_emboss_029",
+      "kind": "emboss",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          49.71907660365105,
+          49.97499659657478
+        ],
+        [
+          -9.0549997985363,
+          -8.999999612569809
+        ],
+        [
+          27.096351608633995,
+          27.814412489533424
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "be7d6e6b6e45a16cfbaddcc5e263dd3df46d23beb2a4c6571ea306c6655ae01a",
+      "uv_sha256": "47f6978aa127619bdb473d5b0b3a57491ccb46041d9f0316d23a7c8d5fad73c3",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.00860219182127407,
+      "bevel_mm": 0.0275,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_foil",
+      "kind": "foil",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          35.999998450279236,
+          50.00000074505806
+        ],
+        [
+          -9.039999917149544,
+          -8.999999612569809
+        ],
+        [
+          4.999999888241291,
+          14.999999664723873
+        ]
+      ],
+      "vertices": 360,
+      "triangles": 716,
+      "mesh_sha256": "4ac8b87b9b4d685c8f5c8e2796d226e844def3e16401982ea898071c3bc03059",
+      "uv_sha256": "f07155e039b514e380c406c3f84e9fa94e890e4f1cd31fdd2448b2373cdb43bd",
+      "nontriangles": 0,
+      "signed_volume_mm3": 5.555869452825466,
+      "bevel_mm": 0.02,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    }
+  ],
+  "views": {
+    "front": {
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292068494294654e-07,
+          -1.0,
+          -0.30000001192092896
+        ],
+        [
+          0.0,
+          1.0,
+          -1.6292068494294654e-07,
+          0.02500000037252903
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              110.0633773803711,
+              608.5750732421875
+            ],
+            [
+              1937.9366455078125,
+              608.5750732421875
+            ],
+            [
+              1937.9366455078125,
+              1439.426513671875
+            ],
+            [
+              110.0633773803711,
+              1439.426513671875
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              1884.697509765625,
+              632.774658203125
+            ],
+            [
+              163.30245971679688,
+              632.774658203125
+            ],
+            [
+              163.30245971679688,
+              1415.2269287109375
+            ],
+            [
+              1884.697509765625,
+              1415.2269287109375
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              632.774658203125
+            ],
+            [
+              110.0633773803711,
+              608.5750732421875
+            ],
+            [
+              110.0633773803711,
+              1439.426513671875
+            ],
+            [
+              163.30245971679688,
+              1415.2269287109375
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1937.9366455078125,
+              608.5750732421875
+            ],
+            [
+              1884.697509765625,
+              632.774658203125
+            ],
+            [
+              1884.697509765625,
+              1415.2269287109375
+            ],
+            [
+              1937.9366455078125,
+              1439.426513671875
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              632.774658203125
+            ],
+            [
+              1884.697509765625,
+              632.774658203125
+            ],
+            [
+              1937.9366455078125,
+              608.5750732421875
+            ],
+            [
+              110.0633773803711,
+              608.5750732421875
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              110.0633773803711,
+              1439.426513671875
+            ],
+            [
+              1937.9366455078125,
+              1439.426513671875
+            ],
+            [
+              1884.697509765625,
+              1415.2269287109375
+            ],
+            [
+              163.30245971679688,
+              1415.2269287109375
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_band": {
+          "quad_px": [
+            [
+              110.0633773803711,
+              608.5750732421875
+            ],
+            [
+              525.4891357421875,
+              608.5750732421875
+            ],
+            [
+              525.4891357421875,
+              1439.426513671875
+            ],
+            [
+              110.0633773803711,
+              1439.426513671875
+            ]
+          ],
+          "visible": true
+        },
+        "front_transition": {
+          "quad_px": [
+            [
+              525.4891357421875,
+              608.5750732421875
+            ],
+            [
+              575.3402099609375,
+              608.5750732421875
+            ],
+            [
+              575.3402099609375,
+              1439.426513671875
+            ],
+            [
+              525.4891357421875,
+              1439.426513671875
+            ]
+          ],
+          "visible": true
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              641.8082885742188,
+              691.66015625
+            ],
+            [
+              1705.2982177734375,
+              691.66015625
+            ],
+            [
+              1705.2982177734375,
+              809.64111328125
+            ],
+            [
+              641.8082885742188,
+              809.64111328125
+            ]
+          ],
+          "visible": true
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1721.915283203125,
+              688.3367919921875
+            ],
+            [
+              1753.4876708984375,
+              688.3367919921875
+            ],
+            [
+              1753.4876708984375,
+              719.5767822265625
+            ],
+            [
+              1721.915283203125,
+              719.5767822265625
+            ]
+          ],
+          "visible": true
+        },
+        "front_pfizer": {
+          "quad_px": [
+            [
+              193.1485137939453,
+              741.51123046875
+            ],
+            [
+              459.0209655761719,
+              741.51123046875
+            ],
+            [
+              459.0209655761719,
+              896.0496826171875
+            ],
+            [
+              193.1485137939453,
+              896.0496826171875
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              641.8082885742188,
+              861.1539306640625
+            ],
+            [
+              924.4786376953125,
+              861.1539306640625
+            ],
+            [
+              924.4786376953125,
+              941.4161376953125
+            ],
+            [
+              641.8082885742188,
+              941.4161376953125
+            ]
+          ],
+          "visible": true
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              1057.2340087890625,
+              874.447509765625
+            ],
+            [
+              1476.08984375,
+              874.447509765625
+            ],
+            [
+              1476.08984375,
+              914.882568359375
+            ],
+            [
+              1057.2340087890625,
+              914.882568359375
+            ]
+          ],
+          "visible": true
+        },
+        "front_sildenafil": {
+          "quad_px": [
+            [
+              1389.57470703125,
+              942.577392578125
+            ],
+            [
+              1583.3843994140625,
+              942.577392578125
+            ],
+            [
+              1583.3843994140625,
+              981.0869140625
+            ],
+            [
+              1389.57470703125,
+              981.0869140625
+            ]
+          ],
+          "visible": true
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              641.8082885742188,
+              1339.724365234375
+            ],
+            [
+              1217.2962646484375,
+              1339.724365234375
+            ],
+            [
+              1217.2962646484375,
+              1385.7879028320312
+            ],
+            [
+              641.8082885742188,
+              1385.7879028320312
+            ]
+          ],
+          "visible": true
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              641.8082885742188,
+              1024.0007934570312
+            ],
+            [
+              1306.489501953125,
+              1024.0007934570312
+            ],
+            [
+              1306.489501953125,
+              1256.6392211914062
+            ],
+            [
+              641.8082885742188,
+              1256.6392211914062
+            ]
+          ],
+          "visible": true
+        },
+        "front_emboss": {
+          "quad_px": [
+            [
+              1622.2130126953125,
+              891.0645751953125
+            ],
+            [
+              1854.8514404296875,
+              891.0645751953125
+            ],
+            [
+              1854.8514404296875,
+              1123.7030029296875
+            ],
+            [
+              1622.2130126953125,
+              1123.7030029296875
+            ]
+          ],
+          "visible": true
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1622.2130126953125,
+              1190.1710815429688
+            ],
+            [
+              1854.8514404296875,
+              1190.1710815429688
+            ],
+            [
+              1854.8514404296875,
+              1356.3413696289062
+            ],
+            [
+              1622.2130126953125,
+              1356.3413696289062
+            ]
+          ],
+          "visible": true
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              1728.2071533203125,
+              711.0198974609375
+            ],
+            [
+              867.509521484375,
+              711.0198974609375
+            ],
+            [
+              867.509521484375,
+              806.47900390625
+            ],
+            [
+              1728.2071533203125,
+              806.47900390625
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              1728.2071533203125,
+              851.861328125
+            ],
+            [
+              1077.3199462890625,
+              851.861328125
+            ],
+            [
+              1077.3199462890625,
+              897.34130859375
+            ],
+            [
+              1728.2071533203125,
+              897.34130859375
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              1728.2071533203125,
+              977.0535888671875
+            ],
+            [
+              1367.1220703125,
+              977.0535888671875
+            ],
+            [
+              1367.1220703125,
+              1010.6409912109375
+            ],
+            [
+              1728.2071533203125,
+              1010.6409912109375
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              930.105712890625,
+              977.0535888671875
+            ],
+            [
+              568.8969116210938,
+              977.0535888671875
+            ],
+            [
+              568.8969116210938,
+              1010.2283935546875
+            ],
+            [
+              930.105712890625,
+              1010.2283935546875
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              1493.471435546875,
+              1086.5969848632812
+            ],
+            [
+              554.5286254882812,
+              1086.5969848632812
+            ],
+            [
+              554.5286254882812,
+              1243.0874633789062
+            ],
+            [
+              1493.471435546875,
+              1243.0874633789062
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              1415.2261962890625,
+              1290.0345458984375
+            ],
+            [
+              893.6728515625,
+              1290.0345458984375
+            ],
+            [
+              893.6728515625,
+              1317.4693603515625
+            ],
+            [
+              1415.2261962890625,
+              1317.4693603515625
+            ]
+          ],
+          "visible": false
+        },
+        "left_band": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              632.774658203125
+            ],
+            [
+              110.0633773803711,
+              608.5750732421875
+            ],
+            [
+              110.0633773803711,
+              1439.426513671875
+            ],
+            [
+              163.30245971679688,
+              1415.2269287109375
+            ]
+          ],
+          "visible": false
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              149.146240234375,
+              753.5914306640625
+            ],
+            [
+              128.8281707763672,
+              747.311279296875
+            ],
+            [
+              128.8281707763672,
+              1284.4144287109375
+            ],
+            [
+              149.146240234375,
+              1278.5037231445312
+            ]
+          ],
+          "visible": false
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              154.86431884765625,
+              1292.6427001953125
+            ],
+            [
+              132.3404998779297,
+              1299.6046142578125
+            ],
+            [
+              132.3404998779297,
+              1335.7586669921875
+            ],
+            [
+              154.86431884765625,
+              1327.8834838867188
+            ]
+          ],
+          "visible": false
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1919.47314453125,
+              714.655517578125
+            ],
+            [
+              1910.0479736328125,
+              717.9114990234375
+            ],
+            [
+              1910.0479736328125,
+              1112.8646240234375
+            ],
+            [
+              1919.47314453125,
+              1113.8099365234375
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1928.6107177734375,
+              1336.502685546875
+            ],
+            [
+              1900.2474365234375,
+              1326.7044677734375
+            ],
+            [
+              1900.2474365234375,
+              1353.3341064453125
+            ],
+            [
+              1928.6107177734375,
+              1363.9943237304688
+            ]
+          ],
+          "visible": false
+        },
+        "top_band": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              632.774658203125
+            ],
+            [
+              554.5286254882812,
+              632.774658203125
+            ],
+            [
+              525.4891357421875,
+              608.5750732421875
+            ],
+            [
+              110.0633773803711,
+              608.5750732421875
+            ]
+          ],
+          "visible": false
+        },
+        "top_stripe": {
+          "quad_px": [
+            [
+              554.5286254882812,
+              632.774658203125
+            ],
+            [
+              601.4757690429688,
+              632.774658203125
+            ],
+            [
+              575.3402099609375,
+              608.5750732421875
+            ],
+            [
+              525.4891357421875,
+              608.5750732421875
+            ]
+          ],
+          "visible": false
+        },
+        "top_title": {
+          "quad_px": [
+            [
+              659.3515625,
+              627.643798828125
+            ],
+            [
+              1036.6044921875,
+              627.643798828125
+            ],
+            [
+              1036.732421875,
+              623.618408203125
+            ],
+            [
+              655.6482543945312,
+              623.618408203125
+            ]
+          ],
+          "visible": false
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              652.0341796875,
+              619.690185546875
+            ],
+            [
+              1025.427734375,
+              619.690185546875
+            ],
+            [
+              1025.4365234375,
+              617.1756591796875
+            ],
+            [
+              649.7208862304688,
+              617.1756591796875
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_band": {
+          "quad_px": [
+            [
+              110.0633773803711,
+              1439.426513671875
+            ],
+            [
+              525.4891357421875,
+              1439.426513671875
+            ],
+            [
+              554.5286254882812,
+              1415.2269287109375
+            ],
+            [
+              163.30245971679688,
+              1415.2269287109375
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_stripe": {
+          "quad_px": [
+            [
+              525.4891357421875,
+              1439.426513671875
+            ],
+            [
+              575.3402099609375,
+              1439.426513671875
+            ],
+            [
+              601.4757690429688,
+              1415.2269287109375
+            ],
+            [
+              554.5286254882812,
+              1415.2269287109375
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_title": {
+          "quad_px": [
+            [
+              663.38232421875,
+              1433.7936401367188
+            ],
+            [
+              1053.4234619140625,
+              1433.7936401367188
+            ],
+            [
+              1053.1207275390625,
+              1429.577880859375
+            ],
+            [
+              667.0921630859375,
+              1429.577880859375
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_note": {
+          "quad_px": [
+            [
+              670.5706787109375,
+              1425.625
+            ],
+            [
+              821.1044311523438,
+              1425.625
+            ],
+            [
+              822.3425903320312,
+              1423.1741333007812
+            ],
+            [
+              672.7274169921875,
+              1423.1741333007812
+            ]
+          ],
+          "visible": false
+        }
+      }
+    },
+    "hero": {
+      "matrix_world": [
+        [
+          0.8191519975662231,
+          0.2424038201570511,
+          -0.5198369026184082,
+          -0.16894695162773132
+        ],
+        [
+          -0.5735765099525452,
+          0.3461885154247284,
+          -0.7424038648605347,
+          -0.24128124117851257
+        ],
+        [
+          3.006681481565465e-08,
+          0.9063078165054321,
+          0.42261815071105957,
+          0.16235093772411346
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              333.0172119140625,
+              916.4368896484375
+            ],
+            [
+              1745.939453125,
+              551.3743896484375
+            ],
+            [
+              1703.264404296875,
+              1192.2923583984375
+            ],
+            [
+              381.6401062011719,
+              1653.7106018066406
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              1575.5924072265625,
+              483.2703857421875
+            ],
+            [
+              193.91700744628906,
+              818.3433837890625
+            ],
+            [
+              249.8394317626953,
+              1530.8140869140625
+            ],
+            [
+              1544.1619873046875,
+              1104.9734497070312
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              193.91700744628906,
+              818.3433837890625
+            ],
+            [
+              333.0172119140625,
+              916.4368896484375
+            ],
+            [
+              381.6401062011719,
+              1653.7106018066406
+            ],
+            [
+              249.8394317626953,
+              1530.8140869140625
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1745.939453125,
+              551.3743896484375
+            ],
+            [
+              1575.5924072265625,
+              483.2703857421875
+            ],
+            [
+              1544.1619873046875,
+              1104.9734497070312
+            ],
+            [
+              1703.264404296875,
+              1192.2923583984375
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              193.91700744628906,
+              818.3433837890625
+            ],
+            [
+              1575.5924072265625,
+              483.2703857421875
+            ],
+            [
+              1745.939453125,
+              551.3743896484375
+            ],
+            [
+              333.0172119140625,
+              916.4368896484375
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              381.6401062011719,
+              1653.7106018066406
+            ],
+            [
+              1703.264404296875,
+              1192.2923583984375
+            ],
+            [
+              1544.1619873046875,
+              1104.9734497070312
+            ],
+            [
+              249.8394317626953,
+              1530.8140869140625
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_band": {
+          "quad_px": [
+            [
+              333.0172119140625,
+              916.4368896484375
+            ],
+            [
+              702.7021484375,
+              820.919921875
+            ],
+            [
+              724.3732299804688,
+              1534.0523071289062
+            ],
+            [
+              381.6401062011719,
+              1653.7106018066406
+            ]
+          ],
+          "visible": true
+        },
+        "front_transition": {
+          "quad_px": [
+            [
+              702.7021484375,
+              820.919921875
+            ],
+            [
+              744.8659057617188,
+              810.02587890625
+            ],
+            [
+              763.5997924804688,
+              1520.357177734375
+            ],
+            [
+              724.3732299804688,
+              1534.0523071289062
+            ]
+          ],
+          "visible": true
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              801.9786987304688,
+              870.8529052734375
+            ],
+            [
+              1589.75146484375,
+              659.7198486328125
+            ],
+            [
+              1584.671630859375,
+              756.1014404296875
+            ],
+            [
+              804.192626953125,
+              975.785400390625
+            ]
+          ],
+          "visible": true
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1600.95361328125,
+              654.0201416015625
+            ],
+            [
+              1621.867919921875,
+              648.4228515625
+            ],
+            [
+              1620.4432373046875,
+              674.030517578125
+            ],
+            [
+              1599.5745849609375,
+              679.6905517578125
+            ]
+          ],
+          "visible": true
+        },
+        "front_pfizer": {
+          "quad_px": [
+            [
+              416.9664001464844,
+              1021.09521484375
+            ],
+            [
+              650.135986328125,
+              957.2691650390625
+            ],
+            [
+              655.0770263671875,
+              1095.2011108398438
+            ],
+            [
+              425.21990966796875,
+              1162.1280517578125
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              805.1455078125,
+              1020.9476318359375
+            ],
+            [
+              1027.982177734375,
+              956.9334716796875
+            ],
+            [
+              1027.956298828125,
+              1024.9775390625
+            ],
+            [
+              806.6138305664062,
+              1090.5397338867188
+            ]
+          ],
+          "visible": true
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              1128.21044921875,
+              939.322265625
+            ],
+            [
+              1427.8489990234375,
+              852.7996826171875
+            ],
+            [
+              1426.5892333984375,
+              885.6800537109375
+            ],
+            [
+              1127.8719482421875,
+              973.2825927734375
+            ]
+          ],
+          "visible": true
+        },
+        "front_sildenafil": {
+          "quad_px": [
+            [
+              1366.1136474609375,
+              925.7489013671875
+            ],
+            [
+              1498.3240966796875,
+              886.57080078125
+            ],
+            [
+              1496.9361572265625,
+              917.3153076171875
+            ],
+            [
+              1365.0941162109375,
+              956.9437255859375
+            ]
+          ],
+          "visible": true
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              813.6182250976562,
+              1422.5266723632812
+            ],
+            [
+              1237.7174072265625,
+              1278.8139038085938
+            ],
+            [
+              1236.966796875,
+              1314.3392944335938
+            ],
+            [
+              814.3992919921875,
+              1459.5452270507812
+            ]
+          ],
+          "visible": true
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              808.1041259765625,
+              1161.1775512695312
+            ],
+            [
+              1306.12841796875,
+              1009.143798828125
+            ],
+            [
+              1301.11669921875,
+              1193.6170654296875
+            ],
+            [
+              812.1947021484375,
+              1355.0536499023438
+            ]
+          ],
+          "visible": true
+        },
+        "front_emboss": {
+          "quad_px": [
+            [
+              1526.2003173828125,
+              837.6041259765625
+            ],
+            [
+              1678.1376953125,
+              793.4493408203125
+            ],
+            [
+              1666.9791259765625,
+              974.2763671875
+            ],
+            [
+              1517.449951171875,
+              1021.537353515625
+            ]
+          ],
+          "visible": true
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1515.0054931640625,
+              1072.918212890625
+            ],
+            [
+              1663.860595703125,
+              1024.8135375976562
+            ],
+            [
+              1656.19482421875,
+              1149.0375366210938
+            ],
+            [
+              1508.999267578125,
+              1199.1705322265625
+            ]
+          ],
+          "visible": true
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              1466.226318359375,
+              575.4913330078125
+            ],
+            [
+              820.9609375,
+              737.8822021484375
+            ],
+            [
+              822.5935668945312,
+              823.5655517578125
+            ],
+            [
+              1462.9615478515625,
+              655.358154296875
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              1461.42626953125,
+              692.91552734375
+            ],
+            [
+              989.12841796875,
+              819.418701171875
+            ],
+            [
+              989.2581787109375,
+              858.7720947265625
+            ],
+            [
+              1459.8985595703125,
+              730.2911376953125
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              1457.2462158203125,
+              795.173095703125
+            ],
+            [
+              1205.059326171875,
+              866.2694091796875
+            ],
+            [
+              1204.5802001953125,
+              894.1324462890625
+            ],
+            [
+              1456.138427734375,
+              822.2757568359375
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              875.1174926757812,
+              959.286376953125
+            ],
+            [
+              579.4751586914062,
+              1042.6336669921875
+            ],
+            [
+              580.7346801757812,
+              1071.9635620117188
+            ],
+            [
+              875.52392578125,
+              987.771484375
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              1292.9923095703125,
+              930.2933349609375
+            ],
+            [
+              571.5009155273438,
+              1142.412841796875
+            ],
+            [
+              577.4398803710938,
+              1276.9598388671875
+            ],
+            [
+              1289.773681640625,
+              1055.4967651367188
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              1234.4921875,
+              1109.637939453125
+            ],
+            [
+              850.7745971679688,
+              1230.8487548828125
+            ],
+            [
+              851.1574096679688,
+              1253.3072509765625
+            ],
+            [
+              1234.0499267578125,
+              1131.2476196289062
+            ]
+          ],
+          "visible": false
+        },
+        "left_band": {
+          "quad_px": [
+            [
+              193.91700744628906,
+              818.3433837890625
+            ],
+            [
+              333.0172119140625,
+              916.4368896484375
+            ],
+            [
+              381.6401062011719,
+              1653.7106018066406
+            ],
+            [
+              249.8394317626953,
+              1530.8140869140625
+            ]
+          ],
+          "visible": true
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              240.43748474121094,
+              966.7447509765625
+            ],
+            [
+              293.1200866699219,
+              1005.9593505859375
+            ],
+            [
+              326.982421875,
+              1487.2401123046875
+            ],
+            [
+              276.1329345703125,
+              1441.7587890625
+            ]
+          ],
+          "visible": true
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              262.7565002441406,
+              1442.5301513671875
+            ],
+            [
+              319.222900390625,
+              1493.2774047851562
+            ],
+            [
+              321.4132995605469,
+              1524.04736328125
+            ],
+            [
+              265.0783996582031,
+              1472.8834838867188
+            ]
+          ],
+          "visible": true
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1682.771240234375,
+              608.3294677734375
+            ],
+            [
+              1652.9530029296875,
+              595.8504638671875
+            ],
+            [
+              1634.6500244140625,
+              910.0782470703125
+            ],
+            [
+              1663.4735107421875,
+              924.275390625
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1680.5548095703125,
+              1104.7557373046875
+            ],
+            [
+              1595.3529052734375,
+              1059.4513549804688
+            ],
+            [
+              1594.2469482421875,
+              1079.455322265625
+            ],
+            [
+              1679.2587890625,
+              1125.0652465820312
+            ]
+          ],
+          "visible": false
+        },
+        "top_band": {
+          "quad_px": [
+            [
+              193.91700744628906,
+              818.3433837890625
+            ],
+            [
+              553.34912109375,
+              731.1767578125
+            ],
+            [
+              702.7021484375,
+              820.919921875
+            ],
+            [
+              333.0172119140625,
+              916.4368896484375
+            ]
+          ],
+          "visible": true
+        },
+        "top_stripe": {
+          "quad_px": [
+            [
+              553.34912109375,
+              731.1767578125
+            ],
+            [
+              594.4364624023438,
+              721.2125244140625
+            ],
+            [
+              744.8659057617188,
+              810.02587890625
+            ],
+            [
+              702.7021484375,
+              820.919921875
+            ]
+          ],
+          "visible": true
+        },
+        "top_title": {
+          "quad_px": [
+            [
+              681.1669311523438,
+              726.8883056640625
+            ],
+            [
+              990.3523559570312,
+              650.8699951171875
+            ],
+            [
+              1016.9998168945312,
+              664.4139404296875
+            ],
+            [
+              706.5830078125,
+              741.5528564453125
+            ]
+          ],
+          "visible": true
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              731.2579345703125,
+              755.789794921875
+            ],
+            [
+              1033.95458984375,
+              679.7901611328125
+            ],
+            [
+              1050.4075927734375,
+              688.1822509765625
+            ],
+            [
+              746.9856567382812,
+              764.8643798828125
+            ]
+          ],
+          "visible": true
+        },
+        "bottom_band": {
+          "quad_px": [
+            [
+              381.6401062011719,
+              1653.7106018066406
+            ],
+            [
+              724.3732299804688,
+              1534.0523071289062
+            ],
+            [
+              583.7951049804688,
+              1420.9404907226562
+            ],
+            [
+              249.8394317626953,
+              1530.8140869140625
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_stripe": {
+          "quad_px": [
+            [
+              724.3732299804688,
+              1534.0523071289062
+            ],
+            [
+              763.5997924804688,
+              1520.357177734375
+            ],
+            [
+              622.0925903320312,
+              1408.3403930664062
+            ],
+            [
+              583.7951049804688,
+              1420.9404907226562
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_title": {
+          "quad_px": [
+            [
+              795.3120727539062,
+              1472.54150390625
+            ],
+            [
+              1087.0369873046875,
+              1372.0574340820312
+            ],
+            [
+              1061.226318359375,
+              1354.3727416992188
+            ],
+            [
+              770.5699462890625,
+              1453.4700927734375
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_note": {
+          "quad_px": [
+            [
+              747.2232666015625,
+              1435.4743041992188
+            ],
+            [
+              863.8733520507812,
+              1396.086669921875
+            ],
+            [
+              849.0568237304688,
+              1385.20166015625
+            ],
+            [
+              732.676025390625,
+              1424.2611694335938
+            ]
+          ],
+          "visible": false
+        }
+      }
+    },
+    "top": {
+      "matrix_world": [
+        [
+          0.8191521167755127,
+          0.5389854311943054,
+          -0.1961747407913208,
+          -0.05787153169512749
+        ],
+        [
+          -0.5735763311386108,
+          0.7697511911392212,
+          -0.28016653656959534,
+          -0.0826491191983223
+        ],
+        [
+          6.146015607555455e-08,
+          0.342020183801651,
+          0.9396926164627075,
+          0.3022093176841736
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              276.90997314453125,
+              1548.7914428710938
+            ],
+            [
+              1891.9095458984375,
+              483.5921630859375
+            ],
+            [
+              1767.1134033203125,
+              814.365966796875
+            ],
+            [
+              391.9292907714844,
+              1738.959716796875
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              1701.2586669921875,
+              257.9263916015625
+            ],
+            [
+              101.56969451904297,
+              1284.219970703125
+            ],
+            [
+              241.275146484375,
+              1511.3671875
+            ],
+            [
+              1605.356201171875,
+              615.6279296875
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              101.56969451904297,
+              1284.219970703125
+            ],
+            [
+              276.90997314453125,
+              1548.7914428710938
+            ],
+            [
+              391.9292907714844,
+              1738.959716796875
+            ],
+            [
+              241.275146484375,
+              1511.3671875
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1891.9095458984375,
+              483.5921630859375
+            ],
+            [
+              1701.2586669921875,
+              257.9263916015625
+            ],
+            [
+              1605.356201171875,
+              615.6279296875
+            ],
+            [
+              1767.1134033203125,
+              814.365966796875
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              101.56969451904297,
+              1284.219970703125
+            ],
+            [
+              1701.2586669921875,
+              257.9263916015625
+            ],
+            [
+              1891.9095458984375,
+              483.5921630859375
+            ],
+            [
+              276.90997314453125,
+              1548.7914428710938
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              391.9292907714844,
+              1738.959716796875
+            ],
+            [
+              1767.1134033203125,
+              814.365966796875
+            ],
+            [
+              1605.356201171875,
+              615.6279296875
+            ],
+            [
+              241.275146484375,
+              1511.3671875
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_band": {
+          "quad_px": [
+            [
+              276.90997314453125,
+              1548.7914428710938
+            ],
+            [
+              667.218017578125,
+              1291.357421875
+            ],
+            [
+              721.2781372070312,
+              1517.5247192382812
+            ],
+            [
+              391.9292907714844,
+              1738.959716796875
+            ]
+          ],
+          "visible": true
+        },
+        "front_transition": {
+          "quad_px": [
+            [
+              667.218017578125,
+              1291.357421875
+            ],
+            [
+              713.0792846679688,
+              1261.10888671875
+            ],
+            [
+              760.1011352539062,
+              1491.4223022460938
+            ],
+            [
+              721.2781372070312,
+              1517.5247192382812
+            ]
+          ],
+          "visible": true
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              778.2755737304688,
+              1248.26953125
+            ],
+            [
+              1689.057861328125,
+              646.2041015625
+            ],
+            [
+              1673.6724853515625,
+              695.65966796875
+            ],
+            [
+              784.2188720703125,
+              1285.4140625
+            ]
+          ],
+          "visible": true
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1703.097900390625,
+              635.790283203125
+            ],
+            [
+              1728.8782958984375,
+              618.749755859375
+            ],
+            [
+              1724.49169921875,
+              632.224609375
+            ],
+            [
+              1698.8660888671875,
+              649.1766357421875
+            ]
+          ],
+          "visible": true
+        },
+        "front_pfizer": {
+          "quad_px": [
+            [
+              374.9783630371094,
+              1532.8162841796875
+            ],
+            [
+              617.4019165039062,
+              1372.3552856445312
+            ],
+            [
+              630.1572875976562,
+              1416.6401977539062
+            ],
+            [
+              395.5709228515625,
+              1572.5145263671875
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              786.724609375,
+              1301.0744018554688
+            ],
+            [
+              1028.3912353515625,
+              1140.6318359375
+            ],
+            [
+              1028.32177734375,
+              1166.6544799804688
+            ],
+            [
+              790.5260620117188,
+              1324.8331298828125
+            ]
+          ],
+          "visible": true
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              1139.6207275390625,
+              1071.12255859375
+            ],
+            [
+              1482.697998046875,
+              843.279296875
+            ],
+            [
+              1479.1016845703125,
+              858.4952392578125
+            ],
+            [
+              1138.6986083984375,
+              1084.7837524414062
+            ]
+          ],
+          "visible": true
+        },
+        "front_sildenafil": {
+          "quad_px": [
+            [
+              1407.6724853515625,
+              914.6781005859375
+            ],
+            [
+              1561.576171875,
+              812.300537109375
+            ],
+            [
+              1557.6298828125,
+              826.7745361328125
+            ],
+            [
+              1404.8341064453125,
+              928.5072021484375
+            ]
+          ],
+          "visible": true
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              807.721923828125,
+              1432.3036499023438
+            ],
+            [
+              1251.2403564453125,
+              1134.6966552734375
+            ],
+            [
+              1249.3624267578125,
+              1148.3261108398438
+            ],
+            [
+              809.5485229492188,
+              1443.7197265625
+            ]
+          ],
+          "visible": true
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              794.3125,
+              1348.4974365234375
+            ],
+            [
+              1336.020751953125,
+              987.465576171875
+            ],
+            [
+              1322.735107421875,
+              1063.960693359375
+            ],
+            [
+              804.3472900390625,
+              1411.212890625
+            ]
+          ],
+          "visible": true
+        },
+        "front_emboss": {
+          "quad_px": [
+            [
+              1597.7899169921875,
+              772.109619140625
+            ],
+            [
+              1780.572998046875,
+              650.67138671875
+            ],
+            [
+              1748.2493896484375,
+              741.81494140625
+            ],
+            [
+              1573.054931640625,
+              858.8385009765625
+            ]
+          ],
+          "visible": true
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1566.3746337890625,
+              882.261474609375
+            ],
+            [
+              1739.515380859375,
+              766.4427490234375
+            ],
+            [
+              1718.5745849609375,
+              825.4896240234375
+            ],
+            [
+              1550.3642578125,
+              938.3988037109375
+            ]
+          ],
+          "visible": true
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              1557.0638427734375,
+              384.610595703125
+            ],
+            [
+              790.6885375976562,
+              877.6173095703125
+            ],
+            [
+              795.422607421875,
+              916.29931640625
+            ],
+            [
+              1546.6455078125,
+              431.505126953125
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              1541.8338623046875,
+              453.1624755859375
+            ],
+            [
+              984.1676635742188,
+              813.5726318359375
+            ],
+            [
+              984.5420532226562,
+              832.0911865234375
+            ],
+            [
+              1537.10009765625,
+              474.4698486328125
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              1529.0086669921875,
+              510.8902587890625
+            ],
+            [
+              1230.981689453125,
+              704.24853515625
+            ],
+            [
+              1229.5948486328125,
+              718.1829833984375
+            ],
+            [
+              1525.6751708984375,
+              525.89453125
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              857.989013671875,
+              946.2440185546875
+            ],
+            [
+              539.0234375,
+              1153.1871337890625
+            ],
+            [
+              542.3435668945312,
+              1164.3514404296875
+            ],
+            [
+              859.1080932617188,
+              958.63232421875
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              1329.599365234375,
+              681.9273681640625
+            ],
+            [
+              537.21533203125,
+              1197.6817016601562
+            ],
+            [
+              552.2232055664062,
+              1246.5888671875
+            ],
+            [
+              1320.52783203125,
+              744.3258056640625
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              1256.613525390625,
+              802.4510498046875
+            ],
+            [
+              838.1801147460938,
+              1076.3358154296875
+            ],
+            [
+              839.1565551757812,
+              1085.30908203125
+            ],
+            [
+              1255.4161376953125,
+              812.65087890625
+            ]
+          ],
+          "visible": false
+        },
+        "left_band": {
+          "quad_px": [
+            [
+              101.56969451904297,
+              1284.219970703125
+            ],
+            [
+              276.90997314453125,
+              1548.7914428710938
+            ],
+            [
+              391.9292907714844,
+              1738.959716796875
+            ],
+            [
+              241.275146484375,
+              1511.3671875
+            ]
+          ],
+          "visible": true
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              174.001708984375,
+              1396.5249633789062
+            ],
+            [
+              239.42013549804688,
+              1495.2567138671875
+            ],
+            [
+              320.94500732421875,
+              1629.1685791015625
+            ],
+            [
+              261.7557067871094,
+              1539.7680358886719
+            ]
+          ],
+          "visible": true
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              247.16732788085938,
+              1518.0227661132812
+            ],
+            [
+              313.087890625,
+              1617.5925598144531
+            ],
+            [
+              318.02435302734375,
+              1625.6917419433594
+            ],
+            [
+              252.52291870117188,
+              1526.7507934570312
+            ]
+          ],
+          "visible": true
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1811.8184814453125,
+              454.1435546875
+            ],
+            [
+              1778.9698486328125,
+              415.0609130859375
+            ],
+            [
+              1723.0479736328125,
+              590.531982421875
+            ],
+            [
+              1753.2969970703125,
+              627.212158203125
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1752.3431396484375,
+              745.7386474609375
+            ],
+            [
+              1665.05419921875,
+              638.908447265625
+            ],
+            [
+              1661.967529296875,
+              649.2373046875
+            ],
+            [
+              1748.8072509765625,
+              755.6339111328125
+            ]
+          ],
+          "visible": false
+        },
+        "top_band": {
+          "quad_px": [
+            [
+              101.56969451904297,
+              1284.219970703125
+            ],
+            [
+              487.744140625,
+              1036.4666137695312
+            ],
+            [
+              667.218017578125,
+              1291.357421875
+            ],
+            [
+              276.90997314453125,
+              1548.7914428710938
+            ]
+          ],
+          "visible": true
+        },
+        "top_stripe": {
+          "quad_px": [
+            [
+              487.744140625,
+              1036.4666137695312
+            ],
+            [
+              533.1378173828125,
+              1007.3438720703125
+            ],
+            [
+              713.0792846679688,
+              1261.10888671875
+            ],
+            [
+              667.218017578125,
+              1291.357421875
+            ]
+          ],
+          "visible": true
+        },
+        "top_title": {
+          "quad_px": [
+            [
+              632.8915405273438,
+              1023.953369140625
+            ],
+            [
+              984.7465209960938,
+              796.8399658203125
+            ],
+            [
+              1015.866455078125,
+              838.0528564453125
+            ],
+            [
+              663.4246215820312,
+              1066.6146850585938
+            ]
+          ],
+          "visible": true
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              692.8201904296875,
+              1107.6867065429688
+            ],
+            [
+              1035.5142822265625,
+              884.4422607421875
+            ],
+            [
+              1054.4693603515625,
+              909.5838623046875
+            ],
+            [
+              711.4312133789062,
+              1133.6903076171875
+            ]
+          ],
+          "visible": true
+        },
+        "bottom_band": {
+          "quad_px": [
+            [
+              391.9292907714844,
+              1738.959716796875
+            ],
+            [
+              721.2781372070312,
+              1517.5247192382812
+            ],
+            [
+              567.6980590820312,
+              1297.0178833007812
+            ],
+            [
+              241.275146484375,
+              1511.3671875
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_stripe": {
+          "quad_px": [
+            [
+              721.2781372070312,
+              1517.5247192382812
+            ],
+            [
+              760.1011352539062,
+              1491.4223022460938
+            ],
+            [
+              606.187255859375,
+              1271.7434692382812
+            ],
+            [
+              567.6980590820312,
+              1297.0178833007812
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_title": {
+          "quad_px": [
+            [
+              789.72509765625,
+              1399.015869140625
+            ],
+            [
+              1090.0838623046875,
+              1198.1380004882812
+            ],
+            [
+              1063.1865234375,
+              1161.8106079101562
+            ],
+            [
+              763.2500610351562,
+              1361.5975341796875
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_note": {
+          "quad_px": [
+            [
+              738.056396484375,
+              1325.9901123046875
+            ],
+            [
+              857.0654907226562,
+              1247.0228881835938
+            ],
+            [
+              841.159423828125,
+              1224.9459838867188
+            ],
+            [
+              722.2531127929688,
+              1303.654541015625
+            ]
+          ],
+          "visible": false
+        }
+      }
+    },
+    "end": {
+      "matrix_world": [
+        [
+          -4.371138828673793e-08,
+          0.13917310535907745,
+          -0.9902680516242981,
+          -0.21290762722492218
+        ],
+        [
+          -1.0,
+          -3.758252020702457e-08,
+          3.8859088391518526e-08,
+          -1.3036832156520584e-17
+        ],
+        [
+          -3.1808628619955925e-08,
+          0.9902680516242981,
+          0.13917310535907745,
+          0.05492221936583519
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              1301.0985107421875,
+              497.4454345703125
+            ],
+            [
+              1187.6177978515625,
+              434.771240234375
+            ],
+            [
+              1183.4464111328125,
+              1326.9872436523438
+            ],
+            [
+              1289.342041015625,
+              1979.5630187988281
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              860.3817749023438,
+              434.771240234375
+            ],
+            [
+              746.9010620117188,
+              497.4454345703125
+            ],
+            [
+              758.6575317382812,
+              1979.563117980957
+            ],
+            [
+              864.55322265625,
+              1326.9872436523438
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            50
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              746.9010620117188,
+              497.4454345703125
+            ],
+            [
+              1301.0985107421875,
+              497.4454345703125
+            ],
+            [
+              1289.342041015625,
+              1979.5630187988281
+            ],
+            [
+              758.6575317382812,
+              1979.563117980957
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1187.6177978515625,
+              434.771240234375
+            ],
+            [
+              860.3817749023438,
+              434.771240234375
+            ],
+            [
+              864.55322265625,
+              1326.9872436523438
+            ],
+            [
+              1183.4464111328125,
+              1326.9872436523438
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            50
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              746.9010620117188,
+              497.4454345703125
+            ],
+            [
+              860.3817749023438,
+              434.771240234375
+            ],
+            [
+              1187.6177978515625,
+              434.771240234375
+            ],
+            [
+              1301.0985107421875,
+              497.4454345703125
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              1289.342041015625,
+              1979.5630187988281
+            ],
+            [
+              1183.4464111328125,
+              1326.9872436523438
+            ],
+            [
+              864.55322265625,
+              1326.9872436523438
+            ],
+            [
+              758.6575317382812,
+              1979.563117980957
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_band": {
+          "quad_px": [
+            [
+              1301.0985107421875,
+              497.4454345703125
+            ],
+            [
+              1263.3671875,
+              476.606689453125
+            ],
+            [
+              1254.54345703125,
+              1765.1180419921875
+            ],
+            [
+              1289.342041015625,
+              1979.5630187988281
+            ]
+          ],
+          "visible": false
+        },
+        "front_transition": {
+          "quad_px": [
+            [
+              1263.3671875,
+              476.606689453125
+            ],
+            [
+              1259.518798828125,
+              474.4813232421875
+            ],
+            [
+              1250.971435546875,
+              1743.1058044433594
+            ],
+            [
+              1254.54345703125,
+              1765.1180419921875
+            ]
+          ],
+          "visible": false
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              1253.7291259765625,
+              600.165283203125
+            ],
+            [
+              1196.1397705078125,
+              536.0509033203125
+            ],
+            [
+              1195.4696044921875,
+              671.90478515625
+            ],
+            [
+              1252.537109375,
+              780.9005126953125
+            ]
+          ],
+          "visible": false
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1195.4869384765625,
+              531.4759521484375
+            ],
+            [
+              1194.224853515625,
+              530.09912109375
+            ],
+            [
+              1194.0509033203125,
+              565.7802734375
+            ],
+            [
+              1195.310302734375,
+              567.4197998046875
+            ]
+          ],
+          "visible": false
+        },
+        "front_pfizer": {
+          "quad_px": [
+            [
+              1290.796142578125,
+              731.2384033203125
+            ],
+            [
+              1267.1759033203125,
+              696.9910888671875
+            ],
+            [
+              1265.4298095703125,
+              946.3890380859375
+            ],
+            [
+              1288.6959228515625,
+              1004.400634765625
+            ]
+          ],
+          "visible": false
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              1252.0205078125,
+              859.2261962890625
+            ],
+            [
+              1233.5274658203125,
+              817.4732666015625
+            ],
+            [
+              1232.8515625,
+              929.13525390625
+            ],
+            [
+              1251.22021484375,
+              980.5623779296875
+            ]
+          ],
+          "visible": false
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              1225.7353515625,
+              817.9886474609375
+            ],
+            [
+              1204.81396484375,
+              768.875
+            ],
+            [
+              1204.5599365234375,
+              817.5767822265625
+            ],
+            [
+              1225.419189453125,
+              872.23974609375
+            ]
+          ],
+          "visible": false
+        },
+        "front_sildenafil": {
+          "quad_px": [
+            [
+              1208.325439453125,
+              861.9139404296875
+            ],
+            [
+              1199.72900390625,
+              837.7789306640625
+            ],
+            [
+              1199.50048828125,
+              882.7724609375
+            ],
+            [
+              1208.073974609375,
+              909.0723876953125
+            ]
+          ],
+          "visible": false
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              1247.3304443359375,
+              1570.3180236816406
+            ],
+            [
+              1213.907958984375,
+              1386.8547973632812
+            ],
+            [
+              1213.5887451171875,
+              1444.071533203125
+            ],
+            [
+              1246.88916015625,
+              1637.2220458984375
+            ]
+          ],
+          "visible": false
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              1250.402587890625,
+              1104.5234985351562
+            ],
+            [
+              1211.7198486328125,
+              974.6517333984375
+            ],
+            [
+              1210.1553955078125,
+              1261.8201904296875
+            ],
+            [
+              1248.1307373046875,
+              1448.9705810546875
+            ]
+          ],
+          "visible": false
+        },
+        "front_emboss": {
+          "quad_px": [
+            [
+              1198.4033203125,
+              773.394287109375
+            ],
+            [
+              1189.2237548828125,
+              750.8150634765625
+            ],
+            [
+              1188.0106201171875,
+              1005.4659423828125
+            ],
+            [
+              1197.0521240234375,
+              1041.9085693359375
+            ]
+          ],
+          "visible": false
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1196.669921875,
+              1117.8644409179688
+            ],
+            [
+              1187.667236328125,
+              1077.5379638671875
+            ],
+            [
+              1186.8150634765625,
+              1256.4044189453125
+            ],
+            [
+              1195.7216796875,
+              1306.2941284179688
+            ]
+          ],
+          "visible": false
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              854.5152587890625,
+              533.0946044921875
+            ],
+            [
+              808.8884887695312,
+              583.89111328125
+            ],
+            [
+              809.787353515625,
+              729.5057373046875
+            ],
+            [
+              855.07373046875,
+              648.092529296875
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              855.3380126953125,
+              702.4981689453125
+            ],
+            [
+              823.3017578125,
+              770.515380859375
+            ],
+            [
+              823.6754150390625,
+              835.045654296875
+            ],
+            [
+              855.6019287109375,
+              756.8504638671875
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              856.0626220703125,
+              851.7041015625
+            ],
+            [
+              839.8233642578125,
+              900.7589111328125
+            ],
+            [
+              840.055908203125,
+              944.35400390625
+            ],
+            [
+              856.2559814453125,
+              891.51611328125
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              815.4116821289062,
+              974.5006103515625
+            ],
+            [
+              789.7488403320312,
+              1052.0218505859375
+            ],
+            [
+              790.1202392578125,
+              1106.5308837890625
+            ],
+            [
+              815.7062377929688,
+              1023.1558837890625
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              846.5588989257812,
+              1019.778564453125
+            ],
+            [
+              789.8307495117188,
+              1235.69580078125
+            ],
+            [
+              791.5713500976562,
+              1489.8628540039062
+            ],
+            [
+              847.56005859375,
+              1213.9385986328125
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              844.2561645507812,
+              1290.7241821289062
+            ],
+            [
+              815.8884887695312,
+              1440.0748901367188
+            ],
+            [
+              816.1310424804688,
+              1479.6871337890625
+            ],
+            [
+              844.4371337890625,
+              1325.0927124023438
+            ]
+          ],
+          "visible": false
+        },
+        "left_band": {
+          "quad_px": [
+            [
+              746.9010620117188,
+              497.4454345703125
+            ],
+            [
+              1301.0985107421875,
+              497.4454345703125
+            ],
+            [
+              1289.342041015625,
+              1979.5630187988281
+            ],
+            [
+              758.6575317382812,
+              1979.563117980957
+            ]
+          ],
+          "visible": true
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              901.711669921875,
+              743.347900390625
+            ],
+            [
+              1112.65869140625,
+              743.347900390625
+            ],
+            [
+              1110.156982421875,
+              1722.1346740722656
+            ],
+            [
+              905.162353515625,
+              1722.1346740722656
+            ]
+          ],
+          "visible": true
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              845.8959350585938,
+              1750.9334106445312
+            ],
+            [
+              1075.3438720703125,
+              1750.9331970214844
+            ],
+            [
+              1075.246337890625,
+              1814.979721069336
+            ],
+            [
+              846.2346801757812,
+              1814.979721069336
+            ]
+          ],
+          "visible": true
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1078.368408203125,
+              544.29443359375
+            ],
+            [
+              1021.1131591796875,
+              544.29443359375
+            ],
+            [
+              1021.149658203125,
+              984.7740478515625
+            ],
+            [
+              1077.6820068359375,
+              984.7740478515625
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1130.623779296875,
+              1222.3306884765625
+            ],
+            [
+              961.5093383789062,
+              1222.3307495117188
+            ],
+            [
+              961.5626831054688,
+              1251.5504150390625
+            ],
+            [
+              1130.53271484375,
+              1251.5504150390625
+            ]
+          ],
+          "visible": false
+        },
+        "top_band": {
+          "quad_px": [
+            [
+              746.9010620117188,
+              497.4454345703125
+            ],
+            [
+              784.6324462890625,
+              476.6068115234375
+            ],
+            [
+              1263.3671875,
+              476.606689453125
+            ],
+            [
+              1301.0985107421875,
+              497.4454345703125
+            ]
+          ],
+          "visible": true
+        },
+        "top_stripe": {
+          "quad_px": [
+            [
+              784.6324462890625,
+              476.6068115234375
+            ],
+            [
+              788.4808349609375,
+              474.4813232421875
+            ],
+            [
+              1259.518798828125,
+              474.4813232421875
+            ],
+            [
+              1263.3671875,
+              476.606689453125
+            ]
+          ],
+          "visible": true
+        },
+        "top_title": {
+          "quad_px": [
+            [
+              895.90185546875,
+              471.7515869140625
+            ],
+            [
+              910.1190795898438,
+              457.617919921875
+            ],
+            [
+              979.9589233398438,
+              457.617919921875
+            ],
+            [
+              974.4607543945312,
+              471.7515869140625
+            ]
+          ],
+          "visible": true
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              1049.619384765625,
+              471.7515869140625
+            ],
+            [
+              1046.851318359375,
+              457.9923095703125
+            ],
+            [
+              1089.0819091796875,
+              457.9923095703125
+            ],
+            [
+              1096.9656982421875,
+              471.7515869140625
+            ]
+          ],
+          "visible": true
+        },
+        "bottom_band": {
+          "quad_px": [
+            [
+              1289.342041015625,
+              1979.5630187988281
+            ],
+            [
+              1254.54345703125,
+              1765.1180419921875
+            ],
+            [
+              793.4562377929688,
+              1765.1180725097656
+            ],
+            [
+              758.6575317382812,
+              1979.563117980957
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_stripe": {
+          "quad_px": [
+            [
+              1254.54345703125,
+              1765.1180419921875
+            ],
+            [
+              1250.971435546875,
+              1743.1058044433594
+            ],
+            [
+              797.0282592773438,
+              1743.1059265136719
+            ],
+            [
+              793.4562377929688,
+              1765.1180725097656
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_title": {
+          "quad_px": [
+            [
+              1146.9210205078125,
+              1707.8966064453125
+            ],
+            [
+              1133.7706298828125,
+              1562.0281982421875
+            ],
+            [
+              1066.4512939453125,
+              1562.0281982421875
+            ],
+            [
+              1071.536865234375,
+              1707.8966064453125
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_note": {
+          "quad_px": [
+            [
+              999.4155883789062,
+              1707.8966064453125
+            ],
+            [
+              1000.5231323242188,
+              1646.4710083007812
+            ],
+            [
+              957.1370239257812,
+              1646.4710083007812
+            ],
+            [
+              953.9827270507812,
+              1707.8966064453125
+            ]
+          ],
+          "visible": false
+        }
+      }
+    }
+  },
+  "images": [
+    {
+      "name": "base_color.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\74-min\\base_color.png",
+      "sha256": "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2",
+      "colorspace": "sRGB",
+      "packed": true,
+      "packed_sha256": "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+    },
+    {
+      "name": "height.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\74-min\\height.png",
+      "sha256": "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+    },
+    {
+      "name": "metallic.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\74-min\\metallic.png",
+      "sha256": "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+    },
+    {
+      "name": "normal.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\74-min\\normal.png",
+      "sha256": "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+    },
+    {
+      "name": "roughness.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\74-min\\roughness.png",
+      "sha256": "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+    }
+  ],
+  "blender_version": "5.1.2",
+  "render": {
+    "source": "authored",
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 2048,
+    "samples": 32,
+    "seed": 7409,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_device": "CPU",
+    "adaptive_sampling": false,
+    "view_transform": "Standard",
+    "look": "None",
+    "exposure": -3.12,
+    "gamma": 1,
+    "max_bounces": 8,
+    "transparent_bounces": 4,
+    "filter_width": 1.5,
+    "png_depth": "8",
+    "png_compression": 15,
+    "threads": 6,
+    "denoising_threads": 1,
+    "png_metadata_policy": "color_only",
+    "reset_between_views": true
+  },
+  "artwork_spec_sha256": "9549663db0cf36706c8d3c8f91d3de840dec39f7864ea8aee087f9606f31e00a",
+  "runtime_render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "seed": 7409,
+    "animated_seed": false,
+    "adaptive_sampling": false,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_device": "CPU",
+    "denoising_threads": 1,
+    "threads": 6,
+    "view_transform": "Standard",
+    "look": "None",
+    "exposure": -3.119999885559082,
+    "gamma": 1.0,
+    "resolution": 2048,
+    "png_depth": "8",
+    "max_bounces": 8,
+    "transparent_bounces": 4,
+    "filter_width": 1.5,
+    "png_compression": 15
+  },
+  "bounds_mm": [
+    [
+      -54.999999701976776,
+      54.999999701976776
+    ],
+    [
+      -9.189999662339687,
+      8.999999612569809
+    ],
+    [
+      0.0,
+      50.00000074505806
+    ]
+  ],
+  "shader_inputs": {
+    "Base Color": {
+      "linked": true,
+      "node": "generated_base_color"
+    },
+    "Metallic": {
+      "linked": true,
+      "node": "generated_metallic"
+    },
+    "Roughness": {
+      "linked": true,
+      "node": "generated_roughness"
+    },
+    "Normal": {
+      "linked": true,
+      "node": "Bump"
+    },
+    "Coat Weight": {
+      "linked": true,
+      "node": "Math.001"
+    },
+    "Anisotropic": {
+      "linked": true,
+      "node": "Math.002"
+    }
+  },
+  "assembly_seconds": 2.72136170000158,
+  "render_runs": [
+    {
+      "view": "hero",
+      "scene_snapshot_sha256": "52dd789305666d49166e7f663120585ed973838321c144cd630e5f8c6800ac9b",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-repeat.png",
+      "seconds": 177.2024642999968,
+      "sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+      "raw_png_sha256": "cbcd23e9e35e2ff1fee8c212c0743baf3d93816df31839072459f478ca662b44",
+      "png_metadata_policy": "color_only",
+      "mask_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-deterministic-repeat_maskMask.png"
+    }
+  ],
+  "render_snapshot": {
+    "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-repeat.stage.blend",
+    "sha256": "52dd789305666d49166e7f663120585ed973838321c144cd630e5f8c6800ac9b"
+  }
+}

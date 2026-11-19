@@ -90,7 +90,10 @@ trash/
 reports/
 renders/
 assets/generated/
-examples/
+# Only audited editable examples are public.
+examples/*
+!examples/74_viagra/
+!examples/59_cialis/
 .claude/
 00_governance/
 08_ops/

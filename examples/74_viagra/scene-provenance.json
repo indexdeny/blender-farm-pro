@@ -1,0 +1,33 @@
+{
+  "sku": "74-min",
+  "source_name": "74-min-deterministic-repeat.stage.blend",
+  "source_sha256": "52dd789305666d49166e7f663120585ed973838321c144cd630e5f8c6800ac9b",
+  "historical_evidence": "74-min-deterministic-repeat.scene.json",
+  "portable_path": "examples/74_viagra/scenes/74-min-historical.blend",
+  "portable_sha256": "cdde1c06bc5481f5fb8095a5f80c3aef505446c6753610a4092601f5f27edc03",
+  "portable_bytes": 74018391,
+  "unpacked_resources": [],
+  "visual_state_before_sha256": "1603c52400da5dad4e023aa870e400a94bf412f44c42843303bd4c4c4392fef9",
+  "visual_state_after_sha256": "1603c52400da5dad4e023aa870e400a94bf412f44c42843303bd4c4c4392fef9",
+  "visual_differences": [],
+  "objects": 87,
+  "object_types": {
+    "CAMERA": 4,
+    "LIGHT": 3,
+    "MESH": 80
+  },
+  "active_camera": "camera_hero",
+  "pre_sanitization_portable_sha256": "6d7efd8b15f847624312ef4e6ad87d0ff2bb2fb1563a063614a525c7767018c0",
+  "private_metadata_sanitized": true,
+  "historical_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+  "source_chain_status": "HASH_VERIFIED_HISTORICAL_RECORD",
+  "exact_creation_git_revision": null,
+  "portable_saved_scene_render_status": "PENDING_CLEAN_CLONE",
+  "normalization_exclusions": [
+    "Output file paths/names",
+    "In-process session_uid",
+    "Unreferenced default Material",
+    "VIEWER frame-buffer images"
+  ],
+  "packing_status": "5 file textures packed"
+}

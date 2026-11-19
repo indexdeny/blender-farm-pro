@@ -1,10 +1,16 @@
-# Blender Farm Pro
+# Blender Farm Pro — AI-Assisted 3D Packaging Visualization
 
 ## 1. Overview
 
 **R&D prototype — two accepted packaging examples; further development discontinued due to project budget constraints.**
 
-Blender Farm Pro is a PharmaGen PRO fork that explores controlled, headless Blender/Cycles rendering of pharmaceutical packaging. Its portfolio scope is **two owner-reported workplace-accepted examples**, Viagra (`74-min`) and Cialis (`59-min`). The retained catalogue contains 391 SKU records for legacy compatibility; it is not a claim of 391 visually approved products.
+Designed the architecture of a Blender/Cycles-based pipeline for automated pharmaceutical packaging visualization, with structured render manifests, configurable scene generation, and automated quality checks.
+
+The system was developed to address limitations in manual product-image production and AI-generated packaging consistency.
+
+Two packaging examples — Viagra (74-min) and Cialis (59-min) — reached the required visual quality and received owner-reported workplace acceptance. Further visual development was discontinued due to budget constraints.
+
+The retained 391-SKU catalogue supports legacy compatibility; it does not represent 391 visually approved products.
 
 ## 2. Problem Statement
 
@@ -66,6 +72,8 @@ Owner-reported workplace acceptance. Original: `59-min-hero.png`, 2048×2048. Me
 
 These are **historically accepted render examples**. The WebP previews preserve every decoded RGBA pixel of the original PNGs. They are not substituted fresh renders. [Hashes and preview provenance](docs/portfolio/preview-provenance.json).
 
+Editable 3D examples: [Viagra scene and resources](examples/74_viagra/README.md), [Cialis scene and resources](examples/59_cialis/README.md). Their preservation, portability and independent rendering verdicts are tracked in the [scene/masks audit](FINAL_SCENE_AND_MASKS_AUDIT.md).
+
 ## 8. Technical Stack
 
 Python 3.10; external Blender 5.1.2 / Cycles CPU; Pillow, NumPy, CairoSVG, fontTools, JSON Schema and PyYAML. Tests use stdlib `unittest`. Optional historical mark-measurement tooling declares its extra SciPy dependency in `requirements-measurement.txt`. Selenium/Gemini support is inherited legacy code and is not needed for the two physical demonstrations. No paid image-generation API is used by these commands.
@@ -92,6 +100,8 @@ Only two packaging examples reached the stated visual acceptance. Remaining prod
 The legacy catalogue, measurements and tests are engineering support data, not evidence that every SKU is approved. The 389 protected historical Gemini outputs remain tracked at the owner's request; they are not additional accepted portfolio examples. Historical documents and Git history may describe earlier scope.
 
 ## 12. My Contribution
+
+**My role:** System architecture, technical specifications, AI-agent orchestration, render evaluation, and quality validation.
 
 I identified the image-quality problem, defined rendering requirements, designed the pipeline architecture, specified geometry/material/validation rules, coordinated AI-assisted implementation, evaluated render quality, and iteratively refined the visual results. This describes engineering direction and evaluation; it does not claim that I manually wrote all program code.
 
