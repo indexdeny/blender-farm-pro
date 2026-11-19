@@ -18,7 +18,7 @@ Python/Blender Cycles pipeline for procedural 3D pharmaceutical packaging, edita
 | Fresh procedural generation | Matches prior baseline; differs from historical originals by 652/501 pixels, max 1/255 |
 | Automated tests | Historical code verification: 611 passed, 0 failures/errors, 14 skip records; no new suite run for this presentation-only change |
 
-[Architecture and validation](FINAL_SCENE_AND_MASKS_AUDIT.md) · [LinkedIn portfolio kit](docs/linkedin/README.md) · [Development-source audit](docs/portfolio/BEFORE_AFTER_SOURCE_AUDIT.md)
+[Architecture and validation](FINAL_SCENE_AND_MASKS_AUDIT.md)
 
 ## 1. Overview
 
