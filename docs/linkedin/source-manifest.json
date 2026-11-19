@@ -13,7 +13,9 @@
     "stage": "Historical development baseline",
     "view": "Three-quarter; camera/shape differ between stages",
     "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
-    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim",
+    "public_copy_sha256": "d053836ecb937f7735b7508d5afb6faa6cce52c155938ed3f8fdc8a687580c86",
+    "public_metadata_policy": "Existing color-only PNG policy; original files untouched, all pixels/color chunks retained"
   },
   {
     "sku": "74-min",
@@ -29,7 +31,9 @@
     "stage": "Owner-reported workplace-accepted historical image",
     "view": "Three-quarter; camera/shape differ between stages",
     "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
-    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim",
+    "public_copy_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+    "public_metadata_policy": "Existing color-only PNG policy; original files untouched, all pixels/color chunks retained"
   },
   {
     "sku": "59-min",
@@ -45,7 +49,9 @@
     "stage": "Historical development baseline",
     "view": "Three-quarter; camera/shape differ between stages",
     "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
-    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim",
+    "public_copy_sha256": "f59cd25611bf0694b95689a86a464ab91c8b04d79abeab29552cc4ef4cee89bf",
+    "public_metadata_policy": "Existing color-only PNG policy; original files untouched, all pixels/color chunks retained"
   },
   {
     "sku": "59-min",
@@ -61,6 +67,8 @@
     "stage": "Owner-reported workplace-accepted historical image",
     "view": "Three-quarter; camera/shape differ between stages",
     "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
-    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim",
+    "public_copy_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+    "public_metadata_policy": "Existing color-only PNG policy; original files untouched, all pixels/color chunks retained"
   }
 ]

@@ -1,13 +1,29 @@
 # Final LinkedIn portfolio report
 
-Status: PREPARED — PUBLICATION VERIFICATION PENDING.
+Date:2026-11-19. Status: **READY WITH LIMITATIONS**.
 
-Scope: GitHub presentation and downloadable LinkedIn kit; no LinkedIn account posting.14PNGexports,14SVGsources,4realPNGinputs,5Englishtextdocuments. [Kit index](README.md), [source audit](../portfolio/BEFORE_AFTER_SOURCE_AUDIT.md), [visual QA](VISUAL_QA_REPORT.md), [source hashes](source-manifest.json), [export manifest](export-manifest.json).
+## Published release
 
-Classic dated Before/After is not established. Development/accepted comparisons use real same-product renders; views, artwork, shape and materials evolved. Metadata dates are recorded but not independently verified. Vertical exports are preferred on mobile; microprint/footer require zoom. Runtime/scenes/masks and accepted originals remain unchanged. Rights follow ASSET_RIGHTS.
+PR: https://github.com/indexdeny/blender-farm-pro/pull/5. Verified media-release master SHA:`f8ffaa8e368f22ce21176e3b63d4fed383d857f9`. A subsequent documentation/source-metadata-only commit finalizes this report; the current final master ref is available at https://api.github.com/repos/indexdeny/blender-farm-pro/branches/master. The exact final post-report SHA is also recorded in the delivery receipt outside the repository to avoid a self-referential commit hash.
 
-Metadata requested: Python/Blender Cycles pipeline for procedural 3D pharmaceutical packaging, editable scenes and automated visual QA.
+[README](../../README.md) · [Kit index](README.md) · [Visual QA](VISUAL_QA_REPORT.md) · [Source audit](../portfolio/BEFORE_AFTER_SOURCE_AUDIT.md).
 
-Topics requested: python, blender, blender-cycles, 3d-rendering, procedural-modeling, computer-graphics, image-processing, workflow-automation, json-schema, quality-assurance.
+Description: Python/Blender Cycles pipeline for procedural 3D pharmaceutical packaging, editable scenes and automated visual QA.
 
-PR, verified master, API metadata/media checks and exact changed files will be recorded after publication.
+Topics accepted by GitHub API: 3d-rendering, blender, blender-cycles, computer-graphics, image-processing, json-schema, procedural-modeling, python, quality-assurance, workflow-automation. Default master; visibility public. Only indexdeny/blender-farm-pro metadata was changed; pharma_v2 was inspected as a presentation reference.
+
+## Visual deliverables
+
+[Viagra](assets/viagra-before-after.png), [Cialis](assets/cialis-before-after.png), [Overview](assets/blender-farm-pro-overview.png). Each has1200×628,1080×1350 and1920×1080 presets: [all exports](export-manifest.json). Five carousel pages: [1](assets/carousel-01.png), [2](assets/carousel-02.png), [3](assets/carousel-03.png), [4](assets/carousel-04.png), [5](assets/carousel-05.png).14editable SVGs under editable/ reference four pixel-identical public source copies under sources/. Source originals are untouched; public-copy PNG text/path metadata is removed separately from original provenance hashes.
+
+## Text package
+
+[Projects](LINKEDIN_PROJECT.md) · [Post](LINKEDIN_POST.md) · [Featured](FEATURED_DESCRIPTION.md) · [Captions/alt text](CAROUSEL_CAPTIONS.md) · [Technical case](TECHNICAL_CASE_STUDY.md).
+
+## Verification
+
+All14published media URLs returned HTTP200/image-png and matched export SHA-256. All14layouts were visually inspected at native and mobile scales; mobile labels were enlarged following independent review. GitHub README was viewed at desktop and390×844 mobile width; badges wrapped and both accepted previews fitted the first image table. Metadata description/topics/master/public were re-read after update. Requested dimensions and sRGBICC verified; no clipping or geometric warping. Existing technical README sections/links retained. Source/renderedscene/mask/runtime hashes are unchanged; only README and docs paths changed. [Changed files](changed-files.json).
+
+## Limitations and scope
+
+Classic dated Before/After is **not established**. These are real Development/Early Iteration → Accepted Result comparisons. PNG Date metadata is recorded but clock/chronology is not independently verified; cameras, artwork, geometry and materials evolved together. No isolated automation/time-saving claim. Horizontal overview microprint/footer needs zoom; vertical assets are preferred for mobile. Existing rights/manufacturer/metrology/determinism limitations remain. No AI replacement packshots, new Blender renders, full refactor or LinkedIn account posting. Previous unittest evidence is explicitly historical, not rerun for this presentation change.
