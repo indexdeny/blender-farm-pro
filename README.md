@@ -74,6 +74,8 @@ These are **historically accepted render examples**. The WebP previews preserve 
 
 Editable 3D examples: [Viagra scene and resources](examples/74_viagra/README.md), [Cialis scene and resources](examples/59_cialis/README.md). Their preservation, portability and independent rendering verdicts are tracked in the [scene/masks audit](FINAL_SCENE_AND_MASKS_AUDIT.md).
 
+In the checked Blender environment, rendering the preserved scenes recovered the exact accepted RGBA pixels and, after the existing color-only PNG metadata policy, the original PNG hashes. Fresh procedural generation separately matches the previous release baseline; its historical differences remain 652/501 pixels at at most 1/255. Exact raw mask regeneration is not claimed; every historical mask is preserved.
+
 ## 8. Technical Stack
 
 Python 3.10; external Blender 5.1.2 / Cycles CPU; Pillow, NumPy, CairoSVG, fontTools, JSON Schema and PyYAML. Tests use stdlib `unittest`. Optional historical mark-measurement tooling declares its extra SciPy dependency in `requirements-measurement.txt`. Selenium/Gemini support is inherited legacy code and is not needed for the two physical demonstrations. No paid image-generation API is used by these commands.

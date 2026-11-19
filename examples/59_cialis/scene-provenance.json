@@ -28,12 +28,15 @@
   "historical_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
   "source_chain_status": "HASH_VERIFIED_HISTORICAL_RECORD",
   "exact_creation_git_revision": null,
-  "portable_saved_scene_render_status": "PENDING_CLEAN_CLONE",
+  "portable_saved_scene_render_status": "PASS_FINAL_SANITIZED_BINARY_FROM_CLEAN_CLONE",
   "normalization_exclusions": [
     "Output file paths/names",
     "In-process session_uid",
     "Unreferenced default Material",
     "VIEWER frame-buffer images"
   ],
-  "packing_status": "4 textures packed; normal.png external via //../textures/normal.png"
+  "packing_status": "4 textures packed; normal.png external via //../textures/normal.png",
+  "saved_replay_exact_pixels_in_tested_environment": true,
+  "saved_replay_color_only_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+  "metadata_privacy_sanitized": true
 }

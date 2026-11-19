@@ -1,5 +1,5 @@
 {
-  "status": "BACKUP_VERIFIED_AUDIT_IN_PROGRESS",
+  "status": "AUDITED_AND_BACKUP_VERIFIED",
   "source_root": "C:\\lil_projects\\Blender Farm Pro\\renders",
   "top_level_entries": [
     {
@@ -298,7 +298,17 @@
           "LIGHT": 3,
           "MESH": 45
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -486,7 +496,17 @@
           "LIGHT": 3,
           "MESH": 45
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -659,7 +679,17 @@
           "LIGHT": 3,
           "MESH": 45
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -774,7 +804,17 @@
           "LIGHT": 3,
           "MESH": 45
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -878,7 +918,17 @@
           "LIGHT": 3,
           "MESH": 45
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -993,7 +1043,17 @@
           "LIGHT": 3,
           "MESH": 45
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -1091,7 +1151,17 @@
           "LIGHT": 3,
           "MESH": 80
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -1160,7 +1230,17 @@
           "LIGHT": 3,
           "MESH": 79
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -1263,7 +1343,17 @@
           "LIGHT": 3,
           "MESH": 80
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -1407,7 +1497,17 @@
           "LIGHT": 3,
           "MESH": 80
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -1781,7 +1881,17 @@
           "LIGHT": 3,
           "MESH": 80
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -1896,7 +2006,17 @@
           "LIGHT": 3,
           "MESH": 80
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -2057,7 +2177,17 @@
           "LIGHT": 3,
           "MESH": 80
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
       }
     },
     {
@@ -2074,7 +2204,7 @@
         "byte_identical_to_accepted_png": false,
         "historical_log_references": []
       },
-      "decision": "KEEP_PRIVATE",
+      "decision": "REVIEW",
       "backup_verified": true,
       "scene_audit": {
         "status": "OPENED",
@@ -2087,7 +2217,34 @@
           "LIGHT": 2,
           "MESH": 4
         },
-        "linked_libraries": 0
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [
+            {
+              "name": "Bfont Regular",
+              "filepath": "<builtin>",
+              "packed": false
+            },
+            {
+              "name": "DejaVuSans-Bold.ttf",
+              "filepath": "//..\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans-Bold.ttf",
+              "packed": false
+            },
+            {
+              "name": "DejaVuSans.ttf",
+              "filepath": "//..\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans.ttf",
+              "packed": false
+            }
+          ],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        },
+        "portability_status": "PRIVATE_LEGACY_BASELINE_REQUIRES_FONT_PATH_REMAP_IF_REUSED"
       }
     },
     {
@@ -3111,5 +3268,28 @@
   "mask_count": 19,
   "blender_files_opened": 14,
   "public_scene_count": 2,
-  "original_deletions": 0
+  "original_deletions": 0,
+  "additional_external_dependency_backup": [
+    {
+      "scene": "baseline_before.blend",
+      "kind": "font",
+      "source_path": "C:\\lil_projects\\Blender Farm Pro\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans-Bold.ttf",
+      "sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+      "bytes": 704128,
+      "private_backup_verified": true,
+      "canonical_public_font": "05_assets/blender/fonts/DejaVuSans-Bold.ttf",
+      "canonical_font_bytes_equal": true
+    },
+    {
+      "scene": "baseline_before.blend",
+      "kind": "font",
+      "source_path": "C:\\lil_projects\\Blender Farm Pro\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans.ttf",
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+      "bytes": 756072,
+      "private_backup_verified": true,
+      "canonical_public_font": "05_assets/blender/fonts/DejaVuSans.ttf",
+      "canonical_font_bytes_equal": true
+    }
+  ],
+  "editable_scene_validation": "PASS"
 }

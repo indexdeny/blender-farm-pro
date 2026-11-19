@@ -22,12 +22,15 @@
   "historical_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
   "source_chain_status": "HASH_VERIFIED_HISTORICAL_RECORD",
   "exact_creation_git_revision": null,
-  "portable_saved_scene_render_status": "PENDING_CLEAN_CLONE",
+  "portable_saved_scene_render_status": "PASS_FINAL_SANITIZED_BINARY_FROM_CLEAN_CLONE",
   "normalization_exclusions": [
     "Output file paths/names",
     "In-process session_uid",
     "Unreferenced default Material",
     "VIEWER frame-buffer images"
   ],
-  "packing_status": "5 file textures packed"
+  "packing_status": "5 file textures packed",
+  "saved_replay_exact_pixels_in_tested_environment": true,
+  "saved_replay_color_only_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+  "metadata_privacy_sanitized": true
 }

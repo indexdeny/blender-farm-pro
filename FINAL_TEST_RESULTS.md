@@ -16,7 +16,7 @@ Structured published clean-checkout run: collected=628, testsRun=624, passed=611
 - JSON Schema корректна;391 legacy manifests построены каноническим provider и валидированы.
 - Required physical imports и все11 declared dependency constraints удовлетворены установленными версиями.
 - Driver smoke / fatal-exit / engine checks выполнены existing tests; два full physical hero renders завершились exit0.
-- Geometry/layout/material gates обоих SKU PASS; exact original byte/pixel equality FAIL, visual regression не выявлена.
+- Geometry/layout/material gates обоих SKU PASS; procedural exact original byte/pixel equality FAIL, visual regression не выявлена.
 - Whole-frame hero OCR частичный; не объявляется100% автоматической приёмкой.
 - Optional historical measurement SciPy объявлена отдельно; не требуется core physical path.
 - Markdown relative links и secret/PII review выполняются по точному публичному набору, а не по оставшимся private files на диске.
@@ -24,3 +24,7 @@ Structured published clean-checkout run: collected=628, testsRun=624, passed=611
 Пропуски NOT VERIFIED: optional reference-photo dataset, PHARMAGEN_SLOW_TESTS render/OCR checks, current-era silhouette measurements и producer photo fixture. Они не засчитаны как PASS. Raw history R-004 с неизвестным старым упавшим тестом не закрыт двумя зелёными современными проверками.
 
 Проверки выполняются в одноразовых копиях/клонах; private generated caches не переносились. Никакие credentials или платные AI API не использовались для render/test verification.
+
+## Addendum: editable scenes and masks (2026-11-19)
+
+Две редактируемые сцены и необходимые ресурсы сохранены в examples; все19 исходных masks и два historical JSON evidence перенесены без изменения bytes. Saved-scene replay в проверенной среде восстановил exact accepted pixels/normalized PNG hashes; procedural replay отдельно сохранил baseline прошлого выпуска. Это разные результаты. Текущий статус и ограничения: [FINAL_SCENE_AND_MASKS_AUDIT.md](FINAL_SCENE_AND_MASKS_AUDIT.md), [inventory](RENDER_ASSET_INVENTORY.md).

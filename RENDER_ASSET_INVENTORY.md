@@ -77,7 +77,7 @@ All 19 masks are single-channel 2048×2048 PNG, with values 0/1/254/255. Code co
 | 74-min-top.png | 3251381 | unknown | KEEP_PRIVATE | `0401be57b7371b4fa48963dbd19b230ced661765ed87e75022f9769fc6598396` |
 | 74-min-uv-final.scene.json | 165475 | final | KEEP_PRIVATE | `f15be958c875ec31c7d6d5c0f6c7fe382f76611b056240be036defefd8eb6939` |
 | 74-min-uv-final.stage.blend | 74021970 | unknown | KEEP_PRIVATE | `3cd1ec8236fe9d5737a62d82879e337b3894d7de1ca8787b92698a1466e05cd4` |
-| baseline_before.blend | 127654 | unknown | KEEP_PRIVATE | `de76266b4f8227f860bdb2e1b1a286d4508a6cb294ef31b4b6ba0d5d79ee2f26` |
+| baseline_before.blend | 127654 | unknown | REVIEW | `de76266b4f8227f860bdb2e1b1a286d4508a6cb294ef31b4b6ba0d5d79ee2f26` |
 | baseline_before.png | 2976252 | unknown | KEEP_PRIVATE | `f847ef2416379a84d3c2f4c5d2baac001dc00ffdd5af579f11e14b3b1f30b2de` |
 | baseline_before.view.json | 622 | unknown | KEEP_PRIVATE | `94dd807014c4e43cf55f0cfe705e2582f7a1e2dd7b7274b1ca6a4c2be113f1af` |
 | masks/59-min-end_maskMask.png | 559151 | unknown | KEEP_PUBLIC | `f7ba6265d633803b8c387c4e73ec60dacb6dbd385692f1ae828c9cdd4f06f5fc` |
@@ -100,3 +100,7 @@ All 19 masks are single-channel 2048×2048 PNG, with values 0/1/254/255. Code co
 | masks/74-min-top-final-study_maskMask.png | 526701 | experimental | KEEP_PUBLIC | `3018050fb78caa871c34aa6294b7eb045fc13e16dab35d9bd4d66bd94c84c7bf` |
 | masks/74-min-top_maskMask.png | 499721 | unknown | KEEP_PUBLIC | `37d04af4ded9d2298f2a6ee4427d9d07fa8d10b41e6c138edd43e9c82e2eedf1` |
 | physical-scene.json | 148333 | unknown | KEEP_PRIVATE | `e2cd3350f382686e17f6b7f85249f1f4dcb08cdd8edac0e8b8940ecd97b57ea4` |
+
+## Legacy baseline dependencies
+
+The unclassified private `baseline_before.blend` uses two unpacked DejaVu font paths under the historical producer worktree. Both font files were additionally copied and SHA-verified in private dependency backup; they match the vendored public fonts. This scene remains REVIEW/private and needs font path remapping if reused. Opening all 14 files is distinct from declaring all historical studies portable. The two selected public physical scenes use no fonts, linked libraries, scripts, external caches or sequence inputs.

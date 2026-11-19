@@ -34,3 +34,7 @@ Whole-frame OCR существующим backend распознал дозиро
 ## Права
 
 Владелец 2026-11-19 подтвердил наличие права показывать оба PNG и основания распространять используемые брендовые SVG для этого портфолио. Разрешительные документы независимо не изучались. Источники, ограниченные лицензии и отсутствие blanket commercial/trademark sublicense: [ASSET_RIGHTS.md](docs/portfolio/ASSET_RIGHTS.md).
+
+## Addendum: editable scenes and masks (2026-11-19)
+
+Две редактируемые сцены и необходимые ресурсы сохранены в examples; все19 исходных masks и два historical JSON evidence перенесены без изменения bytes. Saved-scene replay в проверенной среде восстановил exact accepted pixels/normalized PNG hashes; procedural replay отдельно сохранил baseline прошлого выпуска. Это разные результаты. Текущий статус и ограничения: [FINAL_SCENE_AND_MASKS_AUDIT.md](FINAL_SCENE_AND_MASKS_AUDIT.md), [inventory](RENDER_ASSET_INVENTORY.md).
