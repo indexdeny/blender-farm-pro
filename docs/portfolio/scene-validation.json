@@ -1,6 +1,6 @@
 {
   "date": "2026-11-19",
-  "status": "VALIDATED \u2014 PUBLICATION CHECKS PENDING",
+  "status": "READY WITH LIMITATIONS",
   "four_separate_verdicts": {
     "historical_accepted_image_preservation": "PASS",
     "editable_scene_integrity_and_saved_render": "PASS",
@@ -160,7 +160,7 @@
       "pixel_sha256": "67d6526c3235fb9c28a666c51102d155485b6f3f30491efed3dccb3b546da389",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/59-min-front_maskMask.png",
@@ -181,7 +181,7 @@
       "pixel_sha256": "855736e4944ffe6d7bc77318be5b0390b2e76fce0591d946eb9aa516e5040b9c",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/59-min-grain-study_maskMask.png",
@@ -202,7 +202,7 @@
       "pixel_sha256": "89d263104a825aa0d1eb3d035364bb52c63fca73a4abd404574695738fec63b7",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/59-min-hero_maskMask.png",
@@ -223,7 +223,7 @@
       "pixel_sha256": "3921de7f2aeeab4c21f0de8969afd3ea84db45b76d923b85823689fedc226300",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/59-min-proportion-study_maskMask.png",
@@ -244,7 +244,7 @@
       "pixel_sha256": "d664e81493c2c99f16ada505c83a10a2235a7aef35e2851dda7d0fc428dc682f",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/59-min-top_maskMask.png",
@@ -265,7 +265,7 @@
       "pixel_sha256": "a870280197670121f0ff9595ee1b77acfda3c2e64ea96ebd3bf71b9856885626",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-deterministic-repeat_maskMask.png",
@@ -286,7 +286,7 @@
       "pixel_sha256": "62afd7240397fed4de62140e0dd04463d27e003ee0d53d7295b6890e6ae0aa69",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-end_maskMask.png",
@@ -307,7 +307,7 @@
       "pixel_sha256": "dd18cfd4aff266587f7532e484b3b743f30df16a62959d3d2e662b82027c3822",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-front_maskMask.png",
@@ -328,7 +328,7 @@
       "pixel_sha256": "3de33a7e6e04f43879190660fde47a4a0332081a03d953639838113f454b1885",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-hero-calibration2_maskMask.png",
@@ -349,7 +349,7 @@
       "pixel_sha256": "a8be48610e3e59cd6b7fb7800c2cc1fa08a2dfb6ff919324260e78712787dcc3",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-hero-calibration_maskMask.png",
@@ -370,7 +370,7 @@
       "pixel_sha256": "a3ebc86351debcb0fa6ae53b1e0c2ff9566d59dafc641d79a4910a326c86a210",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-hero-repeat_maskMask.png",
@@ -391,7 +391,7 @@
       "pixel_sha256": "b14e9d27b554de522e38ce12fc1c13da0567265683daba072efa97c09364fa38",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-hero-study_maskMask.png",
@@ -412,7 +412,7 @@
       "pixel_sha256": "f83d15b5432425cd599d82954ede143f6c966b30e51bf5581b4e009ffa1b3e53",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-hero_maskMask.png",
@@ -433,7 +433,7 @@
       "pixel_sha256": "2f170e20e19f5375ffb53d25b58f37eca303073d68566e009929e11dab60729e",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-oidn-single-a_maskMask.png",
@@ -454,7 +454,7 @@
       "pixel_sha256": "78eeea18d8650ebb7e105a0b38e6dee53d709d6a2aba1fbb6bf6bdd80da808e9",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-oidn-single-b_maskMask.png",
@@ -475,7 +475,7 @@
       "pixel_sha256": "afb1c1875dd3336b32c63c086f32576c183eb42ac88211adee25ff51629cd70a",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-regression-for59_maskMask.png",
@@ -496,7 +496,7 @@
       "pixel_sha256": "34537802e06cab01a6c9df79e59bb57ed8e4b56147592ccc577805ea5ac3f73c",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-top-final-study_maskMask.png",
@@ -517,7 +517,7 @@
       "pixel_sha256": "14413d3510ec2ef7302f61a6d3b526fa86e1bee676416548578862c499079b0d",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     },
     {
       "path": "masks/74-min-top_maskMask.png",
@@ -538,7 +538,7 @@
       "pixel_sha256": "a72a5ad86c6706c07dbca5ef9d93bfafdd076c726279056e327fe61ad7f9e4dc",
       "purpose": "Compositing / diagnostic Object Index pass export; not a texture input",
       "source": "src/carton_stage.py:setup_mask_output connects Object Index directly to BW File Output",
-      "regeneration_claim": "PENDING; originals retained regardless"
+      "regeneration_claim": "EXACT_REGENERATION_NOT_CLAIMED; historical original retained unchanged"
     }
   ],
   "mask_regeneration_exact": false,
@@ -551,7 +551,16 @@
     "credential_pattern_matches": 0,
     "corrections": "Only FileSelectParams.directory and ImagePackedFile.filepath metadata; visual fingerprint unchanged"
   },
-  "publication": {},
+  "publication": {
+    "publication_verified": true,
+    "master_sha": "cb7addc4e3baa00aca39d44a9e2b8d83f17c39d2",
+    "default_branch": "master",
+    "pr_url": "https://github.com/indexdeny/blender-farm-pro/pull/3",
+    "actual_github_clone_verified": true,
+    "both_scenes_opened_with_required_resources": true,
+    "scene_candidate_commit": "9e0a8a5cd51abd0db21d102c50e2342b0ef83f6a",
+    "runtime_unchanged": true
+  },
   "historical_creation_git_revision": "UNKNOWN",
   "rights_basis": "Existing owner-confirmed portfolio permission; no independently inspected instruments or blanket downstream commercial/trademark licence"
 }

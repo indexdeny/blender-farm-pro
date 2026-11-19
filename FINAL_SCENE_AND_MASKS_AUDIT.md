@@ -1,6 +1,6 @@
 # FINAL_SCENE_AND_MASKS_AUDIT
 
-Дата: 2026-11-19. Статус: **VALIDATED — PUBLICATION CHECKS PENDING**.
+Дата: 2026-11-19. Статус: **READY WITH LIMITATIONS**.
 
 ## Резюме
 
@@ -42,7 +42,7 @@
 
 ## Публикация и граница
 
-Candidate проверен локально. Публикация сцен и post-publication clone ещё не подтверждены; готовность опубликованного addendum пока не объявляется.
+Публикация проверена: master `cb7addc4e3baa00aca39d44a9e2b8d83f17c39d2`, PR https://github.com/indexdeny/blender-farm-pro/pull/3. Реальный GitHub clone совпал по SHA сцен, масок и normal map; зависимости находятся внутри клона либо packed.
 
 Runtime, schemas, contracts и tests относительно release13eb0c1 не менялись. Предыдущий full unittest result611 PASS/0FAIL/0ERROR/14skip records остаётся историческим результатом проверенного кода; новый full suite ради binary/docs-only changes не запускался. Текущий addendum проверен scene opens, двумя final saved renders и двумя procedural renders, hashes, dependency closure, Markdown/security и независимым review. Первые2 saved renders до metadata sanitization также сохранены в evidence; final binaries проверены повторно из отдельного чистого clone.
 
