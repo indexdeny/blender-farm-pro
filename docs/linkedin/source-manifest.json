@@ -1,0 +1,66 @@
+[
+  {
+    "sku": "74-min",
+    "role": "development",
+    "source_filename": "baseline_before.png",
+    "public_path": "docs/linkedin/sources/74-min-development.png",
+    "sha256": "f847ef2416379a84d3c2f4c5d2baac001dc00ffdd5af579f11e14b3b1f30b2de",
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "creation_date": "UNKNOWN",
+    "stage": "Historical development baseline",
+    "view": "Three-quarter; camera/shape differ between stages",
+    "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+  },
+  {
+    "sku": "74-min",
+    "role": "accepted",
+    "source_filename": "74-min-hero.png",
+    "public_path": "docs/linkedin/sources/74-min-accepted.png",
+    "sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "creation_date": "UNKNOWN",
+    "stage": "Owner-reported workplace-accepted historical image",
+    "view": "Three-quarter; camera/shape differ between stages",
+    "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+  },
+  {
+    "sku": "59-min",
+    "role": "development",
+    "source_filename": "59-min-baseline_before.png",
+    "public_path": "docs/linkedin/sources/59-min-development.png",
+    "sha256": "5dd4862e9b40f0ce4e1ebf8b6765e682cd7af81769170f70bf319a982a52e821",
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "creation_date": "UNKNOWN",
+    "stage": "Historical development baseline",
+    "view": "Three-quarter; camera/shape differ between stages",
+    "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+  },
+  {
+    "sku": "59-min",
+    "role": "accepted",
+    "source_filename": "59-min-hero.png",
+    "public_path": "docs/linkedin/sources/59-min-accepted.png",
+    "sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+    "dimensions": [
+      2048,
+      2048
+    ],
+    "creation_date": "UNKNOWN",
+    "stage": "Owner-reported workplace-accepted historical image",
+    "view": "Three-quarter; camera/shape differ between stages",
+    "identity_evidence": "Visible brand/dose/count: Viagra100mg30 / Cialis20mg30; actual project render and corresponding view JSON",
+    "chronology": "Development-stage comparison; exact dates not established; no classic Before/After claim"
+  }
+]

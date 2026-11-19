@@ -1,5 +1,25 @@
 # Blender Farm Pro — AI-Assisted 3D Packaging Visualization
 
+Python/Blender Cycles pipeline for procedural 3D pharmaceutical packaging, editable scenes and automated visual QA.
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) ![Blender](https://img.shields.io/badge/Blender-E87D0D?logo=blender&logoColor=white) ![Cycles](https://img.shields.io/badge/Cycles-CPU-52677D) ![Procedural 3D](https://img.shields.io/badge/Procedural-3D-326A9B) ![JSON Schema](https://img.shields.io/badge/JSON-Schema-52677D) ![Automated QA](https://img.shields.io/badge/Automated-QA-326A9B)
+
+| Viagra — 74-min | Cialis — 59-min |
+|:---:|:---:|
+| ![Accepted historical Viagra render](docs/portfolio/74-min.webp) | ![Accepted historical Cialis render](docs/portfolio/59-min.webp) |
+| [Editable scene](examples/74_viagra/scenes/74-min-historical.blend) · [Example guide](examples/74_viagra/README.md) | [Editable scene](examples/59_cialis/scenes/59-min-historical.blend) · [Example guide](examples/59_cialis/README.md) |
+
+**Problem → Solution → Results:** limited control over packaging geometry, composition, materials and printed artwork led to a procedural Blender/Cycles pipeline with structured manifests/contracts, artwork preparation and visual QA. Two examples reached owner-reported workplace acceptance. R&D prototype; further catalogue development stopped for budget constraints.
+
+| Evidence | Verified scope |
+|---|---|
+| Historical images | Two accepted2048×2048 originals; lossless previews retain their pixels |
+| Saved scenes | Replay matched accepted RGBA pixels in the checked Blender5.1.2 CPU environment |
+| Fresh procedural generation | Matches prior baseline; differs from historical originals by652/501 pixels,max1/255 |
+| Automated tests | Historical code verification:611passed,0failures/errors,14skip records; no new suite run for this presentation-only change |
+
+[Architecture and validation](FINAL_SCENE_AND_MASKS_AUDIT.md) · [LinkedIn portfolio kit](docs/linkedin/README.md) · [Development-source audit](docs/portfolio/BEFORE_AFTER_SOURCE_AUDIT.md)
+
 ## 1. Overview
 
 **R&D prototype — two accepted packaging examples; further development discontinued due to project budget constraints.**
