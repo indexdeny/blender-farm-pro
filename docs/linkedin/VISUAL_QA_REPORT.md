@@ -6,6 +6,6 @@ All14layouts were inspected at native resolution and in a360px mobile contact sh
 
 Classic chronological Before/After is **NOT ESTABLISHED**. Real development/accepted comparisons are supplied instead, as disclosed in the source audit. Exact capture dates are unknown. Rights remain owner-confirmed under ASSET_RIGHTS; no commercial/trademark sublicense. No manufacturer certification or391-product acceptance claim.
 
-Relative links checked:233; broken:0. New text/source files scanned for profile paths and credential patterns. Existing protected runtime was not edited. Previous unittest counts are explicitly historical; no new suite or coverage claim. SVGs retain individual editable text/image elements and relative source references; keep editable/ and sources/ together.
+Relative links checked:238; broken:0. New text/source files scanned for profile paths and credential patterns. Existing protected runtime was not edited. Previous unittest counts are explicitly historical; no new suite or coverage claim. SVGs retain individual editable text/image elements and relative source references; keep editable/ and sources/ together.
 
 GitHub post-publication metadata/media and browser checks are recorded in the final report. No LinkedIn account posting was performed.

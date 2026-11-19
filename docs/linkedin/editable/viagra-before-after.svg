@@ -2,10 +2,10 @@
 <text x="54.0" y="53.14" font-family="DejaVu Sans" font-size="38.0" font-weight="700" fill="#172c44">Viagra / 74-min</text>
 <text x="54.0" y="99.94" font-family="DejaVu Sans" font-size="28.0" font-weight="400" fill="#52677d">Development stage → accepted result. Views and design evolved.</text>
 <rect x="54.0" y="138.16" width="528.0" height="408.2" rx="14.0" fill="white" stroke="#d8e1ea"/>
-<text x="74.0" y="184.68" font-family="DejaVu Sans" font-size="36.0" font-weight="700" fill="#172c44">EARLY ITERATION</text>
+<text x="74.0" y="187.95999999999998" font-family="DejaVu Sans" font-size="40.0" font-weight="700" fill="#172c44">EARLY ITERATION</text>
 <image x="146.5" y="198.26" width="343" height="343" preserveAspectRatio="xMidYMid meet" xlink:href="../sources/74-min-development.png"/>
 <rect x="618.0" y="138.16" width="528.0" height="408.2" rx="14.0" fill="white" stroke="#d8e1ea"/>
-<text x="638.0" y="184.68" font-family="DejaVu Sans" font-size="36.0" font-weight="700" fill="#172c44">ACCEPTED 3D RESULT</text>
+<text x="638.0" y="187.95999999999998" font-family="DejaVu Sans" font-size="40.0" font-weight="700" fill="#172c44">ACCEPTED 3D RESULT</text>
 <image x="710.5" y="198.26" width="343" height="343" preserveAspectRatio="xMidYMid meet" xlink:href="../sources/74-min-accepted.png"/>
 <text x="54.0" y="606.12" font-family="DejaVu Sans" font-size="16.0" font-weight="400" fill="#52677d">BLENDER / CYCLES / PYTHON     •     TWO DEMONSTRATED EXAMPLES</text>
 </svg>
