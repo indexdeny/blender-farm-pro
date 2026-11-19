@@ -2,7 +2,7 @@
 
 Date:2026-11-19. Verdict: **REAL DEVELOPMENT / ACCEPTED COMPARISONS; CLASSIC BEFORE/AFTER CHRONOLOGY NOT ESTABLISHED**.
 
-All four sources are actual project PNGs,2048Г—2048. Accepted hashes match preview-provenance.json and ACCEPTED_RENDER_PROVENANCE.md. Development sources are baseline_before.png (visible Viagra100mg/30 pills; associated legacy baseline scene and baseline_before.view.json) and59-min-baseline_before.png (visible Cialis20mg/30pills; associated59-min-baseline_before.view.json). These are rendered boxes, not employer photographs. Exact render dates and creation revisions are UNKNOWN; filenames/view evidence and visible content establish development baselines, not a timestamp chronology. Never label these comparisons classic BEFORE/AFTER. File names containing before-after are export identifiers only.
+All four sources are actual project PNGs,2048×2048. Accepted hashes match preview-provenance.json and ACCEPTED_RENDER_PROVENANCE.md. Development sources are baseline_before.png (visible Viagra100mg/30 pills; associated legacy baseline scene and baseline_before.view.json) and59-min-baseline_before.png (visible Cialis20mg/30pills; associated59-min-baseline_before.view.json). These are rendered boxes, not employer photographs. Exact render dates and creation revisions are UNKNOWN; filenames/view evidence and visible content establish development baselines, not a timestamp chronology. Never label these comparisons classic BEFORE/AFTER. File names containing before-after are export identifiers only.
 
 | SKU | Role | Original source | SHA-256 |
 |---|---|---|---|
