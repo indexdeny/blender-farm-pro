@@ -1,0 +1,42 @@
+{
+  "sku": "59-min",
+  "source_name": "59-min-proportion-final.stage.blend",
+  "source_sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a",
+  "historical_evidence": "59-min-proportion-final.scene.json",
+  "portable_path": "examples/59_cialis/scenes/59-min-historical.blend",
+  "portable_sha256": "63340cbdf9bc13759c68e2b7ee6f526585e9ec072445bf502d62531f94a58d61",
+  "portable_bytes": 54335705,
+  "unpacked_resources": [
+    {
+      "path": "examples/59_cialis/textures/normal.png",
+      "sha256": "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd",
+      "bytes": 62216190
+    }
+  ],
+  "visual_state_before_sha256": "3cbc1c513c44f1e44f24b8158496d07cf0077d70d2705949bf9fb17d649c616d",
+  "visual_state_after_sha256": "3cbc1c513c44f1e44f24b8158496d07cf0077d70d2705949bf9fb17d649c616d",
+  "visual_differences": [],
+  "objects": 52,
+  "object_types": {
+    "CAMERA": 4,
+    "LIGHT": 3,
+    "MESH": 45
+  },
+  "active_camera": "camera_hero",
+  "pre_sanitization_portable_sha256": "fd484a340de89d7589a01697caece790853d0d68aa9eae360cddfc5ce8c6ef52",
+  "private_metadata_sanitized": true,
+  "historical_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+  "source_chain_status": "HASH_VERIFIED_HISTORICAL_RECORD",
+  "exact_creation_git_revision": null,
+  "portable_saved_scene_render_status": "PASS_FINAL_SANITIZED_BINARY_FROM_CLEAN_CLONE",
+  "normalization_exclusions": [
+    "Output file paths/names",
+    "In-process session_uid",
+    "Unreferenced default Material",
+    "VIEWER frame-buffer images"
+  ],
+  "packing_status": "4 textures packed; normal.png external via //../textures/normal.png",
+  "saved_replay_exact_pixels_in_tested_environment": true,
+  "saved_replay_color_only_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+  "metadata_privacy_sanitized": true
+}

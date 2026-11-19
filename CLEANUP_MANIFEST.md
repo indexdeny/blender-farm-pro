@@ -19,7 +19,7 @@
 | KEEP_TEST | 143 |
 | REMOVE_FROM_TRACKING | 1488 |
 
-Все named files и основания: [cleanup-files.json](docs/portfolio/cleanup-files.json). Точный final public набор содержит 2207 файлов на момент отчёта; development-tree и public-parent counts различаются из-за разных исходных веток. Удалено из tracking публичного parent 816 путей. Эти числа не считаются уменьшением исторической Git-базы.
+Все named files и основания: [cleanup-files.json](docs/portfolio/cleanup-files.json). До scene-preservation addendum публичный набор содержал 2207 файлов; development-tree и public-parent counts различаются из-за разных исходных веток. Удалено из tracking публичного parent 816 путей. Эти числа не считаются уменьшением исторической Git-базы.
 
 ## Безопасность
 
@@ -28,3 +28,7 @@
 G0 повторно проверил SHA-256 90 487 файлов и восстановление трёх bundles, refs и fsck; accepted PNG совпали. Исходная raw Git metadata с четырьмя zero app refs сохранена как forensic data; valid history восстановлена из bundle в независимый Git. `.gitattributes` сохраняет точные bytes SHA-pinned asset sources при checkout.
 
 В публичную копию не включены исходные Reference Templates photographs, приватные recovery inventories/logs или employer photo inputs. Physical путь не требует этих фотографий. Новые previews lossless-derived от подтверждённых PNG; restricted asset rights не перелицензированы свободной лицензией.
+
+## Addendum: editable scenes and masks (2026-11-19)
+
+Две редактируемые сцены и необходимые ресурсы сохранены в examples; все19 исходных masks и два historical JSON evidence перенесены без изменения bytes. Saved-scene replay в проверенной среде восстановил exact accepted pixels/normalized PNG hashes; procedural replay отдельно сохранил baseline прошлого выпуска. Это разные результаты. Текущий статус и ограничения: [FINAL_SCENE_AND_MASKS_AUDIT.md](FINAL_SCENE_AND_MASKS_AUDIT.md), [inventory](RENDER_ASSET_INVENTORY.md).

@@ -1,0 +1,6345 @@
+{
+  "dimensions_spec_mm": {
+    "width": 110,
+    "height": 69.201,
+    "depth": 18,
+    "source": "estimated"
+  },
+  "objects": [
+    {
+      "name": "front",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          -8.999999612569809,
+          -8.679999969899654
+        ],
+        [
+          0.007499999810534064,
+          69.19349730014801
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "4f6e9a34e60e4ec66996f21151347560c4d0c533eeff31235305fd2d8cd97604",
+      "uv_sha256": "84fa1297f83b4d167ff3a9a1103f10d57456784d80074d5f0b0a689d3a2af577",
+      "nontriangles": 0,
+      "signed_volume_mm3": 2432.589594704308,
+      "bevel_mm": 0.12,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "back",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          8.679999969899654,
+          8.999999612569809
+        ],
+        [
+          0.007499999810534064,
+          69.19349730014801
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "22c14e6a5a3283dfc2b4b0f3db3b82bba69677b3b6a9476ffc8169a3e734f0af",
+      "uv_sha256": "8719180469c821ba5d35bfcee0a40fb9b6383659412f8a3f67f78619682012a1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 2432.589594704308,
+      "bevel_mm": 0.12,
+      "panel": "back",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "left",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.999999701976776,
+          -54.680000990629196
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          0.007499999810534064,
+          69.19349730014801
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "34b622db7b8d454e083cbb0e605140898bf2d350fd7d4c8a1f5355ff22c1b6a3",
+      "uv_sha256": "73f4012b9cf5d68dc26cfc4bd797a1308695027e19219137cdb32e34a553f086",
+      "nontriangles": 0,
+      "signed_volume_mm3": 397.00327923497827,
+      "bevel_mm": 0.12,
+      "panel": "left",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "right",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          54.680000990629196,
+          54.999999701976776
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          0.007499999810534064,
+          69.19349730014801
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "31e07aa691c107e12bf428058252ca49cfb1ac9ec9cae32e9241074415d9bed4",
+      "uv_sha256": "d17d91528ffd9d3483d7306918a6c1dba753ac82efdadf901d4205d8a9cf09ca",
+      "nontriangles": 0,
+      "signed_volume_mm3": 397.00327923497827,
+      "bevel_mm": 0.12,
+      "panel": "right",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          68.88099759817123,
+          69.20100003480911
+        ]
+      ],
+      "vertices": 180,
+      "triangles": 356,
+      "mesh_sha256": "3b0e852d2bfde242c49588ccb70a01b434ac29f5733e5809cb491bc78593e3c2",
+      "uv_sha256": "271f9043cdf9c3df47b8299ae2dcb8a21a23f481520d6d35c07e36a7f0f395e4",
+      "nontriangles": 0,
+      "signed_volume_mm3": 630.2929548169999,
+      "bevel_mm": 0.12,
+      "panel": "top",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": 0.055,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom",
+      "kind": "panel",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.99250069260597,
+          54.99250069260597
+        ],
+        [
+          -8.99249967187643,
+          8.99249967187643
+        ],
+        [
+          0.0,
+          0.31999999191612005
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "b07dfbb7662bbe42f7d49a0e996acacfd146c1dbd8988e9e1529c5c3f2468e8a",
+      "uv_sha256": "5c447f13c3a30163340a2fd273c9100403b0062f0bc27450a209dcb0a07b8538",
+      "nontriangles": 0,
+      "signed_volume_mm3": 631.2544734839173,
+      "bevel_mm": 0.12,
+      "panel": "bottom",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top_tuck",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          54.680000990629196
+        ],
+        [
+          8.3600003272295,
+          8.679999969899654
+        ],
+        [
+          62.881000339984894,
+          68.88099759817123
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "fc7876d502f2400bbdf2f39096d57a7f42b24a1d3da5b8a1d88c9797a82f9da1",
+      "uv_sha256": "6f287aa022c6bc151c2a139eb76812ec7b8230b5ef38535ea0218cf5960b335a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 208.4123336930367,
+      "bevel_mm": 0.12,
+      "panel": "back",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom_tuck",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          54.680000990629196
+        ],
+        [
+          -8.679999969899654,
+          -8.3600003272295
+        ],
+        [
+          0.31999999191612005,
+          6.320000160485506
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "d5922465f387df58caaf90fa5faca949292c9b8dd2a2a81d0304b911780bf124",
+      "uv_sha256": "1ad7ef6e15ca82bd6a17caf2da78b825161c546a86d1cbcfc71103515cb13056",
+      "nontriangles": 0,
+      "signed_volume_mm3": 208.41010076464013,
+      "bevel_mm": 0.12,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top_dust_left",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          -46.67999967932701
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          68.56100261211395,
+          68.88099759817123
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "2a71aafc35c177307c10486f49c95b2112ecde2a453f938eccdb4a034a7978c7",
+      "uv_sha256": "c3d3ec17da8c55c23ecfb3f36e988e9999d02e2096a1bb75b02f361d5e637342",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09407360073114,
+      "bevel_mm": 0.12,
+      "panel": "top",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "top_dust_right",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          46.67999967932701,
+          54.680000990629196
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          68.56100261211395,
+          68.88099759817123
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "3d5dd584eb90b84ec7adc3b0ee2c01205c1e3fc9f8bead014d72390362c25fd6",
+      "uv_sha256": "07534bf85ab87ddda10df544cd8331ff11fcf5d7ed883016fb559563620d2d9d",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.10195522201255,
+      "bevel_mm": 0.12,
+      "panel": "top",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom_dust_left",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -54.680000990629196,
+          -46.67999967932701
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          0.31999999191612005,
+          0.6399999838322401
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "5ef25aa9de43ba73c4bc316e8a0f068f566d2fa3b8d3d0130699226de9f446e3",
+      "uv_sha256": "999cf232ac8f54206e9851a9b780b272493f27fbbf5f83f9d088d138012018bc",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09716724239343,
+      "bevel_mm": 0.12,
+      "panel": "bottom",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "bottom_dust_right",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          46.67999967932701,
+          54.680000990629196
+        ],
+        [
+          -8.679999969899654,
+          8.679999969899654
+        ],
+        [
+          0.31999999191612005,
+          0.6399999838322401
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "d3600b14e638c9a91442e33cdbbcdea568426aa2e74232394cf7d23d806ff3d3",
+      "uv_sha256": "8695f8bbd704ab45ca3c0c005333b072cd16fff79ea1429961cad0ca15d8b3ca",
+      "nontriangles": 0,
+      "signed_volume_mm3": 44.09720039642851,
+      "bevel_mm": 0.12,
+      "panel": "bottom",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "glue_seam",
+      "kind": "flap",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          47.68000170588493,
+          54.680000990629196
+        ],
+        [
+          8.3600003272295,
+          8.679999969899654
+        ],
+        [
+          0.31999999191612005,
+          68.88099759817123
+        ]
+      ],
+      "vertices": 152,
+      "triangles": 300,
+      "mesh_sha256": "2f92115ea8f9c6d3ea1cec8d1731c9777aaab2b1511c08ca7adb9ae42a717543",
+      "uv_sha256": "d36e20cd9c4481c363cfb1b3c514f579fd85c0f290d15f4bb050b9ce2ba522da",
+      "nontriangles": 0,
+      "signed_volume_mm3": 152.55818996004606,
+      "bevel_mm": 0.12,
+      "panel": "back",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_000",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -25.00000037252903,
+          -23.55000004172325
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "6f0e1b9fdfdcc2fb5f4f50dfc15eb2ea5a24f2e4498066ccdd5c4d7294af7207",
+      "uv_sha256": "f9e5b43d94acb68e9d62e2ca1cc6a04f7eaa2d2528480c2fceaccad765e8eaac",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20025438714673335,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_001",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -22.50000089406967,
+          -21.050000563263893
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "db3ede4ee2997267d66defb73e58d4301e5bee2fc3d3397fc276e3d57fe23703",
+      "uv_sha256": "6530857ab397a1439b4d26b9c5db2c6c8c2611992291df3aa6599948681fa886",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20200439469301573,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_002",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -18.99999938905239,
+          -17.550000920891762
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          54.1723370552063,
+          55.62233552336693
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "921cbd80200117d13af576d413aae86f0e76d5e00608e8bce19c11dcfe5bf178",
+      "uv_sha256": "5d73f59882bd99dab4cd3460830186e6ced4015bf402886756b3434deb246051",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.19986047770463158,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_003",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -16.499999910593033,
+          -15.049999579787254
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "26a4f00b76c93114286deb758f6a6b9536e5a5cf39ccae4a78d05fbbcd17c9ee",
+      "uv_sha256": "5c35ab703008b1748628277e214aba378bb8f5ce3b7b30c0a6c73c71d7c26c4d",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2001102154351258,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_004",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -13.000000268220901,
+          -11.549999937415123
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "ccaad372b88c06c65647d7f82b9de952700487ebf3d38111d1ca9b37eb3fc4a7",
+      "uv_sha256": "67356e22ec8b2f13b2548a0a1cc6d9e17df340a5cbe2be98446d981f4db0f33d",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20043299427581804,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_005",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -7.000000216066837,
+          -5.549999885261059
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "7ac3468ad009ffc1ad264cb5a6d6133b4d1dddb0a390f98438d425329f1f0062",
+      "uv_sha256": "3c4034fa60148c4738882c0c05dd3a516888ab87bf2bff5645b354b4eef8aec3",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2007367744250032,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_006",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -7.000000216066837,
+          -5.549999885261059
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          54.1723370552063,
+          55.62233552336693
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "ea9b2ef020f150db37821a9c60e3a01a54d48154aa3988e3fe16b276a9575da3",
+      "uv_sha256": "691a9a1a8d1fef569cf2bc844fded294e726737e9f3284ba50b8665df96cb93a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20080496987428953,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_007",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -7.000000216066837,
+          -5.549999885261059
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          51.67233571410179,
+          53.12233418226242
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "8527660d231ddbc6f716bf263ce834a80c31c81bee72c271940777bee6b2e817",
+      "uv_sha256": "21c8a32bac5d2b22f1506840419405601865d537cf5f8eca23080d55e891aede",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20086300215697228,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_008",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -1.0000000474974513,
+          0.44999999227002263
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          54.1723370552063,
+          55.62233552336693
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "ff58a3429ad0ccb96691ebb79d2f1950db7f17224d31b3b1b0f94d0088f8b83d",
+      "uv_sha256": "7038c1db886f68f352fc93be027a4b7eb2e7928131e962e5fba33c1947b0b26f",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20073387425647315,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_009",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          1.500000013038516,
+          2.950000111013651
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "1c2f389c1a07d70fd80defe780b4751beadacb07bbdd81c01bd8d4e006a6830c",
+      "uv_sha256": "b92f4e8ecb209af41d03ca622ac604ab2b6535d9a5b8332ce76417b172dd78a5",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20073824431402987,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_010",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          4.999999888241291,
+          6.4500002190470695
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          54.1723370552063,
+          55.62233552336693
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "e26b60ce2766308d37d05eb90a399266df2f53336140c1e2b611002c02d7e979",
+      "uv_sha256": "bb7150b3c9d21986522cbd3bfed9dfce9f41863f5671779041fb8ce3873a4404",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20078514545440743,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_011",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          4.999999888241291,
+          6.4500002190470695
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          51.67233571410179,
+          53.12233418226242
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "39d8e9b4b45f2740d46b6a190b4852a36507319fd500695637674b4c84711ac8",
+      "uv_sha256": "48d9e590c3f153db6fc41d514b4ecade7216f364e50746b90a2a5845453dc366",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20047225685049355,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_012",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          7.499999832361937,
+          8.949999697506428
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          56.67233467102051,
+          58.122336864471436
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "1cc879590286525dadfdc1fe8d6412229302941c40bd1510d69ca44f6d74a94e",
+      "uv_sha256": "e8ab89839bef9cc755174b690f8228e88e939e27384abd9eadd77e565b1e19e1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20080215268336657,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_013",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -25.00000037252903,
+          -23.55000004172325
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          43.672334402799606,
+          45.122336596250534
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "6b5b8b797042459c1b452f2c67b992b56f6559cdf3e05b2e3f63394d73831f91",
+      "uv_sha256": "303cd7fa44d5de01d00e0f6c13dfaddf1efbc2683fb8c43fd4b0c7f198078f55",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20236904744545406,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_014",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -22.50000089406967,
+          -21.050000563263893
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "d466de271db56d8d4542f5742012fbded26bca4c92a57904662d2cc2801e6896",
+      "uv_sha256": "a1336f0aab6cf00ec4ad765776ec105bd7ed1448a767922381b881d3d22ef91b",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20111304288583687,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_015",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -22.50000089406967,
+          -21.050000563263893
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          46.172335743904114,
+          47.62233421206474
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "96619e89155d80a8ef04b41c4bf1260ee4e5746e8bf7fe854cc459d21f9ab037",
+      "uv_sha256": "1f4625743f67741343346643003aebc9d95b6e2cbadab85488528f4c7da06aa1",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20228665039330915,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_016",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -22.50000089406967,
+          -21.050000563263893
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          43.672334402799606,
+          45.122336596250534
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "8c853446f75841f9939b8f941100f389dbd2aa0d81e28986956e1429e9fac8e3",
+      "uv_sha256": "78b1f02cd930562febf3f0ccc54de2bf3868ec9fd0fc7e107badf6140d43322a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20064528163943277,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_017",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -18.99999938905239,
+          -17.550000920891762
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "102ae2f4804813b967899e334340306b212955035606349553e9cfd64ed0a46c",
+      "uv_sha256": "e760c22914ab5a0526a48012996ebe70ac9d0161f5471ad1b7f3fe80217baf16",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2010030475396705,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_018",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -18.99999938905239,
+          -17.550000920891762
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          46.172335743904114,
+          47.62233421206474
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "7fa77339f2b21252b2cc8aee8f98c08fe964fc4be98c54590de9db99839c3a6a",
+      "uv_sha256": "c984aaa3a8eb0a492f0ed4c05fcd84565cd213604aa0513947cd483dd9ece4a5",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20040693179031743,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_019",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -13.000000268220901,
+          -11.549999937415123
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          46.172335743904114,
+          47.62233421206474
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "b4925162fecffce208a68ef2d24f07372537cb0984bb5b1f2deb8fbcd111fbd2",
+      "uv_sha256": "854c1347840187ddb038dc97627fe8a37fb056796319a98a7c03443308aca91f",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2004457988480348,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_020",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -10.499999858438969,
+          -9.050000458955765
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "02caf49a98964150b40c9ffc945bafb55594d12814289c1de3ba988b4c5021d8",
+      "uv_sha256": "a3f1a5cab33f6f315a38401f5d26eff208425413087813a9fc66049db36a8c4f",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20059119180496987,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_021",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -10.499999858438969,
+          -9.050000458955765
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          46.172335743904114,
+          47.62233421206474
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "a782ae235f533a96a6bc597d38823223ebfa3844209497be92299a351e087649",
+      "uv_sha256": "cc2df18c18d50bd3fd577a792851914aedb228fd3787520f46b3fa5053bff466",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20050213341467685,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_022",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -1.0000000474974513,
+          0.44999999227002263
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "d00bb943db5d05051710447444f01229f65b5e770c1dd32509ebc636f0ad2076",
+      "uv_sha256": "45bd492dc9df3e04bf5ade678f56d84875007ab50803260792b28247026d723e",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2007217037256845,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_023",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          -1.0000000474974513,
+          0.44999999227002263
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          43.672334402799606,
+          45.122336596250534
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "3980f0db00d9916434ba4d35a997f87f8ef6a73cb619cf11169d8112a68c1298",
+      "uv_sha256": "a219fa8ebcb446011cd502c29a1a703aaedd216e440119af8e5ae77bb05b94ab",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20071418326573565,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_024",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          1.500000013038516,
+          2.950000111013651
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "0fafdc3e2232fbd4ea9c52cb652773265a098640b5191d54b1cdf628de3263ed",
+      "uv_sha256": "dbc0a0709d2641d53209371c6f8a9112969a821069c4ecdee70474d13d367220",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2007516421616756,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_025",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          4.999999888241291,
+          6.4500002190470695
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "0f29442b25fa2067020346b538b8baa476991bfc273e0ae4a71c58acd24597fc",
+      "uv_sha256": "c82018068cf1602b7bca12b5a85fe4e6e5945d2b8671d1259facf1dc2f35d712",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20053397831176617,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_026",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          4.999999888241291,
+          6.4500002190470695
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          46.172335743904114,
+          47.62233421206474
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "31ef83606cf78f2d9188054a49189d363052655bac5c7003d1a78753f53961d9",
+      "uv_sha256": "5ea5fccc54dea3000cfc3a05003ec2fb1167cb20ace3280dc5a6cb1a3348d889",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2006556841978777,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_027",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          7.499999832361937,
+          8.949999697506428
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          48.67233708500862,
+          50.12233555316925
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "f590ca6370830b0b476323cfae3c4b3d5a960853d7aa3165da5bee5b6b52c9e0",
+      "uv_sha256": "c71d161a247ae99ed7e57a2b9749de30557525680c345d0a777bef03f9a0761e",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.20052274424253697,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_braille_028",
+      "kind": "braille",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          7.499999832361937,
+          8.949999697506428
+        ],
+        [
+          -9.189999662339687,
+          -8.999999612569809
+        ],
+        [
+          46.172335743904114,
+          47.62233421206474
+        ]
+      ],
+      "vertices": 102,
+      "triangles": 200,
+      "mesh_sha256": "c44b2c7d11e2bc5194dffc124b794ae0e15062dda22ec8222a5e49bb2d3522da",
+      "uv_sha256": "37ec82de36d0a26c33a48a7948b7aa398ebe96c449851c39e5a53ccc5d9b991a",
+      "nontriangles": 0,
+      "signed_volume_mm3": 0.2006916507979464,
+      "bevel_mm": null,
+      "panel": "front",
+      "dot_height_mm": 0.19,
+      "dot_diameter_mm": 1.45,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    },
+    {
+      "name": "front_foil",
+      "kind": "foil",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "bounds_mm": [
+        [
+          20.999999716877937,
+          43.0000014603138
+        ],
+        [
+          -9.039999917149544,
+          -8.999999612569809
+        ],
+        [
+          5.668165162205696,
+          17.168164253234863
+        ]
+      ],
+      "vertices": 640,
+      "triangles": 1276,
+      "mesh_sha256": "cade336fdeffcfb409d9e3fef8efd27be34650d63da8ff561b3272eba2a7c0d2",
+      "uv_sha256": "80fe3a3b710cc639756665c26f7c1d99bdddc188464c1f73de49190726e5c6d3",
+      "nontriangles": 0,
+      "signed_volume_mm3": 7.926028620128634,
+      "bevel_mm": 0.02,
+      "panel": "front",
+      "dot_height_mm": null,
+      "dot_diameter_mm": null,
+      "hide_render": false,
+      "nonmanifold_edges": 0,
+      "bad_edge_winding": 0,
+      "crease_depth_mm": null,
+      "material_names": [
+        "Physical carton / shared masked PBR"
+      ]
+    }
+  ],
+  "views": {
+    "front": {
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          -1.6292068494294654e-07,
+          -1.0,
+          -0.30000001192092896
+        ],
+        [
+          0.0,
+          1.0,
+          -1.6292068494294654e-07,
+          0.03500000014901161
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              110.06348419189453,
+              455.681884765625
+            ],
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              1937.9366455078125,
+              1605.5968322753906
+            ],
+            [
+              110.0633773803711,
+              1605.5968322753906
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              1884.697509765625,
+              488.7877197265625
+            ],
+            [
+              163.30245971679688,
+              488.7877197265625
+            ],
+            [
+              163.30245971679688,
+              1571.7173767089844
+            ],
+            [
+              1884.697509765625,
+              1571.7173767089844
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              488.7877197265625
+            ],
+            [
+              110.06348419189453,
+              455.681884765625
+            ],
+            [
+              110.0633773803711,
+              1605.5968322753906
+            ],
+            [
+              163.30245971679688,
+              1571.7173767089844
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              1884.697509765625,
+              488.7877197265625
+            ],
+            [
+              1884.697509765625,
+              1571.7173767089844
+            ],
+            [
+              1937.9366455078125,
+              1605.5968322753906
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              488.7877197265625
+            ],
+            [
+              1884.697509765625,
+              488.7877197265625
+            ],
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              110.06348419189453,
+              455.681884765625
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              110.0633773803711,
+              1605.5968322753906
+            ],
+            [
+              1937.9366455078125,
+              1605.5968322753906
+            ],
+            [
+              1884.697509765625,
+              1571.7173767089844
+            ],
+            [
+              163.30245971679688,
+              1571.7173767089844
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_green": {
+          "quad_px": [
+            [
+              110.06348419189453,
+              455.681884765625
+            ],
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              1937.9366455078125,
+              1605.5968322753906
+            ],
+            [
+              110.0633773803711,
+              1605.5968322753906
+            ]
+          ],
+          "visible": true
+        },
+        "front_white_curve": {
+          "quad_px": [
+            [
+              328.2633972167969,
+              455.681884765625
+            ],
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              1937.9366455078125,
+              1533.0084228515625
+            ],
+            [
+              328.2633361816406,
+              1533.0084228515625
+            ]
+          ],
+          "visible": true
+        },
+        "front_cream": {
+          "quad_px": [
+            [
+              359.31890869140625,
+              455.681884765625
+            ],
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              1937.9366455078125,
+              1398.6121215820312
+            ],
+            [
+              359.3188171386719,
+              1398.6121215820312
+            ]
+          ],
+          "visible": true
+        },
+        "front_thin_curve": {
+          "quad_px": [
+            [
+              110.06348419189453,
+              455.681884765625
+            ],
+            [
+              409.16998291015625,
+              455.681884765625
+            ],
+            [
+              409.1698913574219,
+              1260.622314453125
+            ],
+            [
+              110.0633773803711,
+              1260.622314453125
+            ]
+          ],
+          "visible": true
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              508.8721008300781,
+              799.740234375
+            ],
+            [
+              1223.404296875,
+              799.740234375
+            ],
+            [
+              1223.404296875,
+              1034.5221557617188
+            ],
+            [
+              508.8721008300781,
+              1034.5221557617188
+            ]
+          ],
+          "visible": true
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1240.0213623046875,
+              787.08251953125
+            ],
+            [
+              1278.2406005859375,
+              787.08251953125
+            ],
+            [
+              1278.2406005859375,
+              824.1883544921875
+            ],
+            [
+              1240.0213623046875,
+              824.1883544921875
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose_box": {
+          "quad_px": [
+            [
+              1289.8724365234375,
+              846.65283203125
+            ],
+            [
+              1597.2874755859375,
+              846.65283203125
+            ],
+            [
+              1597.2874755859375,
+              1007.6409912109375
+            ],
+            [
+              1289.8724365234375,
+              1007.6409912109375
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              1306.489501953125,
+              885.957275390625
+            ],
+            [
+              1557.358154296875,
+              885.957275390625
+            ],
+            [
+              1557.358154296875,
+              970.880126953125
+            ],
+            [
+              1306.489501953125,
+              970.880126953125
+            ]
+          ],
+          "visible": true
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              1173.55322265625,
+              548.637451171875
+            ],
+            [
+              1685.09814453125,
+              548.637451171875
+            ],
+            [
+              1685.09814453125,
+              589.582763671875
+            ],
+            [
+              1173.55322265625,
+              589.582763671875
+            ]
+          ],
+          "visible": true
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              658.4253540039062,
+              1102.8078002929688
+            ],
+            [
+              1210.2332763671875,
+              1102.8078002929688
+            ],
+            [
+              1210.2332763671875,
+              1155.2691040039062
+            ],
+            [
+              658.4253540039062,
+              1155.2691040039062
+            ]
+          ],
+          "visible": true
+        },
+        "front_tadalafil": {
+          "quad_px": [
+            [
+              807.9786376953125,
+              1210.1618041992188
+            ],
+            [
+              1273.2554931640625,
+              1210.1618041992188
+            ],
+            [
+              1273.2554931640625,
+              1306.6901245117188
+            ],
+            [
+              807.9786376953125,
+              1306.6901245117188
+            ]
+          ],
+          "visible": true
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              608.5742797851562,
+              639.7762451171875
+            ],
+            [
+              1172.722412109375,
+              639.7762451171875
+            ],
+            [
+              1172.722412109375,
+              879.892333984375
+            ],
+            [
+              608.5742797851562,
+              879.892333984375
+            ]
+          ],
+          "visible": true
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1372.9576416015625,
+              1320.3129272460938
+            ],
+            [
+              1738.5323486328125,
+              1320.3129272460938
+            ],
+            [
+              1738.5323486328125,
+              1511.4087524414062
+            ],
+            [
+              1372.9576416015625,
+              1511.4087524414062
+            ]
+          ],
+          "visible": true
+        },
+        "front_lilly": {
+          "quad_px": [
+            [
+              1439.42578125,
+              1372.3635864257812
+            ],
+            [
+              1672.064208984375,
+              1372.3635864257812
+            ],
+            [
+              1672.064208984375,
+              1499.1681518554688
+            ],
+            [
+              1439.42578125,
+              1499.1681518554688
+            ]
+          ],
+          "visible": true
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              1728.2071533203125,
+              602.0804443359375
+            ],
+            [
+              1305.682861328125,
+              602.0804443359375
+            ],
+            [
+              1305.682861328125,
+              740.9188232421875
+            ],
+            [
+              1728.2071533203125,
+              740.9188232421875
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              1728.2071533203125,
+              844.057861328125
+            ],
+            [
+              1101.9395751953125,
+              844.057861328125
+            ],
+            [
+              1101.9395751953125,
+              889.5379638671875
+            ],
+            [
+              1728.2071533203125,
+              889.5379638671875
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              1728.2071533203125,
+              993.384521484375
+            ],
+            [
+              1367.1221923828125,
+              993.384521484375
+            ],
+            [
+              1367.1221923828125,
+              1026.971923828125
+            ],
+            [
+              1728.2071533203125,
+              1026.971923828125
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              930.105712890625,
+              993.3052978515625
+            ],
+            [
+              568.89697265625,
+              993.3052978515625
+            ],
+            [
+              568.89697265625,
+              1026.4800415039062
+            ],
+            [
+              930.105712890625,
+              1026.4800415039062
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              1493.471435546875,
+              1168.59326171875
+            ],
+            [
+              554.5286254882812,
+              1168.59326171875
+            ],
+            [
+              554.5286254882812,
+              1325.083740234375
+            ],
+            [
+              1493.471435546875,
+              1325.083740234375
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              1415.2261962890625,
+              1425.375
+            ],
+            [
+              893.6727905273438,
+              1425.375
+            ],
+            [
+              893.6727905273438,
+              1452.8096923828125
+            ],
+            [
+              1415.2261962890625,
+              1452.8096923828125
+            ]
+          ],
+          "visible": false
+        },
+        "left_green": {
+          "quad_px": [
+            [
+              163.30245971679688,
+              488.7877197265625
+            ],
+            [
+              110.06348419189453,
+              455.681884765625
+            ],
+            [
+              110.0633773803711,
+              1605.5968322753906
+            ],
+            [
+              163.30245971679688,
+              1571.7173767089844
+            ]
+          ],
+          "visible": false
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              149.146240234375,
+              701.0152587890625
+            ],
+            [
+              127.92333221435547,
+              693.179931640625
+            ],
+            [
+              127.92333221435547,
+              1050.1932373046875
+            ],
+            [
+              149.146240234375,
+              1049.5728759765625
+            ]
+          ],
+          "visible": false
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              154.86431884765625,
+              1257.4813842773438
+            ],
+            [
+              130.82810974121094,
+              1263.9383544921875
+            ],
+            [
+              130.82810974121094,
+              1309.20751953125
+            ],
+            [
+              154.86431884765625,
+              1301.5322875976562
+            ]
+          ],
+          "visible": false
+        },
+        "left_count": {
+          "quad_px": [
+            [
+              154.86431884765625,
+              1407.1913452148438
+            ],
+            [
+              126.96683502197266,
+              1419.490966796875
+            ],
+            [
+              126.96683502197266,
+              1446.7523803710938
+            ],
+            [
+              154.86431884765625,
+              1433.6049194335938
+            ]
+          ],
+          "visible": false
+        },
+        "right_green": {
+          "quad_px": [
+            [
+              1937.9365234375,
+              455.681884765625
+            ],
+            [
+              1884.697509765625,
+              488.7877197265625
+            ],
+            [
+              1884.697509765625,
+              1571.7173767089844
+            ],
+            [
+              1937.9366455078125,
+              1605.5968322753906
+            ]
+          ],
+          "visible": false
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1922.4984130859375,
+              692.285888671875
+            ],
+            [
+              1901.1622314453125,
+              700.1629638671875
+            ],
+            [
+              1901.1622314453125,
+              1049.6403198242188
+            ],
+            [
+              1922.49853515625,
+              1050.2639770507812
+            ]
+          ],
+          "visible": false
+        },
+        "right_dose": {
+          "quad_px": [
+            [
+              1928.6107177734375,
+              1267.01123046875
+            ],
+            [
+              1903.96337890625,
+              1260.3900756835938
+            ],
+            [
+              1903.96337890625,
+              1304.9898071289062
+            ],
+            [
+              1928.6107177734375,
+              1312.860107421875
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1928.6107177734375,
+              1422.8318481445312
+            ],
+            [
+              1900.2474365234375,
+              1410.3268432617188
+            ],
+            [
+              1900.2474365234375,
+              1436.95654296875
+            ],
+            [
+              1928.6107177734375,
+              1450.3235473632812
+            ]
+          ],
+          "visible": false
+        },
+        "top_wordmark": {
+          "quad_px": [
+            [
+              565.7284545898438,
+              483.5406494140625
+            ],
+            [
+              913.3827514648438,
+              483.5406494140625
+            ],
+            [
+              910.7058715820312,
+              470.4619140625
+            ],
+            [
+              554.6386108398438,
+              470.4619140625
+            ]
+          ],
+          "visible": false
+        },
+        "top_registered": {
+          "quad_px": [
+            [
+              928.9677734375,
+              482.3013916015625
+            ],
+            [
+              947.9742431640625,
+              482.3013916015625
+            ],
+            [
+              947.6829833984375,
+              480.226318359375
+            ],
+            [
+              928.603759765625,
+              480.226318359375
+            ]
+          ],
+          "visible": false
+        },
+        "top_dose": {
+          "quad_px": [
+            [
+              992.1661987304688,
+              479.626708984375
+            ],
+            [
+              1131.976318359375,
+              479.626708984375
+            ],
+            [
+              1133.0435791015625,
+              474.2459716796875
+            ],
+            [
+              991.8515625,
+              474.2459716796875
+            ]
+          ],
+          "visible": false
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              1308.909912109375,
+              482.656005859375
+            ],
+            [
+              1674.3590087890625,
+              482.656005859375
+            ],
+            [
+              1678.3170166015625,
+              479.361328125
+            ],
+            [
+              1310.6439208984375,
+              479.361328125
+            ]
+          ],
+          "visible": false
+        },
+        "top_lilly": {
+          "quad_px": [
+            [
+              1654.724609375,
+              470.8876953125
+            ],
+            [
+              1832.621337890625,
+              470.8876953125
+            ],
+            [
+              1849.1688232421875,
+              459.56884765625
+            ],
+            [
+              1667.631591796875,
+              459.56884765625
+            ]
+          ],
+          "visible": false
+        },
+        "top_emblem_gold": {
+          "quad_px": [
+            [
+              297.0865173339844,
+              483.5406494140625
+            ],
+            [
+              497.7620544433594,
+              483.5406494140625
+            ],
+            [
+              481.5615234375,
+              466.9022216796875
+            ],
+            [
+              274.70806884765625,
+              466.9022216796875
+            ]
+          ],
+          "visible": false
+        },
+        "top_emblem_green": {
+          "quad_px": [
+            [
+              331.01898193359375,
+              482.989013671875
+            ],
+            [
+              530.712890625,
+              482.989013671875
+            ],
+            [
+              514.2835693359375,
+              464.97021484375
+            ],
+            [
+              307.938720703125,
+              464.97021484375
+            ]
+          ],
+          "visible": false
+        },
+        "top_ingredient": {
+          "quad_px": [
+            [
+              698.3734130859375,
+              467.1629638671875
+            ],
+            [
+              858.82080078125,
+              467.1629638671875
+            ],
+            [
+              857.6129150390625,
+              463.091064453125
+            ],
+            [
+              695.9922485351562,
+              463.091064453125
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_wordmark": {
+          "quad_px": [
+            [
+              547.0234375,
+              1599.6622009277344
+            ],
+            [
+              908.8677368164062,
+              1599.6622009277344
+            ],
+            [
+              911.631103515625,
+              1585.8453674316406
+            ],
+            [
+              558.4716186523438,
+              1585.8453674316406
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_registered": {
+          "quad_px": [
+            [
+              925.5496215820312,
+              1598.2947387695312
+            ],
+            [
+              945.2396850585938,
+              1598.2947387695312
+            ],
+            [
+              945.5498046875,
+              1596.033447265625
+            ],
+            [
+              925.937255859375,
+              1596.033447265625
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_dose": {
+          "quad_px": [
+            [
+              991.349365234375,
+              1595.386474609375
+            ],
+            [
+              1134.746826171875,
+              1595.386474609375
+            ],
+            [
+              1133.6461181640625,
+              1589.7075805664062
+            ],
+            [
+              991.6738891601562,
+              1589.7075805664062
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_count": {
+          "quad_px": [
+            [
+              1319.5517578125,
+              1598.6847839355469
+            ],
+            [
+              1698.65087890625,
+              1598.6847839355469
+            ],
+            [
+              1694.443603515625,
+              1595.1010131835938
+            ],
+            [
+              1317.7086181640625,
+              1595.1010131835938
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_lilly": {
+          "quad_px": [
+            [
+              1650.5338134765625,
+              1586.2746887207031
+            ],
+            [
+              1827.2484130859375,
+              1586.2746887207031
+            ],
+            [
+              1811.56005859375,
+              1575.2927551269531
+            ],
+            [
+              1638.2967529296875,
+              1575.2927551269531
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_gold": {
+          "quad_px": [
+            [
+              267.41644287109375,
+              1599.6622009277344
+            ],
+            [
+              476.2828674316406,
+              1599.6622009277344
+            ],
+            [
+              492.79541015625,
+              1582.3071594238281
+            ],
+            [
+              290.22589111328125,
+              1582.3071594238281
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_green": {
+          "quad_px": [
+            [
+              304.2331237792969,
+              1599.0519714355469
+            ],
+            [
+              511.64581298828125,
+              1599.0519714355469
+            ],
+            [
+              528.242919921875,
+              1580.4238586425781
+            ],
+            [
+              327.549072265625,
+              1580.4238586425781
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_ingredient": {
+          "quad_px": [
+            [
+              704.8214111328125,
+              1582.5632934570312
+            ],
+            [
+              862.0916748046875,
+              1582.5632934570312
+            ],
+            [
+              863.2356567382812,
+              1578.6167907714844
+            ],
+            [
+              707.0765380859375,
+              1578.6167907714844
+            ]
+          ],
+          "visible": false
+        }
+      }
+    },
+    "hero": {
+      "matrix_world": [
+        [
+          0.8191519975662231,
+          0.2424038201570511,
+          -0.5198369026184082,
+          -0.16894695162773132
+        ],
+        [
+          -0.5735765099525452,
+          0.3461885154247284,
+          -0.7424038648605347,
+          -0.24128124117851257
+        ],
+        [
+          3.006681481565465e-08,
+          0.9063078165054321,
+          0.42261815071105957,
+          0.1723509281873703
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              323.25634765625,
+              768.4322509765625
+            ],
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              1695.327880859375,
+              1311.489501953125
+            ],
+            [
+              390.5548400878906,
+              1788.8866271972656
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              1581.7947998046875,
+              360.58740234375
+            ],
+            [
+              182.7340850830078,
+              675.869384765625
+            ],
+            [
+              260.1317443847656,
+              1661.9414367675781
+            ],
+            [
+              1538.30078125,
+              1220.9075317382812
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              182.7340850830078,
+              675.869384765625
+            ],
+            [
+              323.25634765625,
+              768.4322509765625
+            ],
+            [
+              390.5548400878906,
+              1788.8866271972656
+            ],
+            [
+              260.1317443847656,
+              1661.9414367675781
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              1581.7947998046875,
+              360.58740234375
+            ],
+            [
+              1538.30078125,
+              1220.9075317382812
+            ],
+            [
+              1695.327880859375,
+              1311.489501953125
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              182.7340850830078,
+              675.869384765625
+            ],
+            [
+              1581.7947998046875,
+              360.58740234375
+            ],
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              323.25634765625,
+              768.4322509765625
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              390.5548400878906,
+              1788.8866271972656
+            ],
+            [
+              1695.327880859375,
+              1311.489501953125
+            ],
+            [
+              1538.30078125,
+              1220.9075317382812
+            ],
+            [
+              260.1317443847656,
+              1661.9414367675781
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_green": {
+          "quad_px": [
+            [
+              323.25634765625,
+              768.4322509765625
+            ],
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              1695.327880859375,
+              1311.489501953125
+            ],
+            [
+              390.5548400878906,
+              1788.8866271972656
+            ]
+          ],
+          "visible": true
+        },
+        "front_white_curve": {
+          "quad_px": [
+            [
+              524.5907592773438,
+              720.0550537109375
+            ],
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              1698.7718505859375,
+              1259.7647094726562
+            ],
+            [
+              568.802734375,
+              1664.9931030273438
+            ]
+          ],
+          "visible": true
+        },
+        "front_cream": {
+          "quad_px": [
+            [
+              552.45654296875,
+              713.359375
+            ],
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              1705.24267578125,
+              1162.582763671875
+            ],
+            [
+              589.2850341796875,
+              1547.5294189453125
+            ]
+          ],
+          "visible": true
+        },
+        "front_thin_curve": {
+          "quad_px": [
+            [
+              323.25634765625,
+              768.4322509765625
+            ],
+            [
+              596.7896118164062,
+              702.7069091796875
+            ],
+            [
+              625.4547729492188,
+              1420.0692138671875
+            ],
+            [
+              371.7628173828125,
+              1503.9415893554688
+            ]
+          ],
+          "visible": true
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              694.0479125976562,
+              997.8876953125
+            ],
+            [
+              1251.3607177734375,
+              841.6429443359375
+            ],
+            [
+              1247.1812744140625,
+              1035.6226196289062
+            ],
+            [
+              700.5615844726562,
+              1203.1181640625
+            ]
+          ],
+          "visible": true
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1263.6348876953125,
+              827.6190185546875
+            ],
+            [
+              1291.1883544921875,
+              819.933837890625
+            ],
+            [
+              1290.4033203125,
+              851.001708984375
+            ],
+            [
+              1262.9281005859375,
+              858.7803955078125
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose_box": {
+          "quad_px": [
+            [
+              1298.237548828125,
+              867.349365234375
+            ],
+            [
+              1511.180419921875,
+              806.5238037109375
+            ],
+            [
+              1505.240966796875,
+              935.6005859375
+            ],
+            [
+              1294.7955322265625,
+              999.4678955078125
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              1309.18896484375,
+              896.4918212890625
+            ],
+            [
+              1482.8343505859375,
+              846.1273193359375
+            ],
+            [
+              1479.8641357421875,
+              914.406005859375
+            ],
+            [
+              1307.29833984375,
+              966.0814208984375
+            ]
+          ],
+          "visible": true
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              1218.950439453125,
+              635.2879638671875
+            ],
+            [
+              1582.410888671875,
+              543.936767578125
+            ],
+            [
+              1580.6376953125,
+              578.3890380859375
+            ],
+            [
+              1218.299560546875,
+              671.20263671875
+            ]
+          ],
+          "visible": true
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              822.6920776367188,
+              1223.5491333007812
+            ],
+            [
+              1236.6483154296875,
+              1093.6422729492188
+            ],
+            [
+              1235.781982421875,
+              1135.6077880859375
+            ],
+            [
+              823.557861328125,
+              1267.2910766601562
+            ]
+          ],
+          "visible": true
+        },
+        "front_tadalafil": {
+          "quad_px": [
+            [
+              940.1170654296875,
+              1275.0365600585938
+            ],
+            [
+              1279.032958984375,
+              1164.7924194335938
+            ],
+            [
+              1277.1544189453125,
+              1240.1356201171875
+            ],
+            [
+              940.7631225585938,
+              1352.97119140625
+            ]
+          ],
+          "visible": true
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              773.40185546875,
+              831.2633056640625
+            ],
+            [
+              1216.8914794921875,
+              715.0648193359375
+            ],
+            [
+              1213.2022705078125,
+              919.3009033203125
+            ],
+            [
+              778.4750366210938,
+              1045.0958251953125
+            ]
+          ],
+          "visible": true
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1345.12060546875,
+              1227.6964721679688
+            ],
+            [
+              1584.836181640625,
+              1146.9485473632812
+            ],
+            [
+              1577.1160888671875,
+              1288.0015258789062
+            ],
+            [
+              1340.5523681640625,
+              1372.3225708007812
+            ]
+          ],
+          "visible": true
+        },
+        "front_lilly": {
+          "quad_px": [
+            [
+              1388.48486328125,
+              1252.2302856445312
+            ],
+            [
+              1540.45458984375,
+              1200.2196655273438
+            ],
+            [
+              1535.7049560546875,
+              1293.9656372070312
+            ],
+            [
+              1385.0618896484375,
+              1347.4746704101562
+            ]
+          ],
+          "visible": true
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              1470.0118408203125,
+              482.8819580078125
+            ],
+            [
+              1164.566162109375,
+              555.849365234375
+            ],
+            [
+              1162.9853515625,
+              677.7379150390625
+            ],
+            [
+              1465.1986083984375,
+              600.6337890625
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              1461.6895751953125,
+              686.47607421875
+            ],
+            [
+              1008.1103515625,
+              807.563232421875
+            ],
+            [
+              1008.1693725585938,
+              846.8885498046875
+            ],
+            [
+              1460.159912109375,
+              723.8966064453125
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              1456.70703125,
+              808.3680419921875
+            ],
+            [
+              1204.826171875,
+              879.835205078125
+            ],
+            [
+              1204.34814453125,
+              907.6265869140625
+            ],
+            [
+              1455.601806640625,
+              835.4033203125
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              875.3168334960938,
+              973.2598876953125
+            ],
+            [
+              580.0930786132812,
+              1057.0223388671875
+            ],
+            [
+              581.34912109375,
+              1086.2708129882812
+            ],
+            [
+              875.72216796875,
+              1001.6688232421875
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              1291.296142578125,
+              996.271728515625
+            ],
+            [
+              574.6322631835938,
+              1213.3544311523438
+            ],
+            [
+              580.4898681640625,
+              1346.0578002929688
+            ],
+            [
+              1288.1177978515625,
+              1119.9105834960938
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              1232.3282470703125,
+              1215.3681030273438
+            ],
+            [
+              852.6466674804688,
+              1340.6854248046875
+            ],
+            [
+              853.021240234375,
+              1362.6615600585938
+            ],
+            [
+              1231.8948974609375,
+              1236.5361328125
+            ]
+          ],
+          "visible": false
+        },
+        "left_green": {
+          "quad_px": [
+            [
+              182.7340850830078,
+              675.869384765625
+            ],
+            [
+              323.25634765625,
+              768.4322509765625
+            ],
+            [
+              390.5548400878906,
+              1788.8866271972656
+            ],
+            [
+              260.1317443847656,
+              1661.9414367675781
+            ]
+          ],
+          "visible": true
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              236.67344665527344,
+              916.6556396484375
+            ],
+            [
+              291.8880310058594,
+              956.8695068359375
+            ],
+            [
+              314.8934020996094,
+              1284.83447265625
+            ],
+            [
+              260.9730529785156,
+              1240.0193481445312
+            ]
+          ],
+          "visible": true
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              260.425537109375,
+              1412.0593872070312
+            ],
+            [
+              320.7971496582031,
+              1465.739990234375
+            ],
+            [
+              323.5387268066406,
+              1504.447265625
+            ],
+            [
+              263.34344482421875,
+              1450.2042236328125
+            ]
+          ],
+          "visible": true
+        },
+        "left_count": {
+          "quad_px": [
+            [
+              270.2522277832031,
+              1540.5195007324219
+            ],
+            [
+              339.54864501953125,
+              1604.9176025390625
+            ],
+            [
+              341.13525390625,
+              1627.6078186035156
+            ],
+            [
+              271.9598083496094,
+              1562.8415222167969
+            ]
+          ],
+          "visible": true
+        },
+        "right_green": {
+          "quad_px": [
+            [
+              1754.383544921875,
+              424.556396484375
+            ],
+            [
+              1581.7947998046875,
+              360.58740234375
+            ],
+            [
+              1538.30078125,
+              1220.9075317382812
+            ],
+            [
+              1695.327880859375,
+              1311.489501953125
+            ]
+          ],
+          "visible": false
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1693.37255859375,
+              594.9256591796875
+            ],
+            [
+              1625.587158203125,
+              566.8319091796875
+            ],
+            [
+              1609.966064453125,
+              847.971923828125
+            ],
+            [
+              1675.726806640625,
+              879.6029052734375
+            ]
+          ],
+          "visible": false
+        },
+        "right_dose": {
+          "quad_px": [
+            [
+              1683.8536376953125,
+              1053.05859375
+            ],
+            [
+              1609.51318359375,
+              1014.4334716796875
+            ],
+            [
+              1607.6112060546875,
+              1048.1495971679688
+            ],
+            [
+              1681.6734619140625,
+              1087.2252197265625
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1676.50244140625,
+              1168.26318359375
+            ],
+            [
+              1591.894287109375,
+              1122.008544921875
+            ],
+            [
+              1590.8017578125,
+              1141.7713623046875
+            ],
+            [
+              1675.222412109375,
+              1188.322998046875
+            ]
+          ],
+          "visible": false
+        },
+        "top_wordmark": {
+          "quad_px": [
+            [
+              585.5171508789062,
+              604.1043701171875
+            ],
+            [
+              881.5006103515625,
+              536.7056884765625
+            ],
+            [
+              944.534423828125,
+              567.7113037109375
+            ],
+            [
+              645.604736328125,
+              637.5419921875
+            ]
+          ],
+          "visible": true
+        },
+        "top_registered": {
+          "quad_px": [
+            [
+              900.4578857421875,
+              536.704833984375
+            ],
+            [
+              915.9404296875,
+              533.170654296875
+            ],
+            [
+              926.0256958007812,
+              538.0745849609375
+            ],
+            [
+              910.520263671875,
+              541.62841796875
+            ]
+          ],
+          "visible": true
+        },
+        "top_dose": {
+          "quad_px": [
+            [
+              964.8898315429688,
+              531.2393798828125
+            ],
+            [
+              1075.5352783203125,
+              505.849365234375
+            ],
+            [
+              1102.1038818359375,
+              518.0322265625
+            ],
+            [
+              991.06201171875,
+              543.7822265625
+            ]
+          ],
+          "visible": true
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              1196.9835205078125,
+              467.8294677734375
+            ],
+            [
+              1462.998046875,
+              407.149169921875
+            ],
+            [
+              1480.1160888671875,
+              413.8653564453125
+            ],
+            [
+              1213.607177734375,
+              475.0535888671875
+            ]
+          ],
+          "visible": true
+        },
+        "top_lilly": {
+          "quad_px": [
+            [
+              1500.4176025390625,
+              436.4833984375
+            ],
+            [
+              1622.0611572265625,
+              408.090576171875
+            ],
+            [
+              1680.2861328125,
+              430.109130859375
+            ],
+            [
+              1558.002197265625,
+              459.276611328125
+            ]
+          ],
+          "visible": true
+        },
+        "top_emblem_gold": {
+          "quad_px": [
+            [
+              340.8731689453125,
+              659.8125
+            ],
+            [
+              524.9947509765625,
+              617.885986328125
+            ],
+            [
+              600.4900512695312,
+              661.004638671875
+            ],
+            [
+              413.7273254394531,
+              704.932861328125
+            ]
+          ],
+          "visible": true
+        },
+        "top_emblem_green": {
+          "quad_px": [
+            [
+              375.69610595703125,
+              653.93408203125
+            ],
+            [
+              557.4322509765625,
+              612.5057373046875
+            ],
+            [
+              639.545654296875,
+              658.8038330078125
+            ],
+            [
+              455.03277587890625,
+              702.364013671875
+            ]
+          ],
+          "visible": true
+        },
+        "top_ingredient": {
+          "quad_px": [
+            [
+              786.0166015625,
+              616.44189453125
+            ],
+            [
+              918.8487548828125,
+              585.2142333984375
+            ],
+            [
+              938.1280517578125,
+              594.857421875
+            ],
+            [
+              804.9116821289062,
+              626.4205322265625
+            ]
+          ],
+          "visible": true
+        },
+        "bottom_wordmark": {
+          "quad_px": [
+            [
+              717.284423828125,
+              1640.4466247558594
+            ],
+            [
+              990.5776977539062,
+              1541.4488830566406
+            ],
+            [
+              931.6176147460938,
+              1497.3014526367188
+            ],
+            [
+              660.7584838867188,
+              1593.1169128417969
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_registered": {
+          "quad_px": [
+            [
+              996.7516479492188,
+              1532.787841796875
+            ],
+            [
+              1011.0612182617188,
+              1527.6163330078125
+            ],
+            [
+              1001.4270629882812,
+              1520.47802734375
+            ],
+            [
+              987.1365356445312,
+              1525.6227416992188
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_dose": {
+          "quad_px": [
+            [
+              1031.791259765625,
+              1506.5198974609375
+            ],
+            [
+              1133.86962890625,
+              1469.811279296875
+            ],
+            [
+              1109.097412109375,
+              1452.415283203125
+            ],
+            [
+              1007.3509521484375,
+              1488.6492919921875
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_count": {
+          "quad_px": [
+            [
+              1274.83203125,
+              1434.0554809570312
+            ],
+            [
+              1522.52587890625,
+              1344.4796752929688
+            ],
+            [
+              1506.317626953125,
+              1334.6220092773438
+            ],
+            [
+              1259.0433349609375,
+              1423.5016479492188
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_lilly": {
+          "quad_px": [
+            [
+              1444.46630859375,
+              1317.7842407226562
+            ],
+            [
+              1556.783935546875,
+              1278.0226440429688
+            ],
+            [
+              1505.5626220703125,
+              1247.91796875
+            ],
+            [
+              1393.81201171875,
+              1286.7236328125
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_gold": {
+          "quad_px": [
+            [
+              492.3553466796875,
+              1721.9249572753906
+            ],
+            [
+              661.5586547851562,
+              1660.6326599121094
+            ],
+            [
+              591.0916137695312,
+              1600.2337341308594
+            ],
+            [
+              424.0342102050781,
+              1658.9660034179688
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_green": {
+          "quad_px": [
+            [
+              519.677490234375,
+              1708.9816589355469
+            ],
+            [
+              686.6183471679688,
+              1648.5715942382812
+            ],
+            [
+              610.517822265625,
+              1584.0951232910156
+            ],
+            [
+              445.8316955566406,
+              1641.802978515625
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_ingredient": {
+          "quad_px": [
+            [
+              760.0191650390625,
+              1542.0862731933594
+            ],
+            [
+              879.9535522460938,
+              1499.9020385742188
+            ],
+            [
+              862.9608764648438,
+              1486.9832153320312
+            ],
+            [
+              743.3414306640625,
+              1528.76611328125
+            ]
+          ],
+          "visible": false
+        }
+      }
+    },
+    "top": {
+      "matrix_world": [
+        [
+          0.8191521167755127,
+          0.5389854311943054,
+          -0.1961747407913208,
+          -0.05787153169512749
+        ],
+        [
+          -0.5735763311386108,
+          0.7697511911392212,
+          -0.28016653656959534,
+          -0.0826491191983223
+        ],
+        [
+          6.146015607555455e-08,
+          0.342020183801651,
+          0.9396926164627075,
+          0.3122093081474304
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              251.0258331298828,
+              1505.9954833984375
+            ],
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              1746.3404541015625,
+              869.4249267578125
+            ],
+            [
+              410.8102722167969,
+              1770.1764526367188
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              1722.4615478515625,
+              178.8428955078125
+            ],
+            [
+              70.24357604980469,
+              1233.2868041992188
+            ],
+            [
+              264.2875061035156,
+              1548.7827758789062
+            ],
+            [
+              1589.34521484375,
+              675.3465576171875
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              70.24357604980469,
+              1233.2868041992188
+            ],
+            [
+              251.0258331298828,
+              1505.9954833984375
+            ],
+            [
+              410.8102722167969,
+              1770.1764526367188
+            ],
+            [
+              264.2875061035156,
+              1548.7827758789062
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              1722.4615478515625,
+              178.8428955078125
+            ],
+            [
+              1589.34521484375,
+              675.3465576171875
+            ],
+            [
+              1746.3404541015625,
+              869.4249267578125
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              70.24357604980469,
+              1233.2868041992188
+            ],
+            [
+              1722.4615478515625,
+              178.8428955078125
+            ],
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              251.0258331298828,
+              1505.9954833984375
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              410.8102722167969,
+              1770.1764526367188
+            ],
+            [
+              1746.3404541015625,
+              869.4249267578125
+            ],
+            [
+              1589.34521484375,
+              675.3465576171875
+            ],
+            [
+              264.2875061035156,
+              1548.7827758789062
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_green": {
+          "quad_px": [
+            [
+              251.0258331298828,
+              1505.9954833984375
+            ],
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              1746.3404541015625,
+              869.4249267578125
+            ],
+            [
+              410.8102722167969,
+              1770.1764526367188
+            ]
+          ],
+          "visible": true
+        },
+        "front_white_curve": {
+          "quad_px": [
+            [
+              465.2208557128906,
+              1365.3313598632812
+            ],
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              1755.2701416015625,
+              845.7567138671875
+            ],
+            [
+              573.96533203125,
+              1641.41943359375
+            ]
+          ],
+          "visible": true
+        },
+        "front_cream": {
+          "quad_px": [
+            [
+              495.3509521484375,
+              1345.5445556640625
+            ],
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              1772.3997802734375,
+              800.3544921875
+            ],
+            [
+              587.5272827148438,
+              1596.3564758300781
+            ]
+          ],
+          "visible": true
+        },
+        "front_thin_curve": {
+          "quad_px": [
+            [
+              251.0258331298828,
+              1505.9954833984375
+            ],
+            [
+              543.5341796875,
+              1313.9021606445312
+            ],
+            [
+              616.77734375,
+              1538.0068054199219
+            ],
+            [
+              370.26971435546875,
+              1703.1484680175781
+            ]
+          ],
+          "visible": true
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              666.5819702148438,
+              1360.0228271484375
+            ],
+            [
+              1280.93603515625,
+              952.7752685546875
+            ],
+            [
+              1269.388916015625,
+              1035.0729370117188
+            ],
+            [
+              683.116943359375,
+              1425.899169921875
+            ]
+          ],
+          "visible": true
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1295.4747314453125,
+              938.9163818359375
+            ],
+            [
+              1327.3375244140625,
+              917.8016357421875
+            ],
+            [
+              1325.0977783203125,
+              931.581298828125
+            ],
+            [
+              1293.467041015625,
+              952.561767578125
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose_box": {
+          "quad_px": [
+            [
+              1333.322509765625,
+              933.4775390625
+            ],
+            [
+              1582.8126220703125,
+              767.9000244140625
+            ],
+            [
+              1565.7593994140625,
+              829.42529296875
+            ],
+            [
+              1323.7667236328125,
+              990.645263671875
+            ]
+          ],
+          "visible": true
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              1344.47802734375,
+              938.7708740234375
+            ],
+            [
+              1546.737548828125,
+              804.409423828125
+            ],
+            [
+              1538.25,
+              836.5516357421875
+            ],
+            [
+              1339.2218017578125,
+              969.03466796875
+            ]
+          ],
+          "visible": true
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              1250.7017822265625,
+              884.60498046875
+            ],
+            [
+              1691.7000732421875,
+              594.2213134765625
+            ],
+            [
+              1686.0927734375,
+              612.6109619140625
+            ],
+            [
+              1248.75537109375,
+              900.9132080078125
+            ]
+          ],
+          "visible": true
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              811.5011596679688,
+              1361.2354736328125
+            ],
+            [
+              1255.8529052734375,
+              1064.561767578125
+            ],
+            [
+              1253.576171875,
+              1081.4469604492188
+            ],
+            [
+              813.6339111328125,
+              1375.5151977539062
+            ]
+          ],
+          "visible": true
+        },
+        "front_tadalafil": {
+          "quad_px": [
+            [
+              935.6950073242188,
+              1309.9312133789062
+            ],
+            [
+              1299.7908935546875,
+              1066.2731323242188
+            ],
+            [
+              1294.95654296875,
+              1096.3832397460938
+            ],
+            [
+              937.2706909179688,
+              1336.2341918945312
+            ]
+          ],
+          "visible": true
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              745.4013671875,
+              1251.2588500976562
+            ],
+            [
+              1245.695556640625,
+              921.0013427734375
+            ],
+            [
+              1235.173095703125,
+              1009.425537109375
+            ],
+            [
+              758.9397583007812,
+              1325.7418212890625
+            ]
+          ],
+          "visible": true
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1369.117431640625,
+              1050.3558959960938
+            ],
+            [
+              1638.7484130859375,
+              869.5010986328125
+            ],
+            [
+              1618.52392578125,
+              932.485595703125
+            ],
+            [
+              1357.6124267578125,
+              1108.1498413085938
+            ]
+          ],
+          "visible": true
+        },
+        "front_lilly": {
+          "quad_px": [
+            [
+              1415.0284423828125,
+              1033.505615234375
+            ],
+            [
+              1585.059326171875,
+              919.337646484375
+            ],
+            [
+              1572.755859375,
+              960.2279052734375
+            ],
+            [
+              1406.3809814453125,
+              1072.2173461914062
+            ]
+          ],
+          "visible": true
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              1569.4727783203125,
+              328.75634765625
+            ],
+            [
+              1192.0595703125,
+              570.62548828125
+            ],
+            [
+              1187.1270751953125,
+              635.587646484375
+            ],
+            [
+              1553.7562255859375,
+              399.4984130859375
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              1542.655029296875,
+              449.466796875
+            ],
+            [
+              1005.806396484375,
+              796.336669921875
+            ],
+            [
+              1005.9774780273438,
+              815.0274658203125
+            ],
+            [
+              1537.9061279296875,
+              470.841552734375
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              1527.38232421875,
+              518.21044921875
+            ],
+            [
+              1230.3050537109375,
+              711.047119140625
+            ],
+            [
+              1228.9273681640625,
+              724.890869140625
+            ],
+            [
+              1524.0703125,
+              533.11865234375
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              858.5391235351562,
+              952.333740234375
+            ],
+            [
+              540.65576171875,
+              1158.6754150390625
+            ],
+            [
+              543.95361328125,
+              1169.7649536132812
+            ],
+            [
+              859.65087890625,
+              964.6402587890625
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              1324.7779541015625,
+              715.0908203125
+            ],
+            [
+              545.1961669921875,
+              1223.6892700195312
+            ],
+            [
+              559.7232666015625,
+              1271.0298461914062
+            ],
+            [
+              1315.986328125,
+              775.5643310546875
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              1250.8240966796875,
+              851.7696533203125
+            ],
+            [
+              842.8994140625,
+              1119.7060546875
+            ],
+            [
+              843.8270263671875,
+              1128.23046875
+            ],
+            [
+              1249.6854248046875,
+              861.46923828125
+            ]
+          ],
+          "visible": false
+        },
+        "left_green": {
+          "quad_px": [
+            [
+              70.24357604980469,
+              1233.2868041992188
+            ],
+            [
+              251.0258331298828,
+              1505.9954833984375
+            ],
+            [
+              410.8102722167969,
+              1770.1764526367188
+            ],
+            [
+              264.2875061035156,
+              1548.7827758789062
+            ]
+          ],
+          "visible": true
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              164.0859375,
+              1380.3389892578125
+            ],
+            [
+              233.0970916748047,
+              1484.483642578125
+            ],
+            [
+              290.2756652832031,
+              1578.4324951171875
+            ],
+            [
+              225.8164520263672,
+              1481.1033935546875
+            ]
+          ],
+          "visible": true
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              241.74923706054688,
+              1509.1927490234375
+            ],
+            [
+              312.46221923828125,
+              1615.996337890625
+            ],
+            [
+              318.67333984375,
+              1626.1918640136719
+            ],
+            [
+              248.52540588378906,
+              1520.2357788085938
+            ]
+          ],
+          "visible": true
+        },
+        "left_count": {
+          "quad_px": [
+            [
+              264.3098449707031,
+              1545.9591674804688
+            ],
+            [
+              343.9444580078125,
+              1666.2609252929688
+            ],
+            [
+              347.4171142578125,
+              1671.9687194824219
+            ],
+            [
+              268.1559143066406,
+              1552.2268981933594
+            ]
+          ],
+          "visible": true
+        },
+        "right_green": {
+          "quad_px": [
+            [
+              1919.5865478515625,
+              410.2340087890625
+            ],
+            [
+              1722.4615478515625,
+              178.8428955078125
+            ],
+            [
+              1589.34521484375,
+              675.3465576171875
+            ],
+            [
+              1746.3404541015625,
+              869.4249267578125
+            ]
+          ],
+          "visible": false
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1825.6868896484375,
+              456.6109619140625
+            ],
+            [
+              1750.6298828125,
+              367.408447265625
+            ],
+            [
+              1702.0816650390625,
+              528.8675537109375
+            ],
+            [
+              1771.77099609375,
+              613.1346435546875
+            ]
+          ],
+          "visible": false
+        },
+        "right_dose": {
+          "quad_px": [
+            [
+              1761.436767578125,
+              720.290283203125
+            ],
+            [
+              1684.8179931640625,
+              626.7823486328125
+            ],
+            [
+              1679.4573974609375,
+              644.2813720703125
+            ],
+            [
+              1755.4117431640625,
+              737.1512451171875
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1741.353759765625,
+              776.4921875
+            ],
+            [
+              1655.4600830078125,
+              671.011962890625
+            ],
+            [
+              1652.46484375,
+              681.03466796875
+            ],
+            [
+              1737.9234619140625,
+              786.091796875
+            ]
+          ],
+          "visible": false
+        },
+        "top_wordmark": {
+          "quad_px": [
+            [
+              515.9442138671875,
+              1011.197021484375
+            ],
+            [
+              855.4059448242188,
+              793.5303955078125
+            ],
+            [
+              930.88671875,
+              894.79443359375
+            ],
+            [
+              590.01611328125,
+              1115.8795776367188
+            ]
+          ],
+          "visible": true
+        },
+        "top_registered": {
+          "quad_px": [
+            [
+              877.8346557617188,
+              793.5274658203125
+            ],
+            [
+              896.0108032226562,
+              781.85986328125
+            ],
+            [
+              908.13427734375,
+              798.04248046875
+            ],
+            [
+              889.9464111328125,
+              809.7391357421875
+            ]
+          ],
+          "visible": true
+        },
+        "top_dose": {
+          "quad_px": [
+            [
+              953.9456787109375,
+              775.47314453125
+            ],
+            [
+              1085.5677490234375,
+              690.782470703125
+            ],
+            [
+              1116.9501953125,
+              731.58837890625
+            ],
+            [
+              985.11669921875,
+              816.8153076171875
+            ]
+          ],
+          "visible": true
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              1233.172607421875,
+              561.389892578125
+            ],
+            [
+              1565.3519287109375,
+              348.2249755859375
+            ],
+            [
+              1585.230712890625,
+              372.2330322265625
+            ],
+            [
+              1252.7449951171875,
+              586.21728515625
+            ]
+          ],
+          "visible": true
+        },
+        "top_lilly": {
+          "quad_px": [
+            [
+              1605.92431640625,
+              452.318115234375
+            ],
+            [
+              1761.2745361328125,
+              351.5965576171875
+            ],
+            [
+              1827.28173828125,
+              429.8668212890625
+            ],
+            [
+              1671.4901123046875,
+              531.8475341796875
+            ]
+          ],
+          "visible": true
+        },
+        "top_emblem_gold": {
+          "quad_px": [
+            [
+              245.77865600585938,
+              1184.4303588867188
+            ],
+            [
+              448.25238037109375,
+              1054.6019287109375
+            ],
+            [
+              541.7088012695312,
+              1188.0738525390625
+            ],
+            [
+              338.1061096191406,
+              1320.5308837890625
+            ]
+          ],
+          "visible": true
+        },
+        "top_emblem_green": {
+          "quad_px": [
+            [
+              284.13787841796875,
+              1166.4258422851562
+            ],
+            [
+              484.7924499511719,
+              1037.7006225585938
+            ],
+            [
+              585.8946533203125,
+              1181.3457641601562
+            ],
+            [
+              384.0408630371094,
+              1312.8804321289062
+            ]
+          ],
+          "visible": true
+        },
+        "top_ingredient": {
+          "quad_px": [
+            [
+              749.2958374023438,
+              1050.0709228515625
+            ],
+            [
+              901.4548950195312,
+              951.1033935546875
+            ],
+            [
+              924.2201538085938,
+              981.8680419921875
+            ],
+            [
+              771.8751220703125,
+              1081.2987670898438
+            ]
+          ],
+          "visible": true
+        },
+        "bottom_wordmark": {
+          "quad_px": [
+            [
+              717.5306396484375,
+              1510.0883178710938
+            ],
+            [
+              989.8716430664062,
+              1327.1143798828125
+            ],
+            [
+              928.7333374023438,
+              1242.9031982421875
+            ],
+            [
+              657.2846069335938,
+              1423.6012573242188
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_registered": {
+          "quad_px": [
+            [
+              996.1224975585938,
+              1310.7236328125
+            ],
+            [
+              1010.747314453125,
+              1300.9066772460938
+            ],
+            [
+              1000.842529296875,
+              1287.3190307617188
+            ],
+            [
+              986.2252197265625,
+              1297.1162719726562
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_dose": {
+          "quad_px": [
+            [
+              1032.01806640625,
+              1260.6246337890625
+            ],
+            [
+              1138.0018310546875,
+              1189.6192626953125
+            ],
+            [
+              1112.6453857421875,
+              1155.5584106445312
+            ],
+            [
+              1006.7979125976562,
+              1226.2036743164062
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_count": {
+          "quad_px": [
+            [
+              1286.3792724609375,
+              1119.31884765625
+            ],
+            [
+              1556.3050537109375,
+              938.083740234375
+            ],
+            [
+              1540.1783447265625,
+              917.678466796875
+            ],
+            [
+              1270.4544677734375,
+              1098.3497924804688
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_lilly": {
+          "quad_px": [
+            [
+              1475.7523193359375,
+              882.6070556640625
+            ],
+            [
+              1601.7864990234375,
+              798.6842041015625
+            ],
+            [
+              1549.967041015625,
+              734.0908203125
+            ],
+            [
+              1424.2288818359375,
+              817.1829833984375
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_gold": {
+          "quad_px": [
+            [
+              502.0091552734375,
+              1654.8877258300781
+            ],
+            [
+              663.4285888671875,
+              1546.4371032714844
+            ],
+            [
+              587.6321411132812,
+              1436.720458984375
+            ],
+            [
+              426.91473388671875,
+              1543.4478454589844
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_green": {
+          "quad_px": [
+            [
+              527.4650268554688,
+              1632.2225952148438
+            ],
+            [
+              687.4822387695312,
+              1524.7571411132812
+            ],
+            [
+              605.736328125,
+              1406.911376953125
+            ],
+            [
+              446.4656982421875,
+              1512.54052734375
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_ingredient": {
+          "quad_px": [
+            [
+              754.479736328125,
+              1328.318115234375
+            ],
+            [
+              875.5426635742188,
+              1247.9098510742188
+            ],
+            [
+              857.5484619140625,
+              1222.9805297851562
+            ],
+            [
+              736.6034545898438,
+              1303.09130859375
+            ]
+          ],
+          "visible": false
+        }
+      }
+    },
+    "end": {
+      "matrix_world": [
+        [
+          1.9470718370939721e-07,
+          0.139173224568367,
+          -0.9902680516242981,
+          -0.26737236976623535
+        ],
+        [
+          -1.0,
+          -3.590011843357388e-08,
+          -2.016661255765939e-07,
+          -1.6371836616335342e-17
+        ],
+        [
+          -6.361726434533921e-08,
+          0.9902680516242981,
+          0.139173224568367,
+          0.07257673889398575
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "lens_mm": 85.0,
+      "sensor_mm": 36.0,
+      "resolution": 2048,
+      "panels": {
+        "front": {
+          "quad_px": [
+            [
+              1230.4766845703125,
+              422.6126708984375
+            ],
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              1156.145751953125,
+              1420.5050659179688
+            ],
+            [
+              1221.4544677734375,
+              1952.335807800293
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "back": {
+          "quad_px": [
+            [
+              887.8754272460938,
+              395.9664306640625
+            ],
+            [
+              817.5252685546875,
+              422.61279296875
+            ],
+            [
+              826.5474853515625,
+              1952.3358917236328
+            ],
+            [
+              891.8562622070312,
+              1420.5050659179688
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            69.201
+          ]
+        },
+        "left": {
+          "quad_px": [
+            [
+              817.5252685546875,
+              422.61279296875
+            ],
+            [
+              1230.4766845703125,
+              422.6126708984375
+            ],
+            [
+              1221.4544677734375,
+              1952.335807800293
+            ],
+            [
+              826.5474853515625,
+              1952.3358917236328
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "right": {
+          "quad_px": [
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              887.8754272460938,
+              395.9664306640625
+            ],
+            [
+              891.8562622070312,
+              1420.5050659179688
+            ],
+            [
+              1156.145751953125,
+              1420.5050659179688
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            18,
+            69.201
+          ]
+        },
+        "top": {
+          "quad_px": [
+            [
+              817.5252685546875,
+              422.61279296875
+            ],
+            [
+              887.8754272460938,
+              395.9664306640625
+            ],
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              1230.4766845703125,
+              422.6126708984375
+            ]
+          ],
+          "visible": true,
+          "size_mm": [
+            110,
+            18
+          ]
+        },
+        "bottom": {
+          "quad_px": [
+            [
+              1221.4544677734375,
+              1952.335807800293
+            ],
+            [
+              1156.145751953125,
+              1420.5050659179688
+            ],
+            [
+              891.8562622070312,
+              1420.5050659179688
+            ],
+            [
+              826.5474853515625,
+              1952.3358917236328
+            ]
+          ],
+          "visible": false,
+          "size_mm": [
+            110,
+            18
+          ]
+        }
+      },
+      "elements": {
+        "front_green": {
+          "quad_px": [
+            [
+              1230.4766845703125,
+              422.6126708984375
+            ],
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              1156.145751953125,
+              1420.5050659179688
+            ],
+            [
+              1221.4544677734375,
+              1952.335807800293
+            ]
+          ],
+          "visible": false
+        },
+        "front_white_curve": {
+          "quad_px": [
+            [
+              1218.478759765625,
+              418.068359375
+            ],
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              1156.39013671875,
+              1357.606201171875
+            ],
+            [
+              1210.9412841796875,
+              1775.0962829589844
+            ]
+          ],
+          "visible": false
+        },
+        "front_cream": {
+          "quad_px": [
+            [
+              1216.883544921875,
+              417.464111328125
+            ],
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              1156.844970703125,
+              1240.5337524414062
+            ],
+            [
+              1210.3607177734375,
+              1601.5355834960938
+            ]
+          ],
+          "visible": false
+        },
+        "front_thin_curve": {
+          "quad_px": [
+            [
+              1230.4766845703125,
+              422.6126708984375
+            ],
+            [
+              1214.376953125,
+              416.5146484375
+            ],
+            [
+              1208.9234619140625,
+              1419.538818359375
+            ],
+            [
+              1224.0772705078125,
+              1507.6423950195312
+            ]
+          ],
+          "visible": false
+        },
+        "front_wordmark": {
+          "quad_px": [
+            [
+              1207.3021240234375,
+              839.6773681640625
+            ],
+            [
+              1179.4267578125,
+              764.3594970703125
+            ],
+            [
+              1178.3428955078125,
+              1006.1116943359375
+            ],
+            [
+              1205.7965087890625,
+              1123.8126831054688
+            ]
+          ],
+          "visible": false
+        },
+        "front_registered": {
+          "quad_px": [
+            [
+              1178.9375,
+              749.7952880859375
+            ],
+            [
+              1177.6912841796875,
+              746.5345458984375
+            ],
+            [
+              1177.5228271484375,
+              784.5584716796875
+            ],
+            [
+              1178.7662353515625,
+              788.12353515625
+            ]
+          ],
+          "visible": false
+        },
+        "front_dose_box": {
+          "quad_px": [
+            [
+              1177.0469970703125,
+              806.409423828125
+            ],
+            [
+              1167.78369140625,
+              778.4461669921875
+            ],
+            [
+              1167.14599609375,
+              932.12548828125
+            ],
+            [
+              1176.32470703125,
+              969.8109130859375
+            ]
+          ],
+          "visible": false
+        },
+        "front_dose": {
+          "quad_px": [
+            [
+              1176.340087890625,
+              844.70556640625
+            ],
+            [
+              1168.7642822265625,
+              819.8258056640625
+            ],
+            [
+              1168.422607421875,
+              901.5186767578125
+            ],
+            [
+              1175.9617919921875,
+              930.60107421875
+            ]
+          ],
+          "visible": false
+        },
+        "front_count": {
+          "quad_px": [
+            [
+              1182.295166015625,
+              503.7186279296875
+            ],
+            [
+              1166.4952392578125,
+              487.8170166015625
+            ],
+            [
+              1166.3353271484375,
+              527.0081787109375
+            ],
+            [
+              1182.0980224609375,
+              547.230224609375
+            ]
+          ],
+          "visible": false
+        },
+        "front_film": {
+          "quad_px": [
+            [
+              1198.8685302734375,
+              1174.7390747070312
+            ],
+            [
+              1178.4595947265625,
+              1077.8303833007812
+            ],
+            [
+              1178.2191162109375,
+              1131.3177490234375
+            ],
+            [
+              1198.560302734375,
+              1235.1105346679688
+            ]
+          ],
+          "visible": false
+        },
+        "front_tadalafil": {
+          "quad_px": [
+            [
+              1192.236083984375,
+              1265.197021484375
+            ],
+            [
+              1175.9493408203125,
+              1176.0557861328125
+            ],
+            [
+              1175.5216064453125,
+              1272.4741821289062
+            ],
+            [
+              1191.7119140625,
+              1371.6401977539062
+            ]
+          ],
+          "visible": false
+        },
+        "front_braille": {
+          "quad_px": [
+            [
+              1203.81689453125,
+              636.036865234375
+            ],
+            [
+              1181.88525390625,
+              600.467529296875
+            ],
+            [
+              1180.74169921875,
+              852.7421875
+            ],
+            [
+              1202.3350830078125,
+              922.7728271484375
+            ]
+          ],
+          "visible": false
+        },
+        "front_foil": {
+          "quad_px": [
+            [
+              1172.3929443359375,
+              1266.9609375
+            ],
+            [
+              1162.1319580078125,
+              1203.1683959960938
+            ],
+            [
+              1161.433837890625,
+              1376.1624145507812
+            ],
+            [
+              1171.5875244140625,
+              1452.3897094726562
+            ]
+          ],
+          "visible": false
+        },
+        "front_lilly": {
+          "quad_px": [
+            [
+              1170.2010498046875,
+              1304.71728515625
+            ],
+            [
+              1163.6949462890625,
+              1261.9825439453125
+            ],
+            [
+              1163.2203369140625,
+              1378.0678100585938
+            ],
+            [
+              1169.6812744140625,
+              1426.0379638671875
+            ]
+          ],
+          "visible": false
+        },
+        "back_wordmark": {
+          "quad_px": [
+            [
+              883.9796142578125,
+              511.1820068359375
+            ],
+            [
+              870.8006591796875,
+              526.879150390625
+            ],
+            [
+              871.4636840820312,
+              677.93505859375
+            ],
+            [
+              884.53369140625,
+              649.35693359375
+            ]
+          ],
+          "visible": false
+        },
+        "back_strength": {
+          "quad_px": [
+            [
+              884.9424438476562,
+              751.29736328125
+            ],
+            [
+              864.780517578125,
+              810.2919921875
+            ],
+            [
+              865.0158081054688,
+              861.4471435546875
+            ],
+            [
+              885.1219482421875,
+              796.059326171875
+            ]
+          ],
+          "visible": false
+        },
+        "back_batch": {
+          "quad_px": [
+            [
+              885.530029296875,
+              897.834228515625
+            ],
+            [
+              874.6737060546875,
+              941.223876953125
+            ],
+            [
+              874.8265991210938,
+              976.5369873046875
+            ],
+            [
+              885.6614990234375,
+              930.6236572265625
+            ]
+          ],
+          "visible": false
+        },
+        "back_expiry": {
+          "quad_px": [
+            [
+              859.0183715820312,
+              1003.6998291015625
+            ],
+            [
+              843.3662719726562,
+              1066.2479858398438
+            ],
+            [
+              843.5872192382812,
+              1108.2786254882812
+            ],
+            [
+              859.2026977539062,
+              1042.1624755859375
+            ]
+          ],
+          "visible": false
+        },
+        "back_barcode": {
+          "quad_px": [
+            [
+              879.4133911132812,
+              1103.9175415039062
+            ],
+            [
+              843.85205078125,
+              1290.7193603515625
+            ],
+            [
+              844.8839721679688,
+              1486.2736206054688
+            ],
+            [
+              880.078857421875,
+              1261.906982421875
+            ]
+          ],
+          "visible": false
+        },
+        "back_demo": {
+          "quad_px": [
+            [
+              878.1204223632812,
+              1379.2921142578125
+            ],
+            [
+              859.9742431640625,
+              1508.022705078125
+            ],
+            [
+              860.1249389648438,
+              1539.1890869140625
+            ],
+            [
+              878.2396850585938,
+              1407.1185302734375
+            ]
+          ],
+          "visible": false
+        },
+        "left_green": {
+          "quad_px": [
+            [
+              817.5252685546875,
+              422.61279296875
+            ],
+            [
+              1230.4766845703125,
+              422.6126708984375
+            ],
+            [
+              1221.4544677734375,
+              1952.335807800293
+            ],
+            [
+              826.5474853515625,
+              1952.3358917236328
+            ]
+          ],
+          "visible": true
+        },
+        "left_vertical": {
+          "quad_px": [
+            [
+              933.0682983398438,
+              740.8985595703125
+            ],
+            [
+              1096.7470703125,
+              740.8985595703125
+            ],
+            [
+              1095.7188720703125,
+              1231.2311401367188
+            ],
+            [
+              934.3536376953125,
+              1231.2311401367188
+            ]
+          ],
+          "visible": true
+        },
+        "left_dose": {
+          "quad_px": [
+            [
+              890.6624755859375,
+              1519.2559204101562
+            ],
+            [
+              1073.6644287109375,
+              1519.2559204101562
+            ],
+            [
+              1073.5760498046875,
+              1579.6114196777344
+            ],
+            [
+              890.8997802734375,
+              1579.6114196777344
+            ]
+          ],
+          "visible": true
+        },
+        "left_count": {
+          "quad_px": [
+            [
+              891.465576171875,
+              1723.5061645507812
+            ],
+            [
+              1101.6778564453125,
+              1723.5061645507812
+            ],
+            [
+              1101.595458984375,
+              1759.2873229980469
+            ],
+            [
+              891.6062622070312,
+              1759.2872619628906
+            ]
+          ],
+          "visible": true
+        },
+        "right_green": {
+          "quad_px": [
+            [
+              1160.12646484375,
+              395.96630859375
+            ],
+            [
+              887.8754272460938,
+              395.9664306640625
+            ],
+            [
+              891.8562622070312,
+              1420.5050659179688
+            ],
+            [
+              1156.145751953125,
+              1420.5050659179688
+            ]
+          ],
+          "visible": false
+        },
+        "right_vertical": {
+          "quad_px": [
+            [
+              1084.137451171875,
+              606.618408203125
+            ],
+            [
+              975.8917846679688,
+              606.618408203125
+            ],
+            [
+              976.3436889648438,
+              933.7110595703125
+            ],
+            [
+              1083.5726318359375,
+              933.7110595703125
+            ]
+          ],
+          "visible": false
+        },
+        "right_dose": {
+          "quad_px": [
+            [
+              1112.85693359375,
+              1127.3186645507812
+            ],
+            [
+              990.905517578125,
+              1127.3186645507812
+            ],
+            [
+              990.94482421875,
+              1168.0281982421875
+            ],
+            [
+              1112.75146484375,
+              1168.0281982421875
+            ]
+          ],
+          "visible": false
+        },
+        "right_count": {
+          "quad_px": [
+            [
+              1112.49951171875,
+              1265.280029296875
+            ],
+            [
+              972.1333618164062,
+              1265.2800903320312
+            ],
+            [
+              972.170166015625,
+              1289.5057373046875
+            ],
+            [
+              1112.436767578125,
+              1289.5057373046875
+            ]
+          ],
+          "visible": false
+        },
+        "top_wordmark": {
+          "quad_px": [
+            [
+              901.3345947265625,
+              414.0994873046875
+            ],
+            [
+              911.6803588867188,
+              408.2215576171875
+            ],
+            [
+              1047.026611328125,
+              408.2215576171875
+            ],
+            [
+              1049.1475830078125,
+              414.099365234375
+            ]
+          ],
+          "visible": true
+        },
+        "top_registered": {
+          "quad_px": [
+            [
+              925.163330078125,
+              407.977783203125
+            ],
+            [
+              925.6142578125,
+              407.687744140625
+            ],
+            [
+              947.2407836914062,
+              407.687744140625
+            ],
+            [
+              946.8889770507812,
+              407.977783203125
+            ]
+          ],
+          "visible": true
+        },
+        "top_dose": {
+          "quad_px": [
+            [
+              954.2025146484375,
+              407.021240234375
+            ],
+            [
+              956.4349365234375,
+              405.018798828125
+            ],
+            [
+              1009.3042602539062,
+              405.018798828125
+            ],
+            [
+              1008.8186645507812,
+              407.021240234375
+            ]
+          ],
+          "visible": true
+        },
+        "top_count": {
+          "quad_px": [
+            [
+              930.0452880859375,
+              402.640380859375
+            ],
+            [
+              937.0670776367188,
+              398.2882080078125
+            ],
+            [
+              966.277587890625,
+              398.2882080078125
+            ],
+            [
+              961.6151733398438,
+              402.640380859375
+            ]
+          ],
+          "visible": true
+        },
+        "top_lilly": {
+          "quad_px": [
+            [
+              1039.9146728515625,
+              398.65478515625
+            ],
+            [
+              1039.3638916015625,
+              396.7774658203125
+            ],
+            [
+              1131.48046875,
+              396.7774658203125
+            ],
+            [
+              1135.3333740234375,
+              398.65478515625
+            ]
+          ],
+          "visible": true
+        },
+        "top_emblem_gold": {
+          "quad_px": [
+            [
+              891.9347534179688,
+              419.4400634765625
+            ],
+            [
+              899.085205078125,
+              415.3775634765625
+            ],
+            [
+              1089.3526611328125,
+              415.3775634765625
+            ],
+            [
+              1093.0936279296875,
+              419.4400634765625
+            ]
+          ],
+          "visible": true
+        },
+        "top_emblem_green": {
+          "quad_px": [
+            [
+              900.0271606445312,
+              418.7059326171875
+            ],
+            [
+              906.64013671875,
+              414.74267578125
+            ],
+            [
+              1109.9376220703125,
+              414.74267578125
+            ],
+            [
+              1114.7799072265625,
+              418.7059326171875
+            ]
+          ],
+          "visible": true
+        },
+        "top_ingredient": {
+          "quad_px": [
+            [
+              1083.10693359375,
+              411.5687255859375
+            ],
+            [
+              1080.8466796875,
+              409.0003662109375
+            ],
+            [
+              1121.700927734375,
+              409.0003662109375
+            ],
+            [
+              1125.5855712890625,
+              411.5687255859375
+            ]
+          ],
+          "visible": true
+        },
+        "bottom_wordmark": {
+          "quad_px": [
+            [
+              1141.867919921875,
+              1784.1508178710938
+            ],
+            [
+              1132.2843017578125,
+              1667.0863952636719
+            ],
+            [
+              1001.8029174804688,
+              1667.0863952636719
+            ],
+            [
+              999.8382568359375,
+              1784.1508178710938
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_registered": {
+          "quad_px": [
+            [
+              1119.2989501953125,
+              1662.2159729003906
+            ],
+            [
+              1118.8797607421875,
+              1656.4185791015625
+            ],
+            [
+              1098.0242919921875,
+              1656.4185791015625
+            ],
+            [
+              1098.3514404296875,
+              1662.2159729003906
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_dose": {
+          "quad_px": [
+            [
+              1091.3360595703125,
+              1643.0877075195312
+            ],
+            [
+              1089.256103515625,
+              1602.9713439941406
+            ],
+            [
+              1038.195068359375,
+              1602.9714050292969
+            ],
+            [
+              1038.6474609375,
+              1643.0877075195312
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_count": {
+          "quad_px": [
+            [
+              1114.8651123046875,
+              1555.2119140625
+            ],
+            [
+              1108.2816162109375,
+              1467.4840698242188
+            ],
+            [
+              1079.962646484375,
+              1467.4840698242188
+            ],
+            [
+              1084.333984375,
+              1555.2119140625
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_lilly": {
+          "quad_px": [
+            [
+              1008.576171875,
+              1474.892578125
+            ],
+            [
+              1009.0941162109375,
+              1436.930419921875
+            ],
+            [
+              919.7125854492188,
+              1436.930419921875
+            ],
+            [
+              916.0888061523438,
+              1474.892578125
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_gold": {
+          "quad_px": [
+            [
+              1150.5206298828125,
+              1889.8441009521484
+            ],
+            [
+              1143.9432373046875,
+              1809.5010223388672
+            ],
+            [
+              961.251220703125,
+              1809.5010223388672
+            ],
+            [
+              957.8101196289062,
+              1889.8441009521484
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_emblem_green": {
+          "quad_px": [
+            [
+              1142.8170166015625,
+              1875.3525848388672
+            ],
+            [
+              1136.7293701171875,
+              1796.9127960205078
+            ],
+            [
+              941.4564819335938,
+              1796.9127960205078
+            ],
+            [
+              936.998779296875,
+              1875.3525848388672
+            ]
+          ],
+          "visible": false
+        },
+        "bottom_ingredient": {
+          "quad_px": [
+            [
+              967.1267700195312,
+              1733.8437805175781
+            ],
+            [
+              969.2225952148438,
+              1682.6430053710938
+            ],
+            [
+              929.8541259765625,
+              1682.6430053710938
+            ],
+            [
+              926.2521362304688,
+              1733.8437805175781
+            ]
+          ],
+          "visible": false
+        }
+      }
+    }
+  },
+  "images": [
+    {
+      "name": "base_color.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\59-min\\base_color.png",
+      "sha256": "39abec0fdfe5a3fd2fb9f545df492d43ea8b7b205bdce99b504939ca53c17718",
+      "colorspace": "sRGB",
+      "packed": true,
+      "packed_sha256": "39abec0fdfe5a3fd2fb9f545df492d43ea8b7b205bdce99b504939ca53c17718"
+    },
+    {
+      "name": "height.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\59-min\\height.png",
+      "sha256": "51856fbb14189c3a2efdc0450b7782bc004e2f9784c1ab8f7e466dcb7b98854c",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "51856fbb14189c3a2efdc0450b7782bc004e2f9784c1ab8f7e466dcb7b98854c"
+    },
+    {
+      "name": "metallic.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\59-min\\metallic.png",
+      "sha256": "c1b1064c59a6bd57adcff9921d22e44797f9812cb7e16c922094be02bda3b03a",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "c1b1064c59a6bd57adcff9921d22e44797f9812cb7e16c922094be02bda3b03a"
+    },
+    {
+      "name": "normal.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\59-min\\normal.png",
+      "sha256": "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd"
+    },
+    {
+      "name": "roughness.png",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\assets\\generated\\59-min\\roughness.png",
+      "sha256": "aa9c0b9d15f08bd5e93da6f3f64bd0c805f2c70a7f44b2d4773dae30ed4604e3",
+      "colorspace": "Non-Color",
+      "packed": true,
+      "packed_sha256": "aa9c0b9d15f08bd5e93da6f3f64bd0c805f2c70a7f44b2d4773dae30ed4604e3"
+    }
+  ],
+  "blender_version": "5.1.2",
+  "render": {
+    "source": "authored",
+    "engine": "CYCLES",
+    "device": "CPU",
+    "resolution": 2048,
+    "samples": 32,
+    "seed": 5909,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_device": "CPU",
+    "adaptive_sampling": false,
+    "view_transform": "Standard",
+    "look": "None",
+    "exposure": -3.12,
+    "gamma": 1,
+    "max_bounces": 8,
+    "transparent_bounces": 4,
+    "filter_width": 1.5,
+    "png_depth": "8",
+    "png_compression": 15,
+    "threads": 6,
+    "denoising_threads": 1,
+    "png_metadata_policy": "color_only",
+    "reset_between_views": true
+  },
+  "artwork_spec_sha256": "f74222c042c0fa6a42b9ec325c0bfa272f6e8dd1ebc84e292a720dab72542645",
+  "runtime_render": {
+    "engine": "CYCLES",
+    "device": "CPU",
+    "samples": 32,
+    "seed": 5909,
+    "animated_seed": false,
+    "adaptive_sampling": false,
+    "denoiser": "OPENIMAGEDENOISE",
+    "denoising_device": "CPU",
+    "denoising_threads": 1,
+    "threads": 6,
+    "view_transform": "Standard",
+    "look": "None",
+    "exposure": -3.119999885559082,
+    "gamma": 1.0,
+    "resolution": 2048,
+    "png_depth": "8",
+    "max_bounces": 8,
+    "transparent_bounces": 4,
+    "filter_width": 1.5,
+    "png_compression": 15
+  },
+  "bounds_mm": [
+    [
+      -54.999999701976776,
+      54.999999701976776
+    ],
+    [
+      -9.189999662339687,
+      8.999999612569809
+    ],
+    [
+      0.0,
+      69.20100003480911
+    ]
+  ],
+  "shader_inputs": {
+    "Base Color": {
+      "linked": true,
+      "node": "generated_base_color"
+    },
+    "Metallic": {
+      "linked": true,
+      "node": "generated_metallic"
+    },
+    "Roughness": {
+      "linked": true,
+      "node": "generated_roughness"
+    },
+    "Normal": {
+      "linked": true,
+      "node": "Bump"
+    },
+    "Coat Weight": {
+      "linked": true,
+      "node": "Math.001"
+    },
+    "Anisotropic": {
+      "linked": true,
+      "node": "Math.002"
+    }
+  },
+  "assembly_seconds": 3.416459500003839,
+  "render_runs": [
+    {
+      "view": "front",
+      "scene_snapshot_sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-front.png",
+      "seconds": 213.89017769999919,
+      "sha256": "78d98cc26c554bd760c9b51efb4f2385a2b1b101d24d61018320e7298bf83fa9",
+      "raw_png_sha256": "9be6747fffd5238af2019372eefb58808f5b70e6085a4bfe227d5e907087cccc",
+      "png_metadata_policy": "color_only",
+      "mask_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-front_maskMask.png"
+    },
+    {
+      "view": "hero",
+      "scene_snapshot_sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-hero.png",
+      "seconds": 215.32102079998003,
+      "sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+      "raw_png_sha256": "6bf5895c5daa1aff56998779a1515ba6bab48f666c20d5f25bc41d59750b1c7b",
+      "png_metadata_policy": "color_only",
+      "mask_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-hero_maskMask.png"
+    },
+    {
+      "view": "top",
+      "scene_snapshot_sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-top.png",
+      "seconds": 204.69595069999923,
+      "sha256": "20ba80b3aa6cef3c19ccd30ba0ff82f989d030f749771501097ce101a784fb8c",
+      "raw_png_sha256": "68ef9a7b9bf8fc4d2ac546142e0eeddf7d45a3cb0b876211dae9409d0fed1bcc",
+      "png_metadata_policy": "color_only",
+      "mask_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-top_maskMask.png"
+    },
+    {
+      "view": "end",
+      "scene_snapshot_sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a",
+      "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-end.png",
+      "seconds": 198.15491170002497,
+      "sha256": "cd442f8f3e60353d6767270bfb2cca7d06e21690d385eaf622dab241bf10273b",
+      "raw_png_sha256": "2c3e085e11df45148aebfe2c454676fce7633f8185f9b61100203aaf5ac56bff",
+      "png_metadata_policy": "color_only",
+      "mask_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-end_maskMask.png"
+    }
+  ],
+  "render_snapshot": {
+    "path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-final.stage.blend",
+    "sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a"
+  }
+}

@@ -2,3 +2,8 @@
 assets/sources/** -text
 tests/fixtures/physical/*.json -text
 docs/portfolio/*.webp binary
+
+# Preserve original example evidence and binary scene/resource bytes.
+examples/**/*.blend binary
+examples/**/*.png binary
+examples/**/evidence/*.json -text

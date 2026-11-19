@@ -1,0 +1,3295 @@
+{
+  "status": "AUDITED_AND_BACKUP_VERIFIED",
+  "source_root": "C:\\lil_projects\\Blender Farm Pro\\renders",
+  "top_level_entries": [
+    {
+      "relative_path": "59-min-baseline-rebuild.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-baseline_before.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-baseline_before.view.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-before-proportion-correction",
+      "kind": "directory"
+    },
+    {
+      "relative_path": "59-min-clean-repeat.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-clean-repeat.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-end.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-front.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-grain-study.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-grain-study.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-grain-study.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-hero.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-physical.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-physical.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-proportion-final.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-proportion-final.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-proportion-study.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-proportion-study.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-proportion-study.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "59-min-top.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-baseline-rebuild.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-baseline-rebuild.blend1",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-clean-final.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-cold-final.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-cold-final.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-deterministic-final.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-deterministic-repeat.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-deterministic-repeat.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-deterministic-repeat.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-end.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-final.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-front.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-hero-calibration.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-hero-calibration2.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-hero-repeat.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-hero-repeat.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-hero-study.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-hero.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-oidn-single-a.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-oidn-single-a.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-oidn-single-b.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-oidn-single-b.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-regression-for59.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-regression-for59.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-regression-for59.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-regression-for59.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-top-final-study.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-top-final-study.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-top.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-uv-final.scene.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "74-min-uv-final.stage.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "baseline_before.blend",
+      "kind": "file"
+    },
+    {
+      "relative_path": "baseline_before.png",
+      "kind": "file"
+    },
+    {
+      "relative_path": "baseline_before.view.json",
+      "kind": "file"
+    },
+    {
+      "relative_path": "masks",
+      "kind": "directory"
+    },
+    {
+      "relative_path": "physical-scene.json",
+      "kind": "file"
+    }
+  ],
+  "top_level_entry_count": 56,
+  "recursive_directory_count": 2,
+  "file_count": 77,
+  "total_bytes": 1202245421,
+  "files": [
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-baseline-rebuild.blend",
+      "relative_path": "59-min-baseline-rebuild.blend",
+      "type": ".blend",
+      "bytes": 113905598,
+      "sha256": "4b479cc76f08cab953b55bc994f07d2ca9ee060ae9ac4570a8c6993309c68da9",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "39abec0fdfe5a3fd2fb9f545df492d43ea8b7b205bdce99b504939ca53c17718"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "51856fbb14189c3a2efdc0450b7782bc004e2f9784c1ab8f7e466dcb7b98854c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "c1b1064c59a6bd57adcff9921d22e44797f9812cb7e16c922094be02bda3b03a"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "aa9c0b9d15f08bd5e93da6f3f64bd0c805f2c70a7f44b2d4773dae30ed4604e3"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 52,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 45
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-baseline_before.png",
+      "relative_path": "59-min-baseline_before.png",
+      "type": ".png",
+      "bytes": 3069663,
+      "sha256": "5dd4862e9b40f0ce4e1ebf8b6765e682cd7af81769170f70bf319a982a52e821",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-baseline_before.view.json",
+      "relative_path": "59-min-baseline_before.view.json",
+      "type": ".json",
+      "bytes": 634,
+      "sha256": "bc62254315696b2ef649ff9c4e3436ec08954d3937f18c4e8719a84d8de751c6",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-before-proportion-correction\\59-min-end.png",
+      "relative_path": "59-min-before-proportion-correction/59-min-end.png",
+      "type": ".png",
+      "bytes": 4115651,
+      "sha256": "ac2c8d1044d3806f2f6c0fe76633706b55b0ddfe93dc51ad23a4fa1c003efe85",
+      "sku": "59-min",
+      "stage": "intermediate",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-before-proportion-correction\\59-min-front.png",
+      "relative_path": "59-min-before-proportion-correction/59-min-front.png",
+      "type": ".png",
+      "bytes": 3619374,
+      "sha256": "3301f7f78b3c78c3be15c130c2642b62b973b5615760a389b65f871402904a6e",
+      "sku": "59-min",
+      "stage": "intermediate",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-before-proportion-correction\\59-min-hero.png",
+      "relative_path": "59-min-before-proportion-correction/59-min-hero.png",
+      "type": ".png",
+      "bytes": 4066591,
+      "sha256": "dd6d3575e9949430f89ab8f33d77f8945adb9b6fa23f3f9c5185de6e80e0a982",
+      "sku": "59-min",
+      "stage": "intermediate",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-before-proportion-correction\\59-min-top.png",
+      "relative_path": "59-min-before-proportion-correction/59-min-top.png",
+      "type": ".png",
+      "bytes": 3440108,
+      "sha256": "b3092b06e2f4c4a061b78ab517242d5a4bc1a11d3ce8ef07e2c9ae4beb5fb353",
+      "sku": "59-min",
+      "stage": "intermediate",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-clean-repeat.scene.json",
+      "relative_path": "59-min-clean-repeat.scene.json",
+      "type": ".json",
+      "bytes": 154739,
+      "sha256": "59402dc6154b8e69477056e8a7edcc494954bd30ba74b87a43dc9c6206e479e8",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-clean-repeat.stage.blend",
+      "relative_path": "59-min-clean-repeat.stage.blend",
+      "type": ".blend",
+      "bytes": 74200515,
+      "sha256": "86886977a78c06dcaf28464bbccd1caa3d1af603cebf147b03949323d14bca99",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "aa3f5a27cdea3e5ad3872d317266932d540555ad7ad6d7a462626870bcc3d788"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "c44d8f856cb6fea342d43c3973dbced060e349d473225edec816079ca5773f37"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "acde2ba6de2b76f0f879d013dccca96f2d8a975113f83d15ad4337ddf160a6ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "0449793d86940dcc89489eb22f53badb5836412c27093ffb91c4c147070c2117"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "b2e7d1ca3261886b85a226baf90cecec76bec3f8a64650c37b175735041de1ab"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 52,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 45
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-end.png",
+      "relative_path": "59-min-end.png",
+      "type": ".png",
+      "bytes": 4100819,
+      "sha256": "cd442f8f3e60353d6767270bfb2cca7d06e21690d385eaf622dab241bf10273b",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-end.png",
+            "original_relative_path": "59-min-end.png",
+            "view": "end",
+            "output_role": "path",
+            "render_png_sha256": "cd442f8f3e60353d6767270bfb2cca7d06e21690d385eaf622dab241bf10273b",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-front.png",
+      "relative_path": "59-min-front.png",
+      "type": ".png",
+      "bytes": 4227849,
+      "sha256": "78d98cc26c554bd760c9b51efb4f2385a2b1b101d24d61018320e7298bf83fa9",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-front.png",
+            "original_relative_path": "59-min-front.png",
+            "view": "front",
+            "output_role": "path",
+            "render_png_sha256": "78d98cc26c554bd760c9b51efb4f2385a2b1b101d24d61018320e7298bf83fa9",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-grain-study.png",
+      "relative_path": "59-min-grain-study.png",
+      "type": ".png",
+      "bytes": 4466227,
+      "sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+      "sku": "59-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": true,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-grain-study.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-grain-study.png",
+            "original_relative_path": "59-min-grain-study.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-grain-study.scene.json",
+      "relative_path": "59-min-grain-study.scene.json",
+      "type": ".json",
+      "bytes": 153171,
+      "sha256": "cfe5778f7e9f59de04a701871685d0da3104b3cef0a640f32de28bcc28d0804e",
+      "sku": "59-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-grain-study.stage.blend",
+      "relative_path": "59-min-grain-study.stage.blend",
+      "type": ".blend",
+      "bytes": 113908515,
+      "sha256": "bdf84b28dd9261ccff096416d40118000788d857956fb73725e77b9c5a211ac4",
+      "sku": "59-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "39abec0fdfe5a3fd2fb9f545df492d43ea8b7b205bdce99b504939ca53c17718"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "51856fbb14189c3a2efdc0450b7782bc004e2f9784c1ab8f7e466dcb7b98854c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "c1b1064c59a6bd57adcff9921d22e44797f9812cb7e16c922094be02bda3b03a"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "aa9c0b9d15f08bd5e93da6f3f64bd0c805f2c70a7f44b2d4773dae30ed4604e3"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 52,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 45
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-hero.png",
+      "relative_path": "59-min-hero.png",
+      "type": ".png",
+      "bytes": 4466227,
+      "sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+      "sku": "59-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": true,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-hero.png",
+            "original_relative_path": "59-min-hero.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-physical.scene.json",
+      "relative_path": "59-min-physical.scene.json",
+      "type": ".json",
+      "bytes": 154734,
+      "sha256": "e6270c037a0ea8d80f1931fd8f36e4c017fad2b4969e4a1c42182f8f2046b95a",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-physical.stage.blend",
+      "relative_path": "59-min-physical.stage.blend",
+      "type": ".blend",
+      "bytes": 74200512,
+      "sha256": "daed3a6e0b5dc9eb8435680b3925104a5af45136921ed690696480adfd584000",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "aa3f5a27cdea3e5ad3872d317266932d540555ad7ad6d7a462626870bcc3d788"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "c44d8f856cb6fea342d43c3973dbced060e349d473225edec816079ca5773f37"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "acde2ba6de2b76f0f879d013dccca96f2d8a975113f83d15ad4337ddf160a6ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "0449793d86940dcc89489eb22f53badb5836412c27093ffb91c4c147070c2117"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "b2e7d1ca3261886b85a226baf90cecec76bec3f8a64650c37b175735041de1ab"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 52,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 45
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-final.scene.json",
+      "relative_path": "59-min-proportion-final.scene.json",
+      "type": ".json",
+      "bytes": 154886,
+      "sha256": "245a7a46da436a62efa1a75013c0db5dbfdcc427b39047fd1d84cd916b11c518",
+      "sku": "59-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "59-min-proportion-final.scene.json",
+        "public_path": "examples/59_cialis/evidence/59-min-proportion-final.scene.json",
+        "sha256": "245a7a46da436a62efa1a75013c0db5dbfdcc427b39047fd1d84cd916b11c518",
+        "bytes": 154886
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-final.stage.blend",
+      "relative_path": "59-min-proportion-final.stage.blend",
+      "type": ".blend",
+      "bytes": 113908517,
+      "sha256": "7a22d41f9f035bc2587eb054ebc22f6b76ad749ec1d8717ac4fb9089edc23b0a",
+      "sku": "59-min",
+      "stage": "final",
+      "active_renderer_usage": "Editable saved-scene entry point; procedural CLI remains independent",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "39abec0fdfe5a3fd2fb9f545df492d43ea8b7b205bdce99b504939ca53c17718"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "51856fbb14189c3a2efdc0450b7782bc004e2f9784c1ab8f7e466dcb7b98854c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "c1b1064c59a6bd57adcff9921d22e44797f9812cb7e16c922094be02bda3b03a"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "aa9c0b9d15f08bd5e93da6f3f64bd0c805f2c70a7f44b2d4773dae30ed4604e3"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_derivative": {
+        "portable_path": "examples/59_cialis/scenes/59-min-historical.blend",
+        "portable_sha256": "63340cbdf9bc13759c68e2b7ee6f526585e9ec072445bf502d62531f94a58d61",
+        "portable_bytes": 54335705,
+        "unpacked_resources": [
+          {
+            "path": "examples/59_cialis/textures/normal.png",
+            "sha256": "7401cc1617367ad5b52627505c28aaa586439526609ae19fe8e231350c78bffd",
+            "bytes": 62216190
+          }
+        ]
+      },
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 52,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 45
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-study.png",
+      "relative_path": "59-min-proportion-study.png",
+      "type": ".png",
+      "bytes": 4357629,
+      "sha256": "b904822fd7e7287bc04f987c0f1d7d998394e023ce51054948dfac90e3999187",
+      "sku": "59-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-proportion-study.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-study.png",
+            "original_relative_path": "59-min-proportion-study.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "b904822fd7e7287bc04f987c0f1d7d998394e023ce51054948dfac90e3999187",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-study.scene.json",
+      "relative_path": "59-min-proportion-study.scene.json",
+      "type": ".json",
+      "bytes": 153181,
+      "sha256": "7f93815c021ffedfef8b88fc5f4adb04e9c9c6d90e5c54ad5a1ff43c952ec61a",
+      "sku": "59-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-proportion-study.stage.blend",
+      "relative_path": "59-min-proportion-study.stage.blend",
+      "type": ".blend",
+      "bytes": 94387123,
+      "sha256": "1e4841722e2c096a4db7639d56e360eb6c6f0743c691578f3f718e28a6bbe9d7",
+      "sku": "59-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "39abec0fdfe5a3fd2fb9f545df492d43ea8b7b205bdce99b504939ca53c17718"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "51856fbb14189c3a2efdc0450b7782bc004e2f9784c1ab8f7e466dcb7b98854c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "c1b1064c59a6bd57adcff9921d22e44797f9812cb7e16c922094be02bda3b03a"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "beb89d6c464e67cafc1d1cacd73334355dff6b8ba950cbfadc9b63be4912b1c8"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "aa9c0b9d15f08bd5e93da6f3f64bd0c805f2c70a7f44b2d4773dae30ed4604e3"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\59-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 52,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 45
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-top.png",
+      "relative_path": "59-min-top.png",
+      "type": ".png",
+      "bytes": 3722659,
+      "sha256": "20ba80b3aa6cef3c19ccd30ba0ff82f989d030f749771501097ce101a784fb8c",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\59-min-top.png",
+            "original_relative_path": "59-min-top.png",
+            "view": "top",
+            "output_role": "path",
+            "render_png_sha256": "20ba80b3aa6cef3c19ccd30ba0ff82f989d030f749771501097ce101a784fb8c",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-baseline-rebuild.blend",
+      "relative_path": "74-min-baseline-rebuild.blend",
+      "type": ".blend",
+      "bytes": 74018926,
+      "sha256": "f128ad06b01af2fefee98fa2ee1a36ad81cca40d4bb645cb9d012f30ca4bb470",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 87,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 80
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-baseline-rebuild.blend1",
+      "relative_path": "74-min-baseline-rebuild.blend1",
+      "type": ".blend1",
+      "bytes": 67131218,
+      "sha256": "67dc523ac05133987eee17b1c2cd18258811d26afc2fe158fbc286d3ae7b0de6",
+      "sku": "74-min",
+      "stage": "intermediate",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "15358538dbfb98db83b28187a9b6029dfc6b99430b037ca1bd8c039530cebd0c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "0225a35f5042a1d13180a4a0ae4ff7e809a29aade91be21e73b5ee28851ccbfc"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "a14980017a830259af30ba775d268c35b86e205dc48ceca9a98bd8d79a4eedd7"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "338c3a1de51804067eaa7529a9ddbb84e5b847e329ebf51bb2ccab7ee7b05de9"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 86,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 79
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-clean-final.scene.json",
+      "relative_path": "74-min-clean-final.scene.json",
+      "type": ".json",
+      "bytes": 150293,
+      "sha256": "fbc112b823ded8b9334dc3815097e8fb57f0786570c63e4d3ffae00af3359cdb",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-cold-final.scene.json",
+      "relative_path": "74-min-cold-final.scene.json",
+      "type": ".json",
+      "bytes": 151594,
+      "sha256": "56bd3b688e544839bc56e056a1c389161648fb54eadcfd855dd789d01ba35b8b",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-cold-final.stage.blend",
+      "relative_path": "74-min-cold-final.stage.blend",
+      "type": ".blend",
+      "bytes": 74025337,
+      "sha256": "6ba81a383032c5cecb3eb733a9a5b9260a25a19da7d608beece3508e10434061",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 87,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 80
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-final.scene.json",
+      "relative_path": "74-min-deterministic-final.scene.json",
+      "type": ".json",
+      "bytes": 150961,
+      "sha256": "738c0302db8a8cf410e1bd5e59aca905356df585a137c31687a35f2c16f54543",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-repeat.png",
+      "relative_path": "74-min-deterministic-repeat.png",
+      "type": ".png",
+      "bytes": 3955005,
+      "sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": true,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-deterministic-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-repeat.png",
+            "original_relative_path": "74-min-deterministic-repeat.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-repeat.scene.json",
+      "relative_path": "74-min-deterministic-repeat.scene.json",
+      "type": ".json",
+      "bytes": 163797,
+      "sha256": "88d2c27f00cb0825318bd1bff32c32b68e8ebd5008c37cc4d6b150c0549a3bd9",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "74-min-deterministic-repeat.scene.json",
+        "public_path": "examples/74_viagra/evidence/74-min-deterministic-repeat.scene.json",
+        "sha256": "88d2c27f00cb0825318bd1bff32c32b68e8ebd5008c37cc4d6b150c0549a3bd9",
+        "bytes": 163797
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-deterministic-repeat.stage.blend",
+      "relative_path": "74-min-deterministic-repeat.stage.blend",
+      "type": ".blend",
+      "bytes": 74021957,
+      "sha256": "52dd789305666d49166e7f663120585ed973838321c144cd630e5f8c6800ac9b",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Editable saved-scene entry point; procedural CLI remains independent",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_derivative": {
+        "portable_path": "examples/74_viagra/scenes/74-min-historical.blend",
+        "portable_sha256": "cdde1c06bc5481f5fb8095a5f80c3aef505446c6753610a4092601f5f27edc03",
+        "portable_bytes": 74018391,
+        "unpacked_resources": []
+      },
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 87,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 80
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-end.png",
+      "relative_path": "74-min-end.png",
+      "type": ".png",
+      "bytes": 4162010,
+      "sha256": "28e39d3ba030592c3ebe273c52f935f48f42b9f21e8b2ac9938afea9318bc215",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-end.png",
+            "original_relative_path": "74-min-end.png",
+            "view": "end",
+            "output_role": "path",
+            "render_png_sha256": "28e39d3ba030592c3ebe273c52f935f48f42b9f21e8b2ac9938afea9318bc215",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-final.scene.json",
+      "relative_path": "74-min-final.scene.json",
+      "type": ".json",
+      "bytes": 150290,
+      "sha256": "79504911a57c0cb42fc12115a500d782602994fedf1375bb7b67b8f54d80188b",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-front.png",
+      "relative_path": "74-min-front.png",
+      "type": ".png",
+      "bytes": 3620576,
+      "sha256": "d41b4a9bd898583b15e8ca1f8557b5f8700e6773cc4caeae43ed27e8b5d09873",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-front.png",
+            "original_relative_path": "74-min-front.png",
+            "view": "front",
+            "output_role": "path",
+            "render_png_sha256": "d41b4a9bd898583b15e8ca1f8557b5f8700e6773cc4caeae43ed27e8b5d09873",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-calibration.png",
+      "relative_path": "74-min-hero-calibration.png",
+      "type": ".png",
+      "bytes": 3500224,
+      "sha256": "9a98adae6ef41cbeedf0bd1733f603298862e15a16aac3fad68e71c5a23a7aa5",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-calibration2.png",
+      "relative_path": "74-min-hero-calibration2.png",
+      "type": ".png",
+      "bytes": 4295224,
+      "sha256": "9c234d47097757f3575ed129701585c0b4c4ac8b29c17527b5d735f271f1baff",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "physical-scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-calibration2.png",
+            "original_relative_path": "74-min-hero-calibration2.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "9c234d47097757f3575ed129701585c0b4c4ac8b29c17527b5d735f271f1baff",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-repeat.png",
+      "relative_path": "74-min-hero-repeat.png",
+      "type": ".png",
+      "bytes": 3961767,
+      "sha256": "f60398b3ef38ee82bc24e2619e2f9764d34be141ce4764ee0c7ca64c88e6d8d5",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-hero-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-repeat.png",
+            "original_relative_path": "74-min-hero-repeat.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "f60398b3ef38ee82bc24e2619e2f9764d34be141ce4764ee0c7ca64c88e6d8d5",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-repeat.scene.json",
+      "relative_path": "74-min-hero-repeat.scene.json",
+      "type": ".json",
+      "bytes": 149294,
+      "sha256": "e496db55ce2ab06c925f29981849989d64ced9095b3032d60ec241da76ba040a",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero-study.png",
+      "relative_path": "74-min-hero-study.png",
+      "type": ".png",
+      "bytes": 1072833,
+      "sha256": "dec73a2a59489f420b006f3d3e84da30bc50d145e5d1b10ba58c0d5867f5fdba",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero.png",
+      "relative_path": "74-min-hero.png",
+      "type": ".png",
+      "bytes": 3955005,
+      "sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": true,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-hero.png",
+            "original_relative_path": "74-min-hero.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-oidn-single-a.png",
+      "relative_path": "74-min-oidn-single-a.png",
+      "type": ".png",
+      "bytes": 3961318,
+      "sha256": "22063ce770b49e2bfd0a69b2f686fa66c30d545e7645aa04a2e883945f7074f0",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-oidn-single-a.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-oidn-single-a.png",
+            "original_relative_path": "74-min-oidn-single-a.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "22063ce770b49e2bfd0a69b2f686fa66c30d545e7645aa04a2e883945f7074f0",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-oidn-single-a.scene.json",
+      "relative_path": "74-min-oidn-single-a.scene.json",
+      "type": ".json",
+      "bytes": 149298,
+      "sha256": "b0b454ed82b57be803ff9dc29a58d54c7606254dd9695ba3192146ba5482dd28",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-oidn-single-b.png",
+      "relative_path": "74-min-oidn-single-b.png",
+      "type": ".png",
+      "bytes": 3960817,
+      "sha256": "409a2123c7fccba06afb26b223388ad44c31afc4b310b14e0a7bb250837fc945",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-oidn-single-b.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-oidn-single-b.png",
+            "original_relative_path": "74-min-oidn-single-b.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "409a2123c7fccba06afb26b223388ad44c31afc4b310b14e0a7bb250837fc945",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-oidn-single-b.scene.json",
+      "relative_path": "74-min-oidn-single-b.scene.json",
+      "type": ".json",
+      "bytes": 149291,
+      "sha256": "ab15e592b8d399c163d89a84965ef43d70036d8341c5c1777b3c9a4f14262909",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-regression-for59.blend",
+      "relative_path": "74-min-regression-for59.blend",
+      "type": ".blend",
+      "bytes": 74018989,
+      "sha256": "bdc15b7447bcc9f568e64c6b088adb6871e24e91594e783a61112f608d502099",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 87,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 80
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-regression-for59.png",
+      "relative_path": "74-min-regression-for59.png",
+      "type": ".png",
+      "bytes": 3955005,
+      "sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": true,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-regression-for59.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-regression-for59.png",
+            "original_relative_path": "74-min-regression-for59.png",
+            "view": "hero",
+            "output_role": "path",
+            "render_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-regression-for59.scene.json",
+      "relative_path": "74-min-regression-for59.scene.json",
+      "type": ".json",
+      "bytes": 163871,
+      "sha256": "b9ba6982c6a044843b48d188d8f6bc97e6203bc5698582fca1668a0fe40a2fba",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-regression-for59.stage.blend",
+      "relative_path": "74-min-regression-for59.stage.blend",
+      "type": ".blend",
+      "bytes": 74021990,
+      "sha256": "8dc4f3ddf1a1d4166f444beb5f2d62b8c0c4c9599675f058fae304d882b84823",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min-regression-for59\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 87,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 80
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-top-final-study.png",
+      "relative_path": "74-min-top-final-study.png",
+      "type": ".png",
+      "bytes": 3269557,
+      "sha256": "dab2699a28bc33669a5966f292feca4f3ebd3ca7749716e3b0e32f9314ef6130",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-top-final-study.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-top-final-study.png",
+            "original_relative_path": "74-min-top-final-study.png",
+            "view": "top",
+            "output_role": "path",
+            "render_png_sha256": "dab2699a28bc33669a5966f292feca4f3ebd3ca7749716e3b0e32f9314ef6130",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-top-final-study.scene.json",
+      "relative_path": "74-min-top-final-study.scene.json",
+      "type": ".json",
+      "bytes": 149302,
+      "sha256": "3fa9fddd1acd366ae98ecf354cea936bffea9e0d23dba66a72ee7b4df35573ae",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-top.png",
+      "relative_path": "74-min-top.png",
+      "type": ".png",
+      "bytes": 3251381,
+      "sha256": "0401be57b7371b4fa48963dbd19b230ced661765ed87e75022f9769fc6598396",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-top.png",
+            "original_relative_path": "74-min-top.png",
+            "view": "top",
+            "output_role": "path",
+            "render_png_sha256": "0401be57b7371b4fa48963dbd19b230ced661765ed87e75022f9769fc6598396",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_AND_PNG_SHA256_MATCH",
+            "mask_sha256_recorded_in_log": null
+          }
+        ]
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-uv-final.scene.json",
+      "relative_path": "74-min-uv-final.scene.json",
+      "type": ".json",
+      "bytes": 165475,
+      "sha256": "f15be958c875ec31c7d6d5c0f6c7fe382f76611b056240be036defefd8eb6939",
+      "sku": "74-min",
+      "stage": "final",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\74-min-uv-final.stage.blend",
+      "relative_path": "74-min-uv-final.stage.blend",
+      "type": ".blend",
+      "bytes": 74021970,
+      "sha256": "3cd1ec8236fe9d5737a62d82879e337b3894d7de1ca8787b92698a1466e05cd4",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [
+        {
+          "image": "base_color.png",
+          "packed_sha256": [
+            "9166e42ee74510fe8ff06780eb3aa46cd61d86c5586cf1da7dc4c26e196f6bb2"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\base_color.png",
+          "packed": true
+        },
+        {
+          "image": "height.png",
+          "packed_sha256": [
+            "f4e6e90dfa07c7b8f92e6d7b2d1cd9cc6c1f12beda17ab55e9760837899858ae"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\height.png",
+          "packed": true
+        },
+        {
+          "image": "metallic.png",
+          "packed_sha256": [
+            "3bd384a32b492a0b69f4d8fe52ae99c314547f584ebb0effb445a3a91aca3e7b"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\metallic.png",
+          "packed": true
+        },
+        {
+          "image": "normal.png",
+          "packed_sha256": [
+            "b63a558b197cc30e6075fc0cfaf27f6618a960bee057e36e007f6f1a73933830"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\normal.png",
+          "packed": true
+        },
+        {
+          "image": "roughness.png",
+          "packed_sha256": [
+            "47b295e1e11e5da30825906bb5afeb26ca3a011d7b9e1e4cd393da5635022c1c"
+          ],
+          "relative_source_path": "//..\\assets\\generated\\74-min\\roughness.png",
+          "packed": true
+        }
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 87,
+        "object_types": {
+          "CAMERA": 4,
+          "LIGHT": 3,
+          "MESH": 80
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        }
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\baseline_before.blend",
+      "relative_path": "baseline_before.blend",
+      "type": ".blend",
+      "bytes": 127654,
+      "sha256": "de76266b4f8227f860bdb2e1b1a286d4508a6cb294ef31b4b6ba0d5d79ee2f26",
+      "sku": "UNKNOWN",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "REVIEW",
+      "backup_verified": true,
+      "scene_audit": {
+        "status": "OPENED",
+        "blender_version": "5.1.2",
+        "objects": 25,
+        "object_types": {
+          "CAMERA": 1,
+          "CURVE": 13,
+          "FONT": 5,
+          "LIGHT": 2,
+          "MESH": 4
+        },
+        "linked_libraries": 0,
+        "non_image_dependencies": {
+          "fonts": [
+            {
+              "name": "Bfont Regular",
+              "filepath": "<builtin>",
+              "packed": false
+            },
+            {
+              "name": "DejaVuSans-Bold.ttf",
+              "filepath": "//..\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans-Bold.ttf",
+              "packed": false
+            },
+            {
+              "name": "DejaVuSans.ttf",
+              "filepath": "//..\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans.ttf",
+              "packed": false
+            }
+          ],
+          "libraries": [],
+          "sounds": [],
+          "movieclips": [],
+          "cache_files": [],
+          "volumes": [],
+          "drivers": 0,
+          "embedded_text_blocks": []
+        },
+        "portability_status": "PRIVATE_LEGACY_BASELINE_REQUIRES_FONT_PATH_REMAP_IF_REUSED"
+      }
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\baseline_before.png",
+      "relative_path": "baseline_before.png",
+      "type": ".png",
+      "bytes": 2976252,
+      "sha256": "f847ef2416379a84d3c2f4c5d2baac001dc00ffdd5af579f11e14b3b1f30b2de",
+      "sku": "UNKNOWN",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\baseline_before.view.json",
+      "relative_path": "baseline_before.view.json",
+      "type": ".json",
+      "bytes": 622,
+      "sha256": "94dd807014c4e43cf55f0cfe705e2582f7a1e2dd7b7274b1ca6a4c2be113f1af",
+      "sku": "UNKNOWN",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-end_maskMask.png",
+      "relative_path": "masks/59-min-end_maskMask.png",
+      "type": ".png",
+      "bytes": 559151,
+      "sha256": "f7ba6265d633803b8c387c4e73ec60dacb6dbd385692f1ae828c9cdd4f06f5fc",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-clean-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-end_maskMask.png",
+            "original_relative_path": "masks/59-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "ac2c8d1044d3806f2f6c0fe76633706b55b0ddfe93dc51ad23a4fa1c003efe85",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-physical.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-end_maskMask.png",
+            "original_relative_path": "masks/59-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "ac2c8d1044d3806f2f6c0fe76633706b55b0ddfe93dc51ad23a4fa1c003efe85",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-end_maskMask.png",
+            "original_relative_path": "masks/59-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "cd442f8f3e60353d6767270bfb2cca7d06e21690d385eaf622dab241bf10273b",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/59-min-end_maskMask.png",
+        "public_path": "examples/59_cialis/masks/59-min-end_maskMask.png",
+        "sha256": "f7ba6265d633803b8c387c4e73ec60dacb6dbd385692f1ae828c9cdd4f06f5fc",
+        "bytes": 559151
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-front_maskMask.png",
+      "relative_path": "masks/59-min-front_maskMask.png",
+      "type": ".png",
+      "bytes": 534152,
+      "sha256": "b872a4692579a22d4395fa91a872925fb0ea5b6c93e0651e16a3b6c0810ea805",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-clean-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-front_maskMask.png",
+            "original_relative_path": "masks/59-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "3301f7f78b3c78c3be15c130c2642b62b973b5615760a389b65f871402904a6e",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-physical.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-front_maskMask.png",
+            "original_relative_path": "masks/59-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "3301f7f78b3c78c3be15c130c2642b62b973b5615760a389b65f871402904a6e",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-front_maskMask.png",
+            "original_relative_path": "masks/59-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "78d98cc26c554bd760c9b51efb4f2385a2b1b101d24d61018320e7298bf83fa9",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/59-min-front_maskMask.png",
+        "public_path": "examples/59_cialis/masks/59-min-front_maskMask.png",
+        "sha256": "b872a4692579a22d4395fa91a872925fb0ea5b6c93e0651e16a3b6c0810ea805",
+        "bytes": 534152
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-grain-study_maskMask.png",
+      "relative_path": "masks/59-min-grain-study_maskMask.png",
+      "type": ".png",
+      "bytes": 515063,
+      "sha256": "5b807e5f911878621a8f97c56746975db82930b5128fb08cdb96feb4985d14c7",
+      "sku": "59-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-grain-study.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-grain-study_maskMask.png",
+            "original_relative_path": "masks/59-min-grain-study_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/59-min-grain-study_maskMask.png",
+        "public_path": "examples/59_cialis/masks/59-min-grain-study_maskMask.png",
+        "sha256": "5b807e5f911878621a8f97c56746975db82930b5128fb08cdb96feb4985d14c7",
+        "bytes": 515063
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-hero_maskMask.png",
+      "relative_path": "masks/59-min-hero_maskMask.png",
+      "type": ".png",
+      "bytes": 537578,
+      "sha256": "f7e03efbac5f43c1f7131a9821acdda7bd91d5486ddce5f94236146345dda410",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-clean-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-hero_maskMask.png",
+            "original_relative_path": "masks/59-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "dd6d3575e9949430f89ab8f33d77f8945adb9b6fa23f3f9c5185de6e80e0a982",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-physical.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-hero_maskMask.png",
+            "original_relative_path": "masks/59-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "dd6d3575e9949430f89ab8f33d77f8945adb9b6fa23f3f9c5185de6e80e0a982",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-hero_maskMask.png",
+            "original_relative_path": "masks/59-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/59-min-hero_maskMask.png",
+        "public_path": "examples/59_cialis/masks/59-min-hero_maskMask.png",
+        "sha256": "f7e03efbac5f43c1f7131a9821acdda7bd91d5486ddce5f94236146345dda410",
+        "bytes": 537578
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-proportion-study_maskMask.png",
+      "relative_path": "masks/59-min-proportion-study_maskMask.png",
+      "type": ".png",
+      "bytes": 560566,
+      "sha256": "9fcf5ad1151679eb4b65ee6cbe5863c33a87f58e4c725131a3bab76e59f968f5",
+      "sku": "59-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-proportion-study.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-proportion-study_maskMask.png",
+            "original_relative_path": "masks/59-min-proportion-study_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "b904822fd7e7287bc04f987c0f1d7d998394e023ce51054948dfac90e3999187",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/59-min-proportion-study_maskMask.png",
+        "public_path": "examples/59_cialis/masks/59-min-proportion-study_maskMask.png",
+        "sha256": "9fcf5ad1151679eb4b65ee6cbe5863c33a87f58e4c725131a3bab76e59f968f5",
+        "bytes": 560566
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-top_maskMask.png",
+      "relative_path": "masks/59-min-top_maskMask.png",
+      "type": ".png",
+      "bytes": 544299,
+      "sha256": "fcf00970f4098e40aa7019b50fca73f4d463ae3e934aa7db77a334e510862e1c",
+      "sku": "59-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "59-min-clean-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-top_maskMask.png",
+            "original_relative_path": "masks/59-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "b3092b06e2f4c4a061b78ab517242d5a4bc1a11d3ce8ef07e2c9ae4beb5fb353",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-physical.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-top_maskMask.png",
+            "original_relative_path": "masks/59-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "b3092b06e2f4c4a061b78ab517242d5a4bc1a11d3ce8ef07e2c9ae4beb5fb353",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "59-min-proportion-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\59-min-top_maskMask.png",
+            "original_relative_path": "masks/59-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "20ba80b3aa6cef3c19ccd30ba0ff82f989d030f749771501097ce101a784fb8c",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/59-min-top_maskMask.png",
+        "public_path": "examples/59_cialis/masks/59-min-top_maskMask.png",
+        "sha256": "fcf00970f4098e40aa7019b50fca73f4d463ae3e934aa7db77a334e510862e1c",
+        "bytes": 544299
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-deterministic-repeat_maskMask.png",
+      "relative_path": "masks/74-min-deterministic-repeat_maskMask.png",
+      "type": ".png",
+      "bytes": 507223,
+      "sha256": "13d001f4206da6588c0c5ecb2b9dfaac1f9d26bc162898d07eb484065d077dda",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-deterministic-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-deterministic-repeat_maskMask.png",
+            "original_relative_path": "masks/74-min-deterministic-repeat_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-deterministic-repeat_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-deterministic-repeat_maskMask.png",
+        "sha256": "13d001f4206da6588c0c5ecb2b9dfaac1f9d26bc162898d07eb484065d077dda",
+        "bytes": 507223
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-end_maskMask.png",
+      "relative_path": "masks/74-min-end_maskMask.png",
+      "type": ".png",
+      "bytes": 557346,
+      "sha256": "617f9dd83d28ec28edc4cdedfe948825add2a7ec2cdb6eb5beaa277cf2c44c1c",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-clean-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-end_maskMask.png",
+            "original_relative_path": "masks/74-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "7013cbe02d6a4fb01c14b57a6b97d51b5dff26e863780d72d4c90d8a7e338a04",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-cold-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-end_maskMask.png",
+            "original_relative_path": "masks/74-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "a8701194529236e6a87c3f031f4c56868e04cfe01f75b39c6f97fff932b556de",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-deterministic-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-end_maskMask.png",
+            "original_relative_path": "masks/74-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "907cbd3071ce162389049ac687283b39cffc9fa6c9474cd4481341f9a306b712",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-end_maskMask.png",
+            "original_relative_path": "masks/74-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "22a9b37e10212a19ad8869c1f43e7f564eda038df16f16ecd48413c056ae42d6",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-end_maskMask.png",
+            "original_relative_path": "masks/74-min-end_maskMask.png",
+            "view": "end",
+            "output_role": "mask_path",
+            "render_png_sha256": "28e39d3ba030592c3ebe273c52f935f48f42b9f21e8b2ac9938afea9318bc215",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-end_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-end_maskMask.png",
+        "sha256": "617f9dd83d28ec28edc4cdedfe948825add2a7ec2cdb6eb5beaa277cf2c44c1c",
+        "bytes": 557346
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-front_maskMask.png",
+      "relative_path": "masks/74-min-front_maskMask.png",
+      "type": ".png",
+      "bytes": 542026,
+      "sha256": "cc74efc774fd6d2426b6820bdb6aad1cf9e8904016ded17a9b03efe9bc243314",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-clean-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-front_maskMask.png",
+            "original_relative_path": "masks/74-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "9c5767df1409ff7a25f261d1cad7c0d78dbae8efd230d114d1cf77fc7f8c9483",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-cold-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-front_maskMask.png",
+            "original_relative_path": "masks/74-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "4625b045fe037d8dc30fd7f54f66d5684e85928cee5516ecc4570243ccdf049a",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-deterministic-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-front_maskMask.png",
+            "original_relative_path": "masks/74-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "5748461801844e81aa6b54990367854c16af4e3e49c361ecb61ec632f1d880e7",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-front_maskMask.png",
+            "original_relative_path": "masks/74-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "156c165b710e30e541d936723e73542ba3241c5df85c0a1460c6418d379af69c",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-front_maskMask.png",
+            "original_relative_path": "masks/74-min-front_maskMask.png",
+            "view": "front",
+            "output_role": "mask_path",
+            "render_png_sha256": "d41b4a9bd898583b15e8ca1f8557b5f8700e6773cc4caeae43ed27e8b5d09873",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-front_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-front_maskMask.png",
+        "sha256": "cc74efc774fd6d2426b6820bdb6aad1cf9e8904016ded17a9b03efe9bc243314",
+        "bytes": 542026
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero-calibration2_maskMask.png",
+      "relative_path": "masks/74-min-hero-calibration2_maskMask.png",
+      "type": ".png",
+      "bytes": 516376,
+      "sha256": "c7b5f7d6966f92ee74946374cd416c88d2687079d87d5532c7877a308b92363f",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "physical-scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero-calibration2_maskMask.png",
+            "original_relative_path": "masks/74-min-hero-calibration2_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "9c234d47097757f3575ed129701585c0b4c4ac8b29c17527b5d735f271f1baff",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-hero-calibration2_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-hero-calibration2_maskMask.png",
+        "sha256": "c7b5f7d6966f92ee74946374cd416c88d2687079d87d5532c7877a308b92363f",
+        "bytes": 516376
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero-calibration_maskMask.png",
+      "relative_path": "masks/74-min-hero-calibration_maskMask.png",
+      "type": ".png",
+      "bytes": 557472,
+      "sha256": "32ecbea97c4214bfc41491ca9ca23d89a6967581fad704ef6233fb96dfde32e8",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-hero-calibration_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-hero-calibration_maskMask.png",
+        "sha256": "32ecbea97c4214bfc41491ca9ca23d89a6967581fad704ef6233fb96dfde32e8",
+        "bytes": 557472
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero-repeat_maskMask.png",
+      "relative_path": "masks/74-min-hero-repeat_maskMask.png",
+      "type": ".png",
+      "bytes": 515371,
+      "sha256": "13848551249479b66e629557da995f30fb8d016e8eaa9bbf9f90e17ad2b8a176",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-hero-repeat.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero-repeat_maskMask.png",
+            "original_relative_path": "masks/74-min-hero-repeat_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "f60398b3ef38ee82bc24e2619e2f9764d34be141ce4764ee0c7ca64c88e6d8d5",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-hero-repeat_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-hero-repeat_maskMask.png",
+        "sha256": "13848551249479b66e629557da995f30fb8d016e8eaa9bbf9f90e17ad2b8a176",
+        "bytes": 515371
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero-study_maskMask.png",
+      "relative_path": "masks/74-min-hero-study_maskMask.png",
+      "type": ".png",
+      "bytes": 557074,
+      "sha256": "ffb745bcac43581ff9da7142dd8f3a58ad91f0ebfdcbb97093435e825bfc2317",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-hero-study_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-hero-study_maskMask.png",
+        "sha256": "ffb745bcac43581ff9da7142dd8f3a58ad91f0ebfdcbb97093435e825bfc2317",
+        "bytes": 557074
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero_maskMask.png",
+      "relative_path": "masks/74-min-hero_maskMask.png",
+      "type": ".png",
+      "bytes": 525590,
+      "sha256": "e04c843d32b849c9db81c7867c70db1b987c6244bf4f8a89979c9a250218895a",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-clean-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero_maskMask.png",
+            "original_relative_path": "masks/74-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "99d01cbd975ff57287c7b6e0936871661040c87e129a896ddd826fa95e87f1b1",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-cold-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero_maskMask.png",
+            "original_relative_path": "masks/74-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "bf570ec73a9bca2b663355e6d4303d76f81f84c881bfc3b856c52894eecc1d34",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-deterministic-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero_maskMask.png",
+            "original_relative_path": "masks/74-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "5c55aee3cdabc7e6853f68c0e416daa3ab9591031a1ca313dbe04c5183d4afeb",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero_maskMask.png",
+            "original_relative_path": "masks/74-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "4fad99cc61d546f097fa9a9ebf3d016c4103199e675f74e5bdc7060c13c267a9",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-hero_maskMask.png",
+            "original_relative_path": "masks/74-min-hero_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-hero_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-hero_maskMask.png",
+        "sha256": "e04c843d32b849c9db81c7867c70db1b987c6244bf4f8a89979c9a250218895a",
+        "bytes": 525590
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-oidn-single-a_maskMask.png",
+      "relative_path": "masks/74-min-oidn-single-a_maskMask.png",
+      "type": ".png",
+      "bytes": 568128,
+      "sha256": "a9d23d8a89a14c82102bec635c78ccd9d6a2c1fcd1486bd7001e0d72f3419f5e",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-oidn-single-a.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-oidn-single-a_maskMask.png",
+            "original_relative_path": "masks/74-min-oidn-single-a_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "22063ce770b49e2bfd0a69b2f686fa66c30d545e7645aa04a2e883945f7074f0",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-oidn-single-a_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-oidn-single-a_maskMask.png",
+        "sha256": "a9d23d8a89a14c82102bec635c78ccd9d6a2c1fcd1486bd7001e0d72f3419f5e",
+        "bytes": 568128
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-oidn-single-b_maskMask.png",
+      "relative_path": "masks/74-min-oidn-single-b_maskMask.png",
+      "type": ".png",
+      "bytes": 531424,
+      "sha256": "d78dc1ffbc445a2f5ccb15225f41a7d14d2964df00e148ca70e33ae6cae1d6f4",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-oidn-single-b.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-oidn-single-b_maskMask.png",
+            "original_relative_path": "masks/74-min-oidn-single-b_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "409a2123c7fccba06afb26b223388ad44c31afc4b310b14e0a7bb250837fc945",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-oidn-single-b_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-oidn-single-b_maskMask.png",
+        "sha256": "d78dc1ffbc445a2f5ccb15225f41a7d14d2964df00e148ca70e33ae6cae1d6f4",
+        "bytes": 531424
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-regression-for59_maskMask.png",
+      "relative_path": "masks/74-min-regression-for59_maskMask.png",
+      "type": ".png",
+      "bytes": 527802,
+      "sha256": "86022c35e1a053b1dad966e8f2ccf6e5c32985add48b3969992b2aefd677342e",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-regression-for59.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-regression-for59_maskMask.png",
+            "original_relative_path": "masks/74-min-regression-for59_maskMask.png",
+            "view": "hero",
+            "output_role": "mask_path",
+            "render_png_sha256": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c",
+            "render_png_hash_equals_accepted": true,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-regression-for59_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-regression-for59_maskMask.png",
+        "sha256": "86022c35e1a053b1dad966e8f2ccf6e5c32985add48b3969992b2aefd677342e",
+        "bytes": 527802
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top-final-study_maskMask.png",
+      "relative_path": "masks/74-min-top-final-study_maskMask.png",
+      "type": ".png",
+      "bytes": 526701,
+      "sha256": "3018050fb78caa871c34aa6294b7eb045fc13e16dab35d9bd4d66bd94c84c7bf",
+      "sku": "74-min",
+      "stage": "experimental",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-top-final-study.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top-final-study_maskMask.png",
+            "original_relative_path": "masks/74-min-top-final-study_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "dab2699a28bc33669a5966f292feca4f3ebd3ca7749716e3b0e32f9314ef6130",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-top-final-study_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-top-final-study_maskMask.png",
+        "sha256": "3018050fb78caa871c34aa6294b7eb045fc13e16dab35d9bd4d66bd94c84c7bf",
+        "bytes": 526701
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top_maskMask.png",
+      "relative_path": "masks/74-min-top_maskMask.png",
+      "type": ".png",
+      "bytes": 499721,
+      "sha256": "37d04af4ded9d2298f2a6ee4427d9d07fa8d10b41e6c138edd43e9c82e2eedf1",
+      "sku": "74-min",
+      "stage": "unknown",
+      "active_renderer_usage": "Output of Object Index compositor; not sampled by scene materials or procedural artwork",
+      "dependencies": [
+        "Generated from historical scene Object Index pass; no image inputs"
+      ],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": [
+          {
+            "evidence": "74-min-clean-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top_maskMask.png",
+            "original_relative_path": "masks/74-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "4c5f76592525d79bbd0fb8635b912ce7bb91c504634272501663403b41209c00",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-cold-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top_maskMask.png",
+            "original_relative_path": "masks/74-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "8bd9b9e2495403a5e6111c77c79ac416ca672a2c7eb8a92422154e8f3668d4aa",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-deterministic-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top_maskMask.png",
+            "original_relative_path": "masks/74-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "21666a563629087d4103f43c063cbb81c279fc7202c77d25bc8fd4b141dffcb3",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top_maskMask.png",
+            "original_relative_path": "masks/74-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "aa25d3391849dc72a98a29566db4eb0ca50dfde8c053c60eada261af91cde6e9",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          },
+          {
+            "evidence": "74-min-uv-final.scene.json",
+            "original_log_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\masks\\74-min-top_maskMask.png",
+            "original_relative_path": "masks/74-min-top_maskMask.png",
+            "view": "top",
+            "output_role": "mask_path",
+            "render_png_sha256": "0401be57b7371b4fa48963dbd19b230ced661765ed87e75022f9769fc6598396",
+            "render_png_hash_equals_accepted": false,
+            "association_status": "PATH_ONLY_UNVERIFIED_MASK_BYTES",
+            "mask_sha256_recorded_in_log": false
+          }
+        ]
+      },
+      "decision": "KEEP_PUBLIC",
+      "backup_verified": true,
+      "public_copy": {
+        "original": "masks/74-min-top_maskMask.png",
+        "public_path": "examples/74_viagra/masks/74-min-top_maskMask.png",
+        "sha256": "37d04af4ded9d2298f2a6ee4427d9d07fa8d10b41e6c138edd43e9c82e2eedf1",
+        "bytes": 499721
+      },
+      "purpose": "Compositing / diagnostic; retained even when experimental"
+    },
+    {
+      "absolute_path": "C:\\lil_projects\\Blender Farm Pro\\renders\\physical-scene.json",
+      "relative_path": "physical-scene.json",
+      "type": ".json",
+      "bytes": 148333,
+      "sha256": "e2cd3350f382686e17f6b7f85249f1f4dcb08cdd8edac0e8b8940ecd97b57ea4",
+      "sku": "UNKNOWN",
+      "stage": "unknown",
+      "active_renderer_usage": "Historical output/evidence; not an input to the procedural CLI",
+      "dependencies": [],
+      "accepted_png_relation": {
+        "byte_identical_to_accepted_png": false,
+        "historical_log_references": []
+      },
+      "decision": "KEEP_PRIVATE",
+      "backup_verified": true
+    }
+  ],
+  "accepted_original_png_sha256": {
+    "59-min": "0f9946529464cb5778d9e2d5d006d6711aaef075c8697c36dc55c2a8d6f7a9b7",
+    "74-min": "27a4dfbc3dabc3d474c2c35090f6d4147aa4d3d48a48fbe18189055f8e3ab97c"
+  },
+  "mask_count": 19,
+  "blender_files_opened": 14,
+  "public_scene_count": 2,
+  "original_deletions": 0,
+  "additional_external_dependency_backup": [
+    {
+      "scene": "baseline_before.blend",
+      "kind": "font",
+      "source_path": "C:\\lil_projects\\Blender Farm Pro\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans-Bold.ttf",
+      "sha256": "b184b89e3c1075f22f6b71575b6fc20d4972b3cfd3b23322ca6fd596dcaef167",
+      "bytes": 704128,
+      "private_backup_verified": true,
+      "canonical_public_font": "05_assets/blender/fonts/DejaVuSans-Bold.ttf",
+      "canonical_font_bytes_equal": true
+    },
+    {
+      "scene": "baseline_before.blend",
+      "kind": "font",
+      "source_path": "C:\\lil_projects\\Blender Farm Pro\\.worktrees\\reference-design-producer\\05_assets\\blender\\fonts\\DejaVuSans.ttf",
+      "sha256": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+      "bytes": 756072,
+      "private_backup_verified": true,
+      "canonical_public_font": "05_assets/blender/fonts/DejaVuSans.ttf",
+      "canonical_font_bytes_equal": true
+    }
+  ],
+  "editable_scene_validation": "PASS"
+}

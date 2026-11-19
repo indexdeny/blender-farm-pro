@@ -24,7 +24,7 @@ Primary candidate033632e + descendant rendererbd849c1/uncommitted implementation
 
 ## Что не доказано
 
-Exact historical reproduction; factory dimensions/coating/optics; manufacturer certification; полная OCR-приёмка physical hero; выполнение optional/slow photography tests; причина historical R-004; свободные права на любые brand assets или downstream commercial reuse. Publication permission основано на явном подтверждении владельца, а не независимой проверке договоров.
+Exact procedural historical reproduction и cross-environment determinism; factory dimensions/coating/optics; manufacturer certification; полная OCR-приёмка physical hero; выполнение optional/slow photography tests; причина historical R-004; свободные права на любые brand assets или downstream commercial reuse. Publication permission основано на явном подтверждении владельца, а не независимой проверке договоров.
 
 ## Проверка публикации
 
@@ -43,3 +43,7 @@ PR: https://github.com/indexdeny/blender-farm-pro/pull/1. GitHub API подтв�
 ## Риски и граница
 
 Не распространять трактовку двух accepted examples на391 SKU. Не заменять pixel equality на визуальное впечатление и не повышать historical QA records до текущего certification. Учитывать14 skip records и их class-fixture семантику. Исходный архив разработки сохранён; уменьшение active tracking не уменьшает прежнюю Git history.
+
+## Addendum: editable scenes and masks (2026-11-19)
+
+Две редактируемые сцены и необходимые ресурсы сохранены в examples; все19 исходных masks и два historical JSON evidence перенесены без изменения bytes. Saved-scene replay в проверенной среде восстановил exact accepted pixels/normalized PNG hashes; procedural replay отдельно сохранил baseline прошлого выпуска. Это разные результаты. Текущий статус и ограничения: [FINAL_SCENE_AND_MASKS_AUDIT.md](FINAL_SCENE_AND_MASKS_AUDIT.md), [inventory](RENDER_ASSET_INVENTORY.md).
